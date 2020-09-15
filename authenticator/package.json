@@ -1,0 +1,43 @@
+{
+  "name": "oauthwire4",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Autenticador Wire4",
+  "main": "./dist/src/authenticator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "OAuthWire4"
+  ],
+  "author": "Wire4.mx",
+  "license": "ISC",
+  "dependencies": {
+    "@types/form-data": "^2.5.0",
+    "@types/jest": "^26.0.13",
+    "@types/jsonwebtoken": "^8.5.0",
+    "bluebird": "^3.7.2",
+    "form-data": "^3.0.0",
+    "jest": "^26.4.2",
+    "js-base64": "^3.4.5",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.1",
+    "ts-jest": "^26.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

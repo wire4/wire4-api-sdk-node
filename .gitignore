@@ -1,0 +1,10 @@
+sdk-client/node_modules
+sdk-client/*.ts
+sdk-client/.swagger-codegen/
+sdk-client/.swagger-codegen-ignore
+
+authenticator/node_modules
+authenticator/*.ts
+authenticator/src/*.ts
+authenticator/test/*.ts
+authenticator/dist/*.ts
