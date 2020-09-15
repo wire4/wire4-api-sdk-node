@@ -1,3 +1,4 @@
+.idea
 sdk-client/node_modules
 sdk-client/*.ts
 sdk-client/.swagger-codegen/
