@@ -37,22 +37,22 @@ npm install wire4-api-sdk --save
 Por favor sigue el procedimiento de instalación (Instalacion y uso) y ejecuta el siguiente código de ejemplo reemplazando las credenciales de aplicación por tus datos. Toma en cuanta que estos son ejemplos que te servirán de referencia y que pueden cambiar pero debes crear una cuenta en wire4.mx para obtener tus datos de aplicación.
 
 ```
-describe("InstitucionesApi", () => {
-    var instance  = null;
-    var oauthWire4 = null;
-    beforeEach(function() {
-        instance = new api.InstitucionesApi(); //INSTANCIA DE LA API
-        oauthWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX); //INSTANCIA DEL AUTENTICADOR
-    });
+try {
+    var instance = new api.InstitucionesApi();
+    var oauthWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
 
-    test("getAllInstitutionsUsingGET", async () => {
-        const authorization = await oauthWire4.obtainAccessTokenApp('general'); //OBTENCION DEL TOKEN CON CREDENCIALES DE APLICACION O USUARIO DE APLICACION
-        const response = await instance.getAllInstitutionsUsingGET(authorization, {}); //OBTENCION DE DATOS DE LA API
-        console.log(JSON.stringify(response));
-        expect(response).not.toBe(null);
+    const authorization = await oauthWire4.obtainAccessTokenApp('general');
+    const response = await instance.getAllInstitutionsUsingGET(authorization, {});
+    console.log(JSON.stringify(response));
+} catch (error) {
 
-    });
-});
+    if(error.status !== undefined ) {
+        console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+    } else {
+        console.log('Error:' + error);
+    }
+
+}
 ```
 ## Documentación para la autenticación
 
