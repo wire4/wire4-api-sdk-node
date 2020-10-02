@@ -3,7 +3,7 @@
 // tslint:disable
 /**
  * Wire4RestAPI
- * Referencia de la API de Wire4
+ *  # Referencia de API La API de Wire4 está organizada en torno a REST.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -13,7 +13,7 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.SalesPointFound = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.SalesPointFound = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
 const url = require("url");
 const portableFetch = require("portable-fetch");
 const BASE_PATH = "https://sandbox-api.wire4.mx/wire4/1.0.0".replace(/\/+$/, "");
@@ -572,6 +572,47 @@ exports.ContractsDetailsApiFetchParamCreator = function (configuration) {
             };
         },
         /**
+         * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+         * @summary Obtiene los usuarios autorizados por contrato
+         * @param {string} authorization Header para token
+         * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+         * @param {string} [contract] El contrato Monex
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling obtainAuthorizedUsersByContract.');
+            }
+            // verify required parameter 'X_ACCESS_KEY' is not null or undefined
+            if (X_ACCESS_KEY === null || X_ACCESS_KEY === undefined) {
+                throw new RequiredError('X_ACCESS_KEY', 'Required parameter X_ACCESS_KEY was null or undefined when calling obtainAuthorizedUsersByContract.');
+            }
+            const localVarPath = `/onboarding/accounts/authorized-users`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (contract !== undefined) {
+                localVarQueryParameter['contract'] = contract;
+            }
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            if (X_ACCESS_KEY !== undefined && X_ACCESS_KEY !== null) {
+                localVarHeaderParameter['X-ACCESS-KEY'] = String(X_ACCESS_KEY);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Detalles de la compañía relacionada con el contrato de Monex.
          * @summary Obtiene los detalles de la empresa del contrato
          * @param {ContractDetailRequest} body Información para obtener los detalles de la companía
@@ -668,6 +709,28 @@ exports.ContractsDetailsApiFp = function (configuration) {
             };
         },
         /**
+         * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+         * @summary Obtiene los usuarios autorizados por contrato
+         * @param {string} authorization Header para token
+         * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+         * @param {string} [contract] El contrato Monex
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
+            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          * Detalles de la compañía relacionada con el contrato de Monex.
          * @summary Obtiene los detalles de la empresa del contrato
          * @param {ContractDetailRequest} body Información para obtener los detalles de la companía
@@ -721,6 +784,18 @@ exports.ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
             return exports.ContractsDetailsApiFp(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options)(fetch, basePath);
         },
         /**
+         * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+         * @summary Obtiene los usuarios autorizados por contrato
+         * @param {string} authorization Header para token
+         * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+         * @param {string} [contract] El contrato Monex
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
+            return exports.ContractsDetailsApiFp(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options)(fetch, basePath);
+        },
+        /**
          * Detalles de la compañía relacionada con el contrato de Monex.
          * @summary Obtiene los detalles de la empresa del contrato
          * @param {ContractDetailRequest} body Información para obtener los detalles de la companía
@@ -765,6 +840,19 @@ class ContractsDetailsApi extends BaseAPI {
      */
     obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options) {
         return exports.ContractsDetailsApiFp(this.configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options)(this.fetch, this.basePath);
+    }
+    /**
+     * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+     * @summary Obtiene los usuarios autorizados por contrato
+     * @param {string} authorization Header para token
+     * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+     * @param {string} [contract] El contrato Monex
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ContractsDetailsApi
+     */
+    obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
+        return exports.ContractsDetailsApiFp(this.configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options)(this.fetch, this.basePath);
     }
     /**
      * Detalles de la compañía relacionada con el contrato de Monex.
@@ -1095,8 +1183,8 @@ exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration
             };
         },
         /**
-         * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-         * @summary Actualiza el monto límite
+         * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+         * @summary Solicitud para actualizar el monto límite
          * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
          * @param {string} authorization Header para token
          * @param {string} account Cuenta a actualizar
@@ -1311,8 +1399,8 @@ exports.CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
             };
         },
         /**
-         * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-         * @summary Actualiza el monto límite
+         * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+         * @summary Solicitud para actualizar el monto límite
          * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
          * @param {string} authorization Header para token
          * @param {string} account Cuenta a actualizar
@@ -1431,8 +1519,8 @@ exports.CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, b
             return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options)(fetch, basePath);
         },
         /**
-         * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-         * @summary Actualiza el monto límite
+         * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+         * @summary Solicitud para actualizar el monto límite
          * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
          * @param {string} authorization Header para token
          * @param {string} account Cuenta a actualizar
@@ -1549,8 +1637,8 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
         return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options)(this.fetch, this.basePath);
     }
     /**
-     * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-     * @summary Actualiza el monto límite
+     * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+     * @summary Solicitud para actualizar el monto límite
      * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
      * @param {string} authorization Header para token
      * @param {string} account Cuenta a actualizar
@@ -2493,6 +2581,118 @@ class InstitucionesApi extends BaseAPI {
     }
 }
 exports.InstitucionesApi = InstitucionesApi;
+/**
+ * LmitesDeMontosApi - fetch parameter creator
+ * @export
+ */
+exports.LmitesDeMontosApiFetchParamCreator = function (configuration) {
+    return {
+        /**
+         * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+         * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+         * @param {string} authorization Header para token
+         * @param {string} suscription Identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        obtainConfigurationsLimits(authorization, suscription, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling obtainConfigurationsLimits.');
+            }
+            // verify required parameter 'suscription' is not null or undefined
+            if (suscription === null || suscription === undefined) {
+                throw new RequiredError('suscription', 'Required parameter suscription was null or undefined when calling obtainConfigurationsLimits.');
+            }
+            const localVarPath = `/subscriptions/{suscription}/configurations`
+                .replace(`{${"suscription"}}`, encodeURIComponent(String(suscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    };
+};
+/**
+ * LmitesDeMontosApi - functional programming interface
+ * @export
+ */
+exports.LmitesDeMontosApiFp = function (configuration) {
+    return {
+        /**
+         * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+         * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+         * @param {string} authorization Header para token
+         * @param {string} suscription Identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        obtainConfigurationsLimits(authorization, suscription, options) {
+            const localVarFetchArgs = exports.LmitesDeMontosApiFetchParamCreator(configuration).obtainConfigurationsLimits(authorization, suscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+    };
+};
+/**
+ * LmitesDeMontosApi - factory interface
+ * @export
+ */
+exports.LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
+    return {
+        /**
+         * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+         * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+         * @param {string} authorization Header para token
+         * @param {string} suscription Identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        obtainConfigurationsLimits(authorization, suscription, options) {
+            return exports.LmitesDeMontosApiFp(configuration).obtainConfigurationsLimits(authorization, suscription, options)(fetch, basePath);
+        },
+    };
+};
+/**
+ * LmitesDeMontosApi - object-oriented interface
+ * @export
+ * @class LmitesDeMontosApi
+ * @extends {BaseAPI}
+ */
+class LmitesDeMontosApi extends BaseAPI {
+    /**
+     * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+     * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+     * @param {string} authorization Header para token
+     * @param {string} suscription Identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LmitesDeMontosApi
+     */
+    obtainConfigurationsLimits(authorization, suscription, options) {
+        return exports.LmitesDeMontosApiFp(this.configuration).obtainConfigurationsLimits(authorization, suscription, options)(this.fetch, this.basePath);
+    }
+}
+exports.LmitesDeMontosApi = LmitesDeMontosApi;
 /**
  * OperacionesCoDiApi - fetch parameter creator
  * @export

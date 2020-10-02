@@ -1,6 +1,6 @@
 /**
  * Wire4RestAPI
- * Referencia de la API de Wire4
+ *  # Referencia de API La API de Wire4 está organizada en torno a REST.
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -27,7 +27,7 @@ export declare const COLLECTION_FORMATS: {
  * @interface FetchAPI
  */
 export interface FetchAPI {
-    (url: string, init?: any): Promise<Response>;
+    (url: string, init: any): Promise<Response>;
 }
 /**
  *
@@ -58,7 +58,7 @@ export declare class BaseAPI {
 export declare class RequiredError extends Error {
     field: string;
     name: "RequiredError";
-    constructor(field: string, msg?: string);
+    constructor(field: string, msg: string);
 }
 /**
  * Objeto que contiene información de la cuenta
@@ -1511,6 +1511,25 @@ export interface Compay {
     rfc: string;
 }
 /**
+ * Es la lista de configuraciones asociadas al contrato
+ * @export
+ * @interface ConfigurationsLimits
+ */
+export interface ConfigurationsLimits {
+    /**
+     * Nombre del grupo de configuraciones. Debe ser LIMIT_BY_TIME para especificar la configuración por límite por horario o LIMIT_BY_RANGE para especificar límite por periodo.
+     * @type {string}
+     * @memberof ConfigurationsLimits
+     */
+    group: string;
+    /**
+     * Lista de items configurados
+     * @type {Array<Item>}
+     * @memberof ConfigurationsLimits
+     */
+    items: Array<Item>;
+}
+/**
  * Objeto que contiene información básica de un posible cliente
  * @export
  * @interface ContactRequest
@@ -1888,6 +1907,25 @@ export interface InstitutionsList {
     institutions: Array<Institution>;
 }
 /**
+ * Cada Item especifica el valor configurado para limite de monto permitido o número de operaciones permitidas. Debe especificar un item por cada configuración
+ * @export
+ * @interface Item
+ */
+export interface Item {
+    /**
+     * Debe ser BY_AMOUNT para indicar la configuración por monto o BY_OPERATION para indicar la configuración por número de operaciones
+     * @type {string}
+     * @memberof Item
+     */
+    key: string;
+    /**
+     * Valor configurado
+     * @type {string}
+     * @memberof Item
+     */
+    value: string;
+}
+/**
  * El mensaje que se envía mediante (webHook) con la información del registro de la cuenta del beneficiario
  * @export
  * @interface MessageAccountBeneficiary
@@ -2044,6 +2082,98 @@ export interface MessageCEP {
      * @memberof MessageCEP
      */
     urlZip: string;
+}
+/**
+ * El mensaje que se envía con la informacion del punto de venta registrado
+ * @export
+ * @interface MessageCodiAction
+ */
+export interface MessageCodiAction {
+    /**
+     * Monto de la operación de pago
+     * @type {number}
+     * @memberof MessageCodiAction
+     */
+    amount: number;
+    /**
+     * Concepto
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    concept: string;
+    /**
+     * Fecha de expiración de la operación
+     * @type {Date}
+     * @memberof MessageCodiAction
+     */
+    dueDate: Date;
+    /**
+     * Uuid de la operación
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    id: string;
+    /**
+     * Metadata asociada a la petición de pago
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    metadata: string;
+    /**
+     * Fecha de la operación
+     * @type {Date}
+     * @memberof MessageCodiAction
+     */
+    operationDate: Date;
+    /**
+     * Identificador de la petición
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    orderId: string;
+    /**
+     * Tipo de pago
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    paymentType: string;
+    /**
+     * Número de referencia
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    reference: string;
+    /**
+     * Identidicador del punto de venta a la que pertenece la petición de pago
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    salesPointId: string;
+    /**
+     * Estado de la operación de pago
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    status: string;
+    /**
+     * Id de la transacción
+     * @type {string}
+     * @memberof MessageCodiAction
+     */
+    transactionId: string;
+}
+/**
+ * Configuración de límites de montos
+ * @export
+ * @interface MessageConfigurationsLimits
+ */
+export interface MessageConfigurationsLimits {
+    /**
+     * Lista de configuraciones pertenecientes al contrato
+     * @type {Array<ConfigurationsLimits>}
+     * @memberof MessageConfigurationsLimits
+     */
+    configurations: Array<ConfigurationsLimits>;
 }
 /**
  * El mensaje que se envía mediante (webHook) con la información de una transferencia de entrada recibida
@@ -2472,6 +2602,31 @@ export declare namespace MessageRequestChanged {
     }
 }
 /**
+ * El mensaje que se envía con la informacion del punto de venta registrado
+ * @export
+ * @interface MessageSalesPoint
+ */
+export interface MessageSalesPoint {
+    /**
+     * Cuenta donde se realziaran los pagos
+     * @type {string}
+     * @memberof MessageSalesPoint
+     */
+    account: string;
+    /**
+     * Ip desde la cual se accedera al API
+     * @type {string}
+     * @memberof MessageSalesPoint
+     */
+    ip: string;
+    /**
+     * Nombre del punto de venta
+     * @type {string}
+     * @memberof MessageSalesPoint
+     */
+    name: string;
+}
+/**
  * El mensaje que se envía mediante (webHook) con la información de la suscripción a esta a esta API
  * @export
  * @interface MessageSubscription
@@ -2556,6 +2711,12 @@ export interface MessageUserAuthorized {
      * @memberof MessageUserAuthorized
      */
     requestId: string;
+    /**
+     * El nombre del usuario de acceso que se autorizó
+     * @type {string}
+     * @memberof MessageUserAuthorized
+     */
+    userName: string;
 }
 /**
  * El objeto que se envía mediante un mensaje WebHook
@@ -4040,6 +4201,16 @@ export declare const ContractsDetailsApiFetchParamCreator: (configuration: Confi
      */
     obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options?: any): FetchArgs;
     /**
+     * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+     * @summary Obtiene los usuarios autorizados por contrato
+     * @param {string} authorization Header para token
+     * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+     * @param {string} [contract] El contrato Monex
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options?: any): FetchArgs;
+    /**
      * Detalles de la compañía relacionada con el contrato de Monex.
      * @summary Obtiene los detalles de la empresa del contrato
      * @param {ContractDetailRequest} body Información para obtener los detalles de la companía
@@ -4075,6 +4246,16 @@ export declare const ContractsDetailsApiFp: (configuration: Configuration) => {
      */
     obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<AuthorizedUsers>>;
     /**
+     * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+     * @summary Obtiene los usuarios autorizados por contrato
+     * @param {string} authorization Header para token
+     * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+     * @param {string} [contract] El contrato Monex
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<AuthorizedUsers>>;
+    /**
      * Detalles de la compañía relacionada con el contrato de Monex.
      * @summary Obtiene los detalles de la empresa del contrato
      * @param {ContractDetailRequest} body Información para obtener los detalles de la companía
@@ -4109,6 +4290,16 @@ export declare const ContractsDetailsApiFactory: (configuration: Configuration, 
      * @throws {RequiredError}
      */
     obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): Promise<AuthorizedUsers[]>;
+    /**
+     * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+     * @summary Obtiene los usuarios autorizados por contrato
+     * @param {string} authorization Header para token
+     * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+     * @param {string} [contract] El contrato Monex
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options: any): Promise<AuthorizedUsers[]>;
     /**
      * Detalles de la compañía relacionada con el contrato de Monex.
      * @summary Obtiene los detalles de la empresa del contrato
@@ -4147,6 +4338,17 @@ export interface ContractsDetailsApiInterface {
      * @memberof ContractsDetailsApiInterface
      */
     obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): Promise<Array<AuthorizedUsers>>;
+    /**
+     * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+     * @summary Obtiene los usuarios autorizados por contrato
+     * @param {string} authorization Header para token
+     * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+     * @param {string} [contract] El contrato Monex
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ContractsDetailsApiInterface
+     */
+    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options: any): Promise<Array<AuthorizedUsers>>;
     /**
      * Detalles de la compañía relacionada con el contrato de Monex.
      * @summary Obtiene los detalles de la empresa del contrato
@@ -4187,6 +4389,17 @@ export declare class ContractsDetailsApi extends BaseAPI implements ContractsDet
      * @memberof ContractsDetailsApi
      */
     obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): Promise<AuthorizedUsers[]>;
+    /**
+     * Obtienen los detalles de los usuarios autorizados por contrato Monex.
+     * @summary Obtiene los usuarios autorizados por contrato
+     * @param {string} authorization Header para token
+     * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
+     * @param {string} [contract] El contrato Monex
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ContractsDetailsApi
+     */
+    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options: any): Promise<AuthorizedUsers[]>;
     /**
      * Detalles de la compañía relacionada con el contrato de Monex.
      * @summary Obtiene los detalles de la empresa del contrato
@@ -4280,8 +4493,8 @@ export declare const CuentasDeBeneficiariosSPEIApiFetchParamCreator: (configurat
      */
     removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options?: any): FetchArgs;
     /**
-     * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-     * @summary Actualiza el monto límite
+     * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+     * @summary Solicitud para actualizar el monto límite
      * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
      * @param {string} authorization Header para token
      * @param {string} account Cuenta a actualizar
@@ -4372,8 +4585,8 @@ export declare const CuentasDeBeneficiariosSPEIApiFp: (configuration: Configurat
      */
     removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
     /**
-     * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-     * @summary Actualiza el monto límite
+     * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+     * @summary Solicitud para actualizar el monto límite
      * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
      * @param {string} authorization Header para token
      * @param {string} account Cuenta a actualizar
@@ -4464,8 +4677,8 @@ export declare const CuentasDeBeneficiariosSPEIApiFactory: (configuration: Confi
      */
     removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): Promise<Response>;
     /**
-     * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-     * @summary Actualiza el monto límite
+     * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+     * @summary Solicitud para actualizar el monto límite
      * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
      * @param {string} authorization Header para token
      * @param {string} account Cuenta a actualizar
@@ -4564,8 +4777,8 @@ export interface CuentasDeBeneficiariosSPEIApiInterface {
      */
     removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): Promise<{}>;
     /**
-     * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-     * @summary Actualiza el monto límite
+     * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+     * @summary Solicitud para actualizar el monto límite
      * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
      * @param {string} authorization Header para token
      * @param {string} account Cuenta a actualizar
@@ -4666,8 +4879,8 @@ export declare class CuentasDeBeneficiariosSPEIApi extends BaseAPI implements Cu
      */
     removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): Promise<Response>;
     /**
-     * Actualiza el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
-     * @summary Actualiza el monto límite
+     * Inicia una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la subscripción.
+     * @summary Solicitud para actualizar el monto límite
      * @param {AmountRequest} body Información de la cuenta y el monto límite a actualizar
      * @param {string} authorization Header para token
      * @param {string} account Cuenta a actualizar
@@ -5300,6 +5513,86 @@ export declare class InstitucionesApi extends BaseAPI implements InstitucionesAp
      * @memberof InstitucionesApi
      */
     getAllInstitutionsUsingGET(authorization: string, options: any): Promise<InstitutionsList>;
+}
+/**
+ * LmitesDeMontosApi - fetch parameter creator
+ * @export
+ */
+export declare const LmitesDeMontosApiFetchParamCreator: (configuration: Configuration) => {
+    /**
+     * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+     * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+     * @param {string} authorization Header para token
+     * @param {string} suscription Identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    obtainConfigurationsLimits(authorization: string, suscription: string, options?: any): FetchArgs;
+};
+/**
+ * LmitesDeMontosApi - functional programming interface
+ * @export
+ */
+export declare const LmitesDeMontosApiFp: (configuration: Configuration) => {
+    /**
+     * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+     * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+     * @param {string} authorization Header para token
+     * @param {string} suscription Identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    obtainConfigurationsLimits(authorization: string, suscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<MessageConfigurationsLimits>;
+};
+/**
+ * LmitesDeMontosApi - factory interface
+ * @export
+ */
+export declare const LmitesDeMontosApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
+    /**
+     * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+     * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+     * @param {string} authorization Header para token
+     * @param {string} suscription Identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    obtainConfigurationsLimits(authorization: string, suscription: string, options: any): Promise<MessageConfigurationsLimits>;
+};
+/**
+ * LmitesDeMontosApi - interface
+ * @export
+ * @interface LmitesDeMontosApi
+ */
+export interface LmitesDeMontosApiInterface {
+    /**
+     * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+     * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+     * @param {string} authorization Header para token
+     * @param {string} suscription Identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LmitesDeMontosApiInterface
+     */
+    obtainConfigurationsLimits(authorization: string, suscription: string, options: any): Promise<MessageConfigurationsLimits>;
+}
+/**
+ * LmitesDeMontosApi - object-oriented interface
+ * @export
+ * @class LmitesDeMontosApi
+ * @extends {BaseAPI}
+ */
+export declare class LmitesDeMontosApi extends BaseAPI implements LmitesDeMontosApiInterface {
+    /**
+     * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
+     * @summary Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación
+     * @param {string} authorization Header para token
+     * @param {string} suscription Identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LmitesDeMontosApi
+     */
+    obtainConfigurationsLimits(authorization: string, suscription: string, options: any): Promise<MessageConfigurationsLimits>;
 }
 /**
  * OperacionesCoDiApi - fetch parameter creator
