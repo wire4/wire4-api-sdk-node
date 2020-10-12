@@ -1070,7 +1070,7 @@ describe("PeticionesDePagoPorCoDiApi", () => {
     });
 });
 
-describe("LmitesDeMontosApi", async () => {
+describe("LmitesDeMontosApi", () => {
 
     var instance = null;
     var outhWire4= null;
@@ -1087,23 +1087,6 @@ describe("LmitesDeMontosApi", async () => {
         const authorization = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY,"spei_admin");
         const suscription = SUBSCRIPTION
             const response = instance.obtainConfigurationsLimits(authorization, suscription, {});
-            expect(response).not.toBe(null)
-        } catch (error) {
-
-            if(error.status !== undefined ) {
-                console.log('Error:' + error.status, ' mensaje:' + error.statusText);
-            } else {
-                console.log('Error:' + error);
-            }
-        }
-    });
-    test("updateConfigurations", async () => {
-
-        try{
-            const body =  api.UpdateConfigurationsRequestDTO;
-            const authorization = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY,"spei_admin");
-            const suscription = SUBSCRIPTION
-            const response = instance.updateConfigurations(body, authorization, suscription, {});
             expect(response).not.toBe(null)
         } catch (error) {
 

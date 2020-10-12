@@ -61,7 +61,7 @@ export declare class RequiredError extends Error {
     constructor(field: string, msg: string);
 }
 /**
- * Objeto que contiene información de la cuenta
+ * Contiene la información del beneficiario como la cuenta, monto límite, datos del beneficiario entre otros
  * @export
  * @interface Account
  */
@@ -870,11 +870,11 @@ export interface BillingTransaction {
      */
     monexId: number;
     /**
-     *
-     * @type {Timestamp}
+     * Fecha y hora de la transacción
+     * @type {Date}
      * @memberof BillingTransaction
      */
-    operationDate: Timestamp;
+    operationDate: Date;
     /**
      * Identificador de la orden
      * @type {string}
@@ -2817,10 +2817,10 @@ export interface Operations {
     orderId: string;
     /**
      *
-     * @type {Payment}
+     * @type {PaymentCODI}
      * @memberof Operations
      */
-    payment: Payment;
+    payment: PaymentCODI;
     /**
      * Numero de telefono
      * @type {string}
@@ -3032,6 +3032,64 @@ export interface Payment {
      * @memberof Payment
      */
     transactionId: number;
+}
+/**
+ * Objeto que contiene la información del pago realizado
+ * @export
+ * @interface PaymentCODI
+ */
+export interface PaymentCODI {
+    /**
+     * Monto del pago
+     * @type {number}
+     * @memberof PaymentCODI
+     */
+    amount: number;
+    /**
+     * Descripción del pago
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    description: string;
+    /**
+     * Mensaje de error
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    errorMessage: string;
+    /**
+     * Identificador del pago
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    id: string;
+    /**
+     * Fecha en que se efectuo el pago
+     * @type {Date}
+     * @memberof PaymentCODI
+     */
+    operationDate: Date;
+    /**
+     * Estatus del pago
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    status: PaymentCODI.StatusEnum;
+}
+/**
+ * @export
+ * @namespace PaymentCODI
+ */
+export declare namespace PaymentCODI {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum StatusEnum {
+        RECEIVED,
+        COMPLETED,
+        CANCELLED
+    }
 }
 /**
  * Objeto que contiene la información de solicitud de pago por CODI®.
@@ -3319,11 +3377,11 @@ export interface SalesPointFound {
      */
     account: string;
     /**
-     *
-     * @type {Timestamp}
+     * Fecha en la que se creó el punto de venta
+     * @type {Date}
      * @memberof SalesPointFound
      */
-    createdAt: Timestamp;
+    createdAt: Date;
     /**
      * Nombre del punto de venta
      * @type {string}
@@ -3343,11 +3401,11 @@ export interface SalesPointFound {
      */
     status: SalesPointFound.StatusEnum;
     /**
-     *
-     * @type {Timestamp}
+     * Fecha en la que se actualizó el punto de venta
+     * @type {Date}
      * @memberof SalesPointFound
      */
-    updatedAt: Timestamp;
+    updatedAt: Date;
 }
 /**
  * @export
@@ -3550,73 +3608,6 @@ export interface SpidClassificationsResponseDTO {
     classifications: Array<SpidClassificationDTO>;
 }
 /**
- *
- * @export
- * @interface Timestamp
- */
-export interface Timestamp {
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    date: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    day: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    hours: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    minutes: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    month: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    nanos: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    seconds: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    time: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    timezoneOffset: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    year: number;
-}
-/**
  * Respuesta con una url que requiere que un token sea capturado
  * @export
  * @interface TokenRequiredResponse
@@ -3647,6 +3638,12 @@ export interface TransactionOutgoing {
      * @memberof TransactionOutgoing
      */
     amount: number;
+    /**
+     *
+     * @type {Account}
+     * @memberof TransactionOutgoing
+     */
+    beneficiary: Account;
     /**
      * Cuenta del beneficiario, podría ser un número celular, TDD o Cuenta CLABE interbancaria
      * @type {string}
@@ -3758,7 +3755,7 @@ export interface TransactionOutgoingSpid {
     returnUrl: string;
 }
 /**
- * Objeto que contiene la información de las transferencias SPEI de salida
+ * Contiene la información de las transferencias SPEI de salida
  * @export
  * @interface TransactionsOutgoingRegister
  */
