@@ -2,7 +2,7 @@
 // tslint:disable
 /**
  * Wire4RestAPI
- *  # Referencia de API La API de Wire4 está organizada en torno a REST.
+ * Referencia de la API de Wire4
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -12,7 +12,6 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Configuration = void 0;
 class Configuration {
     constructor(param = {}) {
         this.apiKey = param.apiKey;

@@ -3,7 +3,7 @@
 // tslint:disable
 /**
  * Wire4RestAPI
- *  # Referencia de API La API de Wire4 está organizada en torno a REST.
+ * Referencia de la API de Wire4
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -13,7 +13,6 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.SalesPointFound = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
 const url = require("url");
 const portableFetch = require("portable-fetch");
 const BASE_PATH = "https://sandbox-api.wire4.mx/wire4/1.0.0".replace(/\/+$/, "");
@@ -209,6 +208,23 @@ var Operations;
 })(Operations = exports.Operations || (exports.Operations = {}));
 /**
  * @export
+ * @namespace PaymentCODI
+ */
+var PaymentCODI;
+(function (PaymentCODI) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let StatusEnum;
+    (function (StatusEnum) {
+        StatusEnum[StatusEnum["RECEIVED"] = 'RECEIVED'] = "RECEIVED";
+        StatusEnum[StatusEnum["COMPLETED"] = 'COMPLETED'] = "COMPLETED";
+        StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+    })(StatusEnum = PaymentCODI.StatusEnum || (PaymentCODI.StatusEnum = {}));
+})(PaymentCODI = exports.PaymentCODI || (exports.PaymentCODI = {}));
+/**
+ * @export
  * @namespace SalesPointFound
  */
 var SalesPointFound;
@@ -223,6 +239,22 @@ var SalesPointFound;
         StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
     })(StatusEnum = SalesPointFound.StatusEnum || (SalesPointFound.StatusEnum = {}));
 })(SalesPointFound = exports.SalesPointFound || (exports.SalesPointFound = {}));
+/**
+ * @export
+ * @namespace SubscriptionChangeStatusRequest
+ */
+var SubscriptionChangeStatusRequest;
+(function (SubscriptionChangeStatusRequest) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let StatusEnum;
+    (function (StatusEnum) {
+        StatusEnum[StatusEnum["ACTIVE"] = 'ACTIVE'] = "ACTIVE";
+        StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
+    })(StatusEnum = SubscriptionChangeStatusRequest.StatusEnum || (SubscriptionChangeStatusRequest.StatusEnum = {}));
+})(SubscriptionChangeStatusRequest = exports.SubscriptionChangeStatusRequest || (exports.SubscriptionChangeStatusRequest = {}));
 /**
  * @export
  * @namespace Webhook
@@ -257,6 +289,208 @@ var WebhookResponse;
         StatusEnum[StatusEnum["DELETED"] = 'DELETED'] = "DELETED";
     })(StatusEnum = WebhookResponse.StatusEnum || (WebhookResponse.StatusEnum = {}));
 })(WebhookResponse = exports.WebhookResponse || (exports.WebhookResponse = {}));
+/**
+ * AutorizacinDeDepsitosApi - fetch parameter creator
+ * @export
+ */
+exports.AutorizacinDeDepsitosApiFetchParamCreator = function (configuration) {
+    return {
+        /**
+         * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+         * @summary Consulta autorización de depósitos
+         * @param {string} authorization Header para token
+         * @param {string} subscription El identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getDepositAuthConfigurations(authorization, subscription, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getDepositAuthConfigurations.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling getDepositAuthConfigurations.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/configurations/deposit-authorization`
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+         * @summary Des/Habilitar autorización de depósitos
+         * @param {DepositAuthorizationRequest} body Deposit Authorization info
+         * @param {string} authorization Header para token
+         * @param {string} subscription El identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putDepositAuthConfigurations(body, authorization, subscription, options = {}) {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling putDepositAuthConfigurations.');
+            }
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling putDepositAuthConfigurations.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling putDepositAuthConfigurations.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/configurations/deposit-authorization`
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("DepositAuthorizationRequest" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    };
+};
+/**
+ * AutorizacinDeDepsitosApi - functional programming interface
+ * @export
+ */
+exports.AutorizacinDeDepsitosApiFp = function (configuration) {
+    return {
+        /**
+         * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+         * @summary Consulta autorización de depósitos
+         * @param {string} authorization Header para token
+         * @param {string} subscription El identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getDepositAuthConfigurations(authorization, subscription, options) {
+            const localVarFetchArgs = exports.AutorizacinDeDepsitosApiFetchParamCreator(configuration).getDepositAuthConfigurations(authorization, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+         * @summary Des/Habilitar autorización de depósitos
+         * @param {DepositAuthorizationRequest} body Deposit Authorization info
+         * @param {string} authorization Header para token
+         * @param {string} subscription El identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putDepositAuthConfigurations(body, authorization, subscription, options) {
+            const localVarFetchArgs = exports.AutorizacinDeDepsitosApiFetchParamCreator(configuration).putDepositAuthConfigurations(body, authorization, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+    };
+};
+/**
+ * AutorizacinDeDepsitosApi - factory interface
+ * @export
+ */
+exports.AutorizacinDeDepsitosApiFactory = function (configuration, fetch, basePath) {
+    return {
+        /**
+         * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+         * @summary Consulta autorización de depósitos
+         * @param {string} authorization Header para token
+         * @param {string} subscription El identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getDepositAuthConfigurations(authorization, subscription, options) {
+            return exports.AutorizacinDeDepsitosApiFp(configuration).getDepositAuthConfigurations(authorization, subscription, options)(fetch, basePath);
+        },
+        /**
+         * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+         * @summary Des/Habilitar autorización de depósitos
+         * @param {DepositAuthorizationRequest} body Deposit Authorization info
+         * @param {string} authorization Header para token
+         * @param {string} subscription El identificador de la suscripción a esta API
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putDepositAuthConfigurations(body, authorization, subscription, options) {
+            return exports.AutorizacinDeDepsitosApiFp(configuration).putDepositAuthConfigurations(body, authorization, subscription, options)(fetch, basePath);
+        },
+    };
+};
+/**
+ * AutorizacinDeDepsitosApi - object-oriented interface
+ * @export
+ * @class AutorizacinDeDepsitosApi
+ * @extends {BaseAPI}
+ */
+class AutorizacinDeDepsitosApi extends BaseAPI {
+    /**
+     * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+     * @summary Consulta autorización de depósitos
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AutorizacinDeDepsitosApi
+     */
+    getDepositAuthConfigurations(authorization, subscription, options) {
+        return exports.AutorizacinDeDepsitosApiFp(this.configuration).getDepositAuthConfigurations(authorization, subscription, options)(this.fetch, this.basePath);
+    }
+    /**
+     * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+     * @summary Des/Habilitar autorización de depósitos
+     * @param {DepositAuthorizationRequest} body Deposit Authorization info
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AutorizacinDeDepsitosApi
+     */
+    putDepositAuthConfigurations(body, authorization, subscription, options) {
+        return exports.AutorizacinDeDepsitosApiFp(this.configuration).putDepositAuthConfigurations(body, authorization, subscription, options)(this.fetch, this.basePath);
+    }
+}
+exports.AutorizacinDeDepsitosApi = AutorizacinDeDepsitosApi;
 /**
  * ComprobanteElectrnicoDePagoCEPApi - fetch parameter creator
  * @export
@@ -2622,6 +2856,49 @@ exports.LmitesDeMontosApiFetchParamCreator = function (configuration) {
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Actualiza las configuraciones de un contrato asociado a una subscripción
+         * @summary Actualiza las configuraciones por subscripción
+         * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+         * @param {string} authorization Header para token
+         * @param {string} suscription suscription
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateConfigurations(body, authorization, suscription, options = {}) {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling updateConfigurations.');
+            }
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling updateConfigurations.');
+            }
+            // verify required parameter 'suscription' is not null or undefined
+            if (suscription === null || suscription === undefined) {
+                throw new RequiredError('suscription', 'Required parameter suscription was null or undefined when calling updateConfigurations.');
+            }
+            const localVarPath = `/subscriptions/{suscription}/configurations`
+                .replace(`{${"suscription"}}`, encodeURIComponent(String(suscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("UpdateConfigurationsRequestDTO" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     };
 };
 /**
@@ -2651,6 +2928,28 @@ exports.LmitesDeMontosApiFp = function (configuration) {
                 });
             };
         },
+        /**
+         * Actualiza las configuraciones de un contrato asociado a una subscripción
+         * @summary Actualiza las configuraciones por subscripción
+         * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+         * @param {string} authorization Header para token
+         * @param {string} suscription suscription
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateConfigurations(body, authorization, suscription, options) {
+            const localVarFetchArgs = exports.LmitesDeMontosApiFetchParamCreator(configuration).updateConfigurations(body, authorization, suscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
     };
 };
 /**
@@ -2669,6 +2968,18 @@ exports.LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
          */
         obtainConfigurationsLimits(authorization, suscription, options) {
             return exports.LmitesDeMontosApiFp(configuration).obtainConfigurationsLimits(authorization, suscription, options)(fetch, basePath);
+        },
+        /**
+         * Actualiza las configuraciones de un contrato asociado a una subscripción
+         * @summary Actualiza las configuraciones por subscripción
+         * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+         * @param {string} authorization Header para token
+         * @param {string} suscription suscription
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateConfigurations(body, authorization, suscription, options) {
+            return exports.LmitesDeMontosApiFp(configuration).updateConfigurations(body, authorization, suscription, options)(fetch, basePath);
         },
     };
 };
@@ -2690,6 +3001,19 @@ class LmitesDeMontosApi extends BaseAPI {
      */
     obtainConfigurationsLimits(authorization, suscription, options) {
         return exports.LmitesDeMontosApiFp(this.configuration).obtainConfigurationsLimits(authorization, suscription, options)(this.fetch, this.basePath);
+    }
+    /**
+     * Actualiza las configuraciones de un contrato asociado a una subscripción
+     * @summary Actualiza las configuraciones por subscripción
+     * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+     * @param {string} authorization Header para token
+     * @param {string} suscription suscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LmitesDeMontosApi
+     */
+    updateConfigurations(body, authorization, suscription, options) {
+        return exports.LmitesDeMontosApiFp(this.configuration).updateConfigurations(body, authorization, suscription, options)(this.fetch, this.basePath);
     }
 }
 exports.LmitesDeMontosApi = LmitesDeMontosApi;
@@ -3373,6 +3697,49 @@ exports.SaldoApi = SaldoApi;
 exports.SuscripcionesApiFetchParamCreator = function (configuration) {
     return {
         /**
+         * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+         * @summary Cambia el estatus de la suscripción
+         * @param {SubscriptionChangeStatusRequest} body request
+         * @param {string} authorization Header para token
+         * @param {string} subscription subscription
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        changeSubscriptionStatusUsingPUT(body, authorization, subscription, options = {}) {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling changeSubscriptionStatusUsingPUT.');
+            }
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling changeSubscriptionStatusUsingPUT.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling changeSubscriptionStatusUsingPUT.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/status`
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'PUT' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("SubscriptionChangeStatusRequest" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
          * @summary Registra una pre-suscripción
          * @param {PreEnrollmentData} body Información para la pre-suscripción
@@ -3488,6 +3855,28 @@ exports.SuscripcionesApiFetchParamCreator = function (configuration) {
 exports.SuscripcionesApiFp = function (configuration) {
     return {
         /**
+         * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+         * @summary Cambia el estatus de la suscripción
+         * @param {SubscriptionChangeStatusRequest} body request
+         * @param {string} authorization Header para token
+         * @param {string} subscription subscription
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
+            const localVarFetchArgs = exports.SuscripcionesApiFetchParamCreator(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response;
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
          * @summary Registra una pre-suscripción
          * @param {PreEnrollmentData} body Información para la pre-suscripción
@@ -3559,6 +3948,18 @@ exports.SuscripcionesApiFp = function (configuration) {
 exports.SuscripcionesApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
+         * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+         * @summary Cambia el estatus de la suscripción
+         * @param {SubscriptionChangeStatusRequest} body request
+         * @param {string} authorization Header para token
+         * @param {string} subscription subscription
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
+            return exports.SuscripcionesApiFp(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options)(fetch, basePath);
+        },
+        /**
          * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
          * @summary Registra una pre-suscripción
          * @param {PreEnrollmentData} body Información para la pre-suscripción
@@ -3600,6 +4001,19 @@ exports.SuscripcionesApiFactory = function (configuration, fetch, basePath) {
  * @extends {BaseAPI}
  */
 class SuscripcionesApi extends BaseAPI {
+    /**
+     * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+     * @summary Cambia el estatus de la suscripción
+     * @param {SubscriptionChangeStatusRequest} body request
+     * @param {string} authorization Header para token
+     * @param {string} subscription subscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SuscripcionesApi
+     */
+    changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
+        return exports.SuscripcionesApiFp(this.configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options)(this.fetch, this.basePath);
+    }
     /**
      * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
      * @summary Registra una pre-suscripción

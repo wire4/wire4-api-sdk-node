@@ -1,6 +1,6 @@
 /**
  * Wire4RestAPI
- *  # Referencia de API La API de Wire4 está organizada en torno a REST.
+ * Referencia de la API de Wire4
  *
  * OpenAPI spec version: 1.0.0
  *
@@ -870,11 +870,11 @@ export interface BillingTransaction {
      */
     monexId: number;
     /**
-     *
-     * @type {Timestamp}
+     * Fecha y hora de la transacción
+     * @type {Date}
      * @memberof BillingTransaction
      */
-    operationDate: Timestamp;
+    operationDate: Date;
     /**
      * Identificador de la orden
      * @type {string}
@@ -1750,6 +1750,31 @@ export interface Deposit {
     senderRfc: string;
 }
 /**
+ * Contiene la información de la autorización de depósitos
+ * @export
+ * @interface DepositAuthorizationRequest
+ */
+export interface DepositAuthorizationRequest {
+    /**
+     * Indica sí se aplica autorización de depósitos
+     * @type {boolean}
+     * @memberof DepositAuthorizationRequest
+     */
+    enabled: boolean;
+    /**
+     *
+     * @type {WebHookDepositAuthorizationRequest}
+     * @memberof DepositAuthorizationRequest
+     */
+    webhook: WebHookDepositAuthorizationRequest;
+    /**
+     * Identificador del webhook.
+     * @type {string}
+     * @memberof DepositAuthorizationRequest
+     */
+    whUuid: string;
+}
+/**
  * Objeto que contiene los datos del depositante
  * @export
  * @interface Depositant
@@ -1829,6 +1854,56 @@ export interface DepositantsResponse {
      * @memberof DepositantsResponse
      */
     clabe: string;
+}
+/**
+ * Contiene la información de la autorización de depósitos
+ * @export
+ * @interface DepositsAuthorizationResponse
+ */
+export interface DepositsAuthorizationResponse {
+    /**
+     * Indica sí se aplica autorización de depósitos
+     * @type {boolean}
+     * @memberof DepositsAuthorizationResponse
+     */
+    enabled: boolean;
+    /**
+     * Indica sí es de solo lectura, sí otra aplicación tiene el control sobre la autorización de depósitos
+     * @type {boolean}
+     * @memberof DepositsAuthorizationResponse
+     */
+    readOnly: boolean;
+    /**
+     *
+     * @type {WebHookDepositAuthorizationResponse}
+     * @memberof DepositsAuthorizationResponse
+     */
+    webhook: WebHookDepositAuthorizationResponse;
+}
+/**
+ *
+ * @export
+ * @interface DetailedErrorResponse
+ */
+export interface DetailedErrorResponse {
+    /**
+     *
+     * @type {Array<TransactionErrorCode>}
+     * @memberof DetailedErrorResponse
+     */
+    errors: Array<TransactionErrorCode>;
+    /**
+     *
+     * @type {number}
+     * @memberof DetailedErrorResponse
+     */
+    httpStatus: number;
+    /**
+     *
+     * @type {string}
+     * @memberof DetailedErrorResponse
+     */
+    message: string;
 }
 /**
  *
@@ -1918,6 +1993,12 @@ export interface Item {
      * @memberof Item
      */
     key: string;
+    /**
+     * El tipo de dato del grupo de configuraciones.
+     * @type {string}
+     * @memberof Item
+     */
+    type: string;
     /**
      * Valor configurado
      * @type {string}
@@ -2174,6 +2255,133 @@ export interface MessageConfigurationsLimits {
      * @memberof MessageConfigurationsLimits
      */
     configurations: Array<ConfigurationsLimits>;
+}
+/**
+ * El mensaje que se envía mediante (webHook) con la información de un deposito que necesita ser autorizado
+ * @export
+ * @interface MessageDepositAuthorizationRequest
+ */
+export interface MessageDepositAuthorizationRequest {
+    /**
+     * Monto de la transferencia
+     * @type {number}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    amount: number;
+    /**
+     * Cuenta del beneficiario
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    beneficiaryAccount: string;
+    /**
+     * Nombre del beneficiario
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    beneficiaryName: string;
+    /**
+     * RFC del beneficiario
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    beneficiaryRfc: string;
+    /**
+     * Clave de rastreo de la transferencia
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    claveRastreo: string;
+    /**
+     * Fecha de confirmación de la transferencia
+     * @type {Date}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    confirmDate: Date;
+    /**
+     * Código de moneda de la transferencia, puede ser MXP, USD
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    currencyCode: string;
+    /**
+     * Fecha de recepción de la transferencia
+     * @type {Date}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    depositDate: Date;
+    /**
+     * Nombre del depositante, en caso que la transferencia se reciba en una cuenta de depositante
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    depositant: string;
+    /**
+     * CLABE del depositante, en caso que la transferencia se reciba en una cuenta de depositante
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    depositantClabe: string;
+    /**
+     * Correo electrónico del depositante, en caso que la transferencia se reciba en una cuenta de depositante
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    depositantEmail: string;
+    /**
+     * RFC del depositante, en caso que la transferencia se reciba en una cuenta de depositante
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    depositantRfc: string;
+    /**
+     * Concepto de la transferencia
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    description: string;
+    /**
+     * Descripción de Monex para la transferencia
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    monexDescription: string;
+    /**
+     * Identificador asignado por Monex a la transferencia
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    monexTransactionId: string;
+    /**
+     * Referecia de la transferencia
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    reference: string;
+    /**
+     * Cuenta del ordenante, podría ser un número celular, TDD o Cuenta CLABE interbancaria
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    senderAccount: string;
+    /**
+     *
+     * @type {MessageInstitution}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    senderBank: MessageInstitution;
+    /**
+     * Nombre del ordenante
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    senderName: string;
+    /**
+     * RFC del ordenante
+     * @type {string}
+     * @memberof MessageDepositAuthorizationRequest
+     */
+    senderRfc: string;
 }
 /**
  * El mensaje que se envía mediante (webHook) con la información de una transferencia de entrada recibida
@@ -2817,10 +3025,10 @@ export interface Operations {
     orderId: string;
     /**
      *
-     * @type {Payment}
+     * @type {PaymentCODI}
      * @memberof Operations
      */
-    payment: Payment;
+    payment: PaymentCODI;
     /**
      * Numero de telefono
      * @type {string}
@@ -3032,6 +3240,64 @@ export interface Payment {
      * @memberof Payment
      */
     transactionId: number;
+}
+/**
+ * Objeto que contiene la información del pago realizado
+ * @export
+ * @interface PaymentCODI
+ */
+export interface PaymentCODI {
+    /**
+     * Monto del pago
+     * @type {number}
+     * @memberof PaymentCODI
+     */
+    amount: number;
+    /**
+     * Descripción del pago
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    description: string;
+    /**
+     * Mensaje de error
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    errorMessage: string;
+    /**
+     * Identificador del pago
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    id: string;
+    /**
+     * Fecha en que se efectuo el pago
+     * @type {Date}
+     * @memberof PaymentCODI
+     */
+    operationDate: Date;
+    /**
+     * Estatus del pago
+     * @type {string}
+     * @memberof PaymentCODI
+     */
+    status: PaymentCODI.StatusEnum;
+}
+/**
+ * @export
+ * @namespace PaymentCODI
+ */
+export declare namespace PaymentCODI {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum StatusEnum {
+        RECEIVED,
+        COMPLETED,
+        CANCELLED
+    }
 }
 /**
  * Objeto que contiene la información de solicitud de pago por CODI®.
@@ -3319,11 +3585,11 @@ export interface SalesPointFound {
      */
     account: string;
     /**
-     *
-     * @type {Timestamp}
+     * Fecha en la que se creó el punto de venta
+     * @type {Date}
      * @memberof SalesPointFound
      */
-    createdAt: Timestamp;
+    createdAt: Date;
     /**
      * Nombre del punto de venta
      * @type {string}
@@ -3343,11 +3609,11 @@ export interface SalesPointFound {
      */
     status: SalesPointFound.StatusEnum;
     /**
-     *
-     * @type {Timestamp}
+     * Fecha en la que se actualizó el punto de venta
+     * @type {Date}
      * @memberof SalesPointFound
      */
-    updatedAt: Timestamp;
+    updatedAt: Date;
 }
 /**
  * @export
@@ -3552,69 +3818,29 @@ export interface SpidClassificationsResponseDTO {
 /**
  *
  * @export
- * @interface Timestamp
+ * @interface SubscriptionChangeStatusRequest
  */
-export interface Timestamp {
+export interface SubscriptionChangeStatusRequest {
     /**
      *
-     * @type {number}
-     * @memberof Timestamp
+     * @type {string}
+     * @memberof SubscriptionChangeStatusRequest
      */
-    date: number;
+    status: SubscriptionChangeStatusRequest.StatusEnum;
+}
+/**
+ * @export
+ * @namespace SubscriptionChangeStatusRequest
+ */
+export declare namespace SubscriptionChangeStatusRequest {
     /**
-     *
-     * @type {number}
-     * @memberof Timestamp
+     * @export
+     * @enum {string}
      */
-    day: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    hours: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    minutes: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    month: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    nanos: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    seconds: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    time: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    timezoneOffset: number;
-    /**
-     *
-     * @type {number}
-     * @memberof Timestamp
-     */
-    year: number;
+    enum StatusEnum {
+        ACTIVE,
+        INACTIVE
+    }
 }
 /**
  * Respuesta con una url que requiere que un token sea capturado
@@ -3634,6 +3860,31 @@ export interface TokenRequiredResponse {
      * @memberof TokenRequiredResponse
      */
     url: string;
+}
+/**
+ *
+ * @export
+ * @interface TransactionErrorCode
+ */
+export interface TransactionErrorCode {
+    /**
+     *
+     * @type {string}
+     * @memberof TransactionErrorCode
+     */
+    code: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TransactionErrorCode
+     */
+    error: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TransactionErrorCode
+     */
+    orderId: string;
 }
 /**
  * Objeto que contiene la información de una transferencias SPEI de salida
@@ -3783,6 +4034,19 @@ export interface TransactionsOutgoingRegister {
     transactions: Array<TransactionOutgoing>;
 }
 /**
+ * Contiene el listado de grupo de configuraciones para actualizar
+ * @export
+ * @interface UpdateConfigurationsRequestDTO
+ */
+export interface UpdateConfigurationsRequestDTO {
+    /**
+     * Listado de configuraciones para actualizar
+     * @type {Array<ConfigurationsLimits>}
+     * @memberof UpdateConfigurationsRequestDTO
+     */
+    configurations: Array<ConfigurationsLimits>;
+}
+/**
  * Recibe las urls para redirigir en caso de exito o de error
  * @export
  * @interface UrlsRedirect
@@ -3861,6 +4125,68 @@ export interface UserCompany {
      * @memberof UserCompany
      */
     userName: string;
+}
+/**
+ * Contiene la información de un WebHook para autorización de depósitos.
+ * @export
+ * @interface WebHookDepositAuthorizationRequest
+ */
+export interface WebHookDepositAuthorizationRequest {
+    /**
+     * Nombre del webhook.
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationRequest
+     */
+    name: string;
+    /**
+     * URL a la cual Wire4 enviará las notificaciones cuando un evento ocurra.
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationRequest
+     */
+    url: string;
+}
+/**
+ * Contiene la información de un WebHook para autorización de depósitos.
+ * @export
+ * @interface WebHookDepositAuthorizationResponse
+ */
+export interface WebHookDepositAuthorizationResponse {
+    /**
+     * Tipo de evento manejado por el webhook, para mas referencia sobre los tipos de eventos soportados, revise la siguiente liga: https://developers.wire4.mx/#section/Eventos.
+     * @type {Array<string>}
+     * @memberof WebHookDepositAuthorizationResponse
+     */
+    events: Array<string>;
+    /**
+     * Nombre del webhook.
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationResponse
+     */
+    name: string;
+    /**
+     * Llave con la cual se debe de identificar que el webhook fue enviado por Wire4, para mayor información revisar la guía de notificaciones (https://wire4.mx/#/guides/notificaciones), en la sección de  \"Comprobación de firmas de Webhook\".
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationResponse
+     */
+    secret: string;
+    /**
+     * Estatus en el que se encuentra el webhook.
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationResponse
+     */
+    status: string;
+    /**
+     * URL a la cual Wire4 enviará las notificaciones cuando un evento ocurra.
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationResponse
+     */
+    url: string;
+    /**
+     * Identificador del webhook.
+     * @type {string}
+     * @memberof WebHookDepositAuthorizationResponse
+     */
+    whUuid: string;
 }
 /**
  * Webhook creado para notificaciones CoDi.
@@ -4015,6 +4341,138 @@ export interface WebhooksList {
      * @memberof WebhooksList
      */
     webhooks: Array<WebhookResponse>;
+}
+/**
+ * AutorizacinDeDepsitosApi - fetch parameter creator
+ * @export
+ */
+export declare const AutorizacinDeDepsitosApiFetchParamCreator: (configuration: Configuration) => {
+    /**
+     * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+     * @summary Consulta autorización de depósitos
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDepositAuthConfigurations(authorization: string, subscription: string, options?: any): FetchArgs;
+    /**
+     * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+     * @summary Des/Habilitar autorización de depósitos
+     * @param {DepositAuthorizationRequest} body Deposit Authorization info
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putDepositAuthConfigurations(body: DepositAuthorizationRequest, authorization: string, subscription: string, options?: any): FetchArgs;
+};
+/**
+ * AutorizacinDeDepsitosApi - functional programming interface
+ * @export
+ */
+export declare const AutorizacinDeDepsitosApiFp: (configuration: Configuration) => {
+    /**
+     * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+     * @summary Consulta autorización de depósitos
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDepositAuthConfigurations(authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<DepositsAuthorizationResponse>;
+    /**
+     * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+     * @summary Des/Habilitar autorización de depósitos
+     * @param {DepositAuthorizationRequest} body Deposit Authorization info
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putDepositAuthConfigurations(body: DepositAuthorizationRequest, authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<DepositsAuthorizationResponse>;
+};
+/**
+ * AutorizacinDeDepsitosApi - factory interface
+ * @export
+ */
+export declare const AutorizacinDeDepsitosApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
+    /**
+     * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+     * @summary Consulta autorización de depósitos
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDepositAuthConfigurations(authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
+    /**
+     * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+     * @summary Des/Habilitar autorización de depósitos
+     * @param {DepositAuthorizationRequest} body Deposit Authorization info
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    putDepositAuthConfigurations(body: DepositAuthorizationRequest, authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
+};
+/**
+ * AutorizacinDeDepsitosApi - interface
+ * @export
+ * @interface AutorizacinDeDepsitosApi
+ */
+export interface AutorizacinDeDepsitosApiInterface {
+    /**
+     * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+     * @summary Consulta autorización de depósitos
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AutorizacinDeDepsitosApiInterface
+     */
+    getDepositAuthConfigurations(authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
+    /**
+     * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+     * @summary Des/Habilitar autorización de depósitos
+     * @param {DepositAuthorizationRequest} body Deposit Authorization info
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AutorizacinDeDepsitosApiInterface
+     */
+    putDepositAuthConfigurations(body: DepositAuthorizationRequest, authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
+}
+/**
+ * AutorizacinDeDepsitosApi - object-oriented interface
+ * @export
+ * @class AutorizacinDeDepsitosApi
+ * @extends {BaseAPI}
+ */
+export declare class AutorizacinDeDepsitosApi extends BaseAPI implements AutorizacinDeDepsitosApiInterface {
+    /**
+     * Obtiene la información de la autorización de depósitos del contrato relacionado a la subscripción.
+     * @summary Consulta autorización de depósitos
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AutorizacinDeDepsitosApi
+     */
+    getDepositAuthConfigurations(authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
+    /**
+     * Des/Habilitar autorización de depósitos, devuelve la información final de la autorización de depósitos del contrato relacionado a la subscripción al terminar.
+     * @summary Des/Habilitar autorización de depósitos
+     * @param {DepositAuthorizationRequest} body Deposit Authorization info
+     * @param {string} authorization Header para token
+     * @param {string} subscription El identificador de la suscripción a esta API
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AutorizacinDeDepsitosApi
+     */
+    putDepositAuthConfigurations(body: DepositAuthorizationRequest, authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
 }
 /**
  * ComprobanteElectrnicoDePagoCEPApi - fetch parameter creator
@@ -4244,7 +4702,7 @@ export declare const ContractsDetailsApiFp: (configuration: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<AuthorizedUsers>>;
+    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<AuthorizedUsers[]>;
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
      * @summary Obtiene los usuarios autorizados por contrato
@@ -4254,7 +4712,7 @@ export declare const ContractsDetailsApiFp: (configuration: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<AuthorizedUsers>>;
+    obtainAuthorizedUsersByContract(authorization: string, X_ACCESS_KEY: string, contract: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<AuthorizedUsers[]>;
     /**
      * Detalles de la compañía relacionada con el contrato de Monex.
      * @summary Obtiene los detalles de la empresa del contrato
@@ -5225,7 +5683,7 @@ export declare const EmpresasCoDiApiFp: (configuration: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainCompanies(authorization: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<CompanyRegistered>>;
+    obtainCompanies(authorization: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<CompanyRegistered[]>;
     /**
      * Registra una empresa para hacer uso de operaciones CODI. Es requerido tener el certificado emitido por BANXICO® asi como el Nombre de la empresa, Nombre comercial y RFC de la empresa.<br/>
      * @summary Registro de empresas CODI
@@ -5358,7 +5816,7 @@ export declare const FacturasApiFp: (configuration: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    billingsReportUsingGET(authorization: string, period: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Billing>>;
+    billingsReportUsingGET(authorization: string, period: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Billing[]>;
 };
 /**
  * FacturasApi - factory interface
@@ -5528,6 +5986,16 @@ export declare const LmitesDeMontosApiFetchParamCreator: (configuration: Configu
      * @throws {RequiredError}
      */
     obtainConfigurationsLimits(authorization: string, suscription: string, options?: any): FetchArgs;
+    /**
+     * Actualiza las configuraciones de un contrato asociado a una subscripción
+     * @summary Actualiza las configuraciones por subscripción
+     * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+     * @param {string} authorization Header para token
+     * @param {string} suscription suscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateConfigurations(body: UpdateConfigurationsRequestDTO, authorization: string, suscription: string, options?: any): FetchArgs;
 };
 /**
  * LmitesDeMontosApi - functional programming interface
@@ -5543,6 +6011,16 @@ export declare const LmitesDeMontosApiFp: (configuration: Configuration) => {
      * @throws {RequiredError}
      */
     obtainConfigurationsLimits(authorization: string, suscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<MessageConfigurationsLimits>;
+    /**
+     * Actualiza las configuraciones de un contrato asociado a una subscripción
+     * @summary Actualiza las configuraciones por subscripción
+     * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+     * @param {string} authorization Header para token
+     * @param {string} suscription suscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateConfigurations(body: UpdateConfigurationsRequestDTO, authorization: string, suscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
 };
 /**
  * LmitesDeMontosApi - factory interface
@@ -5558,6 +6036,16 @@ export declare const LmitesDeMontosApiFactory: (configuration: Configuration, fe
      * @throws {RequiredError}
      */
     obtainConfigurationsLimits(authorization: string, suscription: string, options: any): Promise<MessageConfigurationsLimits>;
+    /**
+     * Actualiza las configuraciones de un contrato asociado a una subscripción
+     * @summary Actualiza las configuraciones por subscripción
+     * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+     * @param {string} authorization Header para token
+     * @param {string} suscription suscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateConfigurations(body: UpdateConfigurationsRequestDTO, authorization: string, suscription: string, options: any): Promise<Response>;
 };
 /**
  * LmitesDeMontosApi - interface
@@ -5575,6 +6063,17 @@ export interface LmitesDeMontosApiInterface {
      * @memberof LmitesDeMontosApiInterface
      */
     obtainConfigurationsLimits(authorization: string, suscription: string, options: any): Promise<MessageConfigurationsLimits>;
+    /**
+     * Actualiza las configuraciones de un contrato asociado a una subscripción
+     * @summary Actualiza las configuraciones por subscripción
+     * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+     * @param {string} authorization Header para token
+     * @param {string} suscription suscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LmitesDeMontosApiInterface
+     */
+    updateConfigurations(body: UpdateConfigurationsRequestDTO, authorization: string, suscription: string, options: any): Promise<{}>;
 }
 /**
  * LmitesDeMontosApi - object-oriented interface
@@ -5593,6 +6092,17 @@ export declare class LmitesDeMontosApi extends BaseAPI implements LmitesDeMontos
      * @memberof LmitesDeMontosApi
      */
     obtainConfigurationsLimits(authorization: string, suscription: string, options: any): Promise<MessageConfigurationsLimits>;
+    /**
+     * Actualiza las configuraciones de un contrato asociado a una subscripción
+     * @summary Actualiza las configuraciones por subscripción
+     * @param {UpdateConfigurationsRequestDTO} body updateConfigurationsResquestDTO
+     * @param {string} authorization Header para token
+     * @param {string} suscription suscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof LmitesDeMontosApi
+     */
+    updateConfigurations(body: UpdateConfigurationsRequestDTO, authorization: string, suscription: string, options: any): Promise<Response>;
 }
 /**
  * OperacionesCoDiApi - fetch parameter creator
@@ -5879,7 +6389,7 @@ export declare const PuntosDeVentaCoDiApiFp: (configuration: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainSalePoints(authorization: string, companyId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<SalesPointFound>>;
+    obtainSalePoints(authorization: string, companyId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SalesPointFound[]>;
 };
 /**
  * PuntosDeVentaCoDiApi - factory interface
@@ -6049,6 +6559,16 @@ export declare class SaldoApi extends BaseAPI implements SaldoApiInterface {
  */
 export declare const SuscripcionesApiFetchParamCreator: (configuration: Configuration) => {
     /**
+     * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+     * @summary Cambia el estatus de la suscripción
+     * @param {SubscriptionChangeStatusRequest} body request
+     * @param {string} authorization Header para token
+     * @param {string} subscription subscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    changeSubscriptionStatusUsingPUT(body: SubscriptionChangeStatusRequest, authorization: string, subscription: string, options?: any): FetchArgs;
+    /**
      * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
      * @summary Registra una pre-suscripción
      * @param {PreEnrollmentData} body Información para la pre-suscripción
@@ -6081,6 +6601,16 @@ export declare const SuscripcionesApiFetchParamCreator: (configuration: Configur
  * @export
  */
 export declare const SuscripcionesApiFp: (configuration: Configuration) => {
+    /**
+     * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+     * @summary Cambia el estatus de la suscripción
+     * @param {SubscriptionChangeStatusRequest} body request
+     * @param {string} authorization Header para token
+     * @param {string} subscription subscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    changeSubscriptionStatusUsingPUT(body: SubscriptionChangeStatusRequest, authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
     /**
      * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
      * @summary Registra una pre-suscripción
@@ -6115,6 +6645,16 @@ export declare const SuscripcionesApiFp: (configuration: Configuration) => {
  */
 export declare const SuscripcionesApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
     /**
+     * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+     * @summary Cambia el estatus de la suscripción
+     * @param {SubscriptionChangeStatusRequest} body request
+     * @param {string} authorization Header para token
+     * @param {string} subscription subscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    changeSubscriptionStatusUsingPUT(body: SubscriptionChangeStatusRequest, authorization: string, subscription: string, options: any): Promise<Response>;
+    /**
      * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
      * @summary Registra una pre-suscripción
      * @param {PreEnrollmentData} body Información para la pre-suscripción
@@ -6148,6 +6688,17 @@ export declare const SuscripcionesApiFactory: (configuration: Configuration, fet
  * @interface SuscripcionesApi
  */
 export interface SuscripcionesApiInterface {
+    /**
+     * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+     * @summary Cambia el estatus de la suscripción
+     * @param {SubscriptionChangeStatusRequest} body request
+     * @param {string} authorization Header para token
+     * @param {string} subscription subscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SuscripcionesApiInterface
+     */
+    changeSubscriptionStatusUsingPUT(body: SubscriptionChangeStatusRequest, authorization: string, subscription: string, options: any): Promise<{}>;
     /**
      * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
      * @summary Registra una pre-suscripción
@@ -6186,6 +6737,17 @@ export interface SuscripcionesApiInterface {
  * @extends {BaseAPI}
  */
 export declare class SuscripcionesApi extends BaseAPI implements SuscripcionesApiInterface {
+    /**
+     * Se cambia el estatus de la suscripción, los posibles valores son ACTIVE ó INACTIVE
+     * @summary Cambia el estatus de la suscripción
+     * @param {SubscriptionChangeStatusRequest} body request
+     * @param {string} authorization Header para token
+     * @param {string} subscription subscription
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SuscripcionesApi
+     */
+    changeSubscriptionStatusUsingPUT(body: SubscriptionChangeStatusRequest, authorization: string, subscription: string, options: any): Promise<Response>;
     /**
      * Registra una pre-suscripción para operar un contrato a través de un aplicación socio de la plataforma, proporcionando una URL donde el cliente Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/>Una vez que el cuentahabiente autorice el acceso, se envía un mensaje webhook con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
      * @summary Registra una pre-suscripción
@@ -6317,7 +6879,7 @@ export declare const TransferenciasSPEIApiFp: (configuration: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    incomingSpeiTransactionsReportUsingGET(authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Deposit>>;
+    incomingSpeiTransactionsReportUsingGET(authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Deposit[]>;
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cual se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
@@ -6337,7 +6899,7 @@ export declare const TransferenciasSPEIApiFp: (configuration: Configuration) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Payment>>;
+    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Payment[]>;
     /**
      * Registra un conjunto de transferencias a realizar en la cuenta del cliente Monex relacionada a la suscripción, las transferencias deben ser confirmadas por el cliente para que se efectuen.
      * @summary Registro de transferencias
