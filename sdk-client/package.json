@@ -1,6 +1,6 @@
 {
   "name": "wire4-api-sdk",
-  "version": "0.0.1-SNAPSHOT",
+  "version": "0.0.2-SNAPSHOT",
   "description": "swagger client for wire4-api-sdk",
   "author": "Wire4.mx",
   "keywords": [
@@ -19,7 +19,8 @@
     "jest": "^26.4.2",
     "portable-fetch": "^3.0.0",
     "ts-jest": "^26.3.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.2",
+    "oauthwire4": "^0.0.1-SNAPSHOT"
   },
   "devDependencies": {
     "@types/node": "^13.13.0"

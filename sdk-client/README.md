@@ -1,45 +1,93 @@
-## wire4-api-sdk-node@0.0.1
+## wire4-api-sdk-node
 
-This generator creates TypeScript/JavaScript client that utilizes [Fetch API](https://fetch.spec.whatwg.org/). The generated Node module can be used in the following environments:
+Referencia de la API de Wire4  
 
-Environment
-* Node.js
-* Webpack
-* Browserify
+Cliente sdk para trabajar con el api de wire4<br>Wire4 es una API - Fintech de Banco Monex con la que podrás administrar transferencias SPEI
 
-Language level
-* ES5 - you must have a Promises/A+ library installed
-* ES6
+Entorno
+* Javascript es5+
+* NodeJS v10.15.0+
+* npm v6.4+
 
-Module system
-* CommonJS
-* ES6 module system
 
-It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
+### Instalación desde el respositorio fuente
 
-### Building
-
-To build an compile the typescript sources to javascript use:
+Para compilar el proyecto fuente y descargar las librerias asociadas, clonar el proyecto desde este repositorio de github y ejecutar la instrucción:
 ```
 npm install
-npm run build
-```
-
-### Publishing
-
-First build the package then run ```npm publish```
-
-### Consuming
-
-navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
 
 ```
-npm install wire4-api-sdk-node@0.0.1 --save
+
+### Publicar
+
+Primeramente compilar el proyecto y ejecutar la instrucción ```npm publish``` recuerde que debe gestionar su proyecto en npm.
+
+### Consumir desde npm
+
+Para consumir la librería actual de Wire4 para nodejs sin utilizar el repositorio fuente, descargue directamente el compilado desde npm con las siguientes instrucciones.
+
+_publicado:_
+
+```
+npm install wire4-api-sdk --save
 ```
 
-_unPublished (not recommended):_
+## Cómo iniciar
+
+Por favor sigue el procedimiento de instalación (Instalacion y uso) y ejecuta el siguiente código de ejemplo reemplazando las credenciales de aplicación por tus datos. Toma en cuanta que estos son ejemplos que te servirán de referencia y que pueden cambiar pero debes crear una cuenta en wire4.mx para obtener tus datos de aplicación.
 
 ```
-npm install PATH_TO_GENERATED_PACKAGE --save
+try {
+    var instance = new api.InstitucionesApi();
+    var oauthWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+
+    const authorization = await oauthWire4.obtainAccessTokenApp('general');
+    const response = await instance.getAllInstitutionsUsingGET(authorization, {});
+    console.log(JSON.stringify(response));
+} catch (error) {
+
+    if(error.status !== undefined ) {
+        console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+    } else {
+        console.log('Error:' + error);
+    }
+
+}
+```
+## Documentación para la autenticación
+
+
+## Autenticación de aplicación
+
+- **Type**: OAuth
+- **Flow**: application
+- **Authorization URL Sandbox**: *https://sandbox-api.wire4.mx/token*
+- **Authorization URL Producción**: *https://api.wire4.mx/token*
+- **Scopes**:
+- **** `general`
+- **** `codi_general`
+
+## Autenticación de usuario de aplicación SPEI
+
+- **Type**: OAuth
+- **Flow**: password
+- **Authorization URL Sandbox**: *https://sandbox-api.wire4.mx/token*
+- **Authorization URL Producción**: *https://api.wire4.mx/token*
+- **Scopes**:
+- **** spei_admin
+- **** codi_admin
+- **** codi_report
+
+## Autenticación de usuario de aplicación SPID
+
+- **Type**: OAuth
+- **Flow**: password
+- **Authorization URL Sandbox**: *https://sandbox-api.wire4.mx/token*
+- **Authorization URL Producción**: *https://api.wire4.mx/token*
+- **Scopes**:
+- **** spid_admin:
+
+
+## Author
+
+Wire4 Todos los derechos reservados 2020. Politicas de privacidad - Términos y condiciones  *https://wire4.mx/#/policies/use-policies*
