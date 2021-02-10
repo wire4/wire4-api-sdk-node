@@ -4,6 +4,8 @@ Referencia de la API de Wire4
 
 Cliente sdk para trabajar con el api de wire4<br>Wire4 es una API - Fintech de Banco Monex con la que podrás administrar transferencias SPEI
 
+- Version SDK: 1.1.0
+
 Entorno
 * Javascript es5+
 * NodeJS v10.15.0+
@@ -54,6 +56,8 @@ try {
 
 }
 ```
+
+En el proyecto de github https://github.com/wire4/wire4-api-sdk-node encontrarás una sección de ejemplos (examples) que ilustra el uso del sdk en cada uno de los recursos disponibles en el api, sin embargo, si requieres mas información te recomendamos visitar el sitio de referencia en **https://developers.wire4.mx**
 ## Documentación para la autenticación
 
 

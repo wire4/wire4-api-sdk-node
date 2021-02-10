@@ -1,0 +1,20 @@
+{
+  "name": "wire4-examples",
+  "version": "1.0.0",
+  "description": "Ejemplos de implementacion del Api Wire4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ejemplos",
+    "wire4",
+    "implementacion"
+  ],
+  "author": "speiok-team@tcpip.tech",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "wire4-api-sdk": "1.1.0"
+  }
+}
