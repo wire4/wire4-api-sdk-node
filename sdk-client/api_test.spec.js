@@ -7,7 +7,7 @@ const SUBSCRIPTION = "19b341dd-88b0-49a2-9997-117f553d15cd";
 
 const OAuthWire4 = require('oauthwire4').default;
 const api = require('wire4-api-sdk');
-const Environment = require('oauthwire4/build/src/environmentEnum').EnvironmentEnum;
+const Environment = require("oauthwire4/dist/src/environmentEnum").EnvironmentEnum
 
 describe("InstitucionesApi", () => {
     var instance  = null;
@@ -523,6 +523,32 @@ describe("SuscripcionesApi", () => {
                 console.log('Error:' + error);
             }
 
+        }
+    });
+
+    test("changeSubscriptionUseUsingPATCH",async()=>{
+        try{
+            const authorization = await outhWire4.obtainAccessTokenApp("general");
+            const subscription_id = "e9efa676-9ea2-47e0-92cc-f2008e5c853d";
+            const body = {
+                spei:{
+                    status:"ACTIVE",
+                    use:"WITHDRAWAL"
+                },
+                spid:{
+                    status:"INACTIVE", 
+                    use:"WITHDRAWAL_DEPOSIT"
+                }
+            }
+            
+            const response = await instance.changeSubscriptionUseUsingPATCH(body,authorization,subscription_id,{})
+            console.log("Response:"+JSON.stringify(response));
+        } catch(error){
+            if(error.status !== undefined ) {
+                console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+            } else {
+                console.log('Error:' + error);
+            }
         }
     });
 
