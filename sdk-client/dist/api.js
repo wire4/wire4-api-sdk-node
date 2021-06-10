@@ -13,7 +13,8 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = void 0;
 const url = require("url");
 const portableFetch = require("portable-fetch");
 const BASE_PATH = "https://sandbox-api.wire4.mx/wire4/1.0.0".replace(/\/+$/, "");
@@ -320,7 +321,7 @@ var WebhookResponse;
  * AutorizacinDeDepsitosApi - fetch parameter creator
  * @export
  */
-exports.AutorizacinDeDepsitosApiFetchParamCreator = function (configuration) {
+const AutorizacinDeDepsitosApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene la información de la autorización de depósitos del contrato relacionado a la suscripción.
@@ -402,11 +403,12 @@ exports.AutorizacinDeDepsitosApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.AutorizacinDeDepsitosApiFetchParamCreator = AutorizacinDeDepsitosApiFetchParamCreator;
 /**
  * AutorizacinDeDepsitosApi - functional programming interface
  * @export
  */
-exports.AutorizacinDeDepsitosApiFp = function (configuration) {
+const AutorizacinDeDepsitosApiFp = function (configuration) {
     return {
         /**
          * Obtiene la información de la autorización de depósitos del contrato relacionado a la suscripción.
@@ -453,11 +455,12 @@ exports.AutorizacinDeDepsitosApiFp = function (configuration) {
         },
     };
 };
+exports.AutorizacinDeDepsitosApiFp = AutorizacinDeDepsitosApiFp;
 /**
  * AutorizacinDeDepsitosApi - factory interface
  * @export
  */
-exports.AutorizacinDeDepsitosApiFactory = function (configuration, fetch, basePath) {
+const AutorizacinDeDepsitosApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene la información de la autorización de depósitos del contrato relacionado a la suscripción.
@@ -484,6 +487,7 @@ exports.AutorizacinDeDepsitosApiFactory = function (configuration, fetch, basePa
         },
     };
 };
+exports.AutorizacinDeDepsitosApiFactory = AutorizacinDeDepsitosApiFactory;
 /**
  * AutorizacinDeDepsitosApi - object-oriented interface
  * @export
@@ -522,7 +526,7 @@ exports.AutorizacinDeDepsitosApi = AutorizacinDeDepsitosApi;
  * ComprobanteElectrnicoDePagoCEPApi - fetch parameter creator
  * @export
  */
-exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = function (configuration) {
+const ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Consulta el CEP de un pago realizado a través del SPEI, si es que este se encuentra disponible en BANXICO.
@@ -563,11 +567,12 @@ exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = function (configura
         },
     };
 };
+exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = ComprobanteElectrnicoDePagoCEPApiFetchParamCreator;
 /**
  * ComprobanteElectrnicoDePagoCEPApi - functional programming interface
  * @export
  */
-exports.ComprobanteElectrnicoDePagoCEPApiFp = function (configuration) {
+const ComprobanteElectrnicoDePagoCEPApiFp = function (configuration) {
     return {
         /**
          * Consulta el CEP de un pago realizado a través del SPEI, si es que este se encuentra disponible en BANXICO.
@@ -592,11 +597,12 @@ exports.ComprobanteElectrnicoDePagoCEPApiFp = function (configuration) {
         },
     };
 };
+exports.ComprobanteElectrnicoDePagoCEPApiFp = ComprobanteElectrnicoDePagoCEPApiFp;
 /**
  * ComprobanteElectrnicoDePagoCEPApi - factory interface
  * @export
  */
-exports.ComprobanteElectrnicoDePagoCEPApiFactory = function (configuration, fetch, basePath) {
+const ComprobanteElectrnicoDePagoCEPApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Consulta el CEP de un pago realizado a través del SPEI, si es que este se encuentra disponible en BANXICO.
@@ -611,6 +617,7 @@ exports.ComprobanteElectrnicoDePagoCEPApiFactory = function (configuration, fetc
         },
     };
 };
+exports.ComprobanteElectrnicoDePagoCEPApiFactory = ComprobanteElectrnicoDePagoCEPApiFactory;
 /**
  * ComprobanteElectrnicoDePagoCEPApi - object-oriented interface
  * @export
@@ -636,7 +643,7 @@ exports.ComprobanteElectrnicoDePagoCEPApi = ComprobanteElectrnicoDePagoCEPApi;
  * ContactoApi - fetch parameter creator
  * @export
  */
-exports.ContactoApiFetchParamCreator = function (configuration) {
+const ContactoApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Notifica a un asesor Monex para que se ponga en contacto con un posible cliente.
@@ -677,11 +684,12 @@ exports.ContactoApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.ContactoApiFetchParamCreator = ContactoApiFetchParamCreator;
 /**
  * ContactoApi - functional programming interface
  * @export
  */
-exports.ContactoApiFp = function (configuration) {
+const ContactoApiFp = function (configuration) {
     return {
         /**
          * Notifica a un asesor Monex para que se ponga en contacto con un posible cliente.
@@ -706,11 +714,12 @@ exports.ContactoApiFp = function (configuration) {
         },
     };
 };
+exports.ContactoApiFp = ContactoApiFp;
 /**
  * ContactoApi - factory interface
  * @export
  */
-exports.ContactoApiFactory = function (configuration, fetch, basePath) {
+const ContactoApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Notifica a un asesor Monex para que se ponga en contacto con un posible cliente.
@@ -725,6 +734,7 @@ exports.ContactoApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.ContactoApiFactory = ContactoApiFactory;
 /**
  * ContactoApi - object-oriented interface
  * @export
@@ -750,7 +760,7 @@ exports.ContactoApi = ContactoApi;
  * ContractsDetailsApi - fetch parameter creator
  * @export
  */
-exports.ContractsDetailsApiFetchParamCreator = function (configuration) {
+const ContractsDetailsApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Se obtiene la URL para la autorización del usuario Monex.
@@ -920,11 +930,12 @@ exports.ContractsDetailsApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.ContractsDetailsApiFetchParamCreator = ContractsDetailsApiFetchParamCreator;
 /**
  * ContractsDetailsApi - functional programming interface
  * @export
  */
-exports.ContractsDetailsApiFp = function (configuration) {
+const ContractsDetailsApiFp = function (configuration) {
     return {
         /**
          * Se obtiene la URL para la autorización del usuario Monex.
@@ -1015,11 +1026,12 @@ exports.ContractsDetailsApiFp = function (configuration) {
         },
     };
 };
+exports.ContractsDetailsApiFp = ContractsDetailsApiFp;
 /**
  * ContractsDetailsApi - factory interface
  * @export
  */
-exports.ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
+const ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Se obtiene la URL para la autorización del usuario Monex.
@@ -1070,6 +1082,7 @@ exports.ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.ContractsDetailsApiFactory = ContractsDetailsApiFactory;
 /**
  * ContractsDetailsApi - object-oriented interface
  * @export
@@ -1134,7 +1147,7 @@ exports.ContractsDetailsApi = ContractsDetailsApi;
  * CuentasDeBeneficiariosSPEIApi - fetch parameter creator
  * @export
  */
-exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) {
+const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Solicta la agrupación de las cuentas de beneficiarios en estado pendiente para que sean autorizadas,  para ello se crea un conjunto de éstas que puede incluir tanto de SPEI como de SPID. Además se debe indicar las urls de redirección en caso de error y éxito
@@ -1494,11 +1507,12 @@ exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration
         },
     };
 };
+exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = CuentasDeBeneficiariosSPEIApiFetchParamCreator;
 /**
  * CuentasDeBeneficiariosSPEIApi - functional programming interface
  * @export
  */
-exports.CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
+const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
     return {
         /**
          * Solicta la agrupación de las cuentas de beneficiarios en estado pendiente para que sean autorizadas,  para ello se crea un conjunto de éstas que puede incluir tanto de SPEI como de SPID. Además se debe indicar las urls de redirección en caso de error y éxito
@@ -1684,11 +1698,12 @@ exports.CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
         },
     };
 };
+exports.CuentasDeBeneficiariosSPEIApiFp = CuentasDeBeneficiariosSPEIApiFp;
 /**
  * CuentasDeBeneficiariosSPEIApi - factory interface
  * @export
  */
-exports.CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, basePath) {
+const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Solicta la agrupación de las cuentas de beneficiarios en estado pendiente para que sean autorizadas,  para ello se crea un conjunto de éstas que puede incluir tanto de SPEI como de SPID. Además se debe indicar las urls de redirección en caso de error y éxito
@@ -1794,6 +1809,7 @@ exports.CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, b
         },
     };
 };
+exports.CuentasDeBeneficiariosSPEIApiFactory = CuentasDeBeneficiariosSPEIApiFactory;
 /**
  * CuentasDeBeneficiariosSPEIApi - object-oriented interface
  * @export
@@ -1917,7 +1933,7 @@ exports.CuentasDeBeneficiariosSPEIApi = CuentasDeBeneficiariosSPEIApi;
  * CuentasDeBeneficiariosSPIDApi - fetch parameter creator
  * @export
  */
-exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration) {
+const CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene los beneficiarios SPID registrados al contrato relacionado con la suscripción. Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
@@ -2027,11 +2043,12 @@ exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration
         },
     };
 };
+exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = CuentasDeBeneficiariosSPIDApiFetchParamCreator;
 /**
  * CuentasDeBeneficiariosSPIDApi - functional programming interface
  * @export
  */
-exports.CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
+const CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
     return {
         /**
          * Obtiene los beneficiarios SPID registrados al contrato relacionado con la suscripción. Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
@@ -2085,11 +2102,12 @@ exports.CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
         },
     };
 };
+exports.CuentasDeBeneficiariosSPIDApiFp = CuentasDeBeneficiariosSPIDApiFp;
 /**
  * CuentasDeBeneficiariosSPIDApi - factory interface
  * @export
  */
-exports.CuentasDeBeneficiariosSPIDApiFactory = function (configuration, fetch, basePath) {
+const CuentasDeBeneficiariosSPIDApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene los beneficiarios SPID registrados al contrato relacionado con la suscripción. Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
@@ -2123,6 +2141,7 @@ exports.CuentasDeBeneficiariosSPIDApiFactory = function (configuration, fetch, b
         },
     };
 };
+exports.CuentasDeBeneficiariosSPIDApiFactory = CuentasDeBeneficiariosSPIDApiFactory;
 /**
  * CuentasDeBeneficiariosSPIDApi - object-oriented interface
  * @export
@@ -2168,7 +2187,7 @@ exports.CuentasDeBeneficiariosSPIDApi = CuentasDeBeneficiariosSPIDApi;
  * DepositantesApi - fetch parameter creator
  * @export
  */
-exports.DepositantesApiFetchParamCreator = function (configuration) {
+const DepositantesApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
@@ -2250,11 +2269,12 @@ exports.DepositantesApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.DepositantesApiFetchParamCreator = DepositantesApiFetchParamCreator;
 /**
  * DepositantesApi - functional programming interface
  * @export
  */
-exports.DepositantesApiFp = function (configuration) {
+const DepositantesApiFp = function (configuration) {
     return {
         /**
          * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
@@ -2301,11 +2321,12 @@ exports.DepositantesApiFp = function (configuration) {
         },
     };
 };
+exports.DepositantesApiFp = DepositantesApiFp;
 /**
  * DepositantesApi - factory interface
  * @export
  */
-exports.DepositantesApiFactory = function (configuration, fetch, basePath) {
+const DepositantesApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
@@ -2332,6 +2353,7 @@ exports.DepositantesApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.DepositantesApiFactory = DepositantesApiFactory;
 /**
  * DepositantesApi - object-oriented interface
  * @export
@@ -2370,7 +2392,7 @@ exports.DepositantesApi = DepositantesApi;
  * EmpresasCoDiApi - fetch parameter creator
  * @export
  */
-exports.EmpresasCoDiApiFetchParamCreator = function (configuration) {
+const EmpresasCoDiApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Consulta de empresas CODI® registradas para la aplicación.
@@ -2440,11 +2462,12 @@ exports.EmpresasCoDiApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.EmpresasCoDiApiFetchParamCreator = EmpresasCoDiApiFetchParamCreator;
 /**
  * EmpresasCoDiApi - functional programming interface
  * @export
  */
-exports.EmpresasCoDiApiFp = function (configuration) {
+const EmpresasCoDiApiFp = function (configuration) {
     return {
         /**
          * Consulta de empresas CODI® registradas para la aplicación.
@@ -2489,11 +2512,12 @@ exports.EmpresasCoDiApiFp = function (configuration) {
         },
     };
 };
+exports.EmpresasCoDiApiFp = EmpresasCoDiApiFp;
 /**
  * EmpresasCoDiApi - factory interface
  * @export
  */
-exports.EmpresasCoDiApiFactory = function (configuration, fetch, basePath) {
+const EmpresasCoDiApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Consulta de empresas CODI® registradas para la aplicación.
@@ -2518,6 +2542,7 @@ exports.EmpresasCoDiApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.EmpresasCoDiApiFactory = EmpresasCoDiApiFactory;
 /**
  * EmpresasCoDiApi - object-oriented interface
  * @export
@@ -2554,7 +2579,7 @@ exports.EmpresasCoDiApi = EmpresasCoDiApi;
  * FacturasApi - fetch parameter creator
  * @export
  */
-exports.FacturasApiFetchParamCreator = function (configuration) {
+const FacturasApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Consulta las facturas emitidas por conceptos de uso de la plataforma y operaciones realizadas tanto de entrada como de salida. Se debe especificar el identificador de la factura
@@ -2626,11 +2651,12 @@ exports.FacturasApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.FacturasApiFetchParamCreator = FacturasApiFetchParamCreator;
 /**
  * FacturasApi - functional programming interface
  * @export
  */
-exports.FacturasApiFp = function (configuration) {
+const FacturasApiFp = function (configuration) {
     return {
         /**
          * Consulta las facturas emitidas por conceptos de uso de la plataforma y operaciones realizadas tanto de entrada como de salida. Se debe especificar el identificador de la factura
@@ -2676,11 +2702,12 @@ exports.FacturasApiFp = function (configuration) {
         },
     };
 };
+exports.FacturasApiFp = FacturasApiFp;
 /**
  * FacturasApi - factory interface
  * @export
  */
-exports.FacturasApiFactory = function (configuration, fetch, basePath) {
+const FacturasApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Consulta las facturas emitidas por conceptos de uso de la plataforma y operaciones realizadas tanto de entrada como de salida. Se debe especificar el identificador de la factura
@@ -2706,6 +2733,7 @@ exports.FacturasApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.FacturasApiFactory = FacturasApiFactory;
 /**
  * FacturasApi - object-oriented interface
  * @export
@@ -2743,7 +2771,7 @@ exports.FacturasApi = FacturasApi;
  * InstitucionesApi - fetch parameter creator
  * @export
  */
-exports.InstitucionesApiFetchParamCreator = function (configuration) {
+const InstitucionesApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Se obtiene un listado de las instituciones bancarias y la información de cada una de estas.
@@ -2776,11 +2804,12 @@ exports.InstitucionesApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.InstitucionesApiFetchParamCreator = InstitucionesApiFetchParamCreator;
 /**
  * InstitucionesApi - functional programming interface
  * @export
  */
-exports.InstitucionesApiFp = function (configuration) {
+const InstitucionesApiFp = function (configuration) {
     return {
         /**
          * Se obtiene un listado de las instituciones bancarias y la información de cada una de estas.
@@ -2804,11 +2833,12 @@ exports.InstitucionesApiFp = function (configuration) {
         },
     };
 };
+exports.InstitucionesApiFp = InstitucionesApiFp;
 /**
  * InstitucionesApi - factory interface
  * @export
  */
-exports.InstitucionesApiFactory = function (configuration, fetch, basePath) {
+const InstitucionesApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Se obtiene un listado de las instituciones bancarias y la información de cada una de estas.
@@ -2822,6 +2852,7 @@ exports.InstitucionesApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.InstitucionesApiFactory = InstitucionesApiFactory;
 /**
  * InstitucionesApi - object-oriented interface
  * @export
@@ -2846,7 +2877,7 @@ exports.InstitucionesApi = InstitucionesApi;
  * LmitesDeMontosApi - fetch parameter creator
  * @export
  */
-exports.LmitesDeMontosApiFetchParamCreator = function (configuration) {
+const LmitesDeMontosApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
@@ -2928,11 +2959,12 @@ exports.LmitesDeMontosApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.LmitesDeMontosApiFetchParamCreator = LmitesDeMontosApiFetchParamCreator;
 /**
  * LmitesDeMontosApi - functional programming interface
  * @export
  */
-exports.LmitesDeMontosApiFp = function (configuration) {
+const LmitesDeMontosApiFp = function (configuration) {
     return {
         /**
          * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
@@ -2979,11 +3011,12 @@ exports.LmitesDeMontosApiFp = function (configuration) {
         },
     };
 };
+exports.LmitesDeMontosApiFp = LmitesDeMontosApiFp;
 /**
  * LmitesDeMontosApi - factory interface
  * @export
  */
-exports.LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
+const LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Consulta las configuraciones para el contrato asocaido al enrolamiento en la aplicación.
@@ -3010,6 +3043,7 @@ exports.LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.LmitesDeMontosApiFactory = LmitesDeMontosApiFactory;
 /**
  * LmitesDeMontosApi - object-oriented interface
  * @export
@@ -3048,7 +3082,7 @@ exports.LmitesDeMontosApi = LmitesDeMontosApi;
  * OperacionesCoDiApi - fetch parameter creator
  * @export
  */
-exports.OperacionesCoDiApiFetchParamCreator = function (configuration) {
+const OperacionesCoDiApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene las operaciones generadas a partir de peticiones de pago CODI® de forma paginada, pudiendo aplicar filtros.
@@ -3101,11 +3135,12 @@ exports.OperacionesCoDiApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.OperacionesCoDiApiFetchParamCreator = OperacionesCoDiApiFetchParamCreator;
 /**
  * OperacionesCoDiApi - functional programming interface
  * @export
  */
-exports.OperacionesCoDiApiFp = function (configuration) {
+const OperacionesCoDiApiFp = function (configuration) {
     return {
         /**
          * Obtiene las operaciones generadas a partir de peticiones de pago CODI® de forma paginada, pudiendo aplicar filtros.
@@ -3134,11 +3169,12 @@ exports.OperacionesCoDiApiFp = function (configuration) {
         },
     };
 };
+exports.OperacionesCoDiApiFp = OperacionesCoDiApiFp;
 /**
  * OperacionesCoDiApi - factory interface
  * @export
  */
-exports.OperacionesCoDiApiFactory = function (configuration, fetch, basePath) {
+const OperacionesCoDiApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene las operaciones generadas a partir de peticiones de pago CODI® de forma paginada, pudiendo aplicar filtros.
@@ -3157,6 +3193,7 @@ exports.OperacionesCoDiApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.OperacionesCoDiApiFactory = OperacionesCoDiApiFactory;
 /**
  * OperacionesCoDiApi - object-oriented interface
  * @export
@@ -3186,7 +3223,7 @@ exports.OperacionesCoDiApi = OperacionesCoDiApi;
  * PeticionesDePagoPorCoDiApi - fetch parameter creator
  * @export
  */
-exports.PeticionesDePagoPorCoDiApiFetchParamCreator = function (configuration) {
+const PeticionesDePagoPorCoDiApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
@@ -3280,11 +3317,12 @@ exports.PeticionesDePagoPorCoDiApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.PeticionesDePagoPorCoDiApiFetchParamCreator = PeticionesDePagoPorCoDiApiFetchParamCreator;
 /**
  * PeticionesDePagoPorCoDiApi - functional programming interface
  * @export
  */
-exports.PeticionesDePagoPorCoDiApiFp = function (configuration) {
+const PeticionesDePagoPorCoDiApiFp = function (configuration) {
     return {
         /**
          * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
@@ -3332,11 +3370,12 @@ exports.PeticionesDePagoPorCoDiApiFp = function (configuration) {
         },
     };
 };
+exports.PeticionesDePagoPorCoDiApiFp = PeticionesDePagoPorCoDiApiFp;
 /**
  * PeticionesDePagoPorCoDiApi - factory interface
  * @export
  */
-exports.PeticionesDePagoPorCoDiApiFactory = function (configuration, fetch, basePath) {
+const PeticionesDePagoPorCoDiApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
@@ -3364,6 +3403,7 @@ exports.PeticionesDePagoPorCoDiApiFactory = function (configuration, fetch, base
         },
     };
 };
+exports.PeticionesDePagoPorCoDiApiFactory = PeticionesDePagoPorCoDiApiFactory;
 /**
  * PeticionesDePagoPorCoDiApi - object-oriented interface
  * @export
@@ -3403,7 +3443,7 @@ exports.PeticionesDePagoPorCoDiApi = PeticionesDePagoPorCoDiApi;
  * PuntosDeVentaCoDiApi - fetch parameter creator
  * @export
  */
-exports.PuntosDeVentaCoDiApiFetchParamCreator = function (configuration) {
+const PuntosDeVentaCoDiApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Se registra un punto de venta (TPV) desde donde se emitarán los cobros CODI®. El punto de venta se debe asociar a un cuenta CLABE registrada previamente ante Banxico para realizar cobros con CODI®.
@@ -3489,11 +3529,12 @@ exports.PuntosDeVentaCoDiApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.PuntosDeVentaCoDiApiFetchParamCreator = PuntosDeVentaCoDiApiFetchParamCreator;
 /**
  * PuntosDeVentaCoDiApi - functional programming interface
  * @export
  */
-exports.PuntosDeVentaCoDiApiFp = function (configuration) {
+const PuntosDeVentaCoDiApiFp = function (configuration) {
     return {
         /**
          * Se registra un punto de venta (TPV) desde donde se emitarán los cobros CODI®. El punto de venta se debe asociar a un cuenta CLABE registrada previamente ante Banxico para realizar cobros con CODI®.
@@ -3540,11 +3581,12 @@ exports.PuntosDeVentaCoDiApiFp = function (configuration) {
         },
     };
 };
+exports.PuntosDeVentaCoDiApiFp = PuntosDeVentaCoDiApiFp;
 /**
  * PuntosDeVentaCoDiApi - factory interface
  * @export
  */
-exports.PuntosDeVentaCoDiApiFactory = function (configuration, fetch, basePath) {
+const PuntosDeVentaCoDiApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Se registra un punto de venta (TPV) desde donde se emitarán los cobros CODI®. El punto de venta se debe asociar a un cuenta CLABE registrada previamente ante Banxico para realizar cobros con CODI®.
@@ -3571,6 +3613,7 @@ exports.PuntosDeVentaCoDiApiFactory = function (configuration, fetch, basePath) 
         },
     };
 };
+exports.PuntosDeVentaCoDiApiFactory = PuntosDeVentaCoDiApiFactory;
 /**
  * PuntosDeVentaCoDiApi - object-oriented interface
  * @export
@@ -3609,7 +3652,7 @@ exports.PuntosDeVentaCoDiApi = PuntosDeVentaCoDiApi;
  * SaldoApi - fetch parameter creator
  * @export
  */
-exports.SaldoApiFetchParamCreator = function (configuration) {
+const SaldoApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene el saldo de un contrato, según las divisas que se manejen en dicho contrato, ya sea peso mexicano (MXP) o dólar estadounidense (USD).
@@ -3648,11 +3691,12 @@ exports.SaldoApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.SaldoApiFetchParamCreator = SaldoApiFetchParamCreator;
 /**
  * SaldoApi - functional programming interface
  * @export
  */
-exports.SaldoApiFp = function (configuration) {
+const SaldoApiFp = function (configuration) {
     return {
         /**
          * Obtiene el saldo de un contrato, según las divisas que se manejen en dicho contrato, ya sea peso mexicano (MXP) o dólar estadounidense (USD).
@@ -3677,11 +3721,12 @@ exports.SaldoApiFp = function (configuration) {
         },
     };
 };
+exports.SaldoApiFp = SaldoApiFp;
 /**
  * SaldoApi - factory interface
  * @export
  */
-exports.SaldoApiFactory = function (configuration, fetch, basePath) {
+const SaldoApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene el saldo de un contrato, según las divisas que se manejen en dicho contrato, ya sea peso mexicano (MXP) o dólar estadounidense (USD).
@@ -3696,6 +3741,7 @@ exports.SaldoApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.SaldoApiFactory = SaldoApiFactory;
 /**
  * SaldoApi - object-oriented interface
  * @export
@@ -3721,7 +3767,7 @@ exports.SaldoApi = SaldoApi;
  * SuscripcionesApi - fetch parameter creator
  * @export
  */
-exports.SuscripcionesApiFetchParamCreator = function (configuration) {
+const SuscripcionesApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Se cambia el estado o estatus de la suscripción a los posibles valores que son: ACTIVE o INACTIVE
@@ -3918,11 +3964,12 @@ exports.SuscripcionesApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.SuscripcionesApiFetchParamCreator = SuscripcionesApiFetchParamCreator;
 /**
  * SuscripcionesApi - functional programming interface
  * @export
  */
-exports.SuscripcionesApiFp = function (configuration) {
+const SuscripcionesApiFp = function (configuration) {
     return {
         /**
          * Se cambia el estado o estatus de la suscripción a los posibles valores que son: ACTIVE o INACTIVE
@@ -4033,11 +4080,12 @@ exports.SuscripcionesApiFp = function (configuration) {
         },
     };
 };
+exports.SuscripcionesApiFp = SuscripcionesApiFp;
 /**
  * SuscripcionesApi - factory interface
  * @export
  */
-exports.SuscripcionesApiFactory = function (configuration, fetch, basePath) {
+const SuscripcionesApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Se cambia el estado o estatus de la suscripción a los posibles valores que son: ACTIVE o INACTIVE
@@ -4098,6 +4146,7 @@ exports.SuscripcionesApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.SuscripcionesApiFactory = SuscripcionesApiFactory;
 /**
  * SuscripcionesApi - object-oriented interface
  * @export
@@ -4173,7 +4222,7 @@ exports.SuscripcionesApi = SuscripcionesApi;
  * TransferenciasSPEIApi - fetch parameter creator
  * @export
  */
-exports.TransferenciasSPEIApiFetchParamCreator = function (configuration) {
+const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Agrupa transacciones SPEI/SPID en un mismo transaction_id, posteriormente genera la dirección URL del centro de autorización para la confirmación de las transacciones. <br><br>Las transacciones deben estar en estatus PENDING y pertenecer a un mismo contrato.
@@ -4264,7 +4313,7 @@ exports.TransferenciasSPEIApiFetchParamCreator = function (configuration) {
             };
         },
         /**
-         * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta.
+         * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
          * @summary Consulta de transferencias recibidas
          * @param {string} authorization Header para token
          * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
@@ -4431,11 +4480,12 @@ exports.TransferenciasSPEIApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.TransferenciasSPEIApiFetchParamCreator = TransferenciasSPEIApiFetchParamCreator;
 /**
  * TransferenciasSPEIApi - functional programming interface
  * @export
  */
-exports.TransferenciasSPEIApiFp = function (configuration) {
+const TransferenciasSPEIApiFp = function (configuration) {
     return {
         /**
          * Agrupa transacciones SPEI/SPID en un mismo transaction_id, posteriormente genera la dirección URL del centro de autorización para la confirmación de las transacciones. <br><br>Las transacciones deben estar en estatus PENDING y pertenecer a un mismo contrato.
@@ -4483,7 +4533,7 @@ exports.TransferenciasSPEIApiFp = function (configuration) {
             };
         },
         /**
-         * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta.
+         * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
          * @summary Consulta de transferencias recibidas
          * @param {string} authorization Header para token
          * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
@@ -4573,11 +4623,12 @@ exports.TransferenciasSPEIApiFp = function (configuration) {
         },
     };
 };
+exports.TransferenciasSPEIApiFp = TransferenciasSPEIApiFp;
 /**
  * TransferenciasSPEIApi - factory interface
  * @export
  */
-exports.TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
+const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Agrupa transacciones SPEI/SPID en un mismo transaction_id, posteriormente genera la dirección URL del centro de autorización para la confirmación de las transacciones. <br><br>Las transacciones deben estar en estatus PENDING y pertenecer a un mismo contrato.
@@ -4605,7 +4656,7 @@ exports.TransferenciasSPEIApiFactory = function (configuration, fetch, basePath)
             return exports.TransferenciasSPEIApiFp(configuration).dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options)(fetch, basePath);
         },
         /**
-         * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta.
+         * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
          * @summary Consulta de transferencias recibidas
          * @param {string} authorization Header para token
          * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
@@ -4655,6 +4706,7 @@ exports.TransferenciasSPEIApiFactory = function (configuration, fetch, basePath)
         },
     };
 };
+exports.TransferenciasSPEIApiFactory = TransferenciasSPEIApiFactory;
 /**
  * TransferenciasSPEIApi - object-oriented interface
  * @export
@@ -4690,7 +4742,7 @@ class TransferenciasSPEIApi extends BaseAPI {
         return exports.TransferenciasSPEIApiFp(this.configuration).dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options)(this.fetch, this.basePath);
     }
     /**
-     * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta.
+     * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
      * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
@@ -4748,7 +4800,7 @@ exports.TransferenciasSPEIApi = TransferenciasSPEIApi;
  * TransferenciasSPIDApi - fetch parameter creator
  * @export
  */
-exports.TransferenciasSPIDApiFetchParamCreator = function (configuration) {
+const TransferenciasSPIDApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene las clasificaciones para operaciones con dólares (SPID®) de Monex.<br/><br/>Este recurso se debe invocar previo al realizar una operación SPID.<br/><br/>
@@ -4830,11 +4882,12 @@ exports.TransferenciasSPIDApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.TransferenciasSPIDApiFetchParamCreator = TransferenciasSPIDApiFetchParamCreator;
 /**
  * TransferenciasSPIDApi - functional programming interface
  * @export
  */
-exports.TransferenciasSPIDApiFp = function (configuration) {
+const TransferenciasSPIDApiFp = function (configuration) {
     return {
         /**
          * Obtiene las clasificaciones para operaciones con dólares (SPID®) de Monex.<br/><br/>Este recurso se debe invocar previo al realizar una operación SPID.<br/><br/>
@@ -4881,11 +4934,12 @@ exports.TransferenciasSPIDApiFp = function (configuration) {
         },
     };
 };
+exports.TransferenciasSPIDApiFp = TransferenciasSPIDApiFp;
 /**
  * TransferenciasSPIDApi - factory interface
  * @export
  */
-exports.TransferenciasSPIDApiFactory = function (configuration, fetch, basePath) {
+const TransferenciasSPIDApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene las clasificaciones para operaciones con dólares (SPID®) de Monex.<br/><br/>Este recurso se debe invocar previo al realizar una operación SPID.<br/><br/>
@@ -4912,6 +4966,7 @@ exports.TransferenciasSPIDApiFactory = function (configuration, fetch, basePath)
         },
     };
 };
+exports.TransferenciasSPIDApiFactory = TransferenciasSPIDApiFactory;
 /**
  * TransferenciasSPIDApi - object-oriented interface
  * @export
@@ -4950,7 +5005,7 @@ exports.TransferenciasSPIDApi = TransferenciasSPIDApi;
  * WebhooksApi - fetch parameter creator
  * @export
  */
-exports.WebhooksApiFetchParamCreator = function (configuration) {
+const WebhooksApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene un webhook registrado en la plataforma mediante su identificador.
@@ -4969,7 +5024,7 @@ exports.WebhooksApiFetchParamCreator = function (configuration) {
             if (webhookId === null || webhookId === undefined) {
                 throw new RequiredError('webhookId', 'Required parameter webhookId was null or undefined when calling getWebhook.');
             }
-            const localVarPath = `/webhooks/{id}`
+            const localVarPath = `/webhooks/{webhook_id}`
                 .replace(`{${"webhook_id"}}`, encodeURIComponent(String(webhookId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
@@ -5055,11 +5110,12 @@ exports.WebhooksApiFetchParamCreator = function (configuration) {
         },
     };
 };
+exports.WebhooksApiFetchParamCreator = WebhooksApiFetchParamCreator;
 /**
  * WebhooksApi - functional programming interface
  * @export
  */
-exports.WebhooksApiFp = function (configuration) {
+const WebhooksApiFp = function (configuration) {
     return {
         /**
          * Obtiene un webhook registrado en la plataforma mediante su identificador.
@@ -5125,11 +5181,12 @@ exports.WebhooksApiFp = function (configuration) {
         },
     };
 };
+exports.WebhooksApiFp = WebhooksApiFp;
 /**
  * WebhooksApi - factory interface
  * @export
  */
-exports.WebhooksApiFactory = function (configuration, fetch, basePath) {
+const WebhooksApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene un webhook registrado en la plataforma mediante su identificador.
@@ -5165,6 +5222,7 @@ exports.WebhooksApiFactory = function (configuration, fetch, basePath) {
         },
     };
 };
+exports.WebhooksApiFactory = WebhooksApiFactory;
 /**
  * WebhooksApi - object-oriented interface
  * @export
