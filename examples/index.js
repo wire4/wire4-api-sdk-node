@@ -826,9 +826,11 @@ apiRoutes.get('/incomingSpeiTransactionsReportUsingGET', async (req, resp) => {
         var instance = new api.TransferenciasSPEIApi();
         var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
 
+        const beginDate = null;
+        const endDate = null;
         const authorization = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_admin');
         const subscription = SUBSCRIPTION;
-        const response = await instance.incomingSpeiTransactionsReportUsingGET(authorization, subscription, {});
+        const response = await instance.incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, {});
         console.log("Response:"+JSON.stringify(response));
 
         resp.json(response);
