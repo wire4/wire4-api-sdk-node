@@ -36,6 +36,17 @@ npm install wire4-api-sdk --save
 ```
 
 ## Cómo iniciar
+### Importar librería de Wire4
+Primeramente se tiene que hacer uso del autenticador en el código pues es el que permitirá consumir los endpoints del API. Para implementar el autenticador se debe hacer lo siguiente:
+
+var ow = require('oauthwire4').default; 
+var environment = require('oauthwire4/dist/src/environmentEnum').EnvironmentEnum;
+
+var outhWire4 = new ow(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, environment.SANDBOX);
+
+El environment se refiere al uso de SANDBOX o de PRODUCTION, según se requiera.
+
+### Implementación de código
 
 Por favor sigue el procedimiento de instalación (Instalacion y uso) y ejecuta el siguiente código de ejemplo reemplazando las credenciales de aplicación por tus datos. Toma en cuanta que estos son ejemplos que te servirán de referencia y que pueden cambiar pero debes crear una cuenta en wire4.mx para obtener tus datos de aplicación.
 
