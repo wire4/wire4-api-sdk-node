@@ -71,19 +71,19 @@ export interface Account {
      * @type {number}
      * @memberof Account
      */
-    amountLimit: number;
+    amount_limit: number;
     /**
      * Es la clave del banco, es requerido en caso de que la cuenta del beneficiario sea un número de celular.
      * @type {string}
      * @memberof Account
      */
-    bankKey: string;
+    bank_key: string;
     /**
      * Es la cuenta del beneficiario, podría ser teléfono celular (se valida que sea de 10 dígitos), Tarjeta de débito (TDD, se valida que sea de 16 dígitos) o cuenta CLABE (se valida que sea de 18 dígitos). <br/><br/>Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
      * @type {string}
      * @memberof Account
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es una lista de correos electrónicos (emails). Se valida el formato de email. Este campo es opcional.
      * @type {Array<string>}
@@ -101,19 +101,19 @@ export interface Account {
      * @type {string}
      * @memberof Account
      */
-    kindOfRelationship: string;
+    kind_of_relationship: string;
     /**
      * Es la referencia numérica a utilizar cuando se realice una transferencia y no se especifique una referencia.
      * @type {string}
      * @memberof Account
      */
-    numericReferenceSpei: string;
+    numeric_reference_spei: string;
     /**
      * Es el concepto de pago a utilizar cuando se realice una transferencia y no se especifique un concepto
      * @type {string}
      * @memberof Account
      */
-    paymentConceptSpei: string;
+    payment_concept_spei: string;
     /**
      *
      * @type {Person}
@@ -150,13 +150,13 @@ export interface AccountDetail {
      * @type {string}
      * @memberof AccountDetail
      */
-    businessName: string;
+    business_name: string;
     /**
      * La fecha de constitución del negocio
      * @type {string}
      * @memberof AccountDetail
      */
-    constitutionDate: string;
+    constitution_date: string;
     /**
      * La lista de correos del negocio
      * @type {Array<string>}
@@ -168,7 +168,7 @@ export interface AccountDetail {
      * @type {Array<string>}
      * @memberof AccountDetail
      */
-    legalRepresentatives: Array<string>;
+    legal_representatives: Array<string>;
     /**
      * El RFC del negocio
      * @type {string}
@@ -187,7 +187,7 @@ export interface AccountReassigned {
      * @type {number}
      * @memberof AccountReassigned
      */
-    amountLimit: number;
+    amount_limit: number;
     /**
      *
      * @type {Institution}
@@ -199,13 +199,13 @@ export interface AccountReassigned {
      * @type {string}
      * @memberof AccountReassigned
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es el código de divisa. Es en el formato estándar de 3 dígitos, por ejemplo para el peso mexicano: <b>MXP</b>, para el dólar estadounidense: <b>USD</b>.<br/><br/>Este dato es opcional, al registrar una cuenta si no se cuenta con este valor se asignará <b>MXP</b>
      * @type {string}
      * @memberof AccountReassigned
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es una lista de correos electrónicos (emails). Se valida el formato de email. Este campo es opcional.
      * @type {Array<string>}
@@ -223,19 +223,19 @@ export interface AccountReassigned {
      * @type {string}
      * @memberof AccountReassigned
      */
-    kindOfRelationship: string;
+    kind_of_relationship: string;
     /**
      * Es la referencia numérica a utilizar cuando se realice una transferencia y no se especifique una referencia.
      * @type {string}
      * @memberof AccountReassigned
      */
-    numericReferenceSpei: string;
+    numeric_reference_spei: string;
     /**
      * Es el concepto de pago a utilizar cuando se realice una transferencia y no se especifique un concepto
      * @type {string}
      * @memberof AccountReassigned
      */
-    paymentConceptSpei: string;
+    payment_concept_spei: string;
     /**
      *
      * @type {Person}
@@ -247,7 +247,7 @@ export interface AccountReassigned {
      * @type {Date}
      * @memberof AccountReassigned
      */
-    registerDate: Date;
+    register_date: Date;
     /**
      * Es la relación con el propietario de la cuenta, para registrar este valor se debe obtener del recurso <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">relationships.</a> <br/> <br/> <b>Nota:</b> Si en la respuesta de Monex, sta propiedad es nula, tampoco estará presente en esta respuesta.
      * @type {string}
@@ -284,13 +284,13 @@ export interface AccountRequest {
      * @type {string}
      * @memberof AccountRequest
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso exitoso.
      * @type {string}
      * @memberof AccountRequest
      */
-    returnUrl: string;
+    return_url: string;
 }
 /**
  * Objeto que contiene información de la cuenta.
@@ -303,7 +303,7 @@ export interface AccountResponse {
      * @type {number}
      * @memberof AccountResponse
      */
-    amountLimit: number;
+    amount_limit: number;
     /**
      *
      * @type {Institution}
@@ -315,7 +315,7 @@ export interface AccountResponse {
      * @type {string}
      * @memberof AccountResponse
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es una lista de correos electrónicos (emails). Se valida el formato de email. Este campo es opcional.
      * @type {Array<string>}
@@ -333,19 +333,19 @@ export interface AccountResponse {
      * @type {string}
      * @memberof AccountResponse
      */
-    kindOfRelationship: string;
+    kind_of_relationship: string;
     /**
      * Es la referencia numérica a utilizar cuando se realice una transferencia y no se especifique una referencia.
      * @type {string}
      * @memberof AccountResponse
      */
-    numericReferenceSpei: string;
+    numeric_reference_spei: string;
     /**
      * Es el concepto de pago a utilizar cuando se realice una transferencia y no se especifique un concepto
      * @type {string}
      * @memberof AccountResponse
      */
-    paymentConceptSpei: string;
+    payment_concept_spei: string;
     /**
      *
      * @type {Person}
@@ -357,7 +357,7 @@ export interface AccountResponse {
      * @type {Date}
      * @memberof AccountResponse
      */
-    registerDate: Date;
+    register_date: Date;
     /**
      * Es la relación con el propietario de la cuenta, para registrar este valor se debe obtener del recurso <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">relationships.</a> <br/> <br/> <b>Nota:</b> Si en la respuesta de Monex, sta propiedad es nula, tampoco estará presente en esta respuesta.
      * @type {string}
@@ -388,25 +388,25 @@ export interface AccountSpid {
      * @type {number}
      * @memberof AccountSpid
      */
-    amountLimit: number;
+    amount_limit: number;
     /**
      * Es el código banxico con una longitud de 5 dígitos, es requerido en caso de que la cuenta del beneficiario sea un número de celular.
      * @type {string}
      * @memberof AccountSpid
      */
-    bankCodeBanxico: string;
+    bank_code_banxico: string;
     /**
      * Cuenta del beneficiario debe ser una cuenta CLABE. Ejemplo: 032180000118359719.
      * @type {string}
      * @memberof AccountSpid
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso de que el cliente cancele el registro. Se valida hasta 512 caracteres.
      * @type {string}
      * @memberof AccountSpid
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Lista de correos electrónicos (emails), este dato es opcional.
      * @type {Array<string>}
@@ -424,19 +424,19 @@ export interface AccountSpid {
      * @type {string}
      * @memberof AccountSpid
      */
-    kindOfRelationship: string;
+    kind_of_relationship: string;
     /**
      * Es la referencia numérica.
      * @type {string}
      * @memberof AccountSpid
      */
-    numericReference: string;
+    numeric_reference: string;
     /**
      * Es el concepto de pago.
      * @type {string}
      * @memberof AccountSpid
      */
-    paymentConcept: string;
+    payment_concept: string;
     /**
      * Es la relación con el propietario de la cuenta, para registrar este valor se debe obtener del recurso <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">relationships.</a> <br/> <br/> <b>Nota:</b> Si en la respuesta de Monex, sta propiedad es nula, tampoco estará presente en esta respuesta.
      * @type {string}
@@ -448,7 +448,7 @@ export interface AccountSpid {
      * @type {string}
      * @memberof AccountSpid
      */
-    returnUrl: string;
+    return_url: string;
     /**
      * Es el Registro federal de contribuyentes (RFC) de la persona o institución propietaria de la cuenta. <br/> <br/><b>Nota:</b> Se valida el formato de RFC.
      * @type {string}
@@ -473,19 +473,19 @@ export interface AddressCompany {
      * @type {string}
      * @memberof AddressCompany
      */
-    countryCode: string;
+    country_code: string;
     /**
      * Número exterior
      * @type {string}
      * @memberof AddressCompany
      */
-    exteriorNumber: string;
+    exterior_number: string;
     /**
      * Número interior
      * @type {string}
      * @memberof AddressCompany
      */
-    interiorNumber: string;
+    interior_number: string;
     /**
      * El municipio
      * @type {string}
@@ -497,7 +497,7 @@ export interface AddressCompany {
      * @type {string}
      * @memberof AddressCompany
      */
-    postalCode: string;
+    postal_code: string;
     /**
      * El asentamiento
      * @type {string}
@@ -509,7 +509,7 @@ export interface AddressCompany {
      * @type {string}
      * @memberof AddressCompany
      */
-    settlementName: string;
+    settlement_name: string;
     /**
      * El estado
      * @type {string}
@@ -521,7 +521,7 @@ export interface AddressCompany {
      * @type {string}
      * @memberof AddressCompany
      */
-    streetAddress: string;
+    street_address: string;
 }
 /**
  * Objeto que contiene la información del previo y nuevo monto límite.
@@ -534,31 +534,31 @@ export interface AmountRequest {
      * @type {number}
      * @memberof AmountRequest
      */
-    amountLimit: number;
+    amount_limit: number;
     /**
      * Es la dirección URL a la que se redirigirá en caso de que el cliente cancele el registro. Se valida hasta 512 caracteres.
      * @type {string}
      * @memberof AmountRequest
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Es el código de divisa de la cuenta. Es en el formato estándar de 3 dígitos, por ejemplo para el peso mexicano: <b>MXP</b>, para el dólar estadounidense: <b>USD</b>.
      * @type {string}
      * @memberof AmountRequest
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es el monto límite registrado actualmente, un monto de 0.0 implica que no hay límite.
      * @type {number}
      * @memberof AmountRequest
      */
-    previousAmountLimit: number;
+    previous_amount_limit: number;
     /**
      * Es la dirección URL a la que se redirigirá en caso de éxito. Se valida hasta 512 caracteres.
      * @type {string}
      * @memberof AmountRequest
      */
-    returnUrl: string;
+    return_url: string;
 }
 /**
  * Contiene la información para agrupar transacciones existentes y autorizarlas de forma conjunta
@@ -571,7 +571,7 @@ export interface AuthorizationTransactionGroup {
      * @type {UrlsRedirect}
      * @memberof AuthorizationTransactionGroup
      */
-    redirectUrls: UrlsRedirect;
+    redirect_urls: UrlsRedirect;
     /**
      * Listado de order_id de las transacciones a agrupar.
      * @type {Array<string>}
@@ -596,7 +596,7 @@ export interface AuthorizedBeneficiariesResponse {
      * @type {string}
      * @memberof AuthorizedBeneficiariesResponse
      */
-    requestId: string;
+    request_id: string;
     /**
      * Es la dirección URL generada para confirmación de la operación. Es para ingresar al centro de autorización.
      * @type {string}
@@ -621,19 +621,19 @@ export interface AuthorizedUsers {
      * @type {string}
      * @memberof AuthorizedUsers
      */
-    maskedAccount: string;
+    masked_account: string;
     /**
      * El usuario enmascarado que se autorizó
      * @type {string}
      * @memberof AuthorizedUsers
      */
-    maskedName: string;
+    masked_name: string;
     /**
      * El nombre enmascarado del usuario de acceso que se autorizó
      * @type {string}
      * @memberof AuthorizedUsers
      */
-    maskedUserName: string;
+    masked_user_name: string;
     /**
      * El usuario que se autorizó
      * @type {string}
@@ -645,7 +645,7 @@ export interface AuthorizedUsers {
      * @type {string}
      * @memberof AuthorizedUsers
      */
-    userName: string;
+    user_name: string;
 }
 /**
  * Objeto que contiene el saldo, moneda y código de moneda.
@@ -670,7 +670,7 @@ export interface Balance {
      * @type {string}
      * @memberof Balance
      */
-    currencyCode: string;
+    currency_code: string;
 }
 /**
  * Objeto que contiene la lista de movimientos del balance del contrato
@@ -696,7 +696,7 @@ export interface BeneficiariesQueryRegisterStatus {
      * @type {Date}
      * @memberof BeneficiariesQueryRegisterStatus
      */
-    authorizationDate: Date;
+    authorization_date: Date;
     /**
      * Es una lista de beneficiarios obtenidos.
      * @type {Array<AccountResponse>}
@@ -708,25 +708,25 @@ export interface BeneficiariesQueryRegisterStatus {
      * @type {Date}
      * @memberof BeneficiariesQueryRegisterStatus
      */
-    requestDate: Date;
+    request_date: Date;
     /**
      * Identificador de la petición del registro de beneficiarios
      * @type {string}
      * @memberof BeneficiariesQueryRegisterStatus
      */
-    requestId: string;
+    request_id: string;
     /**
      * Indica sí la petición ya fue autorizada usando el token del usuario
      * @type {string}
      * @memberof BeneficiariesQueryRegisterStatus
      */
-    statusRequest: BeneficiariesQueryRegisterStatus.StatusRequestEnum;
+    status_request: BeneficiariesQueryRegisterStatus.StatusRequestEnum;
     /**
      * Total de beneficiarios enviados en la petición
      * @type {number}
      * @memberof BeneficiariesQueryRegisterStatus
      */
-    totalBeneficiaries: number;
+    total_beneficiaries: number;
 }
 /**
  * @export
@@ -785,13 +785,13 @@ export interface Billing {
      * @type {Date}
      * @memberof Billing
      */
-    emissionAt: Date;
+    emission_at: Date;
     /**
      * Fecha en que finaliza el periodo que se factura
      * @type {Date}
      * @memberof Billing
      */
-    endDate: Date;
+    end_date: Date;
     /**
      * Identificador de la factura
      * @type {string}
@@ -803,7 +803,7 @@ export interface Billing {
      * @type {Date}
      * @memberof Billing
      */
-    startDate: Date;
+    start_date: Date;
     /**
      * Estatus de la factura
      * @type {string}
@@ -821,13 +821,13 @@ export interface Billing {
      * @type {string}
      * @memberof Billing
      */
-    urlPdf: string;
+    url_pdf: string;
     /**
      * Url del archivo xml de la factura
      * @type {string}
      * @memberof Billing
      */
-    urlXml: string;
+    url_xml: string;
 }
 /**
  * @export
@@ -862,37 +862,37 @@ export interface BillingTransaction {
      * @type {string}
      * @memberof BillingTransaction
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Identificador de transaccion en banco monex
      * @type {number}
      * @memberof BillingTransaction
      */
-    monexId: number;
+    monex_id: number;
     /**
      * Fecha y hora de la transacción
      * @type {Date}
      * @memberof BillingTransaction
      */
-    operationDate: Date;
+    operation_date: Date;
     /**
      * Identificador de la orden
      * @type {string}
      * @memberof BillingTransaction
      */
-    orderId: string;
+    order_id: string;
     /**
      * Identificador de la orden de pago
      * @type {string}
      * @memberof BillingTransaction
      */
-    paymentOrderId: string;
+    payment_order_id: string;
     /**
      * Identificador de la transacción
      * @type {number}
      * @memberof BillingTransaction
      */
-    transactionId: number;
+    transaction_id: number;
     /**
      * Tipo de transaccion IN | OUT
      * @type {string}
@@ -925,13 +925,13 @@ export interface CepResponse {
      * @type {string}
      * @memberof CepResponse
      */
-    accountBeneficiary: string;
+    account_beneficiary: string;
     /**
      * Es la cuenta del ordenante.
      * @type {string}
      * @memberof CepResponse
      */
-    accountSender: string;
+    account_sender: string;
     /**
      * Es el monto de la transferencia.
      * @type {number}
@@ -949,43 +949,43 @@ export interface CepResponse {
      * @type {string}
      * @memberof CepResponse
      */
-    beneficiaryBankKey: string;
+    beneficiary_bank_key: string;
     /**
      * Nombre del beneficiario.
      * @type {string}
      * @memberof CepResponse
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @type {string}
      * @memberof CepResponse
      */
-    beneficiaryRfc: string;
+    beneficiary_rfc: string;
     /**
      * Cadena original del CEP.
      * @type {string}
      * @memberof CepResponse
      */
-    cadenaOriginal: string;
+    cadena_original: string;
     /**
      * Es la fecha de captura de la transferencia. Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
      * @type {Date}
      * @memberof CepResponse
      */
-    captureDate: Date;
+    capture_date: Date;
     /**
      * Número de serie del certificado.
      * @type {string}
      * @memberof CepResponse
      */
-    certificateSerialNumber: string;
+    certificate_serial_number: string;
     /**
      * Es la clave de rastreo.
      * @type {string}
      * @memberof CepResponse
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es la descripción de la transferencia.
      * @type {string}
@@ -1003,13 +1003,13 @@ export interface CepResponse {
      * @type {Date}
      * @memberof CepResponse
      */
-    operationDate: Date;
+    operation_date: Date;
     /**
      * Es la fecha de abono registrada en el CEP.  Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
      * @type {Date}
      * @memberof CepResponse
      */
-    operationDateCep: Date;
+    operation_date_cep: Date;
     /**
      * Es la referencia numérica de la transferencia.
      * @type {string}
@@ -1021,19 +1021,19 @@ export interface CepResponse {
      * @type {string}
      * @memberof CepResponse
      */
-    senderBankKey: string;
+    sender_bank_key: string;
     /**
      * Es el nombre del emisor.
      * @type {string}
      * @memberof CepResponse
      */
-    senderName: string;
+    sender_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del emisor.
      * @type {string}
      * @memberof CepResponse
      */
-    senderRfc: string;
+    sender_rfc: string;
     /**
      * Firma del CEP..
      * @type {string}
@@ -1045,7 +1045,7 @@ export interface CepResponse {
      * @type {string}
      * @memberof CepResponse
      */
-    urlZip: string;
+    url_zip: string;
 }
 /**
  *
@@ -1064,25 +1064,25 @@ export interface CepSearchBanxico {
      * @type {string}
      * @memberof CepSearchBanxico
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Clave del banco beneficiario. Éste valor no esta presente si obtiene de la cuenta del beneficiario, en caso de que sea un número celular éste campo es requerido. se puede obtener del recurso de las <a href=\"#operation/getAllInstitutionsUsingGET\">instituciones.</a>
      * @type {string}
      * @memberof CepSearchBanxico
      */
-    beneficiaryBankKey: string;
+    beneficiary_bank_key: string;
     /**
      * Es la clave de rastreo de la transferencia.
      * @type {string}
      * @memberof CepSearchBanxico
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es la fecha de operación de la transferencia, formato: dd-MM-yyyy.
      * @type {string}
      * @memberof CepSearchBanxico
      */
-    operationDate: string;
+    operation_date: string;
     /**
      * Es la referencia numérica de la transferencia. Se valida hasta 7 dígitos.
      * @type {string}
@@ -1094,13 +1094,13 @@ export interface CepSearchBanxico {
      * @type {string}
      * @memberof CepSearchBanxico
      */
-    senderAccount: string;
+    sender_account: string;
     /**
      * Es la clave del banco ordenante, es requerida cuando no se envía la cuenta ordenante.  Se puede obtener del recurso de las <a href=\"#operation/getAllInstitutionsUsingGET\">instituciones.</a>
      * @type {string}
      * @memberof CepSearchBanxico
      */
-    senderBankKey: string;
+    sender_bank_key: string;
 }
 /**
  * Certificado de la empresa que se está registrando.
@@ -1119,19 +1119,19 @@ export interface CertificateRequest {
      * @type {string}
      * @memberof CertificateRequest
      */
-    certificateNumber: string;
+    certificate_number: string;
     /**
      * Es el dígito verificador. Es un sólo dígito.
      * @type {string}
      * @memberof CertificateRequest
      */
-    checkDigit: string;
+    check_digit: string;
     /**
      * Es la información de cifrado.
      * @type {string}
      * @memberof CertificateRequest
      */
-    cipherData: string;
+    cipher_data: string;
 }
 /**
  *
@@ -1150,13 +1150,13 @@ export interface CodiCodeQrResponseDTO {
      * @type {string}
      * @memberof CodiCodeQrResponseDTO
      */
-    barcodeBase64: string;
+    barcode_base64: string;
     /**
      * Es la dirección URL del código QR.
      * @type {string}
      * @memberof CodiCodeQrResponseDTO
      */
-    barcodeUrl: string;
+    barcode_url: string;
     /**
      * Es la descripción del pago CODI®.
      * @type {string}
@@ -1168,25 +1168,25 @@ export interface CodiCodeQrResponseDTO {
      * @type {Date}
      * @memberof CodiCodeQrResponseDTO
      */
-    creationDate: Date;
+    creation_date: Date;
     /**
      * Es la fecha de operación del pago CODI®. Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
      * @type {Date}
      * @memberof CodiCodeQrResponseDTO
      */
-    dueDate: Date;
+    due_date: Date;
     /**
      * Es la referencia de la transferencia asignada por el cliente.
      * @type {string}
      * @memberof CodiCodeQrResponseDTO
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el Número de teléfono móvil en caso de ser un pago CODI® usando \"PUSH_NOTIFICATION\".
      * @type {string}
      * @memberof CodiCodeQrResponseDTO
      */
-    phoneNumber: string;
+    phone_number: string;
     /**
      * El estado del código QR para pago CODI®.
      * @type {string}
@@ -1246,7 +1246,7 @@ export interface CodiCodeRequestDTO {
      * @type {Date}
      * @memberof CodiCodeRequestDTO
      */
-    dueDate: Date;
+    due_date: Date;
     /**
      * Campo de metada CODI®, longitud máxima determinada por configuracion de la empresa, por defecto 100 caracteres
      * @type {string}
@@ -1258,13 +1258,13 @@ export interface CodiCodeRequestDTO {
      * @type {string}
      * @memberof CodiCodeRequestDTO
      */
-    orderId: string;
+    order_id: string;
     /**
      * Número de teléfono móvil en caso de ser un pago CODI® usando 'PUSH_NOTIFICATION' estecampo sería obligatorio
      * @type {string}
      * @memberof CodiCodeRequestDTO
      */
-    phoneNumber: string;
+    phone_number: string;
     /**
      * El tipo de código QR para pago con CODI®
      * @type {string}
@@ -1315,13 +1315,13 @@ export interface CodiOperationResponseDTO {
      * @type {Date}
      * @memberof CodiOperationResponseDTO
      */
-    operationDate: Date;
+    operation_date: Date;
     /**
      * Es el tipo de pago.
      * @type {string}
      * @memberof CodiOperationResponseDTO
      */
-    paymentType: string;
+    payment_type: string;
     /**
      * Es el estado (estatus) de la operación. Los valores pueden ser: <b>COMPLETED, CANCELLED Y POSTPONED</b>
      * @type {string}
@@ -1333,7 +1333,7 @@ export interface CodiOperationResponseDTO {
      * @type {string}
      * @memberof CodiOperationResponseDTO
      */
-    transactionId: string;
+    transaction_id: string;
 }
 /**
  *
@@ -1346,43 +1346,43 @@ export interface CodiOperationsFiltersRequestDTO {
      * @type {number}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    amountFrom: number;
+    amount_from: number;
     /**
      * Es el monto máximo. Se permiten dos decimales. Ejemplo 1000.00
      * @type {number}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    amountTo: number;
+    amount_to: number;
     /**
      * Es el filtro de fecha de operación \"desde\".
      * @type {string}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    operationDateFrom: string;
+    operation_date_from: string;
     /**
      * Es el filtro de fecha de operación \"hasta\".
      * @type {string}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    operationDateTo: string;
+    operation_date_to: string;
     /**
      * Es el order id de la petición.
      * @type {string}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el filtro de fecha de petición \"desde\".
      * @type {string}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    requestDateFrom: string;
+    request_date_from: string;
     /**
      * Es el filtro de fecha de petición \"hasta\".
      * @type {string}
      * @memberof CodiOperationsFiltersRequestDTO
      */
-    requestDateTo: string;
+    request_date_to: string;
     /**
      * Es el estado (estatus) de la petición.
      * @type {string}
@@ -1416,7 +1416,7 @@ export interface CompanyRegistered {
      * @type {string}
      * @memberof CompanyRegistered
      */
-    businessName: string;
+    business_name: string;
     /**
      * Es la información del certificado.
      * @type {string}
@@ -1428,13 +1428,13 @@ export interface CompanyRegistered {
      * @type {string}
      * @memberof CompanyRegistered
      */
-    comercialName: string;
+    comercial_name: string;
     /**
      * Es el identificador de la empresa.
      * @type {string}
      * @memberof CompanyRegistered
      */
-    companyId: string;
+    company_id: string;
     /**
      * Es el Registro Federal de Constituyentes (RFC) de la empresa registrada.
      * @type {string}
@@ -1459,7 +1459,7 @@ export interface CompanyRequested {
      * @type {string}
      * @memberof CompanyRequested
      */
-    businessName: string;
+    business_name: string;
     /**
      *
      * @type {CertificateRequest}
@@ -1471,7 +1471,7 @@ export interface CompanyRequested {
      * @type {string}
      * @memberof CompanyRequested
      */
-    comercialName: string;
+    comercial_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) de la empresa que se va a registrar.
      * @type {string}
@@ -1490,13 +1490,13 @@ export interface Compay {
      * @type {string}
      * @memberof Compay
      */
-    commercialName: string;
+    commercial_name: string;
     /**
      * Identificador de la empresa
      * @type {string}
      * @memberof Compay
      */
-    companyId: string;
+    company_id: string;
     /**
      * Nombre de la empresa
      * @type {string}
@@ -1552,7 +1552,7 @@ export interface ContactRequest {
      * @type {string}
      * @memberof ContactRequest
      */
-    contactPerson: string;
+    contact_person: string;
     /**
      * Es el correo electrónico (email) de la persona. Se valida que tenga el formato de email, por ejemplo: correo@correo.com.
      * @type {string}
@@ -1564,7 +1564,7 @@ export interface ContactRequest {
      * @type {string}
      * @memberof ContactRequest
      */
-    phoneNumber: string;
+    phone_number: string;
 }
 /**
  *
@@ -1589,13 +1589,13 @@ export interface ContractDetailRequest {
      * @type {string}
      * @memberof ContractDetailRequest
      */
-    tokenCode: string;
+    token_code: string;
     /**
      * El nombre del usuario
      * @type {string}
      * @memberof ContractDetailRequest
      */
-    userName: string;
+    user_name: string;
 }
 /**
  *
@@ -1633,19 +1633,19 @@ export interface Deposit {
      * @type {string}
      * @memberof Deposit
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es el nombre del beneficiario.
      * @type {string}
      * @memberof Deposit
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @type {string}
      * @memberof Deposit
      */
-    beneficiaryRfc: string;
+    beneficiary_rfc: string;
     /**
      *
      * @type {MessageCEP}
@@ -1657,25 +1657,25 @@ export interface Deposit {
      * @type {string}
      * @memberof Deposit
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es la fecha de confirmación del deposito. Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
      * @type {Date}
      * @memberof Deposit
      */
-    confirmDate: Date;
+    confirm_date: Date;
     /**
      * Es el código de divisa de la transferencia. Es en el formato estándar de 3 dígitos, por ejemplo para el peso mexicano: <b>MXP</b>, para el dólar estadounidense: <b>USD</b>.
      * @type {string}
      * @memberof Deposit
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es la fecha del deposito.  Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
      * @type {Date}
      * @memberof Deposit
      */
-    depositDate: Date;
+    deposit_date: Date;
     /**
      * Es el depositante.
      * @type {string}
@@ -1687,25 +1687,25 @@ export interface Deposit {
      * @type {string}
      * @memberof Deposit
      */
-    depositantAlias: string;
+    depositant_alias: string;
     /**
      * Es la Cuenta CLABE interbancaria (de 18 dígitos) del depositante.
      * @type {string}
      * @memberof Deposit
      */
-    depositantClabe: string;
+    depositant_clabe: string;
     /**
      * Es el correo electrónico (email) del depositante.
      * @type {string}
      * @memberof Deposit
      */
-    depositantEmail: string;
+    depositant_email: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del depositante.
      * @type {string}
      * @memberof Deposit
      */
-    depositantRfc: string;
+    depositant_rfc: string;
     /**
      * Es la descripción del traspaso.
      * @type {string}
@@ -1717,13 +1717,13 @@ export interface Deposit {
      * @type {string}
      * @memberof Deposit
      */
-    monexDescription: string;
+    monex_description: string;
     /**
      * es el identificador de la transferencia en Monex.
      * @type {string}
      * @memberof Deposit
      */
-    monexTransactionId: string;
+    monex_transaction_id: string;
     /**
      * Es la referencia del depósito.
      * @type {string}
@@ -1735,25 +1735,25 @@ export interface Deposit {
      * @type {string}
      * @memberof Deposit
      */
-    senderAccount: string;
+    sender_account: string;
     /**
      *
      * @type {MessageInstitution}
      * @memberof Deposit
      */
-    senderBank: MessageInstitution;
+    sender_bank: MessageInstitution;
     /**
      * Es el nombre del ordenante.
      * @type {string}
      * @memberof Deposit
      */
-    senderName: string;
+    sender_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) de la cuenta ordenante.
      * @type {string}
      * @memberof Deposit
      */
-    senderRfc: string;
+    sender_rfc: string;
 }
 /**
  * Contiene la información de la autorización de depósitos
@@ -1778,7 +1778,7 @@ export interface DepositAuthorizationRequest {
      * @type {string}
      * @memberof DepositAuthorizationRequest
      */
-    whUuid: string;
+    wh_uuid: string;
 }
 /**
  * Objeto que contiene los datos del depositante
@@ -1797,13 +1797,13 @@ export interface Depositant {
      * @type {string}
      * @memberof Depositant
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es la cuenta CLABE (es de 18 dígitos) del depositante.
      * @type {string}
      * @memberof Depositant
      */
-    depositantClabe: string;
+    depositant_clabe: string;
     /**
      * Es la lista de correos electrónicos (emails) del depositante.
      * @type {Array<string>}
@@ -1834,7 +1834,7 @@ export interface DepositantsRegister {
      * @type {string}
      * @memberof DepositantsRegister
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es la lista de correos electrónicos (emails) del depositante. <br><br><b>Ejemplo</b>: mi_correo@correo.com,mi_correo@correo.com...
      * @type {Array<string>}
@@ -1878,7 +1878,7 @@ export interface DepositsAuthorizationResponse {
      * @type {boolean}
      * @memberof DepositsAuthorizationResponse
      */
-    readOnly: boolean;
+    read_only: boolean;
     /**
      *
      * @type {WebHookDepositAuthorizationResponse}
@@ -1903,7 +1903,7 @@ export interface DetailedErrorResponse {
      * @type {number}
      * @memberof DetailedErrorResponse
      */
-    httpStatus: number;
+    http_status: number;
     /**
      *
      * @type {string}
@@ -1922,7 +1922,7 @@ export interface ErrorResponse {
      * @type {number}
      * @memberof ErrorResponse
      */
-    httpStatus: number;
+    http_status: number;
     /**
      *
      * @type {string}
@@ -1954,7 +1954,7 @@ export interface Institution {
      * @type {string}
      * @memberof Institution
      */
-    companyName: string;
+    company_name: string;
     /**
      * Es la clave de BANXICO que pertenece a la institución.
      * @type {string}
@@ -2029,13 +2029,13 @@ export interface MessageAccountBeneficiary {
      * @type {string}
      * @memberof MessageAccountBeneficiary
      */
-    errorMessage: string;
+    error_message: string;
     /**
      * Es el identificador en esta API de la petición de registro de la cuenta del beneficiario.
      * @type {string}
      * @memberof MessageAccountBeneficiary
      */
-    requestId: string;
+    request_id: string;
 }
 /**
  * Es el objeto del Comprobante Electrónico de Pago (CEP) de la transferencia, que es emitido por Banxico. Se muestra sólo cuando esté disponible, en otro caso se podrá usar la <a href=\"#operation/obtainTransactionCepUsingPOST\">Consulta de CEP</a> que ésta misma API ofrece.
@@ -2048,13 +2048,13 @@ export interface MessageCEP {
      * @type {string}
      * @memberof MessageCEP
      */
-    accountBeneficiary: string;
+    account_beneficiary: string;
     /**
      * Es la cuenta que envía la operación.
      * @type {string}
      * @memberof MessageCEP
      */
-    accountSender: string;
+    account_sender: string;
     /**
      * Es el monto de la operación.
      * @type {number}
@@ -2072,49 +2072,49 @@ export interface MessageCEP {
      * @type {string}
      * @memberof MessageCEP
      */
-    bankBeneficiary: string;
+    bank_beneficiary: string;
     /**
      * Es la clave del banco que envía la operación.
      * @type {string}
      * @memberof MessageCEP
      */
-    bankSender: string;
+    bank_sender: string;
     /**
      * Es el nombre del beneficiario.
      * @type {string}
      * @memberof MessageCEP
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @type {string}
      * @memberof MessageCEP
      */
-    beneficiaryRfc: string;
+    beneficiary_rfc: string;
     /**
      * Es la cadena original emitida por el Servicio de Administración Tributaria (SAT).
      * @type {string}
      * @memberof MessageCEP
      */
-    cadenaOriginal: string;
+    cadena_original: string;
     /**
      * Es la fecha de captura.
      * @type {Date}
      * @memberof MessageCEP
      */
-    captureDate: Date;
+    capture_date: Date;
     /**
      * Es el número de serie emitido por el SAT
      * @type {string}
      * @memberof MessageCEP
      */
-    certificateSerialNumber: string;
+    certificate_serial_number: string;
     /**
      * Es la clave de rastreo de la operación.
      * @type {string}
      * @memberof MessageCEP
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es la descripción de la operación.
      * @type {string}
@@ -2132,13 +2132,13 @@ export interface MessageCEP {
      * @type {Date}
      * @memberof MessageCEP
      */
-    operationDate: Date;
+    operation_date: Date;
     /**
      * Es la fecha en la que se genera el CEP.
      * @type {Date}
      * @memberof MessageCEP
      */
-    operationDateCep: Date;
+    operation_date_cep: Date;
     /**
      * Es la Referencia de la operación
      * @type {string}
@@ -2150,13 +2150,13 @@ export interface MessageCEP {
      * @type {string}
      * @memberof MessageCEP
      */
-    senderName: string;
+    sender_name: string;
     /**
      * Es el Registro Federal de Contrinuyentes (RFC) de quién envía la operación.
      * @type {string}
      * @memberof MessageCEP
      */
-    senderRfc: string;
+    sender_rfc: string;
     /**
      * Firma del CEP
      * @type {string}
@@ -2168,7 +2168,7 @@ export interface MessageCEP {
      * @type {string}
      * @memberof MessageCEP
      */
-    urlZip: string;
+    url_zip: string;
 }
 /**
  * Es el objeto del mensaje que se envía con la información del punto de venta registrado.
@@ -2193,7 +2193,7 @@ export interface MessageCodiAction {
      * @type {Date}
      * @memberof MessageCodiAction
      */
-    dueDate: Date;
+    due_date: Date;
     /**
      * Es el UUID de la operación.
      * @type {string}
@@ -2211,19 +2211,19 @@ export interface MessageCodiAction {
      * @type {Date}
      * @memberof MessageCodiAction
      */
-    operationDate: Date;
+    operation_date: Date;
     /**
      * Es el identificador de la petición.
      * @type {string}
      * @memberof MessageCodiAction
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el tipo de pago.
      * @type {string}
      * @memberof MessageCodiAction
      */
-    paymentType: string;
+    payment_type: string;
     /**
      * Es el número de referencia.
      * @type {string}
@@ -2235,7 +2235,7 @@ export interface MessageCodiAction {
      * @type {string}
      * @memberof MessageCodiAction
      */
-    salesPointId: string;
+    sales_point_id: string;
     /**
      * Es el estado (estatus) de la operación de pago.
      * @type {string}
@@ -2247,7 +2247,7 @@ export interface MessageCodiAction {
      * @type {string}
      * @memberof MessageCodiAction
      */
-    transactionId: string;
+    transaction_id: string;
 }
 /**
  * Configuración de límites de montos.
@@ -2279,43 +2279,43 @@ export interface MessageDepositAuthorizationRequest {
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es el nombre del beneficiario.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    beneficiaryRfc: string;
+    beneficiary_rfc: string;
     /**
      * Es la clave de rastreo de la transferencia.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es la Fecha de confirmación de la transferencia.
      * @type {Date}
      * @memberof MessageDepositAuthorizationRequest
      */
-    confirmDate: Date;
+    confirm_date: Date;
     /**
      * Es el código de divisa de la transferencia. Es en el formato estándar ISO 4217 y es de 3 dígitos. Puede ser \"MXN\" o \"USD\".
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es la fecha de recepción de la transferencia.
      * @type {Date}
      * @memberof MessageDepositAuthorizationRequest
      */
-    depositDate: Date;
+    deposit_date: Date;
     /**
      * Es el nombre del depositante en caso de que la transferencia se reciba en una cuenta de depositante.
      * @type {string}
@@ -2327,25 +2327,25 @@ export interface MessageDepositAuthorizationRequest {
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    depositantAlias: string;
+    depositant_alias: string;
     /**
      * Es la cuenta CLABE del depositante en caso que la transferencia se reciba en una cuenta de depositante
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    depositantClabe: string;
+    depositant_clabe: string;
     /**
      * Es el Correo electrónico (email) del depositante en caso que la transferencia se reciba en una cuenta de depositante
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    depositantEmail: string;
+    depositant_email: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del depositante, en caso que la transferencia se reciba en una cuenta de depositante.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    depositantRfc: string;
+    depositant_rfc: string;
     /**
      * Es el concepto de la transferencia.
      * @type {string}
@@ -2357,13 +2357,13 @@ export interface MessageDepositAuthorizationRequest {
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    monexDescription: string;
+    monex_description: string;
     /**
      * Es el identificador asignado por Monex a la transferencia.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    monexTransactionId: string;
+    monex_transaction_id: string;
     /**
      * Es la referecia de la transferencia.
      * @type {string}
@@ -2375,25 +2375,25 @@ export interface MessageDepositAuthorizationRequest {
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    senderAccount: string;
+    sender_account: string;
     /**
      *
      * @type {MessageInstitution}
      * @memberof MessageDepositAuthorizationRequest
      */
-    senderBank: MessageInstitution;
+    sender_bank: MessageInstitution;
     /**
      * Es el nombre del ordenante.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    senderName: string;
+    sender_name: string;
     /**
      * Es el Registro Federal de Contribuyente (RFC) del ordenante.
      * @type {string}
      * @memberof MessageDepositAuthorizationRequest
      */
-    senderRfc: string;
+    sender_rfc: string;
 }
 /**
  * Es el objeto del mensaje que se envía mediante webhook con la información de una transferencia de entrada recibida.
@@ -2412,19 +2412,19 @@ export interface MessageDepositReceived {
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es el nombre del beneficiario.
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    beneficiaryRfc: string;
+    beneficiary_rfc: string;
     /**
      *
      * @type {MessageCEP}
@@ -2436,25 +2436,25 @@ export interface MessageDepositReceived {
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es la Fecha de confirmación de la transferencia.
      * @type {Date}
      * @memberof MessageDepositReceived
      */
-    confirmDate: Date;
+    confirm_date: Date;
     /**
      * Es el código de divisa de la transferencia. Es en el formato estándar ISO 4217 y es de 3 dígitos. Puede ser \"MXN\" o \"USD\".
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es la fecha de recepción de la transferencia.
      * @type {Date}
      * @memberof MessageDepositReceived
      */
-    depositDate: Date;
+    deposit_date: Date;
     /**
      * Es el nombre del depositante en caso de que la transferencia se reciba en una cuenta de depositante.
      * @type {string}
@@ -2466,25 +2466,25 @@ export interface MessageDepositReceived {
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    depositantAlias: string;
+    depositant_alias: string;
     /**
      * Es la cuenta CLABE del depositante en caso que la transferencia se reciba en una cuenta de depositante
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    depositantClabe: string;
+    depositant_clabe: string;
     /**
      * Es el Correo electrónico (email) del depositante en caso que la transferencia se reciba en una cuenta de depositante
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    depositantEmail: string;
+    depositant_email: string;
     /**
      * Es el Registro Federal de Contribuyentes (RFC) del depositante, en caso que la transferencia se reciba en una cuenta de depositante.
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    depositantRfc: string;
+    depositant_rfc: string;
     /**
      * Es el concepto de la transferencia.
      * @type {string}
@@ -2496,13 +2496,13 @@ export interface MessageDepositReceived {
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    monexDescription: string;
+    monex_description: string;
     /**
      * Es el identificador asignado por Monex a la transferencia.
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    monexTransactionId: string;
+    monex_transaction_id: string;
     /**
      * Es la referecia de la transferencia.
      * @type {string}
@@ -2514,25 +2514,25 @@ export interface MessageDepositReceived {
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    senderAccount: string;
+    sender_account: string;
     /**
      *
      * @type {MessageInstitution}
      * @memberof MessageDepositReceived
      */
-    senderBank: MessageInstitution;
+    sender_bank: MessageInstitution;
     /**
      * Es el nombre del ordenante.
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    senderName: string;
+    sender_name: string;
     /**
      * Es el Registro Federal de Contribuyente (RFC) del ordenante.
      * @type {string}
      * @memberof MessageDepositReceived
      */
-    senderRfc: string;
+    sender_rfc: string;
 }
 /**
  * Objeto que contiene la información del banco.
@@ -2545,7 +2545,7 @@ export interface MessageInstitution {
      * @type {string}
      * @memberof MessageInstitution
      */
-    companyName: string;
+    company_name: string;
     /**
      * Es la clave de la institución bancaria.
      * @type {string}
@@ -2588,19 +2588,19 @@ export interface MessagePayment {
      * @type {string}
      * @memberof MessagePayment
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      *
      * @type {MessageInstitution}
      * @memberof MessagePayment
      */
-    beneficiaryBank: MessageInstitution;
+    beneficiary_bank: MessageInstitution;
     /**
      * Es el nombre del beneficiario.
      * @type {string}
      * @memberof MessagePayment
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      *
      * @type {MessageCEP}
@@ -2612,7 +2612,7 @@ export interface MessagePayment {
      * @type {string}
      * @memberof MessagePayment
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es el concepto de la transferencia de salida.
      * @type {string}
@@ -2624,49 +2624,49 @@ export interface MessagePayment {
      * @type {Date}
      * @memberof MessagePayment
      */
-    confirmDate: Date;
+    confirm_date: Date;
     /**
      * Código de divisa de la transferencia de salida. Es en el formato estándar ISO 4217 y es de 3 dígitos. Ejemplo: \"MXN\".
      * @type {string}
      * @memberof MessagePayment
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es el mensaje de detención de Monex de la transferencia de salida.
      * @type {string}
      * @memberof MessagePayment
      */
-    detentionMessage: string;
+    detention_message: string;
     /**
      * Mensaje de error.
      * @type {string}
      * @memberof MessagePayment
      */
-    errorMessage: string;
+    error_message: string;
     /**
      * La descripción de Monex de la transferencia de salida.
      * @type {string}
      * @memberof MessagePayment
      */
-    monexDescription: string;
+    monex_description: string;
     /**
      * Es el identificador de la transferencia de salida.
      * @type {string}
      * @memberof MessagePayment
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el identificador de la orden de pago de Monex de la transferencia de salida.
      * @type {number}
      * @memberof MessagePayment
      */
-    paymentOrderId: number;
+    payment_order_id: number;
     /**
      * Es la razón de porque está pendiente aún cuando se autorizó la transferencia.
      * @type {string}
      * @memberof MessagePayment
      */
-    pendingReason: string;
+    pending_reason: string;
     /**
      * Es la referecia de la transferencia.
      * @type {number}
@@ -2678,19 +2678,19 @@ export interface MessagePayment {
      * @type {string}
      * @memberof MessagePayment
      */
-    requestId: string;
+    request_id: string;
     /**
      * Es el estado de la transferencia de salida.
      * @type {string}
      * @memberof MessagePayment
      */
-    statusCode: string;
+    status_code: string;
     /**
      * Es el identificador de Monex de la transferencia de salida.
      * @type {number}
      * @memberof MessagePayment
      */
-    transactionId: number;
+    transaction_id: number;
 }
 /**
  * Es el objeto del mensaje que se envía mediante webhook con la información de una transferencia que está pendiente de ser completada.
@@ -2715,19 +2715,19 @@ export interface MessagePaymentStatePending {
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      *
      * @type {MessageInstitution}
      * @memberof MessagePaymentStatePending
      */
-    beneficiaryBank: MessageInstitution;
+    beneficiary_bank: MessageInstitution;
     /**
      * Es el nombre del beneficiario.
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      * Es el concepto de la transferencia de salida.
      * @type {string}
@@ -2739,37 +2739,37 @@ export interface MessagePaymentStatePending {
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es el Mensaje de detención de Monex, indica la causa por la cuál esta detenida la operación en Monex.
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    detentionMessage: string;
+    detention_message: string;
     /**
      * Es el mensaje de error.
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    errorMessage: string;
+    error_message: string;
     /**
      * El identificador de la transferencia de salida.
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el identificador de la orden de pago de Monex de la transferencia de salida.
      * @type {number}
      * @memberof MessagePaymentStatePending
      */
-    paymentOrderId: number;
+    payment_order_id: number;
     /**
      * Es el esaado que identifica la causa por la que la transferencia se ecuentra detenida o  pendiente de procesarse. Los posibles estados son: <ul><li>FI=Fondos Insuficientes</li><li>FM=Firma mancomunada, en espera de ingreso de segundo token de autorización</li><li>DP=Se detecto una transferencia duplicada que esta en wspera de confirmación o de eliminación</li></ul>
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    pendingReason: string;
+    pending_reason: string;
     /**
      * Es la referecia de la transferencia.
      * @type {number}
@@ -2781,19 +2781,19 @@ export interface MessagePaymentStatePending {
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    requestId: string;
+    request_id: string;
     /**
      * Es el estado (estatus) de la transferencia de salida. Deberá ser \"PENDING\".
      * @type {string}
      * @memberof MessagePaymentStatePending
      */
-    statusCode: string;
+    status_code: string;
     /**
      * Es el identificador de Monex de la transferencia de salida, podría no estar presente por lo que Usted debería hacer referencias mediate el paymentOrderID.
      * @type {number}
      * @memberof MessagePaymentStatePending
      */
-    transactionId: number;
+    transaction_id: number;
 }
 /**
  * Es el objeto del mensaje que se envía mediante webhook con la información acerca de algún cambio en el procesamiento o estado de la petición a esta a esta API.
@@ -2806,7 +2806,7 @@ export interface MessageRequestChanged {
      * @type {string}
      * @memberof MessageRequestChanged
      */
-    requestId: string;
+    request_id: string;
     /**
      * Es el cambio a informar en el procesamiento/estado de la petición.
      * @type {string}
@@ -2869,7 +2869,7 @@ export interface MessageSubscription {
      * @type {string}
      * @memberof MessageSubscription
      */
-    maskedContract: string;
+    masked_contract: string;
     /**
      * Es el identificador de la suscripción, el que se utilizará en las operaciones que solicitan una suscripción.
      * @type {string}
@@ -2887,13 +2887,13 @@ export interface MessageSubscription {
      * @type {string}
      * @memberof MessageSubscription
      */
-    userKey: string;
+    user_key: string;
     /**
      * Es la contraseña proporcionada por Wire4, la que se debe utilizar para autenticar a esta suscripción.
      * @type {string}
      * @memberof MessageSubscription
      */
-    userSecret: string;
+    user_secret: string;
 }
 /**
  * Es el objeto de mensaje que se envía mediante webhook con la información del usuario que se le autorizó el uso del API de Monex.
@@ -2912,19 +2912,19 @@ export interface MessageUserAuthorized {
      * @type {string}
      * @memberof MessageUserAuthorized
      */
-    maskedAccount: string;
+    masked_account: string;
     /**
      * Es el usuario enmascarado que se autorizó.
      * @type {string}
      * @memberof MessageUserAuthorized
      */
-    maskedName: string;
+    masked_name: string;
     /**
      * Es el nombre enmascarado del usuario de acceso que se autorizó.
      * @type {string}
      * @memberof MessageUserAuthorized
      */
-    maskedUserName: string;
+    masked_user_name: string;
     /**
      * Es el usuario que se autorizó.
      * @type {string}
@@ -2936,13 +2936,13 @@ export interface MessageUserAuthorized {
      * @type {string}
      * @memberof MessageUserAuthorized
      */
-    requestId: string;
+    request_id: string;
     /**
      * Es el nombre del usuario de acceso que se autorizó.
      * @type {string}
      * @memberof MessageUserAuthorized
      */
-    userName: string;
+    user_name: string;
 }
 /**
  * El objeto que se envía mediante un mensaje WebHook.
@@ -2955,7 +2955,7 @@ export interface MessageWebHook {
      * @type {string}
      * @memberof MessageWebHook
      */
-    apiVersion: string;
+    api_version: string;
     /**
      * Fecha de creación del mensaje.
      * @type {Date}
@@ -2991,7 +2991,7 @@ export interface MessageWebHook {
      * @type {number}
      * @memberof MessageWebHook
      */
-    pendingWebhooks: number;
+    pending_webhooks: number;
     /**
      * Es el identificador del recurso relacionado.
      * @type {string}
@@ -3034,13 +3034,13 @@ export interface Operations {
      * @type {Date}
      * @memberof Operations
      */
-    dueDate: Date;
+    due_date: Date;
     /**
      * Es el order id de la petición.
      * @type {string}
      * @memberof Operations
      */
-    orderId: string;
+    order_id: string;
     /**
      *
      * @type {PaymentCODI}
@@ -3052,13 +3052,13 @@ export interface Operations {
      * @type {string}
      * @memberof Operations
      */
-    phoneNumber: string;
+    phone_number: string;
     /**
      *
      * @type {SalesPoint}
      * @memberof Operations
      */
-    salesPoint: SalesPoint;
+    sales_point: SalesPoint;
     /**
      * Estatus de la petición
      * @type {string}
@@ -3112,7 +3112,7 @@ export interface PagerResponseDto {
      * @type {number}
      * @memberof PagerResponseDto
      */
-    numberOfElements: number;
+    number_of_elements: number;
     /**
      * Es el número de página.
      * @type {number}
@@ -3130,13 +3130,13 @@ export interface PagerResponseDto {
      * @type {number}
      * @memberof PagerResponseDto
      */
-    totalItems: number;
+    total_items: number;
     /**
      * Es el número total de paginas.
      * @type {number}
      * @memberof PagerResponseDto
      */
-    totalPages: number;
+    total_pages: number;
 }
 /**
  *
@@ -3161,19 +3161,19 @@ export interface Payment {
      * @type {string}
      * @memberof Payment
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      *
      * @type {Institution}
      * @memberof Payment
      */
-    beneficiaryBank: Institution;
+    beneficiary_bank: Institution;
     /**
      * Es el nombre del Beneficiario.
      * @type {string}
      * @memberof Payment
      */
-    beneficiaryName: string;
+    beneficiary_name: string;
     /**
      *
      * @type {MessageCEP}
@@ -3185,7 +3185,7 @@ export interface Payment {
      * @type {string}
      * @memberof Payment
      */
-    claveRastreo: string;
+    clave_rastreo: string;
     /**
      * Es el concepto de pago.
      * @type {string}
@@ -3197,49 +3197,49 @@ export interface Payment {
      * @type {Date}
      * @memberof Payment
      */
-    confirmDate: Date;
+    confirm_date: Date;
     /**
      * Es el código de divisa de la transferencia. Es en el formato estándar de 3 dígitos. Ejemplo del peso mexicano: <b>MXP</b>, ejemplo del dólar estadounidense: <b>USD</b>.
      * @type {string}
      * @memberof Payment
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Es el mensaje proporcionado por Monex para la transferencia.
      * @type {string}
      * @memberof Payment
      */
-    detentionMessage: string;
+    detention_message: string;
     /**
      * Es el mensaje de error, en caso de algún error se informará aquí.
      * @type {string}
      * @memberof Payment
      */
-    errorMessage: string;
+    error_message: string;
     /**
      * Es la descripción de Monex.
      * @type {string}
      * @memberof Payment
      */
-    monexDescription: string;
+    monex_description: string;
     /**
      * Es el identificador asignado por la aplciación a la transferencia.
      * @type {string}
      * @memberof Payment
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el identificador de la orden de pago en Monex.
      * @type {number}
      * @memberof Payment
      */
-    paymentOrderId: number;
+    payment_order_id: number;
     /**
      * Es la razón de porque esta pendiente aún cuando se autorizó la transferencia.
      * @type {string}
      * @memberof Payment
      */
-    pendingReason: string;
+    pending_reason: string;
     /**
      * Es la referencia numérica.
      * @type {number}
@@ -3251,13 +3251,13 @@ export interface Payment {
      * @type {string}
      * @memberof Payment
      */
-    statusCode: string;
+    status_code: string;
     /**
      * Es el identificador de la transferencia asignado por Monex.
      * @type {number}
      * @memberof Payment
      */
-    transactionId: number;
+    transaction_id: number;
 }
 /**
  * Objeto que contiene la información del pago realizado
@@ -3282,7 +3282,7 @@ export interface PaymentCODI {
      * @type {string}
      * @memberof PaymentCODI
      */
-    errorMessage: string;
+    error_message: string;
     /**
      * Identificador del pago
      * @type {string}
@@ -3294,7 +3294,7 @@ export interface PaymentCODI {
      * @type {Date}
      * @memberof PaymentCODI
      */
-    operationDate: Date;
+    operation_date: Date;
     /**
      * Estatus del pago
      * @type {string}
@@ -3334,13 +3334,13 @@ export interface PaymentRequestCodiResponseDTO {
      * @type {string}
      * @memberof PaymentRequestCodiResponseDTO
      */
-    barcodeBase64: string;
+    barcode_base64: string;
     /**
      * Es la dirección URL de la imagen QR para el CODI®.
      * @type {string}
      * @memberof PaymentRequestCodiResponseDTO
      */
-    barcodeUrl: string;
+    barcode_url: string;
     /**
      * Es el concepto de pago.
      * @type {string}
@@ -3352,13 +3352,13 @@ export interface PaymentRequestCodiResponseDTO {
      * @type {Date}
      * @memberof PaymentRequestCodiResponseDTO
      */
-    creationDate: Date;
+    creation_date: Date;
     /**
      * Es la fecha de vencimiento. Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
      * @type {Date}
      * @memberof PaymentRequestCodiResponseDTO
      */
-    dueDate: Date;
+    due_date: Date;
     /**
      * Es el listado de pagos realizados sobre la petición.
      * @type {Array<CodiOperationResponseDTO>}
@@ -3370,13 +3370,13 @@ export interface PaymentRequestCodiResponseDTO {
      * @type {string}
      * @memberof PaymentRequestCodiResponseDTO
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el número de teléfono.
      * @type {string}
      * @memberof PaymentRequestCodiResponseDTO
      */
-    phoneNumber: string;
+    phone_number: string;
     /**
      * Es el estado (estatus) de la orden de pago. Los valores pueden ser: <b>RECEIVED, COMPLETED Y CANCELLED</b>
      * @type {string}
@@ -3401,31 +3401,31 @@ export interface PaymentsRequestId {
      * @type {Date}
      * @memberof PaymentsRequestId
      */
-    authorizationDate: Date;
+    authorization_date: Date;
     /**
      * Fecha en que se realizó la petición de registro de transacciones
      * @type {Date}
      * @memberof PaymentsRequestId
      */
-    requestDate: Date;
+    request_date: Date;
     /**
      * Identificador de la petición del registro de transacciones
      * @type {string}
      * @memberof PaymentsRequestId
      */
-    requestId: string;
+    request_id: string;
     /**
      * Monto total de las transacciones registradas
      * @type {number}
      * @memberof PaymentsRequestId
      */
-    totalAmount: number;
+    total_amount: number;
     /**
      * Total de transacciones en la petición
      * @type {number}
      * @memberof PaymentsRequestId
      */
-    totalTransactions: number;
+    total_transactions: number;
     /**
      * Lista de las transacciones registradas
      * @type {Array<Payment>}
@@ -3444,13 +3444,13 @@ export interface Person {
      * @type {string}
      * @memberof Person
      */
-    lastName: string;
+    last_name: string;
     /**
      * Apellido Paterno del propietario de la cuenta
      * @type {string}
      * @memberof Person
      */
-    middleName: string;
+    middle_name: string;
     /**
      * Nombre(s) del propietario de la cuenta
      * @type {string}
@@ -3469,13 +3469,13 @@ export interface PreEnrollmentData {
      * @type {string}
      * @memberof PreEnrollmentData
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso de exito. Se valida una longitud de 512 caracteres  y que la URL sea por ejemplo: http://mysite.com/cancel.
      * @type {string}
      * @memberof PreEnrollmentData
      */
-    returnUrl: string;
+    return_url: string;
 }
 /**
  *
@@ -3488,7 +3488,7 @@ export interface PreEnrollmentResponse {
      * @type {string}
      * @memberof PreEnrollmentResponse
      */
-    subscriptionId: string;
+    subscription_id: string;
     /**
      * Es la dirección URL del centro de autorizción para confirmación del alta de la suscripción.
      * @type {string}
@@ -3507,19 +3507,19 @@ export interface PreMonexAuthorization {
      * @type {string}
      * @memberof PreMonexAuthorization
      */
-    businessName: string;
+    business_name: string;
     /**
      * Url a la que se redirigira en caso de que el cliente cancele el registro
      * @type {string}
      * @memberof PreMonexAuthorization
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Url a la que se redirigirá en caso de exito
      * @type {string}
      * @memberof PreMonexAuthorization
      */
-    returnUrl: string;
+    return_url: string;
     /**
      * RFC de la empresa a la que debe pertenecer el contrato solicitado, si no se especifica este valor no se realiza validación
      * @type {string}
@@ -3538,7 +3538,7 @@ export interface Relationship {
      * @type {string}
      * @memberof Relationship
      */
-    kindOfRelationship: string;
+    kind_of_relationship: string;
     /**
      * Es el mombre de la relación.
      * @type {string}
@@ -3582,7 +3582,7 @@ export interface SalesPoint {
      * @type {string}
      * @memberof SalesPoint
      */
-    salesPointId: string;
+    sales_point_id: string;
 }
 /**
  * Objeto que contiene la información del punto de venta encontrada.
@@ -3595,7 +3595,7 @@ export interface SalesPointFound {
      * @type {string}
      * @memberof SalesPointFound
      */
-    accessIp: string;
+    access_ip: string;
     /**
      * Es la cuenta registra para el punto de venta.
      * @type {string}
@@ -3607,7 +3607,7 @@ export interface SalesPointFound {
      * @type {Date}
      * @memberof SalesPointFound
      */
-    createdAt: Date;
+    created_at: Date;
     /**
      * Es el nombre del punto de venta.
      * @type {string}
@@ -3619,7 +3619,7 @@ export interface SalesPointFound {
      * @type {string}
      * @memberof SalesPointFound
      */
-    publicId: string;
+    public_id: string;
     /**
      * Es el estado (estatus) del punto de venta. Puede ser \"ACTIVE\" o \"INACTIVO\".
      * @type {string}
@@ -3631,7 +3631,7 @@ export interface SalesPointFound {
      * @type {Date}
      * @memberof SalesPointFound
      */
-    updatedAt: Date;
+    updated_at: Date;
 }
 /**
  * @export
@@ -3658,7 +3658,7 @@ export interface SalesPointRequest {
      * @type {string}
      * @memberof SalesPointRequest
      */
-    accessIp: string;
+    access_ip: string;
     /**
      * Es el número de cuenta CLABE donde se realizará el deposito del cobro CODI®.
      * @type {string}
@@ -3676,7 +3676,7 @@ export interface SalesPointRequest {
      * @type {string}
      * @memberof SalesPointRequest
      */
-    notificationsUrl: string;
+    notifications_url: string;
 }
 /**
  * Objeto que contiene la información del punto de venta que se registró.
@@ -3689,19 +3689,19 @@ export interface SalesPointRespose {
      * @type {string}
      * @memberof SalesPointRespose
      */
-    salesPointId: string;
+    sales_point_id: string;
     /**
      * Es la llave de usuario para el API Wire4. Sólo para el uso de CODI®.
      * @type {string}
      * @memberof SalesPointRespose
      */
-    userKey: string;
+    user_key: string;
     /**
      * Es la contraseña para el API Wire4. Sólo para el uso de CODI®.
      * @type {string}
      * @memberof SalesPointRespose
      */
-    userSecret: string;
+    user_secret: string;
     /**
      *
      * @type {Webhook}
@@ -3752,7 +3752,7 @@ export interface SpidBeneficiaryResponse {
      * @type {number}
      * @memberof SpidBeneficiaryResponse
      */
-    amountLimit: number;
+    amount_limit: number;
     /**
      *
      * @type {Institution}
@@ -3764,7 +3764,7 @@ export interface SpidBeneficiaryResponse {
      * @type {string}
      * @memberof SpidBeneficiaryResponse
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Lista de correos electrónicos (emails), este dato es opcional.
      * @type {Array<string>}
@@ -3782,25 +3782,25 @@ export interface SpidBeneficiaryResponse {
      * @type {string}
      * @memberof SpidBeneficiaryResponse
      */
-    kindOfRelationship: string;
+    kind_of_relationship: string;
     /**
      * Referencia numérica.
      * @type {string}
      * @memberof SpidBeneficiaryResponse
      */
-    numericReferenceSpid: string;
+    numeric_reference_spid: string;
     /**
      * Concepto de pago.
      * @type {string}
      * @memberof SpidBeneficiaryResponse
      */
-    paymentConceptSpid: string;
+    payment_concept_spid: string;
     /**
      * La fecha en la que se registro el beneficiario.
      * @type {Date}
      * @memberof SpidBeneficiaryResponse
      */
-    registerDate: Date;
+    register_date: Date;
     /**
      * Es la relación con el propietario de la cuenta, para registrar este valor se debe obtener del recurso <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">relationships.</a> <br/> <br/> <b>Nota:</b> Si en la respuesta de Monex, sta propiedad es nula, tampoco estará presente en esta respuesta.
      * @type {string}
@@ -3831,7 +3831,7 @@ export interface SpidClassificationDTO {
      * @type {string}
      * @memberof SpidClassificationDTO
      */
-    classificationId: string;
+    classification_id: string;
     /**
      * Es la descripción de la clasificación de la operación.
      * @type {string}
@@ -3890,7 +3890,7 @@ export interface TokenRequiredResponse {
      * @type {string}
      * @memberof TokenRequiredResponse
      */
-    requestId: string;
+    request_id: string;
     /**
      * Es la dirección URL generada para confirmación de la operación. Es para ingresar al centro de autorización.
      * @type {string}
@@ -3921,7 +3921,7 @@ export interface TransactionErrorCode {
      * @type {string}
      * @memberof TransactionErrorCode
      */
-    orderId: string;
+    order_id: string;
 }
 /**
  * Objeto que contiene la información de una transferencias SPEI de salida
@@ -3940,13 +3940,13 @@ export interface TransactionOutgoing {
      * @type {string}
      * @memberof TransactionOutgoing
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * La clave del banco beneficiario, proprocionada por BANXICO, este campo solo es obligatario cuando la cuenta beneficiaria es un número celular (*).
      * @type {string}
      * @memberof TransactionOutgoing
      */
-    beneficiaryBankKey: string;
+    beneficiary_bank_key: string;
     /**
      * Concepto de la transferencia
      * @type {string}
@@ -3958,7 +3958,7 @@ export interface TransactionOutgoing {
      * @type {string}
      * @memberof TransactionOutgoing
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Lista de email del beneficiario,es opcional
      * @type {Array<string>}
@@ -3970,7 +3970,7 @@ export interface TransactionOutgoing {
      * @type {string}
      * @memberof TransactionOutgoing
      */
-    orderId: string;
+    order_id: string;
     /**
      * Referencia numérica de la transferencia
      * @type {number}
@@ -3995,25 +3995,25 @@ export interface TransactionOutgoingSpid {
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    beneficiaryAccount: string;
+    beneficiary_account: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso de que el usario cancele el registro.
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Es el identificador de la clasificación de la transferencia SPID.
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    classificationId: string;
+    classification_id: string;
     /**
      * Código de moneda en la que opera la cuenta.
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    currencyCode: string;
+    currency_code: string;
     /**
      * Lista de correo electrónico (email) del beneficiario. Este campo es opcional.
      * @type {Array<string>}
@@ -4025,25 +4025,25 @@ export interface TransactionOutgoingSpid {
      * @type {number}
      * @memberof TransactionOutgoingSpid
      */
-    numericReferenceSpid: number;
+    numeric_reference_spid: number;
     /**
      * Es la referencia de la transferencia asignada por el cliente. Ejemplo: dae9c6ae-8c7a-42e8-99f4-ebe90566efae
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    orderId: string;
+    order_id: string;
     /**
      * Es el concepto de la transferencia.
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    paymentConceptSpid: string;
+    payment_concept_spid: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso de éxito.
      * @type {string}
      * @memberof TransactionOutgoingSpid
      */
-    returnUrl: string;
+    return_url: string;
 }
 /**
  * Objeto que contiene la información de las transferencias SPEI de salida.
@@ -4056,13 +4056,13 @@ export interface TransactionsOutgoingRegister {
      * @type {string}
      * @memberof TransactionsOutgoingRegister
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso de éxito.
      * @type {string}
      * @memberof TransactionsOutgoingRegister
      */
-    returnUrl: string;
+    return_url: string;
     /**
      * Lista de transferencias de salida que se enviarán a Monex.
      * @type {Array<TransactionOutgoing>}
@@ -4094,13 +4094,13 @@ export interface UrlsRedirect {
      * @type {string}
      * @memberof UrlsRedirect
      */
-    cancelReturnUrl: string;
+    cancel_return_url: string;
     /**
      * Es la dirección URL a la que se redirigirá en caso exitoso. Se valida hasta 512 caracteres.
      * @type {string}
      * @memberof UrlsRedirect
      */
-    returnUrl: string;
+    return_url: string;
 }
 /**
  * Uso y estado de la subscripción
@@ -4161,19 +4161,19 @@ export interface UserCompany {
      * @type {boolean}
      * @memberof UserCompany
      */
-    legalRepresentative: boolean;
+    legal_representative: boolean;
     /**
      * El nombre del usuario enmascarado
      * @type {string}
      * @memberof UserCompany
      */
-    maskedName: string;
+    masked_name: string;
     /**
      * El nombre del usuario de acceso enmascarado
      * @type {string}
      * @memberof UserCompany
      */
-    maskedUserName: string;
+    masked_user_name: string;
     /**
      * El nombre del usuario
      * @type {string}
@@ -4185,25 +4185,25 @@ export interface UserCompany {
      * @type {Array<string>}
      * @memberof UserCompany
      */
-    phoneNumbers: Array<string>;
+    phone_numbers: Array<string>;
     /**
      * El apellido paterno del usuario
      * @type {string}
      * @memberof UserCompany
      */
-    surnameFather: string;
+    surname_father: string;
     /**
      * El apellido materno del usuario
      * @type {string}
      * @memberof UserCompany
      */
-    surnameMother: string;
+    surname_mother: string;
     /**
      * El nombre del usuario de acceso
      * @type {string}
      * @memberof UserCompany
      */
-    userName: string;
+    user_name: string;
 }
 /**
  * Contiene la información de un WebHook para autorización de depósitos.
@@ -4265,7 +4265,7 @@ export interface WebHookDepositAuthorizationResponse {
      * @type {string}
      * @memberof WebHookDepositAuthorizationResponse
      */
-    whUuid: string;
+    wh_uuid: string;
 }
 /**
  * Objeto de Webhook creado para notificaciones CODI®.
@@ -4308,7 +4308,7 @@ export interface Webhook {
      * @type {string}
      * @memberof Webhook
      */
-    whId: string;
+    wh_id: string;
 }
 /**
  * @export
@@ -4391,7 +4391,7 @@ export interface WebhookResponse {
      * @type {string}
      * @memberof WebhookResponse
      */
-    whUuid: string;
+    wh_uuid: string;
 }
 /**
  * @export
@@ -4732,11 +4732,11 @@ export declare const ContractsDetailsApiFetchParamCreator: (configuration: Confi
      * @summary Obtiene los usuarios autorizados
      * @param {string} authorization Header para token
      * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-     * @param {string} requestId El identificador de la petición a esta API
+     * @param {string} request_id El identificador de la petición a esta API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options?: any): FetchArgs;
+    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, request_id: string, options?: any): FetchArgs;
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
      * @summary Obtiene los usuarios autorizados por contrato
@@ -4777,11 +4777,11 @@ export declare const ContractsDetailsApiFp: (configuration: Configuration) => {
      * @summary Obtiene los usuarios autorizados
      * @param {string} authorization Header para token
      * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-     * @param {string} requestId El identificador de la petición a esta API
+     * @param {string} request_id El identificador de la petición a esta API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<AuthorizedUsers>>;
+    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, request_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<AuthorizedUsers>>;
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
      * @summary Obtiene los usuarios autorizados por contrato
@@ -4822,11 +4822,11 @@ export declare const ContractsDetailsApiFactory: (configuration: Configuration, 
      * @summary Obtiene los usuarios autorizados
      * @param {string} authorization Header para token
      * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-     * @param {string} requestId El identificador de la petición a esta API
+     * @param {string} request_id El identificador de la petición a esta API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): Promise<AuthorizedUsers[]>;
+    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, request_id: string, options: any): Promise<AuthorizedUsers[]>;
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
      * @summary Obtiene los usuarios autorizados por contrato
@@ -4869,12 +4869,12 @@ export interface ContractsDetailsApiInterface {
      * @summary Obtiene los usuarios autorizados
      * @param {string} authorization Header para token
      * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-     * @param {string} requestId El identificador de la petición a esta API
+     * @param {string} request_id El identificador de la petición a esta API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ContractsDetailsApiInterface
      */
-    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): Promise<Array<AuthorizedUsers>>;
+    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, request_id: string, options: any): Promise<Array<AuthorizedUsers>>;
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
      * @summary Obtiene los usuarios autorizados por contrato
@@ -4920,12 +4920,12 @@ export declare class ContractsDetailsApi extends BaseAPI implements ContractsDet
      * @summary Obtiene los usuarios autorizados
      * @param {string} authorization Header para token
      * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-     * @param {string} requestId El identificador de la petición a esta API
+     * @param {string} request_id El identificador de la petición a esta API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ContractsDetailsApi
      */
-    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, requestId: string, options: any): Promise<AuthorizedUsers[]>;
+    obtainAuthorizedUsers(authorization: string, X_ACCESS_KEY: string, request_id: string, options: any): Promise<AuthorizedUsers[]>;
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
      * @summary Obtiene los usuarios autorizados por contrato
@@ -4987,28 +4987,28 @@ export declare const CuentasDeBeneficiariosSPEIApiFetchParamCreator: (configurat
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
      * @summary Consulta los beneficiarios por el identificador de la petición de registro
      * @param {string} authorization Header para token
-     * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+     * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesByRequestId(authorization: string, requestId: string, subscription: string, options?: any): FetchArgs;
+    getBeneficiariesByRequestId(authorization: string, request_id: string, subscription: string, options?: any): FetchArgs;
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
      * @summary Consulta los beneficiarios registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options?: any): FetchArgs;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options?: any): FetchArgs;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5023,12 +5023,12 @@ export declare const CuentasDeBeneficiariosSPEIApiFetchParamCreator: (configurat
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
      * @summary Eliminación de beneficiarios SPEI® sin confirmar
      * @param {string} authorization Header para token
-     * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+     * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options?: any): FetchArgs;
+    removeBeneficiariesPendingUsingDELETE(authorization: string, request_id: string, subscription: string, options?: any): FetchArgs;
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
      * @summary Solicitud para actualizar el monto límite de una cuenta
@@ -5079,28 +5079,28 @@ export declare const CuentasDeBeneficiariosSPEIApiFp: (configuration: Configurat
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
      * @summary Consulta los beneficiarios por el identificador de la petición de registro
      * @param {string} authorization Header para token
-     * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+     * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesByRequestId(authorization: string, requestId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<BeneficiariesResponse>;
+    getBeneficiariesByRequestId(authorization: string, request_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<BeneficiariesResponse>;
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
      * @summary Consulta los beneficiarios registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5115,12 +5115,12 @@ export declare const CuentasDeBeneficiariosSPEIApiFp: (configuration: Configurat
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
      * @summary Eliminación de beneficiarios SPEI® sin confirmar
      * @param {string} authorization Header para token
-     * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+     * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
+    removeBeneficiariesPendingUsingDELETE(authorization: string, request_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
      * @summary Solicitud para actualizar el monto límite de una cuenta
@@ -5171,28 +5171,28 @@ export declare const CuentasDeBeneficiariosSPEIApiFactory: (configuration: Confi
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
      * @summary Consulta los beneficiarios por el identificador de la petición de registro
      * @param {string} authorization Header para token
-     * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+     * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesByRequestId(authorization: string, requestId: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesByRequestId(authorization: string, request_id: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
      * @summary Consulta los beneficiarios registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5207,12 +5207,12 @@ export declare const CuentasDeBeneficiariosSPEIApiFactory: (configuration: Confi
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
      * @summary Eliminación de beneficiarios SPEI® sin confirmar
      * @param {string} authorization Header para token
-     * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+     * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): Promise<Response>;
+    removeBeneficiariesPendingUsingDELETE(authorization: string, request_id: string, subscription: string, options: any): Promise<Response>;
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
      * @summary Solicitud para actualizar el monto límite de una cuenta
@@ -5267,22 +5267,22 @@ export interface CuentasDeBeneficiariosSPEIApiInterface {
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
      * @summary Consulta los beneficiarios por el identificador de la petición de registro
      * @param {string} authorization Header para token
-     * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+     * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApiInterface
      */
-    getBeneficiariesByRequestId(authorization: string, requestId: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesByRequestId(authorization: string, request_id: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
      * @summary Consulta los beneficiarios registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
@@ -5290,7 +5290,7 @@ export interface CuentasDeBeneficiariosSPEIApiInterface {
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApiInterface
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5306,13 +5306,13 @@ export interface CuentasDeBeneficiariosSPEIApiInterface {
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
      * @summary Eliminación de beneficiarios SPEI® sin confirmar
      * @param {string} authorization Header para token
-     * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+     * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApiInterface
      */
-    removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): Promise<{}>;
+    removeBeneficiariesPendingUsingDELETE(authorization: string, request_id: string, subscription: string, options: any): Promise<{}>;
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
      * @summary Solicitud para actualizar el monto límite de una cuenta
@@ -5369,22 +5369,22 @@ export declare class CuentasDeBeneficiariosSPEIApi extends BaseAPI implements Cu
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
      * @summary Consulta los beneficiarios por el identificador de la petición de registro
      * @param {string} authorization Header para token
-     * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+     * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    getBeneficiariesByRequestId(authorization: string, requestId: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesByRequestId(authorization: string, request_id: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
      * @summary Consulta los beneficiarios registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
@@ -5392,7 +5392,7 @@ export declare class CuentasDeBeneficiariosSPEIApi extends BaseAPI implements Cu
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5408,13 +5408,13 @@ export declare class CuentasDeBeneficiariosSPEIApi extends BaseAPI implements Cu
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
      * @summary Eliminación de beneficiarios SPEI® sin confirmar
      * @param {string} authorization Header para token
-     * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+     * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    removeBeneficiariesPendingUsingDELETE(authorization: string, requestId: string, subscription: string, options: any): Promise<Response>;
+    removeBeneficiariesPendingUsingDELETE(authorization: string, request_id: string, subscription: string, options: any): Promise<Response>;
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
      * @summary Solicitud para actualizar el monto límite de una cuenta
@@ -5438,17 +5438,17 @@ export declare const CuentasDeBeneficiariosSPIDApiFetchParamCreator: (configurat
      * @summary Consulta los beneficiarios SPID registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options?: any): FetchArgs;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options?: any): FetchArgs;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5470,17 +5470,17 @@ export declare const CuentasDeBeneficiariosSPIDApiFp: (configuration: Configurat
      * @summary Consulta los beneficiarios SPID registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5502,17 +5502,17 @@ export declare const CuentasDeBeneficiariosSPIDApiFactory: (configuration: Confi
      * @summary Consulta los beneficiarios SPID registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5535,10 +5535,10 @@ export interface CuentasDeBeneficiariosSPIDApiInterface {
      * @summary Consulta los beneficiarios SPID registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
@@ -5546,7 +5546,7 @@ export interface CuentasDeBeneficiariosSPIDApiInterface {
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPIDApiInterface
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5571,10 +5571,10 @@ export declare class CuentasDeBeneficiariosSPIDApi extends BaseAPI implements Cu
      * @summary Consulta los beneficiarios SPID registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
@@ -5582,7 +5582,7 @@ export declare class CuentasDeBeneficiariosSPIDApi extends BaseAPI implements Cu
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPIDApi
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiaryBank: string, beneficiaryName: string, endDate: string, initDate: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -6193,14 +6193,14 @@ export declare const OperacionesCoDiApiFetchParamCreator: (configuration: Config
      * @summary Consulta de operaciones
      * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
      * @param {string} authorization Header para token
-     * @param {string} [companyId] Es el identificador de empresa CODI®.
+     * @param {string} [company_id] Es el identificador de empresa CODI®.
      * @param {string} [page] Es el número de pago.
-     * @param {string} [salesPointId] Es el identificador del punto de venta.
+     * @param {string} [sales_point_id] Es el identificador del punto de venta.
      * @param {string} [size] Es el tamaño de página.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, companyId: string, page: string, salesPointId: string, size: string, options?: any): FetchArgs;
+    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, company_id: string, page: string, sales_point_id: string, size: string, options?: any): FetchArgs;
 };
 /**
  * OperacionesCoDiApi - functional programming interface
@@ -6212,14 +6212,14 @@ export declare const OperacionesCoDiApiFp: (configuration: Configuration) => {
      * @summary Consulta de operaciones
      * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
      * @param {string} authorization Header para token
-     * @param {string} [companyId] Es el identificador de empresa CODI®.
+     * @param {string} [company_id] Es el identificador de empresa CODI®.
      * @param {string} [page] Es el número de pago.
-     * @param {string} [salesPointId] Es el identificador del punto de venta.
+     * @param {string} [sales_point_id] Es el identificador del punto de venta.
      * @param {string} [size] Es el tamaño de página.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, companyId: string, page: string, salesPointId: string, size: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PagerResponseDto>;
+    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, company_id: string, page: string, sales_point_id: string, size: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PagerResponseDto>;
 };
 /**
  * OperacionesCoDiApi - factory interface
@@ -6231,14 +6231,14 @@ export declare const OperacionesCoDiApiFactory: (configuration: Configuration, f
      * @summary Consulta de operaciones
      * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
      * @param {string} authorization Header para token
-     * @param {string} [companyId] Es el identificador de empresa CODI®.
+     * @param {string} [company_id] Es el identificador de empresa CODI®.
      * @param {string} [page] Es el número de pago.
-     * @param {string} [salesPointId] Es el identificador del punto de venta.
+     * @param {string} [sales_point_id] Es el identificador del punto de venta.
      * @param {string} [size] Es el tamaño de página.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, companyId: string, page: string, salesPointId: string, size: string, options: any): Promise<PagerResponseDto>;
+    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, company_id: string, page: string, sales_point_id: string, size: string, options: any): Promise<PagerResponseDto>;
 };
 /**
  * OperacionesCoDiApi - interface
@@ -6251,15 +6251,15 @@ export interface OperacionesCoDiApiInterface {
      * @summary Consulta de operaciones
      * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
      * @param {string} authorization Header para token
-     * @param {string} [companyId] Es el identificador de empresa CODI®.
+     * @param {string} [company_id] Es el identificador de empresa CODI®.
      * @param {string} [page] Es el número de pago.
-     * @param {string} [salesPointId] Es el identificador del punto de venta.
+     * @param {string} [sales_point_id] Es el identificador del punto de venta.
      * @param {string} [size] Es el tamaño de página.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OperacionesCoDiApiInterface
      */
-    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, companyId: string, page: string, salesPointId: string, size: string, options: any): Promise<PagerResponseDto>;
+    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, company_id: string, page: string, sales_point_id: string, size: string, options: any): Promise<PagerResponseDto>;
 }
 /**
  * OperacionesCoDiApi - object-oriented interface
@@ -6273,15 +6273,15 @@ export declare class OperacionesCoDiApi extends BaseAPI implements OperacionesCo
      * @summary Consulta de operaciones
      * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
      * @param {string} authorization Header para token
-     * @param {string} [companyId] Es el identificador de empresa CODI®.
+     * @param {string} [company_id] Es el identificador de empresa CODI®.
      * @param {string} [page] Es el número de pago.
-     * @param {string} [salesPointId] Es el identificador del punto de venta.
+     * @param {string} [sales_point_id] Es el identificador del punto de venta.
      * @param {string} [size] Es el tamaño de página.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OperacionesCoDiApi
      */
-    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, companyId: string, page: string, salesPointId: string, size: string, options: any): Promise<PagerResponseDto>;
+    consultCodiOperations(body: CodiOperationsFiltersRequestDTO, authorization: string, company_id: string, page: string, sales_point_id: string, size: string, options: any): Promise<PagerResponseDto>;
 }
 /**
  * PeticionesDePagoPorCoDiApi - fetch parameter creator
@@ -6292,22 +6292,22 @@ export declare const PeticionesDePagoPorCoDiApiFetchParamCreator: (configuration
      * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
      * @summary Consulta información de petición por orderId
      * @param {string} authorization Header para token
-     * @param {string} orderId Identificador del pago CODI®
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} order_id Identificador del pago CODI®
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    consultCodiRequestByOrderId(authorization: string, orderId: string, salesPointId: string, options?: any): FetchArgs;
+    consultCodiRequestByOrderId(authorization: string, order_id: string, sales_point_id: string, options?: any): FetchArgs;
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
      * @summary Genera código QR
      * @param {CodiCodeRequestDTO} body Información del pago CODI®
      * @param {string} authorization Header para token
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, salesPointId: string, options?: any): FetchArgs;
+    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, sales_point_id: string, options?: any): FetchArgs;
 };
 /**
  * PeticionesDePagoPorCoDiApi - functional programming interface
@@ -6318,22 +6318,22 @@ export declare const PeticionesDePagoPorCoDiApiFp: (configuration: Configuration
      * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
      * @summary Consulta información de petición por orderId
      * @param {string} authorization Header para token
-     * @param {string} orderId Identificador del pago CODI®
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} order_id Identificador del pago CODI®
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    consultCodiRequestByOrderId(authorization: string, orderId: string, salesPointId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentRequestCodiResponseDTO>;
+    consultCodiRequestByOrderId(authorization: string, order_id: string, sales_point_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentRequestCodiResponseDTO>;
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
      * @summary Genera código QR
      * @param {CodiCodeRequestDTO} body Información del pago CODI®
      * @param {string} authorization Header para token
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, salesPointId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<CodiCodeQrResponseDTO>;
+    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, sales_point_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<CodiCodeQrResponseDTO>;
 };
 /**
  * PeticionesDePagoPorCoDiApi - factory interface
@@ -6344,22 +6344,22 @@ export declare const PeticionesDePagoPorCoDiApiFactory: (configuration: Configur
      * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
      * @summary Consulta información de petición por orderId
      * @param {string} authorization Header para token
-     * @param {string} orderId Identificador del pago CODI®
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} order_id Identificador del pago CODI®
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    consultCodiRequestByOrderId(authorization: string, orderId: string, salesPointId: string, options: any): Promise<PaymentRequestCodiResponseDTO>;
+    consultCodiRequestByOrderId(authorization: string, order_id: string, sales_point_id: string, options: any): Promise<PaymentRequestCodiResponseDTO>;
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
      * @summary Genera código QR
      * @param {CodiCodeRequestDTO} body Información del pago CODI®
      * @param {string} authorization Header para token
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, salesPointId: string, options: any): Promise<CodiCodeQrResponseDTO>;
+    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, sales_point_id: string, options: any): Promise<CodiCodeQrResponseDTO>;
 };
 /**
  * PeticionesDePagoPorCoDiApi - interface
@@ -6371,24 +6371,24 @@ export interface PeticionesDePagoPorCoDiApiInterface {
      * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
      * @summary Consulta información de petición por orderId
      * @param {string} authorization Header para token
-     * @param {string} orderId Identificador del pago CODI®
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} order_id Identificador del pago CODI®
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PeticionesDePagoPorCoDiApiInterface
      */
-    consultCodiRequestByOrderId(authorization: string, orderId: string, salesPointId: string, options: any): Promise<PaymentRequestCodiResponseDTO>;
+    consultCodiRequestByOrderId(authorization: string, order_id: string, sales_point_id: string, options: any): Promise<PaymentRequestCodiResponseDTO>;
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
      * @summary Genera código QR
      * @param {CodiCodeRequestDTO} body Información del pago CODI®
      * @param {string} authorization Header para token
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PeticionesDePagoPorCoDiApiInterface
      */
-    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, salesPointId: string, options: any): Promise<CodiCodeQrResponseDTO>;
+    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, sales_point_id: string, options: any): Promise<CodiCodeQrResponseDTO>;
 }
 /**
  * PeticionesDePagoPorCoDiApi - object-oriented interface
@@ -6401,24 +6401,24 @@ export declare class PeticionesDePagoPorCoDiApi extends BaseAPI implements Petic
      * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
      * @summary Consulta información de petición por orderId
      * @param {string} authorization Header para token
-     * @param {string} orderId Identificador del pago CODI®
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} order_id Identificador del pago CODI®
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PeticionesDePagoPorCoDiApi
      */
-    consultCodiRequestByOrderId(authorization: string, orderId: string, salesPointId: string, options: any): Promise<PaymentRequestCodiResponseDTO>;
+    consultCodiRequestByOrderId(authorization: string, order_id: string, sales_point_id: string, options: any): Promise<PaymentRequestCodiResponseDTO>;
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
      * @summary Genera código QR
      * @param {CodiCodeRequestDTO} body Información del pago CODI®
      * @param {string} authorization Header para token
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PeticionesDePagoPorCoDiApi
      */
-    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, salesPointId: string, options: any): Promise<CodiCodeQrResponseDTO>;
+    generateCodiCodeQR(body: CodiCodeRequestDTO, authorization: string, sales_point_id: string, options: any): Promise<CodiCodeQrResponseDTO>;
 }
 /**
  * PuntosDeVentaCoDiApi - fetch parameter creator
@@ -6430,20 +6430,20 @@ export declare const PuntosDeVentaCoDiApiFetchParamCreator: (configuration: Conf
      * @summary Registro de punto de venta.
      * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa.
+     * @param {string} company_id Es el identificador de la empresa.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createSalesPoint(body: SalesPointRequest, authorization: string, companyId: string, options?: any): FetchArgs;
+    createSalesPoint(body: SalesPointRequest, authorization: string, company_id: string, options?: any): FetchArgs;
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
      * @summary Consulta de puntos de venta
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+     * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainSalePoints(authorization: string, companyId: string, options?: any): FetchArgs;
+    obtainSalePoints(authorization: string, company_id: string, options?: any): FetchArgs;
 };
 /**
  * PuntosDeVentaCoDiApi - functional programming interface
@@ -6455,20 +6455,20 @@ export declare const PuntosDeVentaCoDiApiFp: (configuration: Configuration) => {
      * @summary Registro de punto de venta.
      * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa.
+     * @param {string} company_id Es el identificador de la empresa.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createSalesPoint(body: SalesPointRequest, authorization: string, companyId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SalesPointRespose>;
+    createSalesPoint(body: SalesPointRequest, authorization: string, company_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SalesPointRespose>;
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
      * @summary Consulta de puntos de venta
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+     * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainSalePoints(authorization: string, companyId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<SalesPointFound>>;
+    obtainSalePoints(authorization: string, company_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<SalesPointFound>>;
 };
 /**
  * PuntosDeVentaCoDiApi - factory interface
@@ -6480,20 +6480,20 @@ export declare const PuntosDeVentaCoDiApiFactory: (configuration: Configuration,
      * @summary Registro de punto de venta.
      * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa.
+     * @param {string} company_id Es el identificador de la empresa.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    createSalesPoint(body: SalesPointRequest, authorization: string, companyId: string, options: any): Promise<SalesPointRespose>;
+    createSalesPoint(body: SalesPointRequest, authorization: string, company_id: string, options: any): Promise<SalesPointRespose>;
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
      * @summary Consulta de puntos de venta
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+     * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    obtainSalePoints(authorization: string, companyId: string, options: any): Promise<SalesPointFound[]>;
+    obtainSalePoints(authorization: string, company_id: string, options: any): Promise<SalesPointFound[]>;
 };
 /**
  * PuntosDeVentaCoDiApi - interface
@@ -6506,22 +6506,22 @@ export interface PuntosDeVentaCoDiApiInterface {
      * @summary Registro de punto de venta.
      * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa.
+     * @param {string} company_id Es el identificador de la empresa.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PuntosDeVentaCoDiApiInterface
      */
-    createSalesPoint(body: SalesPointRequest, authorization: string, companyId: string, options: any): Promise<SalesPointRespose>;
+    createSalesPoint(body: SalesPointRequest, authorization: string, company_id: string, options: any): Promise<SalesPointRespose>;
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
      * @summary Consulta de puntos de venta
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+     * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PuntosDeVentaCoDiApiInterface
      */
-    obtainSalePoints(authorization: string, companyId: string, options: any): Promise<Array<SalesPointFound>>;
+    obtainSalePoints(authorization: string, company_id: string, options: any): Promise<Array<SalesPointFound>>;
 }
 /**
  * PuntosDeVentaCoDiApi - object-oriented interface
@@ -6535,22 +6535,22 @@ export declare class PuntosDeVentaCoDiApi extends BaseAPI implements PuntosDeVen
      * @summary Registro de punto de venta.
      * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa.
+     * @param {string} company_id Es el identificador de la empresa.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PuntosDeVentaCoDiApi
      */
-    createSalesPoint(body: SalesPointRequest, authorization: string, companyId: string, options: any): Promise<SalesPointRespose>;
+    createSalesPoint(body: SalesPointRequest, authorization: string, company_id: string, options: any): Promise<SalesPointRespose>;
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
      * @summary Consulta de puntos de venta
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+     * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PuntosDeVentaCoDiApi
      */
-    obtainSalePoints(authorization: string, companyId: string, options: any): Promise<SalesPointFound[]>;
+    obtainSalePoints(authorization: string, company_id: string, options: any): Promise<SalesPointFound[]>;
 }
 /**
  * SaldoApi - fetch parameter creator
@@ -6929,44 +6929,44 @@ export declare const TransferenciasSPEIApiFetchParamCreator: (configuration: Con
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
      * @summary Eliminación de transferencias SPEI® pendientes
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-     * @param {string} requestId Identificador de las transferencias a eliminar.
+     * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+     * @param {string} request_id Identificador de las transferencias a eliminar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    dropTransactionsPendingUsingDELETE(authorization: string, orderId: string, requestId: string, subscription: string, options?: any): FetchArgs;
+    dropTransactionsPendingUsingDELETE(authorization: string, order_id: string, request_id: string, subscription: string, options?: any): FetchArgs;
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
-     * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-     * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    incomingSpeiTransactionsReportUsingGET(authorization: string, beginDate: string, endDate: string, subscription: string, options?: any): FetchArgs;
+    incomingSpeiTransactionsReportUsingGET(authorization: string, begin_date: string, end_date: string, subscription: string, options?: any): FetchArgs;
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
      * @param {string} authorization Header para token
-     * @param {string} requestId Identificador de la petición a buscar.
+     * @param {string} request_id Identificador de la petición a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, requestId: string, subscription: string, options?: any): FetchArgs;
+    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options?: any): FetchArgs;
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Es el identificador de la orden a buscar.
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options?: any): FetchArgs;
+    outgoingSpeiTransactionsReportUsingGET(authorization: string, order_id: string, subscription: string, options?: any): FetchArgs;
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
      * @summary Registro de transferencias
@@ -6997,44 +6997,44 @@ export declare const TransferenciasSPEIApiFp: (configuration: Configuration) => 
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
      * @summary Eliminación de transferencias SPEI® pendientes
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-     * @param {string} requestId Identificador de las transferencias a eliminar.
+     * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+     * @param {string} request_id Identificador de las transferencias a eliminar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    dropTransactionsPendingUsingDELETE(authorization: string, orderId: string, requestId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
+    dropTransactionsPendingUsingDELETE(authorization: string, order_id: string, request_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Response>;
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
-     * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-     * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    incomingSpeiTransactionsReportUsingGET(authorization: string, beginDate: string, endDate: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Deposit>>;
+    incomingSpeiTransactionsReportUsingGET(authorization: string, begin_date: string, end_date: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Deposit>>;
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
      * @param {string} authorization Header para token
-     * @param {string} requestId Identificador de la petición a buscar.
+     * @param {string} request_id Identificador de la petición a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, requestId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentsRequestId>;
+    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentsRequestId>;
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Es el identificador de la orden a buscar.
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Payment>>;
+    outgoingSpeiTransactionsReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Array<Payment>>;
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
      * @summary Registro de transferencias
@@ -7065,44 +7065,44 @@ export declare const TransferenciasSPEIApiFactory: (configuration: Configuration
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
      * @summary Eliminación de transferencias SPEI® pendientes
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-     * @param {string} requestId Identificador de las transferencias a eliminar.
+     * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+     * @param {string} request_id Identificador de las transferencias a eliminar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    dropTransactionsPendingUsingDELETE(authorization: string, orderId: string, requestId: string, subscription: string, options: any): Promise<Response>;
+    dropTransactionsPendingUsingDELETE(authorization: string, order_id: string, request_id: string, subscription: string, options: any): Promise<Response>;
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
-     * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-     * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    incomingSpeiTransactionsReportUsingGET(authorization: string, beginDate: string, endDate: string, subscription: string, options: any): Promise<Deposit[]>;
+    incomingSpeiTransactionsReportUsingGET(authorization: string, begin_date: string, end_date: string, subscription: string, options: any): Promise<Deposit[]>;
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
      * @param {string} authorization Header para token
-     * @param {string} requestId Identificador de la petición a buscar.
+     * @param {string} request_id Identificador de la petición a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, requestId: string, subscription: string, options: any): Promise<PaymentsRequestId>;
+    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsRequestId>;
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Es el identificador de la orden a buscar.
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options: any): Promise<Payment[]>;
+    outgoingSpeiTransactionsReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): Promise<Payment[]>;
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
      * @summary Registro de transferencias
@@ -7135,48 +7135,48 @@ export interface TransferenciasSPEIApiInterface {
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
      * @summary Eliminación de transferencias SPEI® pendientes
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-     * @param {string} requestId Identificador de las transferencias a eliminar.
+     * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+     * @param {string} request_id Identificador de las transferencias a eliminar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApiInterface
      */
-    dropTransactionsPendingUsingDELETE(authorization: string, orderId: string, requestId: string, subscription: string, options: any): Promise<{}>;
+    dropTransactionsPendingUsingDELETE(authorization: string, order_id: string, request_id: string, subscription: string, options: any): Promise<{}>;
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
-     * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-     * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApiInterface
      */
-    incomingSpeiTransactionsReportUsingGET(authorization: string, beginDate: string, endDate: string, subscription: string, options: any): Promise<Array<Deposit>>;
+    incomingSpeiTransactionsReportUsingGET(authorization: string, begin_date: string, end_date: string, subscription: string, options: any): Promise<Array<Deposit>>;
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
      * @param {string} authorization Header para token
-     * @param {string} requestId Identificador de la petición a buscar.
+     * @param {string} request_id Identificador de la petición a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApiInterface
      */
-    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, requestId: string, subscription: string, options: any): Promise<PaymentsRequestId>;
+    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsRequestId>;
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Es el identificador de la orden a buscar.
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApiInterface
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options: any): Promise<Array<Payment>>;
+    outgoingSpeiTransactionsReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): Promise<Array<Payment>>;
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
      * @summary Registro de transferencias
@@ -7211,48 +7211,48 @@ export declare class TransferenciasSPEIApi extends BaseAPI implements Transferen
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
      * @summary Eliminación de transferencias SPEI® pendientes
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-     * @param {string} requestId Identificador de las transferencias a eliminar.
+     * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+     * @param {string} request_id Identificador de las transferencias a eliminar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    dropTransactionsPendingUsingDELETE(authorization: string, orderId: string, requestId: string, subscription: string, options: any): Promise<Response>;
+    dropTransactionsPendingUsingDELETE(authorization: string, order_id: string, request_id: string, subscription: string, options: any): Promise<Response>;
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
-     * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-     * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    incomingSpeiTransactionsReportUsingGET(authorization: string, beginDate: string, endDate: string, subscription: string, options: any): Promise<Deposit[]>;
+    incomingSpeiTransactionsReportUsingGET(authorization: string, begin_date: string, end_date: string, subscription: string, options: any): Promise<Deposit[]>;
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
      * @param {string} authorization Header para token
-     * @param {string} requestId Identificador de la petición a buscar.
+     * @param {string} request_id Identificador de la petición a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, requestId: string, subscription: string, options: any): Promise<PaymentsRequestId>;
+    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsRequestId>;
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Es el identificador de la orden a buscar.
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization: string, orderId: string, subscription: string, options: any): Promise<Payment[]>;
+    outgoingSpeiTransactionsReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): Promise<Payment[]>;
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
      * @summary Registro de transferencias
@@ -7406,11 +7406,11 @@ export declare const WebhooksApiFetchParamCreator: (configuration: Configuration
      * Obtiene un webhook registrado en la plataforma mediante su identificador.
      * @summary Consulta de Webhook
      * @param {string} authorization Header para token
-     * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+     * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhook(authorization: string, webhookId: string, options?: any): FetchArgs;
+    getWebhook(authorization: string, webhook_id: string, options?: any): FetchArgs;
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
      * @summary Consulta la lista de Webhooks
@@ -7438,11 +7438,11 @@ export declare const WebhooksApiFp: (configuration: Configuration) => {
      * Obtiene un webhook registrado en la plataforma mediante su identificador.
      * @summary Consulta de Webhook
      * @param {string} authorization Header para token
-     * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+     * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhook(authorization: string, webhookId: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<WebhookResponse>;
+    getWebhook(authorization: string, webhook_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<WebhookResponse>;
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
      * @summary Consulta la lista de Webhooks
@@ -7470,11 +7470,11 @@ export declare const WebhooksApiFactory: (configuration: Configuration, fetch: F
      * Obtiene un webhook registrado en la plataforma mediante su identificador.
      * @summary Consulta de Webhook
      * @param {string} authorization Header para token
-     * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+     * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getWebhook(authorization: string, webhookId: string, options: any): Promise<WebhookResponse>;
+    getWebhook(authorization: string, webhook_id: string, options: any): Promise<WebhookResponse>;
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
      * @summary Consulta la lista de Webhooks
@@ -7503,12 +7503,12 @@ export interface WebhooksApiInterface {
      * Obtiene un webhook registrado en la plataforma mediante su identificador.
      * @summary Consulta de Webhook
      * @param {string} authorization Header para token
-     * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+     * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhooksApiInterface
      */
-    getWebhook(authorization: string, webhookId: string, options: any): Promise<WebhookResponse>;
+    getWebhook(authorization: string, webhook_id: string, options: any): Promise<WebhookResponse>;
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
      * @summary Consulta la lista de Webhooks
@@ -7540,12 +7540,12 @@ export declare class WebhooksApi extends BaseAPI implements WebhooksApiInterface
      * Obtiene un webhook registrado en la plataforma mediante su identificador.
      * @summary Consulta de Webhook
      * @param {string} authorization Header para token
-     * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+     * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhooksApi
      */
-    getWebhook(authorization: string, webhookId: string, options: any): Promise<WebhookResponse>;
+    getWebhook(authorization: string, webhook_id: string, options: any): Promise<WebhookResponse>;
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
      * @summary Consulta la lista de Webhooks

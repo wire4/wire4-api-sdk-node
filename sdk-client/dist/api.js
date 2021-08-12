@@ -804,11 +804,11 @@ const ContractsDetailsApiFetchParamCreator = function (configuration) {
          * @summary Obtiene los usuarios autorizados
          * @param {string} authorization Header para token
          * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-         * @param {string} requestId El identificador de la petición a esta API
+         * @param {string} request_id El identificador de la petición a esta API
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options = {}) {
+        obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling obtainAuthorizedUsers.');
@@ -817,12 +817,12 @@ const ContractsDetailsApiFetchParamCreator = function (configuration) {
             if (X_ACCESS_KEY === null || X_ACCESS_KEY === undefined) {
                 throw new RequiredError('X_ACCESS_KEY', 'Required parameter X_ACCESS_KEY was null or undefined when calling obtainAuthorizedUsers.');
             }
-            // verify required parameter 'requestId' is not null or undefined
-            if (requestId === null || requestId === undefined) {
-                throw new RequiredError('requestId', 'Required parameter requestId was null or undefined when calling obtainAuthorizedUsers.');
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling obtainAuthorizedUsers.');
             }
             const localVarPath = `/onboarding/accounts/{requestId}/authorized-users`
-                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)));
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -963,12 +963,12 @@ const ContractsDetailsApiFp = function (configuration) {
          * @summary Obtiene los usuarios autorizados
          * @param {string} authorization Header para token
          * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-         * @param {string} requestId El identificador de la petición a esta API
+         * @param {string} request_id El identificador de la petición a esta API
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options) {
-            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options);
+        obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
+            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1049,12 +1049,12 @@ const ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
          * @summary Obtiene los usuarios autorizados
          * @param {string} authorization Header para token
          * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-         * @param {string} requestId El identificador de la petición a esta API
+         * @param {string} request_id El identificador de la petición a esta API
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options) {
-            return exports.ContractsDetailsApiFp(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options)(fetch, basePath);
+        obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
+            return exports.ContractsDetailsApiFp(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options)(fetch, basePath);
         },
         /**
          * Obtienen los detalles de los usuarios autorizados por contrato Monex.
@@ -1107,13 +1107,13 @@ class ContractsDetailsApi extends BaseAPI {
      * @summary Obtiene los usuarios autorizados
      * @param {string} authorization Header para token
      * @param {string} X_ACCESS_KEY La llave de acceso de la aplicación
-     * @param {string} requestId El identificador de la petición a esta API
+     * @param {string} request_id El identificador de la petición a esta API
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ContractsDetailsApi
      */
-    obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options) {
-        return exports.ContractsDetailsApiFp(this.configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, requestId, options)(this.fetch, this.basePath);
+    obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
+        return exports.ContractsDetailsApiFp(this.configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options)(this.fetch, this.basePath);
     }
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
@@ -1272,26 +1272,26 @@ const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) 
          * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
          * @summary Consulta los beneficiarios por el identificador de la petición de registro
          * @param {string} authorization Header para token
-         * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+         * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesByRequestId(authorization, requestId, subscription, options = {}) {
+        getBeneficiariesByRequestId(authorization, request_id, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getBeneficiariesByRequestId.');
             }
-            // verify required parameter 'requestId' is not null or undefined
-            if (requestId === null || requestId === undefined) {
-                throw new RequiredError('requestId', 'Required parameter requestId was null or undefined when calling getBeneficiariesByRequestId.');
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling getBeneficiariesByRequestId.');
             }
             // verify required parameter 'subscription' is not null or undefined
             if (subscription === null || subscription === undefined) {
                 throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling getBeneficiariesByRequestId.');
             }
             const localVarPath = `/subscriptions/{subscription}/beneficiaries/spei/{requestId}`
-                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)))
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)))
                 .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
@@ -1314,17 +1314,17 @@ const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) 
          * @summary Consulta los beneficiarios registrados
          * @param {string} authorization Header para token
          * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-         * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-         * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-         * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-         * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+         * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+         * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
          * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
          * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options = {}) {
+        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getBeneficiariesForAccountUsingGET.');
@@ -1342,17 +1342,17 @@ const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) 
             if (account !== undefined) {
                 localVarQueryParameter['account'] = account;
             }
-            if (beneficiaryBank !== undefined) {
-                localVarQueryParameter['beneficiary_bank'] = beneficiaryBank;
+            if (beneficiary_bank !== undefined) {
+                localVarQueryParameter['beneficiary_bank'] = beneficiary_bank;
             }
-            if (beneficiaryName !== undefined) {
-                localVarQueryParameter['beneficiary_name'] = beneficiaryName;
+            if (beneficiary_name !== undefined) {
+                localVarQueryParameter['beneficiary_name'] = beneficiary_name;
             }
-            if (endDate !== undefined) {
-                localVarQueryParameter['end_date'] = endDate;
+            if (end_date !== undefined) {
+                localVarQueryParameter['end_date'] = end_date;
             }
-            if (initDate !== undefined) {
-                localVarQueryParameter['init_date'] = initDate;
+            if (init_date !== undefined) {
+                localVarQueryParameter['init_date'] = init_date;
             }
             if (rfc !== undefined) {
                 localVarQueryParameter['rfc'] = rfc;
@@ -1419,26 +1419,26 @@ const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) 
          * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
          * @summary Eliminación de beneficiarios SPEI® sin confirmar
          * @param {string} authorization Header para token
-         * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+         * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options = {}) {
+        removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling removeBeneficiariesPendingUsingDELETE.');
             }
-            // verify required parameter 'requestId' is not null or undefined
-            if (requestId === null || requestId === undefined) {
-                throw new RequiredError('requestId', 'Required parameter requestId was null or undefined when calling removeBeneficiariesPendingUsingDELETE.');
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling removeBeneficiariesPendingUsingDELETE.');
             }
             // verify required parameter 'subscription' is not null or undefined
             if (subscription === null || subscription === undefined) {
                 throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling removeBeneficiariesPendingUsingDELETE.');
             }
             const localVarPath = `/subscriptions/{subscription}/beneficiaries/spei/request/{requestId}`
-                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)))
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)))
                 .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
@@ -1583,13 +1583,13 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
          * @summary Consulta los beneficiarios por el identificador de la petición de registro
          * @param {string} authorization Header para token
-         * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+         * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesByRequestId(authorization, requestId, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getBeneficiariesByRequestId(authorization, requestId, subscription, options);
+        getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
+            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1606,18 +1606,18 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @summary Consulta los beneficiarios registrados
          * @param {string} authorization Header para token
          * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-         * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-         * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-         * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-         * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+         * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+         * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
          * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
          * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options);
+        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
+            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1655,13 +1655,13 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
          * @summary Eliminación de beneficiarios SPEI® sin confirmar
          * @param {string} authorization Header para token
-         * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+         * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options);
+        removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
+            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1744,31 +1744,31 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
          * @summary Consulta los beneficiarios por el identificador de la petición de registro
          * @param {string} authorization Header para token
-         * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+         * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesByRequestId(authorization, requestId, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getBeneficiariesByRequestId(authorization, requestId, subscription, options)(fetch, basePath);
+        getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
+            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
          * @summary Consulta los beneficiarios registrados
          * @param {string} authorization Header para token
          * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-         * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-         * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-         * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-         * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+         * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+         * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
          * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
          * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options)(fetch, basePath);
+        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
+            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(fetch, basePath);
         },
         /**
          * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -1786,13 +1786,13 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
          * @summary Eliminación de beneficiarios SPEI® sin confirmar
          * @param {string} authorization Header para token
-         * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+         * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options)(fetch, basePath);
+        removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
+            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
@@ -1859,24 +1859,24 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
      * @summary Consulta los beneficiarios por el identificador de la petición de registro
      * @param {string} authorization Header para token
-     * @param {string} requestId El identificador de la petición del registro de beneficiarios a esta API.
+     * @param {string} request_id El identificador de la petición del registro de beneficiarios a esta API.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    getBeneficiariesByRequestId(authorization, requestId, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getBeneficiariesByRequestId(authorization, requestId, subscription, options)(this.fetch, this.basePath);
+    getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
+        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
      * @summary Consulta los beneficiarios registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Es la cuenta del beneficiario, podría ser teléfono celular (es de 10 dígitos), Tarjeta de débito (TDD, es de 16 dígitos) o cuenta CLABE (es de 18 dígitos). &lt;br/&gt;&lt;br/&gt;Por ejemplo Teléfono celular: 5525072600, TDD: 4323 1234 5678 9123, CLABE: 032180000118359719.
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del recurso de las &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
@@ -1884,8 +1884,8 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options)(this.fetch, this.basePath);
+    getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
+        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -1904,14 +1904,14 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
      * @summary Eliminación de beneficiarios SPEI® sin confirmar
      * @param {string} authorization Header para token
-     * @param {string} requestId Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
+     * @param {string} request_id Es el identificador con el que se dió de alta a los beneficiarios (viene en el cuerpo de la respuesta del &lt;a href&#x3D;\&quot;#operation/getAvailableRelationshipsMonexUsingGET\&quot;&gt;pre-registro de beneficiarios&lt;/a&gt;), los registros bajo éste campo van a ser eliminados.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).removeBeneficiariesPendingUsingDELETE(authorization, requestId, subscription, options)(this.fetch, this.basePath);
+    removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
+        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
@@ -1940,17 +1940,17 @@ const CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration) 
          * @summary Consulta los beneficiarios SPID registrados
          * @param {string} authorization Header para token
          * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-         * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-         * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-         * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-         * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+         * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+         * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
          * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
          * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options = {}) {
+        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getSpidBeneficiariesForAccount.');
@@ -1968,17 +1968,17 @@ const CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration) 
             if (account !== undefined) {
                 localVarQueryParameter['account'] = account;
             }
-            if (beneficiaryBank !== undefined) {
-                localVarQueryParameter['beneficiary_bank'] = beneficiaryBank;
+            if (beneficiary_bank !== undefined) {
+                localVarQueryParameter['beneficiary_bank'] = beneficiary_bank;
             }
-            if (beneficiaryName !== undefined) {
-                localVarQueryParameter['beneficiary_name'] = beneficiaryName;
+            if (beneficiary_name !== undefined) {
+                localVarQueryParameter['beneficiary_name'] = beneficiary_name;
             }
-            if (endDate !== undefined) {
-                localVarQueryParameter['end_date'] = endDate;
+            if (end_date !== undefined) {
+                localVarQueryParameter['end_date'] = end_date;
             }
-            if (initDate !== undefined) {
-                localVarQueryParameter['init_date'] = initDate;
+            if (init_date !== undefined) {
+                localVarQueryParameter['init_date'] = init_date;
             }
             if (rfc !== undefined) {
                 localVarQueryParameter['rfc'] = rfc;
@@ -2055,18 +2055,18 @@ const CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
          * @summary Consulta los beneficiarios SPID registrados
          * @param {string} authorization Header para token
          * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-         * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-         * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-         * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-         * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+         * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+         * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
          * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
          * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options);
+        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
+            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2114,18 +2114,18 @@ const CuentasDeBeneficiariosSPIDApiFactory = function (configuration, fetch, bas
          * @summary Consulta los beneficiarios SPID registrados
          * @param {string} authorization Header para token
          * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-         * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-         * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-         * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-         * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+         * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+         * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
          * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
          * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPIDApiFp(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options)(fetch, basePath);
+        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
+            return exports.CuentasDeBeneficiariosSPIDApiFp(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(fetch, basePath);
         },
         /**
          * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -2154,10 +2154,10 @@ class CuentasDeBeneficiariosSPIDApi extends BaseAPI {
      * @summary Consulta los beneficiarios SPID registrados
      * @param {string} authorization Header para token
      * @param {string} [account] Cuenta del beneficiario, puede ser CLABE (18 dígitos), Tarjeta de débito  (TDD, 16 dígitos) o número de celular (10 dígitos).
-     * @param {string} [beneficiaryBank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
-     * @param {string} [beneficiaryName] Es el nombre del beneficiario.
-     * @param {string} [endDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
-     * @param {string} [initDate] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [beneficiary_bank] Es la clave del banco beneficiario. Se puede obtener del catalogo de &lt;a href&#x3D;\&quot;#operation/getAllInstitutionsUsingGET\&quot;&gt;instituciones.&lt;/a&gt;
+     * @param {string} [beneficiary_name] Es el nombre del beneficiario.
+     * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
@@ -2165,8 +2165,8 @@ class CuentasDeBeneficiariosSPIDApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPIDApi
      */
-    getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPIDApiFp(this.configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiaryBank, beneficiaryName, endDate, initDate, rfc, status, subscription, options)(this.fetch, this.basePath);
+    getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
+        return exports.CuentasDeBeneficiariosSPIDApiFp(this.configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -3089,14 +3089,14 @@ const OperacionesCoDiApiFetchParamCreator = function (configuration) {
          * @summary Consulta de operaciones
          * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
          * @param {string} authorization Header para token
-         * @param {string} [companyId] Es el identificador de empresa CODI®.
+         * @param {string} [company_id] Es el identificador de empresa CODI®.
          * @param {string} [page] Es el número de pago.
-         * @param {string} [salesPointId] Es el identificador del punto de venta.
+         * @param {string} [sales_point_id] Es el identificador del punto de venta.
          * @param {string} [size] Es el tamaño de página.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options = {}) {
+        consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling consultCodiOperations.');
@@ -3106,14 +3106,14 @@ const OperacionesCoDiApiFetchParamCreator = function (configuration) {
             const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (companyId !== undefined) {
-                localVarQueryParameter['company_id'] = companyId;
+            if (company_id !== undefined) {
+                localVarQueryParameter['company_id'] = company_id;
             }
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
-            if (salesPointId !== undefined) {
-                localVarQueryParameter['sales_point_id'] = salesPointId;
+            if (sales_point_id !== undefined) {
+                localVarQueryParameter['sales_point_id'] = sales_point_id;
             }
             if (size !== undefined) {
                 localVarQueryParameter['size'] = size;
@@ -3147,15 +3147,15 @@ const OperacionesCoDiApiFp = function (configuration) {
          * @summary Consulta de operaciones
          * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
          * @param {string} authorization Header para token
-         * @param {string} [companyId] Es el identificador de empresa CODI®.
+         * @param {string} [company_id] Es el identificador de empresa CODI®.
          * @param {string} [page] Es el número de pago.
-         * @param {string} [salesPointId] Es el identificador del punto de venta.
+         * @param {string} [sales_point_id] Es el identificador del punto de venta.
          * @param {string} [size] Es el tamaño de página.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options) {
-            const localVarFetchArgs = exports.OperacionesCoDiApiFetchParamCreator(configuration).consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options);
+        consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
+            const localVarFetchArgs = exports.OperacionesCoDiApiFetchParamCreator(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3181,15 +3181,15 @@ const OperacionesCoDiApiFactory = function (configuration, fetch, basePath) {
          * @summary Consulta de operaciones
          * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
          * @param {string} authorization Header para token
-         * @param {string} [companyId] Es el identificador de empresa CODI®.
+         * @param {string} [company_id] Es el identificador de empresa CODI®.
          * @param {string} [page] Es el número de pago.
-         * @param {string} [salesPointId] Es el identificador del punto de venta.
+         * @param {string} [sales_point_id] Es el identificador del punto de venta.
          * @param {string} [size] Es el tamaño de página.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options) {
-            return exports.OperacionesCoDiApiFp(configuration).consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options)(fetch, basePath);
+        consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
+            return exports.OperacionesCoDiApiFp(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options)(fetch, basePath);
         },
     };
 };
@@ -3206,16 +3206,16 @@ class OperacionesCoDiApi extends BaseAPI {
      * @summary Consulta de operaciones
      * @param {CodiOperationsFiltersRequestDTO} [body] Filtros de busqueda
      * @param {string} authorization Header para token
-     * @param {string} [companyId] Es el identificador de empresa CODI®.
+     * @param {string} [company_id] Es el identificador de empresa CODI®.
      * @param {string} [page] Es el número de pago.
-     * @param {string} [salesPointId] Es el identificador del punto de venta.
+     * @param {string} [sales_point_id] Es el identificador del punto de venta.
      * @param {string} [size] Es el tamaño de página.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof OperacionesCoDiApi
      */
-    consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options) {
-        return exports.OperacionesCoDiApiFp(this.configuration).consultCodiOperations(body, authorization, companyId, page, salesPointId, size, options)(this.fetch, this.basePath);
+    consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
+        return exports.OperacionesCoDiApiFp(this.configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options)(this.fetch, this.basePath);
     }
 }
 exports.OperacionesCoDiApi = OperacionesCoDiApi;
@@ -3229,34 +3229,34 @@ const PeticionesDePagoPorCoDiApiFetchParamCreator = function (configuration) {
          * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
          * @summary Consulta información de petición por orderId
          * @param {string} authorization Header para token
-         * @param {string} orderId Identificador del pago CODI®
-         * @param {string} salesPointId Identificador del punto de venta
+         * @param {string} order_id Identificador del pago CODI®
+         * @param {string} sales_point_id Identificador del punto de venta
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consultCodiRequestByOrderId(authorization, orderId, salesPointId, options = {}) {
+        consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling consultCodiRequestByOrderId.');
             }
-            // verify required parameter 'orderId' is not null or undefined
-            if (orderId === null || orderId === undefined) {
-                throw new RequiredError('orderId', 'Required parameter orderId was null or undefined when calling consultCodiRequestByOrderId.');
+            // verify required parameter 'order_id' is not null or undefined
+            if (order_id === null || order_id === undefined) {
+                throw new RequiredError('order_id', 'Required parameter order_id was null or undefined when calling consultCodiRequestByOrderId.');
             }
-            // verify required parameter 'salesPointId' is not null or undefined
-            if (salesPointId === null || salesPointId === undefined) {
-                throw new RequiredError('salesPointId', 'Required parameter salesPointId was null or undefined when calling consultCodiRequestByOrderId.');
+            // verify required parameter 'sales_point_id' is not null or undefined
+            if (sales_point_id === null || sales_point_id === undefined) {
+                throw new RequiredError('sales_point_id', 'Required parameter sales_point_id was null or undefined when calling consultCodiRequestByOrderId.');
             }
             const localVarPath = `/codi/sales-point/charges`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (orderId !== undefined) {
-                localVarQueryParameter['orderId'] = orderId;
+            if (order_id !== undefined) {
+                localVarQueryParameter['orderId'] = order_id;
             }
-            if (salesPointId !== undefined) {
-                localVarQueryParameter['salesPointId'] = salesPointId;
+            if (sales_point_id !== undefined) {
+                localVarQueryParameter['salesPointId'] = sales_point_id;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -3275,11 +3275,11 @@ const PeticionesDePagoPorCoDiApiFetchParamCreator = function (configuration) {
          * @summary Genera código QR
          * @param {CodiCodeRequestDTO} body Información del pago CODI®
          * @param {string} authorization Header para token
-         * @param {string} salesPointId Identificador del punto de venta
+         * @param {string} sales_point_id Identificador del punto de venta
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateCodiCodeQR(body, authorization, salesPointId, options = {}) {
+        generateCodiCodeQR(body, authorization, sales_point_id, options = {}) {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body', 'Required parameter body was null or undefined when calling generateCodiCodeQR.');
@@ -3288,17 +3288,17 @@ const PeticionesDePagoPorCoDiApiFetchParamCreator = function (configuration) {
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling generateCodiCodeQR.');
             }
-            // verify required parameter 'salesPointId' is not null or undefined
-            if (salesPointId === null || salesPointId === undefined) {
-                throw new RequiredError('salesPointId', 'Required parameter salesPointId was null or undefined when calling generateCodiCodeQR.');
+            // verify required parameter 'sales_point_id' is not null or undefined
+            if (sales_point_id === null || sales_point_id === undefined) {
+                throw new RequiredError('sales_point_id', 'Required parameter sales_point_id was null or undefined when calling generateCodiCodeQR.');
             }
             const localVarPath = `/codi/sales-point/charges`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (salesPointId !== undefined) {
-                localVarQueryParameter['salesPointId'] = salesPointId;
+            if (sales_point_id !== undefined) {
+                localVarQueryParameter['salesPointId'] = sales_point_id;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -3328,13 +3328,13 @@ const PeticionesDePagoPorCoDiApiFp = function (configuration) {
          * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
          * @summary Consulta información de petición por orderId
          * @param {string} authorization Header para token
-         * @param {string} orderId Identificador del pago CODI®
-         * @param {string} salesPointId Identificador del punto de venta
+         * @param {string} order_id Identificador del pago CODI®
+         * @param {string} sales_point_id Identificador del punto de venta
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consultCodiRequestByOrderId(authorization, orderId, salesPointId, options) {
-            const localVarFetchArgs = exports.PeticionesDePagoPorCoDiApiFetchParamCreator(configuration).consultCodiRequestByOrderId(authorization, orderId, salesPointId, options);
+        consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
+            const localVarFetchArgs = exports.PeticionesDePagoPorCoDiApiFetchParamCreator(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3351,12 +3351,12 @@ const PeticionesDePagoPorCoDiApiFp = function (configuration) {
          * @summary Genera código QR
          * @param {CodiCodeRequestDTO} body Información del pago CODI®
          * @param {string} authorization Header para token
-         * @param {string} salesPointId Identificador del punto de venta
+         * @param {string} sales_point_id Identificador del punto de venta
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateCodiCodeQR(body, authorization, salesPointId, options) {
-            const localVarFetchArgs = exports.PeticionesDePagoPorCoDiApiFetchParamCreator(configuration).generateCodiCodeQR(body, authorization, salesPointId, options);
+        generateCodiCodeQR(body, authorization, sales_point_id, options) {
+            const localVarFetchArgs = exports.PeticionesDePagoPorCoDiApiFetchParamCreator(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3381,25 +3381,25 @@ const PeticionesDePagoPorCoDiApiFactory = function (configuration, fetch, basePa
          * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
          * @summary Consulta información de petición por orderId
          * @param {string} authorization Header para token
-         * @param {string} orderId Identificador del pago CODI®
-         * @param {string} salesPointId Identificador del punto de venta
+         * @param {string} order_id Identificador del pago CODI®
+         * @param {string} sales_point_id Identificador del punto de venta
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        consultCodiRequestByOrderId(authorization, orderId, salesPointId, options) {
-            return exports.PeticionesDePagoPorCoDiApiFp(configuration).consultCodiRequestByOrderId(authorization, orderId, salesPointId, options)(fetch, basePath);
+        consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
+            return exports.PeticionesDePagoPorCoDiApiFp(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options)(fetch, basePath);
         },
         /**
          * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
          * @summary Genera código QR
          * @param {CodiCodeRequestDTO} body Información del pago CODI®
          * @param {string} authorization Header para token
-         * @param {string} salesPointId Identificador del punto de venta
+         * @param {string} sales_point_id Identificador del punto de venta
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        generateCodiCodeQR(body, authorization, salesPointId, options) {
-            return exports.PeticionesDePagoPorCoDiApiFp(configuration).generateCodiCodeQR(body, authorization, salesPointId, options)(fetch, basePath);
+        generateCodiCodeQR(body, authorization, sales_point_id, options) {
+            return exports.PeticionesDePagoPorCoDiApiFp(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options)(fetch, basePath);
         },
     };
 };
@@ -3415,27 +3415,27 @@ class PeticionesDePagoPorCoDiApi extends BaseAPI {
      * Obtiene la información de una petición de pago CODI® por orderId para un punto de venta.
      * @summary Consulta información de petición por orderId
      * @param {string} authorization Header para token
-     * @param {string} orderId Identificador del pago CODI®
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} order_id Identificador del pago CODI®
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PeticionesDePagoPorCoDiApi
      */
-    consultCodiRequestByOrderId(authorization, orderId, salesPointId, options) {
-        return exports.PeticionesDePagoPorCoDiApiFp(this.configuration).consultCodiRequestByOrderId(authorization, orderId, salesPointId, options)(this.fetch, this.basePath);
+    consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
+        return exports.PeticionesDePagoPorCoDiApiFp(this.configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options)(this.fetch, this.basePath);
     }
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
      * @summary Genera código QR
      * @param {CodiCodeRequestDTO} body Información del pago CODI®
      * @param {string} authorization Header para token
-     * @param {string} salesPointId Identificador del punto de venta
+     * @param {string} sales_point_id Identificador del punto de venta
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PeticionesDePagoPorCoDiApi
      */
-    generateCodiCodeQR(body, authorization, salesPointId, options) {
-        return exports.PeticionesDePagoPorCoDiApiFp(this.configuration).generateCodiCodeQR(body, authorization, salesPointId, options)(this.fetch, this.basePath);
+    generateCodiCodeQR(body, authorization, sales_point_id, options) {
+        return exports.PeticionesDePagoPorCoDiApiFp(this.configuration).generateCodiCodeQR(body, authorization, sales_point_id, options)(this.fetch, this.basePath);
     }
 }
 exports.PeticionesDePagoPorCoDiApi = PeticionesDePagoPorCoDiApi;
@@ -3450,11 +3450,11 @@ const PuntosDeVentaCoDiApiFetchParamCreator = function (configuration) {
          * @summary Registro de punto de venta.
          * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
          * @param {string} authorization Header para token
-         * @param {string} companyId Es el identificador de la empresa.
+         * @param {string} company_id Es el identificador de la empresa.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSalesPoint(body, authorization, companyId, options = {}) {
+        createSalesPoint(body, authorization, company_id, options = {}) {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
                 throw new RequiredError('body', 'Required parameter body was null or undefined when calling createSalesPoint.');
@@ -3463,17 +3463,17 @@ const PuntosDeVentaCoDiApiFetchParamCreator = function (configuration) {
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling createSalesPoint.');
             }
-            // verify required parameter 'companyId' is not null or undefined
-            if (companyId === null || companyId === undefined) {
-                throw new RequiredError('companyId', 'Required parameter companyId was null or undefined when calling createSalesPoint.');
+            // verify required parameter 'company_id' is not null or undefined
+            if (company_id === null || company_id === undefined) {
+                throw new RequiredError('company_id', 'Required parameter company_id was null or undefined when calling createSalesPoint.');
             }
             const localVarPath = `/codi/companies/salespoint`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (companyId !== undefined) {
-                localVarQueryParameter['companyId'] = companyId;
+            if (company_id !== undefined) {
+                localVarQueryParameter['companyId'] = company_id;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -3494,26 +3494,26 @@ const PuntosDeVentaCoDiApiFetchParamCreator = function (configuration) {
          * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
          * @summary Consulta de puntos de venta
          * @param {string} authorization Header para token
-         * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+         * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        obtainSalePoints(authorization, companyId, options = {}) {
+        obtainSalePoints(authorization, company_id, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling obtainSalePoints.');
             }
-            // verify required parameter 'companyId' is not null or undefined
-            if (companyId === null || companyId === undefined) {
-                throw new RequiredError('companyId', 'Required parameter companyId was null or undefined when calling obtainSalePoints.');
+            // verify required parameter 'company_id' is not null or undefined
+            if (company_id === null || company_id === undefined) {
+                throw new RequiredError('company_id', 'Required parameter company_id was null or undefined when calling obtainSalePoints.');
             }
             const localVarPath = `/codi/companies/salespoint`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (companyId !== undefined) {
-                localVarQueryParameter['companyId'] = companyId;
+            if (company_id !== undefined) {
+                localVarQueryParameter['companyId'] = company_id;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -3541,12 +3541,12 @@ const PuntosDeVentaCoDiApiFp = function (configuration) {
          * @summary Registro de punto de venta.
          * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
          * @param {string} authorization Header para token
-         * @param {string} companyId Es el identificador de la empresa.
+         * @param {string} company_id Es el identificador de la empresa.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSalesPoint(body, authorization, companyId, options) {
-            const localVarFetchArgs = exports.PuntosDeVentaCoDiApiFetchParamCreator(configuration).createSalesPoint(body, authorization, companyId, options);
+        createSalesPoint(body, authorization, company_id, options) {
+            const localVarFetchArgs = exports.PuntosDeVentaCoDiApiFetchParamCreator(configuration).createSalesPoint(body, authorization, company_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3562,12 +3562,12 @@ const PuntosDeVentaCoDiApiFp = function (configuration) {
          * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
          * @summary Consulta de puntos de venta
          * @param {string} authorization Header para token
-         * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+         * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        obtainSalePoints(authorization, companyId, options) {
-            const localVarFetchArgs = exports.PuntosDeVentaCoDiApiFetchParamCreator(configuration).obtainSalePoints(authorization, companyId, options);
+        obtainSalePoints(authorization, company_id, options) {
+            const localVarFetchArgs = exports.PuntosDeVentaCoDiApiFetchParamCreator(configuration).obtainSalePoints(authorization, company_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3593,23 +3593,23 @@ const PuntosDeVentaCoDiApiFactory = function (configuration, fetch, basePath) {
          * @summary Registro de punto de venta.
          * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
          * @param {string} authorization Header para token
-         * @param {string} companyId Es el identificador de la empresa.
+         * @param {string} company_id Es el identificador de la empresa.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createSalesPoint(body, authorization, companyId, options) {
-            return exports.PuntosDeVentaCoDiApiFp(configuration).createSalesPoint(body, authorization, companyId, options)(fetch, basePath);
+        createSalesPoint(body, authorization, company_id, options) {
+            return exports.PuntosDeVentaCoDiApiFp(configuration).createSalesPoint(body, authorization, company_id, options)(fetch, basePath);
         },
         /**
          * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
          * @summary Consulta de puntos de venta
          * @param {string} authorization Header para token
-         * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+         * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        obtainSalePoints(authorization, companyId, options) {
-            return exports.PuntosDeVentaCoDiApiFp(configuration).obtainSalePoints(authorization, companyId, options)(fetch, basePath);
+        obtainSalePoints(authorization, company_id, options) {
+            return exports.PuntosDeVentaCoDiApiFp(configuration).obtainSalePoints(authorization, company_id, options)(fetch, basePath);
         },
     };
 };
@@ -3626,25 +3626,25 @@ class PuntosDeVentaCoDiApi extends BaseAPI {
      * @summary Registro de punto de venta.
      * @param {SalesPointRequest} body Es el objeto que contiene información del punto de venta CODI®.
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa.
+     * @param {string} company_id Es el identificador de la empresa.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PuntosDeVentaCoDiApi
      */
-    createSalesPoint(body, authorization, companyId, options) {
-        return exports.PuntosDeVentaCoDiApiFp(this.configuration).createSalesPoint(body, authorization, companyId, options)(this.fetch, this.basePath);
+    createSalesPoint(body, authorization, company_id, options) {
+        return exports.PuntosDeVentaCoDiApiFp(this.configuration).createSalesPoint(body, authorization, company_id, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
      * @summary Consulta de puntos de venta
      * @param {string} authorization Header para token
-     * @param {string} companyId Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
+     * @param {string} company_id Es el identificador de la empresa. Ejemplo: 8838d513-5916-4662-bb30-2448f0f543ed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PuntosDeVentaCoDiApi
      */
-    obtainSalePoints(authorization, companyId, options) {
-        return exports.PuntosDeVentaCoDiApiFp(this.configuration).obtainSalePoints(authorization, companyId, options)(this.fetch, this.basePath);
+    obtainSalePoints(authorization, company_id, options) {
+        return exports.PuntosDeVentaCoDiApiFp(this.configuration).obtainSalePoints(authorization, company_id, options)(this.fetch, this.basePath);
     }
 }
 exports.PuntosDeVentaCoDiApi = PuntosDeVentaCoDiApi;
@@ -4271,34 +4271,34 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
          * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
          * @summary Eliminación de transferencias SPEI® pendientes
          * @param {string} authorization Header para token
-         * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-         * @param {string} requestId Identificador de las transferencias a eliminar.
+         * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+         * @param {string} request_id Identificador de las transferencias a eliminar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options = {}) {
+        dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling dropTransactionsPendingUsingDELETE.');
             }
-            // verify required parameter 'requestId' is not null or undefined
-            if (requestId === null || requestId === undefined) {
-                throw new RequiredError('requestId', 'Required parameter requestId was null or undefined when calling dropTransactionsPendingUsingDELETE.');
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling dropTransactionsPendingUsingDELETE.');
             }
             // verify required parameter 'subscription' is not null or undefined
             if (subscription === null || subscription === undefined) {
                 throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling dropTransactionsPendingUsingDELETE.');
             }
             const localVarPath = `/subscriptions/{subscription}/transactions/outcoming/spei/request/{requestId}`
-                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)))
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)))
                 .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (orderId !== undefined) {
-                localVarQueryParameter['order_id'] = orderId;
+            if (order_id !== undefined) {
+                localVarQueryParameter['order_id'] = order_id;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -4316,13 +4316,13 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
          * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
          * @summary Consulta de transferencias recibidas
          * @param {string} authorization Header para token
-         * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-         * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+         * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+         * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options = {}) {
+        incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling incomingSpeiTransactionsReportUsingGET.');
@@ -4337,11 +4337,11 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (beginDate !== undefined) {
-                localVarQueryParameter['beginDate'] = beginDate;
+            if (begin_date !== undefined) {
+                localVarQueryParameter['beginDate'] = begin_date;
             }
-            if (endDate !== undefined) {
-                localVarQueryParameter['endDate'] = endDate;
+            if (end_date !== undefined) {
+                localVarQueryParameter['endDate'] = end_date;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -4359,26 +4359,26 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
          * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
          * @summary Consulta de transferencias de salida por identificador de petición
          * @param {string} authorization Header para token
-         * @param {string} requestId Identificador de la petición a buscar.
+         * @param {string} request_id Identificador de la petición a buscar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options = {}) {
+        outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling outCommingSpeiRequestIdTransactionsReportUsingGET.');
             }
-            // verify required parameter 'requestId' is not null or undefined
-            if (requestId === null || requestId === undefined) {
-                throw new RequiredError('requestId', 'Required parameter requestId was null or undefined when calling outCommingSpeiRequestIdTransactionsReportUsingGET.');
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling outCommingSpeiRequestIdTransactionsReportUsingGET.');
             }
             // verify required parameter 'subscription' is not null or undefined
             if (subscription === null || subscription === undefined) {
                 throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling outCommingSpeiRequestIdTransactionsReportUsingGET.');
             }
             const localVarPath = `/subscriptions/{subscription}/transactions/outcoming/spei/{requestId}`
-                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)))
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)))
                 .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
@@ -4400,12 +4400,12 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
          * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
          * @summary Consulta de transferencias realizadas
          * @param {string} authorization Header para token
-         * @param {string} [orderId] Es el identificador de la orden a buscar.
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options = {}) {
+        outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling outgoingSpeiTransactionsReportUsingGET.');
@@ -4420,8 +4420,8 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             const localVarHeaderParameter = {};
             const localVarQueryParameter = {};
-            if (orderId !== undefined) {
-                localVarQueryParameter['order_id'] = orderId;
+            if (order_id !== undefined) {
+                localVarQueryParameter['order_id'] = order_id;
             }
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
@@ -4513,14 +4513,14 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
          * @summary Eliminación de transferencias SPEI® pendientes
          * @param {string} authorization Header para token
-         * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-         * @param {string} requestId Identificador de las transferencias a eliminar.
+         * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+         * @param {string} request_id Identificador de las transferencias a eliminar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options);
+        dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
+            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4536,14 +4536,14 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
          * @summary Consulta de transferencias recibidas
          * @param {string} authorization Header para token
-         * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-         * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+         * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+         * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options);
+        incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
+            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4559,13 +4559,13 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
          * @summary Consulta de transferencias de salida por identificador de petición
          * @param {string} authorization Header para token
-         * @param {string} requestId Identificador de la petición a buscar.
+         * @param {string} request_id Identificador de la petición a buscar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options);
+        outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
+            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4581,13 +4581,13 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
          * @summary Consulta de transferencias realizadas
          * @param {string} authorization Header para token
-         * @param {string} [orderId] Es el identificador de la orden a buscar.
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options);
+        outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
+            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4646,51 +4646,51 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
          * @summary Eliminación de transferencias SPEI® pendientes
          * @param {string} authorization Header para token
-         * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-         * @param {string} requestId Identificador de las transferencias a eliminar.
+         * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+         * @param {string} request_id Identificador de las transferencias a eliminar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options)(fetch, basePath);
+        dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
+            return exports.TransferenciasSPEIApiFp(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
          * @summary Consulta de transferencias recibidas
          * @param {string} authorization Header para token
-         * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-         * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+         * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+         * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options)(fetch, basePath);
+        incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
+            return exports.TransferenciasSPEIApiFp(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options)(fetch, basePath);
         },
         /**
          * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
          * @summary Consulta de transferencias de salida por identificador de petición
          * @param {string} authorization Header para token
-         * @param {string} requestId Identificador de la petición a buscar.
+         * @param {string} request_id Identificador de la petición a buscar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options)(fetch, basePath);
+        outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
+            return exports.TransferenciasSPEIApiFp(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
          * @summary Consulta de transferencias realizadas
          * @param {string} authorization Header para token
-         * @param {string} [orderId] Es el identificador de la orden a buscar.
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options)(fetch, basePath);
+        outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
+            return exports.TransferenciasSPEIApiFp(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options)(fetch, basePath);
         },
         /**
          * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
@@ -4731,55 +4731,55 @@ class TransferenciasSPEIApi extends BaseAPI {
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
      * @summary Eliminación de transferencias SPEI® pendientes
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Listado de identificadores dentro del request_id para eliminar.
-     * @param {string} requestId Identificador de las transferencias a eliminar.
+     * @param {string} [order_id] Listado de identificadores dentro del request_id para eliminar.
+     * @param {string} request_id Identificador de las transferencias a eliminar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).dropTransactionsPendingUsingDELETE(authorization, orderId, requestId, subscription, options)(this.fetch, this.basePath);
+    dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
+        return exports.TransferenciasSPEIApiFp(this.configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
      * @summary Consulta de transferencias recibidas
      * @param {string} authorization Header para token
-     * @param {string} [beginDate] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
-     * @param {string} [endDate] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [begin_date] Fecha inicial para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
+     * @param {string} [end_date] Fecha final para filtrar los depósitos, se espera en formato &#x27;yyyy-MM-dd&#x27;
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).incomingSpeiTransactionsReportUsingGET(authorization, beginDate, endDate, subscription, options)(this.fetch, this.basePath);
+    incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
+        return exports.TransferenciasSPEIApiFp(this.configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
      * @summary Consulta de transferencias de salida por identificador de petición
      * @param {string} authorization Header para token
-     * @param {string} requestId Identificador de la petición a buscar.
+     * @param {string} request_id Identificador de la petición a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, requestId, subscription, options)(this.fetch, this.basePath);
+    outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
+        return exports.TransferenciasSPEIApiFp(this.configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
-     * @param {string} [orderId] Es el identificador de la orden a buscar.
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof TransferenciasSPEIApi
      */
-    outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).outgoingSpeiTransactionsReportUsingGET(authorization, orderId, subscription, options)(this.fetch, this.basePath);
+    outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
+        return exports.TransferenciasSPEIApiFp(this.configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
@@ -5011,21 +5011,21 @@ const WebhooksApiFetchParamCreator = function (configuration) {
          * Obtiene un webhook registrado en la plataforma mediante su identificador.
          * @summary Consulta de Webhook
          * @param {string} authorization Header para token
-         * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+         * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getWebhook(authorization, webhookId, options = {}) {
+        getWebhook(authorization, webhook_id, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getWebhook.');
             }
-            // verify required parameter 'webhookId' is not null or undefined
-            if (webhookId === null || webhookId === undefined) {
-                throw new RequiredError('webhookId', 'Required parameter webhookId was null or undefined when calling getWebhook.');
+            // verify required parameter 'webhook_id' is not null or undefined
+            if (webhook_id === null || webhook_id === undefined) {
+                throw new RequiredError('webhook_id', 'Required parameter webhook_id was null or undefined when calling getWebhook.');
             }
             const localVarPath = `/webhooks/{webhook_id}`
-                .replace(`{${"webhook_id"}}`, encodeURIComponent(String(webhookId)));
+                .replace(`{${"webhook_id"}}`, encodeURIComponent(String(webhook_id)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -5121,12 +5121,12 @@ const WebhooksApiFp = function (configuration) {
          * Obtiene un webhook registrado en la plataforma mediante su identificador.
          * @summary Consulta de Webhook
          * @param {string} authorization Header para token
-         * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+         * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getWebhook(authorization, webhookId, options) {
-            const localVarFetchArgs = exports.WebhooksApiFetchParamCreator(configuration).getWebhook(authorization, webhookId, options);
+        getWebhook(authorization, webhook_id, options) {
+            const localVarFetchArgs = exports.WebhooksApiFetchParamCreator(configuration).getWebhook(authorization, webhook_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -5192,12 +5192,12 @@ const WebhooksApiFactory = function (configuration, fetch, basePath) {
          * Obtiene un webhook registrado en la plataforma mediante su identificador.
          * @summary Consulta de Webhook
          * @param {string} authorization Header para token
-         * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+         * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getWebhook(authorization, webhookId, options) {
-            return exports.WebhooksApiFp(configuration).getWebhook(authorization, webhookId, options)(fetch, basePath);
+        getWebhook(authorization, webhook_id, options) {
+            return exports.WebhooksApiFp(configuration).getWebhook(authorization, webhook_id, options)(fetch, basePath);
         },
         /**
          * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
@@ -5234,13 +5234,13 @@ class WebhooksApi extends BaseAPI {
      * Obtiene un webhook registrado en la plataforma mediante su identificador.
      * @summary Consulta de Webhook
      * @param {string} authorization Header para token
-     * @param {string} webhookId Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
+     * @param {string} webhook_id Es el identificador del webhook. Ejemplo: wh_54a932866f784b439bc625c0f4e04e12
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof WebhooksApi
      */
-    getWebhook(authorization, webhookId, options) {
-        return exports.WebhooksApiFp(this.configuration).getWebhook(authorization, webhookId, options)(this.fetch, this.basePath);
+    getWebhook(authorization, webhook_id, options) {
+        return exports.WebhooksApiFp(this.configuration).getWebhook(authorization, webhook_id, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
