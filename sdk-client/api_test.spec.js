@@ -388,6 +388,24 @@ describe("DepositantesApi", () => {
         outhWire4= new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
     });
 
+    test("getDepositantsTotalsUsingGET", async() => {
+        try {
+            const authorization = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_admin');
+            const subscription = SUBSCRIPTION;
+            const response = await instance.getDepositantsTotalsUsingGET(authorization, subscription, {});
+            console.log("Response:"+JSON.stringify(response));
+            expect(response).not.toBe(null)
+        }catch (error) {
+
+            if(error.status !== undefined ) {
+                console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+            } else {
+                console.log('Error:' + error);
+            }
+
+        }
+    });
+
     test("getDepositantsUsingGET", async() => {
         try {
             const authorization = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_admin');

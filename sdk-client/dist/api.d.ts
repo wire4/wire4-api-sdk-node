@@ -1818,6 +1818,19 @@ export interface Depositant {
     name: string;
 }
 /**
+ * Objeto que contiene la cantidad de depositantes
+ * @export
+ * @interface DepositantCountResponse
+ */
+ export interface DepositantCountResponse {
+    /**
+     * Total de depositantes.
+     * @type {number}
+     * @memberof DepositantCountResponse
+     */
+    total: number;
+}
+/**
  *
  * @export
  * @interface DepositantsRegister
@@ -5601,6 +5614,15 @@ export declare class CuentasDeBeneficiariosSPIDApi extends BaseAPI implements Cu
  */
 export declare const DepositantesApiFetchParamCreator: (configuration: Configuration) => {
     /**
+     * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+     * @summary Consulta cuantas cuentas de depositantes existen
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+     getDepositantsTotalsUsingGET(authorization: string, subscription: string, options?: any): FetchArgs;
+    /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes
      * @param {string} authorization Header para token
@@ -5625,6 +5647,15 @@ export declare const DepositantesApiFetchParamCreator: (configuration: Configura
  * @export
  */
 export declare const DepositantesApiFp: (configuration: Configuration) => {
+    /**
+     * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+     * @summary Consulta cuantas cuentas de depositantes existen
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDepositantsTotalsUsingGET(authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<DepositantCountResponse>;
     /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes
@@ -5651,6 +5682,15 @@ export declare const DepositantesApiFp: (configuration: Configuration) => {
  */
 export declare const DepositantesApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
     /**
+     * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+     * @summary Consulta cuantas cuentas de depositantes existen
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    getDepositantsTotalsUsingGET(authorization: string, subscription: string, options: any): Promise<DepositantCountResponse>;
+    /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes
      * @param {string} authorization Header para token
@@ -5676,6 +5716,16 @@ export declare const DepositantesApiFactory: (configuration: Configuration, fetc
  * @interface DepositantesApi
  */
 export interface DepositantesApiInterface {
+    /**
+     * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+     * @summary Consulta cuantas cuentas de depositantes existen
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApiInterface
+     */
+    getDepositantsTotalsUsingGET(authorization: string, subscription: string, options: any): Promise<DepositantCountResponse>;
     /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes
@@ -5705,6 +5755,16 @@ export interface DepositantesApiInterface {
  * @extends {BaseAPI}
  */
 export declare class DepositantesApi extends BaseAPI implements DepositantesApiInterface {
+    /**
+     * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+     * @summary Consulta cuantas cuentas de depositantes existen
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApi
+     */
+    getDepositantsTotalsUsingGET(authorization: string, subscription: string, options: any): Promise<DepositantCountResponse>;
     /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes

@@ -2190,6 +2190,41 @@ exports.CuentasDeBeneficiariosSPIDApi = CuentasDeBeneficiariosSPIDApi;
 const DepositantesApiFetchParamCreator = function (configuration) {
     return {
         /**
+         * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+         * @summary Consulta cuantas cuentas de depositantes existen
+         * @param {string} authorization Header para token
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+         getDepositantsTotalsUsingGET(authorization, subscription, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getDepositantsTotalsUsingGET.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling getDepositantsTotalsUsingGET.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/depositants/count`
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
          * @summary Consulta de cuentas de depositantes
          * @param {string} authorization Header para token
@@ -2277,6 +2312,27 @@ exports.DepositantesApiFetchParamCreator = DepositantesApiFetchParamCreator;
 const DepositantesApiFp = function (configuration) {
     return {
         /**
+         * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+         * @summary Consulta cuantas cuentas de depositantes existen
+         * @param {string} authorization Header para token
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+         getDepositantsTotalsUsingGET(authorization, subscription, options) {
+            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).getDepositantsTotalsUsingGET(authorization, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
          * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
          * @summary Consulta de cuentas de depositantes
          * @param {string} authorization Header para token
@@ -2329,6 +2385,17 @@ exports.DepositantesApiFp = DepositantesApiFp;
 const DepositantesApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
+         * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+         * @summary Consulta cuantas cuentas de depositantes existen
+         * @param {string} authorization Header para token
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+         getDepositantsTotalsUsingGET(authorization, subscription, options) {
+            return (0, exports.DepositantesApiFp)(configuration).getDepositantsTotalsUsingGET(authorization, subscription, options)(fetch, basePath);
+        },
+        /**
          * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
          * @summary Consulta de cuentas de depositantes
          * @param {string} authorization Header para token
@@ -2361,6 +2428,18 @@ exports.DepositantesApiFactory = DepositantesApiFactory;
  * @extends {BaseAPI}
  */
 class DepositantesApi extends BaseAPI {
+    /**
+     * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
+     * @summary Consulta cuantas cuentas de depositantes existen
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApi
+     */
+     getDepositantsTotalsUsingGET(authorization, subscription, options) {
+        return (0, exports.DepositantesApiFp)(this.configuration).getDepositantsTotalsUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
+    }
     /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes

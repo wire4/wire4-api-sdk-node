@@ -558,6 +558,31 @@ apiRoutes.post('/preRegisterAccountsUsingPOST1', async (req, resp) => {
 
     }
 });
+apiRoutes.get('/getDepositantsTotalsUsingGET', async (req, resp) => {
+
+    try {
+        var instance = new api.DepositantesApi();
+        var outhWire4= new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+
+        const authorization = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_admin');
+        const subscription = SUBSCRIPTION;
+        const response = await instance.getDepositantsTotalsUsingGET(authorization, subscription, {});
+        console.log("Response:"+JSON.stringify(response));
+
+        resp.json(response);
+        resp.end();
+
+    }catch (error) {
+
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+
+    }
+
+});
 apiRoutes.get('/getDepositantsUsingGET', async (req, resp) => {
 
     try {
