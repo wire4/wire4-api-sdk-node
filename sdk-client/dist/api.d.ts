@@ -189,6 +189,12 @@ export interface AccountReassigned {
      */
     amount_limit: number;
     /**
+     * Es la fecha en la que se autorizó el registro del beneficiario. Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
+     * @type {Date}
+     * @memberof AccountReassigned
+     */
+    authorization_date: Date;
+    /**
      *
      * @type {Institution}
      * @memberof AccountReassigned
@@ -200,12 +206,6 @@ export interface AccountReassigned {
      * @memberof AccountReassigned
      */
     beneficiary_account: string;
-    /**
-     * Es el código de divisa. Es en el formato estándar de 3 dígitos, por ejemplo para el peso mexicano: <b>MXP</b>, para el dólar estadounidense: <b>USD</b>.<br/><br/>Este dato es opcional, al registrar una cuenta si no se cuenta con este valor se asignará <b>MXP</b>
-     * @type {string}
-     * @memberof AccountReassigned
-     */
-    currency_code: string;
     /**
      * Es una lista de correos electrónicos (emails). Se valida el formato de email. Este campo es opcional.
      * @type {Array<string>}
@@ -304,6 +304,12 @@ export interface AccountResponse {
      * @memberof AccountResponse
      */
     amount_limit: number;
+    /**
+     * Es la fecha en la que se autorizó el registro del beneficiario. Ésta fecha viene en formato ISO 8601 con zona horaria, ejemplo: <strong>2020-10-27T11:03:15.000-06:00</strong>.
+     * @type {Date}
+     * @memberof AccountResponse
+     */
+    authorization_date: Date;
     /**
      *
      * @type {Institution}
@@ -756,6 +762,31 @@ export interface BeneficiariesResponse {
     beneficiaries: Array<AccountResponse>;
 }
 /**
+ *
+ * @export
+ * @interface BeneficiaryDTO
+ */
+export interface BeneficiaryDTO {
+    /**
+     *
+     * @type {string}
+     * @memberof BeneficiaryDTO
+     */
+    account: string;
+    /**
+     *
+     * @type {number}
+     * @memberof BeneficiaryDTO
+     */
+    account_type: number;
+    /**
+     *
+     * @type {string}
+     * @memberof BeneficiaryDTO
+     */
+    name: string;
+}
+/**
  * Objeto que contiene el nombre de la institución, este campo se debe llenar si el dueño de la cuenta es una persona moral
  * @export
  * @interface BeneficiaryInstitution
@@ -1121,7 +1152,7 @@ export interface CertificateRequest {
      */
     certificate_number: string;
     /**
-     * Es el dígito verificador. Es un sólo dígito.
+     * Es el dígito verificador. Máximo 3 dígitos.
      * @type {string}
      * @memberof CertificateRequest
      */
@@ -1188,6 +1219,12 @@ export interface CodiCodeQrResponseDTO {
      */
     phone_number: string;
     /**
+     * Referencia numérica del pago CODI®.
+     * @type {number}
+     * @memberof CodiCodeQrResponseDTO
+     */
+    reference: number;
+    /**
      * El estado del código QR para pago CODI®.
      * @type {string}
      * @memberof CodiCodeQrResponseDTO
@@ -1210,9 +1247,14 @@ export declare namespace CodiCodeQrResponseDTO {
      * @enum {string}
      */
     enum StatusEnum {
+        ACCEPTED,
         RECEIVED,
         COMPLETED,
-        CANCELLED
+        CANCELLED,
+        POSTPONED,
+        REJECTED,
+        REVERSED,
+        PENDING
     }
     /**
      * @export
@@ -1220,7 +1262,8 @@ export declare namespace CodiCodeQrResponseDTO {
      */
     enum TypeEnum {
         PUSHNOTIFICATION,
-        QRCODE
+        QRCODE,
+        UNKNOWN
     }
 }
 /**
@@ -1236,7 +1279,13 @@ export interface CodiCodeRequestDTO {
      */
     amount: number;
     /**
-     * Descripción del pago CODI®
+     *
+     * @type {BeneficiaryDTO}
+     * @memberof CodiCodeRequestDTO
+     */
+    beneficiary2: BeneficiaryDTO;
+    /**
+     * Descripción del pago CODI®, no debe contener letras con acentos ni caracteres especiales
      * @type {string}
      * @memberof CodiCodeRequestDTO
      */
@@ -1260,13 +1309,25 @@ export interface CodiCodeRequestDTO {
      */
     order_id: string;
     /**
+     * El tipo de pago ya sea en una ocasión (ONE_OCCASION) o recurrente (RECURRENT)
+     * @type {string}
+     * @memberof CodiCodeRequestDTO
+     */
+    payment_type: CodiCodeRequestDTO.PaymentTypeEnum;
+    /**
      * Número de teléfono móvil en caso de ser un pago CODI® usando 'PUSH_NOTIFICATION' estecampo sería obligatorio
      * @type {string}
      * @memberof CodiCodeRequestDTO
      */
     phone_number: string;
     /**
-     * El tipo de código QR para pago con CODI®
+     * Referencia numérica del pago CODI®. Debe ser de 7 dígitos
+     * @type {number}
+     * @memberof CodiCodeRequestDTO
+     */
+    reference: number;
+    /**
+     * El tipo de solicitud QR o PUSH para pago con CODI®
      * @type {string}
      * @memberof CodiCodeRequestDTO
      */
@@ -1281,9 +1342,20 @@ export declare namespace CodiCodeRequestDTO {
      * @export
      * @enum {string}
      */
+    enum PaymentTypeEnum {
+        ONEOCCASION,
+        RECURRENT,
+        RECURRENTNORECURRENT,
+        UNKNOWN
+    }
+    /**
+     * @export
+     * @enum {string}
+     */
     enum TypeEnum {
         PUSHNOTIFICATION,
-        QRCODE
+        QRCODE,
+        UNKNOWN
     }
 }
 /**
@@ -1400,9 +1472,14 @@ export declare namespace CodiOperationsFiltersRequestDTO {
      * @enum {string}
      */
     enum StatusEnum {
+        ACCEPTED,
         RECEIVED,
         COMPLETED,
-        CANCELLED
+        CANCELLED,
+        POSTPONED,
+        REJECTED,
+        REVERSED,
+        PENDING
     }
 }
 /**
@@ -1530,6 +1607,25 @@ export interface ConfigurationsLimits {
     items: Array<Item>;
 }
 /**
+ *
+ * @export
+ * @interface ConfirmRecurringCharge
+ */
+export interface ConfirmRecurringCharge {
+    /**
+     * Identificador de la orden enviada por parte del cliente
+     * @type {string}
+     * @memberof ConfirmRecurringCharge
+     */
+    order_id: string;
+    /**
+     * Url del portal en donde se debe capturar los datos de la tarjeta para aplicar el cargo
+     * @type {string}
+     * @memberof ConfirmRecurringCharge
+     */
+    url: string;
+}
+/**
  * Objeto que contiene información básica de un posible cliente.
  * @export
  * @interface ContactRequest
@@ -1615,6 +1711,25 @@ export interface ContractDetailResponse {
      * @memberof ContractDetailResponse
      */
     user: UserCompany;
+}
+/**
+ * Información del cliente a quien se le aplicarán los cargos
+ * @export
+ * @interface Customer
+ */
+export interface Customer {
+    /**
+     * Email del dueño de la tarjeta
+     * @type {string}
+     * @memberof Customer
+     */
+    email: string;
+    /**
+     * Nombre del dueño de la tarjeta
+     * @type {string}
+     * @memberof Customer
+     */
+    name: string;
 }
 /**
  *
@@ -1822,7 +1937,7 @@ export interface Depositant {
  * @export
  * @interface DepositantCountResponse
  */
- export interface DepositantCountResponse {
+export interface DepositantCountResponse {
     /**
      * Total de depositantes.
      * @type {number}
@@ -3095,9 +3210,14 @@ export declare namespace Operations {
      * @enum {string}
      */
     enum StatusEnum {
+        ACCEPTED,
         RECEIVED,
         COMPLETED,
-        CANCELLED
+        CANCELLED,
+        POSTPONED,
+        REJECTED,
+        REVERSED,
+        PENDING
     }
     /**
      * @export
@@ -3105,7 +3225,8 @@ export declare namespace Operations {
      */
     enum TypeEnum {
         PUSHNOTIFICATION,
-        QRCODE
+        QRCODE,
+        UNKNOWN
     }
 }
 /**
@@ -3325,9 +3446,14 @@ export declare namespace PaymentCODI {
      * @enum {string}
      */
     enum StatusEnum {
+        ACCEPTED,
         RECEIVED,
         COMPLETED,
-        CANCELLED
+        CANCELLED,
+        POSTPONED,
+        REJECTED,
+        REVERSED,
+        PENDING
     }
 }
 /**
@@ -3447,6 +3573,62 @@ export interface PaymentsRequestId {
     transactions: Array<Payment>;
 }
 /**
+ * Contiene el conjunto de transacciones SPEI y SPID registradas bajo una misma petición
+ * @export
+ * @interface PaymentsSpeiAndSpidOrderId
+ */
+export interface PaymentsSpeiAndSpidOrderId {
+    /**
+     * Lista de las transacciones spei registradas
+     * @type {Array<Payment>}
+     * @memberof PaymentsSpeiAndSpidOrderId
+     */
+    spei: Array<Payment>;
+    /**
+     * Lista de las transacciones spid registradas
+     * @type {Array<Payment>}
+     * @memberof PaymentsSpeiAndSpidOrderId
+     */
+    spid: Array<Payment>;
+}
+/**
+ * Contiene el conjunto de transacciones SPEI y SPID registradas bajo una misma petición
+ * @export
+ * @interface PaymentsSpeiAndSpidRequestId
+ */
+export interface PaymentsSpeiAndSpidRequestId {
+    /**
+     * Fecha en que el usuario propietario del token emitió la autorización
+     * @type {Date}
+     * @memberof PaymentsSpeiAndSpidRequestId
+     */
+    authorization_date: Date;
+    /**
+     * Fecha en que se realizó la petición de registro de transacciones
+     * @type {Date}
+     * @memberof PaymentsSpeiAndSpidRequestId
+     */
+    request_date: Date;
+    /**
+     * Identificador de la petición del registro de transacciones
+     * @type {string}
+     * @memberof PaymentsSpeiAndSpidRequestId
+     */
+    request_id: string;
+    /**
+     * Lista de las transacciones spei registradas
+     * @type {Array<Payment>}
+     * @memberof PaymentsSpeiAndSpidRequestId
+     */
+    spei: Array<Payment>;
+    /**
+     * Lista de las transacciones spid registradas
+     * @type {Array<Payment>}
+     * @memberof PaymentsSpeiAndSpidRequestId
+     */
+    spid: Array<Payment>;
+}
+/**
  * Objeto que contiene los datos de la persona propietaria de la cuenta
  * @export
  * @interface Person
@@ -3539,6 +3721,101 @@ export interface PreMonexAuthorization {
      * @memberof PreMonexAuthorization
      */
     rfc: string;
+}
+/**
+ * Información del producto sobre el cual se aplicarán los cobros recurrentes
+ * @export
+ * @interface Product
+ */
+export interface Product {
+    /**
+     * Monto del calgo que se aplicará de forma periodica
+     * @type {number}
+     * @memberof Product
+     */
+    amount: number;
+    /**
+     * Periodo en el cual se aplicará el cargo, si no se especifica la propiedad frequency por defecto sera la unidad
+     * @type {string}
+     * @memberof Product
+     */
+    billing_period: Product.BillingPeriodEnum;
+    /**
+     * La frecuencia en la que se aplicará el cargo, trabaja en conjunto con la propiedad billingPeriod
+     * @type {number}
+     * @memberof Product
+     */
+    frequency: number;
+    /**
+     * Nombre del producto sobre el cual se aplicará el cobro recurrente
+     * @type {string}
+     * @memberof Product
+     */
+    name: string;
+}
+/**
+ * @export
+ * @namespace Product
+ */
+export declare namespace Product {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum BillingPeriodEnum {
+        WEEKLY,
+        MONTHLY,
+        YEARLY
+    }
+}
+/**
+ * Objeto request para solictar la aplicación de Cargos Recurrentes
+ * @export
+ * @interface RecurringChargeRequest
+ */
+export interface RecurringChargeRequest {
+    /**
+     * Es la dirección URL a la que se redirigirá en caso de que el usuario cancele.
+     * @type {string}
+     * @memberof RecurringChargeRequest
+     */
+    cancel_return_url: string;
+    /**
+     * Número de cargos que se aplicarán a la tarjeta del cliente final a partir de la fecha del primer cargo
+     * @type {number}
+     * @memberof RecurringChargeRequest
+     */
+    charges: number;
+    /**
+     *
+     * @type {Customer}
+     * @memberof RecurringChargeRequest
+     */
+    customer: Customer;
+    /**
+     * Fecha en la que se aplicará el primer cargo a la tarjeta del cliente final
+     * @type {Date}
+     * @memberof RecurringChargeRequest
+     */
+    first_charge_date: Date;
+    /**
+     * Número de orden asignado por el cliente de Wire4
+     * @type {string}
+     * @memberof RecurringChargeRequest
+     */
+    order_id: string;
+    /**
+     *
+     * @type {Product}
+     * @memberof RecurringChargeRequest
+     */
+    product: Product;
+    /**
+     * Es la dirección URL a la que se redirigirá en caso de éxito.
+     * @type {string}
+     * @memberof RecurringChargeRequest
+     */
+    return_url: string;
 }
 /**
  *
@@ -3766,6 +4043,12 @@ export interface SpidBeneficiaryResponse {
      * @memberof SpidBeneficiaryResponse
      */
     amount_limit: number;
+    /**
+     * La fecha en la que se registro el beneficiario.
+     * @type {Date}
+     * @memberof SpidBeneficiaryResponse
+     */
+    authorization_date: Date;
     /**
      *
      * @type {Institution}
@@ -4059,6 +4342,61 @@ export interface TransactionOutgoingSpid {
     return_url: string;
 }
 /**
+ * Objeto que contiene la información de una transferencia SPID® de salida.
+ * @export
+ * @interface TransactionSpeiSpid
+ */
+export interface TransactionSpeiSpid {
+    /**
+     * Es el monto de la transferencia. Se valida que sean máximo 20 dígitos y 2 decimales. Ejemplo 1000.00
+     * @type {number}
+     * @memberof TransactionSpeiSpid
+     */
+    amount: number;
+    /**
+     * Cuenta del beneficiario, podría ser un número celular (10dígitos), tarjeta de débito (TDD) o Cuenta CLABE interbancaria (18 dígitos).
+     * @type {string}
+     * @memberof TransactionSpeiSpid
+     */
+    beneficiary_account: string;
+    /**
+     * Es el identificador de la clasificación de la transferencia SPID.
+     * @type {string}
+     * @memberof TransactionSpeiSpid
+     */
+    classification_id: string;
+    /**
+     * Es el concepto de la transferencia.
+     * @type {string}
+     * @memberof TransactionSpeiSpid
+     */
+    concept: string;
+    /**
+     * Código de moneda en la que opera la cuenta.
+     * @type {string}
+     * @memberof TransactionSpeiSpid
+     */
+    currency_code: string;
+    /**
+     * Lista de correo electrónico (email) del beneficiario. Este campo es opcional.
+     * @type {Array<string>}
+     * @memberof TransactionSpeiSpid
+     */
+    email: Array<string>;
+    /**
+     * Es la referencia de la transferencia asignada por el cliente. Ejemplo: dae9c6ae-8c7a-42e8-99f4-ebe90566efae
+     * @type {string}
+     * @memberof TransactionSpeiSpid
+     */
+    order_id: string;
+    /**
+     * Es la referencia numérica de la transferencia.
+     * @type {number}
+     * @memberof TransactionSpeiSpid
+     */
+    reference: number;
+}
+/**
  * Objeto que contiene la información de las transferencias SPEI de salida.
  * @export
  * @interface TransactionsOutgoingRegister
@@ -4082,6 +4420,37 @@ export interface TransactionsOutgoingRegister {
      * @memberof TransactionsOutgoingRegister
      */
     transactions: Array<TransactionOutgoing>;
+}
+/**
+ * Objeto que contiene la información de las transferencias SPEI y SPID de salida.
+ * @export
+ * @interface TransactionsRegister
+ */
+export interface TransactionsRegister {
+    /**
+     * Es la dirección URL a la que se redirigirá en caso de que el usario cancele el registro.
+     * @type {string}
+     * @memberof TransactionsRegister
+     */
+    cancel_return_url: string;
+    /**
+     * Es la dirección URL a la que se redirigirá en caso de éxito.
+     * @type {string}
+     * @memberof TransactionsRegister
+     */
+    return_url: string;
+    /**
+     * Lista de transacciones SPEI
+     * @type {Array<TransactionSpeiSpid>}
+     * @memberof TransactionsRegister
+     */
+    spei: Array<TransactionSpeiSpid>;
+    /**
+     * Lista de transacciones SPID
+     * @type {Array<TransactionSpeiSpid>}
+     * @memberof TransactionsRegister
+     */
+    spid: Array<TransactionSpeiSpid>;
 }
 /**
  * Contiene el listado de grupo de configuraciones para actualizar
@@ -4567,6 +4936,133 @@ export declare class AutorizacinDeDepsitosApi extends BaseAPI implements Autoriz
     putDepositAuthConfigurations(body: DepositAuthorizationRequest, authorization: string, subscription: string, options: any): Promise<DepositsAuthorizationResponse>;
 }
 /**
+ * CargosRecurrentesApi - fetch parameter creator
+ * @export
+ */
+export declare const CargosRecurrentesApiFetchParamCreator: (configuration: Configuration) => {
+    /**
+     *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Cancelación/desubscripción de cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {string} order_id orderId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteRecurringChargeUsingDELETE(authorization: string, order_id: string, options?: any): FetchArgs;
+    /**
+     *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Registro de cargos recurrentes
+     * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerRecurringChargeUsingPOST(body: RecurringChargeRequest, authorization: string, options?: any): FetchArgs;
+};
+/**
+ * CargosRecurrentesApi - functional programming interface
+ * @export
+ */
+export declare const CargosRecurrentesApiFp: (configuration: Configuration) => {
+    /**
+     *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Cancelación/desubscripción de cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {string} order_id orderId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteRecurringChargeUsingDELETE(authorization: string, order_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<ConfirmRecurringCharge>;
+    /**
+     *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Registro de cargos recurrentes
+     * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerRecurringChargeUsingPOST(body: RecurringChargeRequest, authorization: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<ConfirmRecurringCharge>;
+};
+/**
+ * CargosRecurrentesApi - factory interface
+ * @export
+ */
+export declare const CargosRecurrentesApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
+    /**
+     *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Cancelación/desubscripción de cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {string} order_id orderId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    deleteRecurringChargeUsingDELETE(authorization: string, order_id: string, options: any): Promise<ConfirmRecurringCharge>;
+    /**
+     *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Registro de cargos recurrentes
+     * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerRecurringChargeUsingPOST(body: RecurringChargeRequest, authorization: string, options: any): Promise<ConfirmRecurringCharge>;
+};
+/**
+ * CargosRecurrentesApi - interface
+ * @export
+ * @interface CargosRecurrentesApi
+ */
+export interface CargosRecurrentesApiInterface {
+    /**
+     *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Cancelación/desubscripción de cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {string} order_id orderId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CargosRecurrentesApiInterface
+     */
+    deleteRecurringChargeUsingDELETE(authorization: string, order_id: string, options: any): Promise<ConfirmRecurringCharge>;
+    /**
+     *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Registro de cargos recurrentes
+     * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CargosRecurrentesApiInterface
+     */
+    registerRecurringChargeUsingPOST(body: RecurringChargeRequest, authorization: string, options: any): Promise<ConfirmRecurringCharge>;
+}
+/**
+ * CargosRecurrentesApi - object-oriented interface
+ * @export
+ * @class CargosRecurrentesApi
+ * @extends {BaseAPI}
+ */
+export declare class CargosRecurrentesApi extends BaseAPI implements CargosRecurrentesApiInterface {
+    /**
+     *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Cancelación/desubscripción de cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {string} order_id orderId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CargosRecurrentesApi
+     */
+    deleteRecurringChargeUsingDELETE(authorization: string, order_id: string, options: any): Promise<ConfirmRecurringCharge>;
+    /**
+     *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Registro de cargos recurrentes
+     * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CargosRecurrentesApi
+     */
+    registerRecurringChargeUsingPOST(body: RecurringChargeRequest, authorization: string, options: any): Promise<ConfirmRecurringCharge>;
+}
+/**
  * ComprobanteElectrnicoDePagoCEPApi - fetch parameter creator
  * @export
  */
@@ -5015,13 +5511,15 @@ export declare const CuentasDeBeneficiariosSPEIApiFetchParamCreator: (configurat
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options?: any): FetchArgs;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options?: any): FetchArgs;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5107,13 +5605,15 @@ export declare const CuentasDeBeneficiariosSPEIApiFp: (configuration: Configurat
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5199,13 +5699,15 @@ export declare const CuentasDeBeneficiariosSPEIApiFactory: (configuration: Confi
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5296,14 +5798,16 @@ export interface CuentasDeBeneficiariosSPEIApiInterface {
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApiInterface
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5398,14 +5902,16 @@ export declare class CuentasDeBeneficiariosSPEIApi extends BaseAPI implements Cu
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
+    getBeneficiariesForAccountUsingGET(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): Promise<BeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPEI®.
@@ -5455,13 +5961,15 @@ export declare const CuentasDeBeneficiariosSPIDApiFetchParamCreator: (configurat
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options?: any): FetchArgs;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options?: any): FetchArgs;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5487,13 +5995,15 @@ export declare const CuentasDeBeneficiariosSPIDApiFp: (configuration: Configurat
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5519,13 +6029,15 @@ export declare const CuentasDeBeneficiariosSPIDApiFactory: (configuration: Confi
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5552,14 +6064,16 @@ export interface CuentasDeBeneficiariosSPIDApiInterface {
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPIDApiInterface
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5588,14 +6102,16 @@ export declare class CuentasDeBeneficiariosSPIDApi extends BaseAPI implements Cu
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPIDApi
      */
-    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, rfc: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
+    getSpidBeneficiariesForAccount(authorization: string, account: string, beneficiary_bank: string, beneficiary_name: string, end_date: string, init_date: string, page: string, rfc: string, size: string, status: string, subscription: string, options: any): Promise<SpidBeneficiariesResponse>;
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
      * @summary Pre-registro de cuentas de beneficiarios SPID®
@@ -5615,13 +6131,13 @@ export declare class CuentasDeBeneficiariosSPIDApi extends BaseAPI implements Cu
 export declare const DepositantesApiFetchParamCreator: (configuration: Configuration) => {
     /**
      * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-     * @summary Consulta cuantas cuentas de depositantes existen
+     * @summary Número de depositantes por suscripción
      * @param {string} authorization Header para token
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-     getDepositantsTotalsUsingGET(authorization: string, subscription: string, options?: any): FetchArgs;
+    getDepositantsTotalsUsingGET(authorization: string, subscription: string, options?: any): FetchArgs;
     /**
      * Obtiene una lista de depositantes asociados al contrato relacionado a la suscripción.
      * @summary Consulta de cuentas de depositantes
@@ -5632,7 +6148,7 @@ export declare const DepositantesApiFetchParamCreator: (configuration: Configura
      */
     getDepositantsUsingGET(authorization: string, subscription: string, options?: any): FetchArgs;
     /**
-     * Registra un nuevo depositante en el contrato asociado a la suscripción.
+     * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
      * @summary Registra un nuevo depositante
      * @param {DepositantsRegister} body Depositant info
      * @param {string} authorization Header para token
@@ -5649,7 +6165,7 @@ export declare const DepositantesApiFetchParamCreator: (configuration: Configura
 export declare const DepositantesApiFp: (configuration: Configuration) => {
     /**
      * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-     * @summary Consulta cuantas cuentas de depositantes existen
+     * @summary Número de depositantes por suscripción
      * @param {string} authorization Header para token
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
@@ -5666,7 +6182,7 @@ export declare const DepositantesApiFp: (configuration: Configuration) => {
      */
     getDepositantsUsingGET(authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<GetDepositants>;
     /**
-     * Registra un nuevo depositante en el contrato asociado a la suscripción.
+     * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
      * @summary Registra un nuevo depositante
      * @param {DepositantsRegister} body Depositant info
      * @param {string} authorization Header para token
@@ -5683,7 +6199,7 @@ export declare const DepositantesApiFp: (configuration: Configuration) => {
 export declare const DepositantesApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
     /**
      * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-     * @summary Consulta cuantas cuentas de depositantes existen
+     * @summary Número de depositantes por suscripción
      * @param {string} authorization Header para token
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
@@ -5700,7 +6216,7 @@ export declare const DepositantesApiFactory: (configuration: Configuration, fetc
      */
     getDepositantsUsingGET(authorization: string, subscription: string, options: any): Promise<GetDepositants>;
     /**
-     * Registra un nuevo depositante en el contrato asociado a la suscripción.
+     * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
      * @summary Registra un nuevo depositante
      * @param {DepositantsRegister} body Depositant info
      * @param {string} authorization Header para token
@@ -5718,7 +6234,7 @@ export declare const DepositantesApiFactory: (configuration: Configuration, fetc
 export interface DepositantesApiInterface {
     /**
      * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-     * @summary Consulta cuantas cuentas de depositantes existen
+     * @summary Número de depositantes por suscripción
      * @param {string} authorization Header para token
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
@@ -5737,7 +6253,7 @@ export interface DepositantesApiInterface {
      */
     getDepositantsUsingGET(authorization: string, subscription: string, options: any): Promise<GetDepositants>;
     /**
-     * Registra un nuevo depositante en el contrato asociado a la suscripción.
+     * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
      * @summary Registra un nuevo depositante
      * @param {DepositantsRegister} body Depositant info
      * @param {string} authorization Header para token
@@ -5757,7 +6273,7 @@ export interface DepositantesApiInterface {
 export declare class DepositantesApi extends BaseAPI implements DepositantesApiInterface {
     /**
      * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-     * @summary Consulta cuantas cuentas de depositantes existen
+     * @summary Número de depositantes por suscripción
      * @param {string} authorization Header para token
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
@@ -5776,7 +6292,7 @@ export declare class DepositantesApi extends BaseAPI implements DepositantesApiI
      */
     getDepositantsUsingGET(authorization: string, subscription: string, options: any): Promise<GetDepositants>;
     /**
-     * Registra un nuevo depositante en el contrato asociado a la suscripción.
+     * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
      * @summary Registra un nuevo depositante
      * @param {DepositantsRegister} body Depositant info
      * @param {string} authorization Header para token
@@ -7018,6 +7534,26 @@ export declare const TransferenciasSPEIApiFetchParamCreator: (configuration: Con
      */
     outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options?: any): FetchArgs;
     /**
+     * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+     * @summary Consulta de transferencias realizadas por order_id
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization: string, order_id: string, subscription: string, options?: any): FetchArgs;
+    /**
+     * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+     * @summary Consulta de transferencias de salida por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options?: any): FetchArgs;
+    /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
@@ -7037,6 +7573,16 @@ export declare const TransferenciasSPEIApiFetchParamCreator: (configuration: Con
      * @throws {RequiredError}
      */
     registerOutgoingSpeiTransactionUsingPOST(body: TransactionsOutgoingRegister, authorization: string, subscription: string, options?: any): FetchArgs;
+    /**
+     * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+     * @summary Registro de transferencias SPEI y SPID
+     * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerSpeiSpidOutgoingTransactionsUsingPOST(body: TransactionsRegister, authorization: string, subscription: string, options?: any): FetchArgs;
 };
 /**
  * TransferenciasSPEIApi - functional programming interface
@@ -7086,6 +7632,26 @@ export declare const TransferenciasSPEIApiFp: (configuration: Configuration) => 
      */
     outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentsRequestId>;
     /**
+     * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+     * @summary Consulta de transferencias realizadas por order_id
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentsSpeiAndSpidOrderId>;
+    /**
+     * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+     * @summary Consulta de transferencias de salida por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentsSpeiAndSpidRequestId>;
+    /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
@@ -7105,6 +7671,16 @@ export declare const TransferenciasSPEIApiFp: (configuration: Configuration) => 
      * @throws {RequiredError}
      */
     registerOutgoingSpeiTransactionUsingPOST(body: TransactionsOutgoingRegister, authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<TokenRequiredResponse>;
+    /**
+     * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+     * @summary Registro de transferencias SPEI y SPID
+     * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerSpeiSpidOutgoingTransactionsUsingPOST(body: TransactionsRegister, authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<TokenRequiredResponse>;
 };
 /**
  * TransferenciasSPEIApi - factory interface
@@ -7154,6 +7730,26 @@ export declare const TransferenciasSPEIApiFactory: (configuration: Configuration
      */
     outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsRequestId>;
     /**
+     * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+     * @summary Consulta de transferencias realizadas por order_id
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): Promise<PaymentsSpeiAndSpidOrderId>;
+    /**
+     * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+     * @summary Consulta de transferencias de salida por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsSpeiAndSpidRequestId>;
+    /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
@@ -7173,6 +7769,16 @@ export declare const TransferenciasSPEIApiFactory: (configuration: Configuration
      * @throws {RequiredError}
      */
     registerOutgoingSpeiTransactionUsingPOST(body: TransactionsOutgoingRegister, authorization: string, subscription: string, options: any): Promise<TokenRequiredResponse>;
+    /**
+     * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+     * @summary Registro de transferencias SPEI y SPID
+     * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerSpeiSpidOutgoingTransactionsUsingPOST(body: TransactionsRegister, authorization: string, subscription: string, options: any): Promise<TokenRequiredResponse>;
 };
 /**
  * TransferenciasSPEIApi - interface
@@ -7227,6 +7833,28 @@ export interface TransferenciasSPEIApiInterface {
      */
     outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsRequestId>;
     /**
+     * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+     * @summary Consulta de transferencias realizadas por order_id
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApiInterface
+     */
+    outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): Promise<PaymentsSpeiAndSpidOrderId>;
+    /**
+     * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+     * @summary Consulta de transferencias de salida por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApiInterface
+     */
+    outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsSpeiAndSpidRequestId>;
+    /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
@@ -7248,6 +7876,17 @@ export interface TransferenciasSPEIApiInterface {
      * @memberof TransferenciasSPEIApiInterface
      */
     registerOutgoingSpeiTransactionUsingPOST(body: TransactionsOutgoingRegister, authorization: string, subscription: string, options: any): Promise<TokenRequiredResponse>;
+    /**
+     * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+     * @summary Registro de transferencias SPEI y SPID
+     * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApiInterface
+     */
+    registerSpeiSpidOutgoingTransactionsUsingPOST(body: TransactionsRegister, authorization: string, subscription: string, options: any): Promise<TokenRequiredResponse>;
 }
 /**
  * TransferenciasSPEIApi - object-oriented interface
@@ -7303,6 +7942,28 @@ export declare class TransferenciasSPEIApi extends BaseAPI implements Transferen
      */
     outCommingSpeiRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsRequestId>;
     /**
+     * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+     * @summary Consulta de transferencias realizadas por order_id
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApi
+     */
+    outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization: string, order_id: string, subscription: string, options: any): Promise<PaymentsSpeiAndSpidOrderId>;
+    /**
+     * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+     * @summary Consulta de transferencias de salida por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApi
+     */
+    outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization: string, request_id: string, subscription: string, options: any): Promise<PaymentsSpeiAndSpidRequestId>;
+    /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
      * @summary Consulta de transferencias realizadas
      * @param {string} authorization Header para token
@@ -7324,6 +7985,17 @@ export declare class TransferenciasSPEIApi extends BaseAPI implements Transferen
      * @memberof TransferenciasSPEIApi
      */
     registerOutgoingSpeiTransactionUsingPOST(body: TransactionsOutgoingRegister, authorization: string, subscription: string, options: any): Promise<TokenRequiredResponse>;
+    /**
+     * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+     * @summary Registro de transferencias SPEI y SPID
+     * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApi
+     */
+    registerSpeiSpidOutgoingTransactionsUsingPOST(body: TransactionsRegister, authorization: string, subscription: string, options: any): Promise<TokenRequiredResponse>;
 }
 /**
  * TransferenciasSPIDApi - fetch parameter creator

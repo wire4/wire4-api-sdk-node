@@ -13,8 +13,8 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
-exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = void 0;
+exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.CargosRecurrentesApi = exports.CargosRecurrentesApiFactory = exports.CargosRecurrentesApiFp = exports.CargosRecurrentesApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.Product = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = void 0;
 const url = require("url");
 const portableFetch = require("portable-fetch");
 const BASE_PATH = "https://sandbox-api.wire4.mx/wire4/1.0.0".replace(/\/+$/, "");
@@ -120,9 +120,14 @@ var CodiCodeQrResponseDTO;
      */
     let StatusEnum;
     (function (StatusEnum) {
+        StatusEnum[StatusEnum["ACCEPTED"] = 'ACCEPTED'] = "ACCEPTED";
         StatusEnum[StatusEnum["RECEIVED"] = 'RECEIVED'] = "RECEIVED";
         StatusEnum[StatusEnum["COMPLETED"] = 'COMPLETED'] = "COMPLETED";
         StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+        StatusEnum[StatusEnum["POSTPONED"] = 'POSTPONED'] = "POSTPONED";
+        StatusEnum[StatusEnum["REJECTED"] = 'REJECTED'] = "REJECTED";
+        StatusEnum[StatusEnum["REVERSED"] = 'REVERSED'] = "REVERSED";
+        StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
     })(StatusEnum = CodiCodeQrResponseDTO.StatusEnum || (CodiCodeQrResponseDTO.StatusEnum = {}));
     /**
      * @export
@@ -132,6 +137,7 @@ var CodiCodeQrResponseDTO;
     (function (TypeEnum) {
         TypeEnum[TypeEnum["PUSHNOTIFICATION"] = 'PUSH_NOTIFICATION'] = "PUSHNOTIFICATION";
         TypeEnum[TypeEnum["QRCODE"] = 'QR_CODE'] = "QRCODE";
+        TypeEnum[TypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
     })(TypeEnum = CodiCodeQrResponseDTO.TypeEnum || (CodiCodeQrResponseDTO.TypeEnum = {}));
 })(CodiCodeQrResponseDTO = exports.CodiCodeQrResponseDTO || (exports.CodiCodeQrResponseDTO = {}));
 /**
@@ -144,10 +150,22 @@ var CodiCodeRequestDTO;
      * @export
      * @enum {string}
      */
+    let PaymentTypeEnum;
+    (function (PaymentTypeEnum) {
+        PaymentTypeEnum[PaymentTypeEnum["ONEOCCASION"] = 'ONE_OCCASION'] = "ONEOCCASION";
+        PaymentTypeEnum[PaymentTypeEnum["RECURRENT"] = 'RECURRENT'] = "RECURRENT";
+        PaymentTypeEnum[PaymentTypeEnum["RECURRENTNORECURRENT"] = 'RECURRENT_NO_RECURRENT'] = "RECURRENTNORECURRENT";
+        PaymentTypeEnum[PaymentTypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
+    })(PaymentTypeEnum = CodiCodeRequestDTO.PaymentTypeEnum || (CodiCodeRequestDTO.PaymentTypeEnum = {}));
+    /**
+     * @export
+     * @enum {string}
+     */
     let TypeEnum;
     (function (TypeEnum) {
         TypeEnum[TypeEnum["PUSHNOTIFICATION"] = 'PUSH_NOTIFICATION'] = "PUSHNOTIFICATION";
         TypeEnum[TypeEnum["QRCODE"] = 'QR_CODE'] = "QRCODE";
+        TypeEnum[TypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
     })(TypeEnum = CodiCodeRequestDTO.TypeEnum || (CodiCodeRequestDTO.TypeEnum = {}));
 })(CodiCodeRequestDTO = exports.CodiCodeRequestDTO || (exports.CodiCodeRequestDTO = {}));
 /**
@@ -162,9 +180,14 @@ var CodiOperationsFiltersRequestDTO;
      */
     let StatusEnum;
     (function (StatusEnum) {
+        StatusEnum[StatusEnum["ACCEPTED"] = 'ACCEPTED'] = "ACCEPTED";
         StatusEnum[StatusEnum["RECEIVED"] = 'RECEIVED'] = "RECEIVED";
         StatusEnum[StatusEnum["COMPLETED"] = 'COMPLETED'] = "COMPLETED";
         StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+        StatusEnum[StatusEnum["POSTPONED"] = 'POSTPONED'] = "POSTPONED";
+        StatusEnum[StatusEnum["REJECTED"] = 'REJECTED'] = "REJECTED";
+        StatusEnum[StatusEnum["REVERSED"] = 'REVERSED'] = "REVERSED";
+        StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
     })(StatusEnum = CodiOperationsFiltersRequestDTO.StatusEnum || (CodiOperationsFiltersRequestDTO.StatusEnum = {}));
 })(CodiOperationsFiltersRequestDTO = exports.CodiOperationsFiltersRequestDTO || (exports.CodiOperationsFiltersRequestDTO = {}));
 /**
@@ -194,9 +217,14 @@ var Operations;
      */
     let StatusEnum;
     (function (StatusEnum) {
+        StatusEnum[StatusEnum["ACCEPTED"] = 'ACCEPTED'] = "ACCEPTED";
         StatusEnum[StatusEnum["RECEIVED"] = 'RECEIVED'] = "RECEIVED";
         StatusEnum[StatusEnum["COMPLETED"] = 'COMPLETED'] = "COMPLETED";
         StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+        StatusEnum[StatusEnum["POSTPONED"] = 'POSTPONED'] = "POSTPONED";
+        StatusEnum[StatusEnum["REJECTED"] = 'REJECTED'] = "REJECTED";
+        StatusEnum[StatusEnum["REVERSED"] = 'REVERSED'] = "REVERSED";
+        StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
     })(StatusEnum = Operations.StatusEnum || (Operations.StatusEnum = {}));
     /**
      * @export
@@ -206,6 +234,7 @@ var Operations;
     (function (TypeEnum) {
         TypeEnum[TypeEnum["PUSHNOTIFICATION"] = 'PUSH_NOTIFICATION'] = "PUSHNOTIFICATION";
         TypeEnum[TypeEnum["QRCODE"] = 'QR_CODE'] = "QRCODE";
+        TypeEnum[TypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
     })(TypeEnum = Operations.TypeEnum || (Operations.TypeEnum = {}));
 })(Operations = exports.Operations || (exports.Operations = {}));
 /**
@@ -220,11 +249,33 @@ var PaymentCODI;
      */
     let StatusEnum;
     (function (StatusEnum) {
+        StatusEnum[StatusEnum["ACCEPTED"] = 'ACCEPTED'] = "ACCEPTED";
         StatusEnum[StatusEnum["RECEIVED"] = 'RECEIVED'] = "RECEIVED";
         StatusEnum[StatusEnum["COMPLETED"] = 'COMPLETED'] = "COMPLETED";
         StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+        StatusEnum[StatusEnum["POSTPONED"] = 'POSTPONED'] = "POSTPONED";
+        StatusEnum[StatusEnum["REJECTED"] = 'REJECTED'] = "REJECTED";
+        StatusEnum[StatusEnum["REVERSED"] = 'REVERSED'] = "REVERSED";
+        StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
     })(StatusEnum = PaymentCODI.StatusEnum || (PaymentCODI.StatusEnum = {}));
 })(PaymentCODI = exports.PaymentCODI || (exports.PaymentCODI = {}));
+/**
+ * @export
+ * @namespace Product
+ */
+var Product;
+(function (Product) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let BillingPeriodEnum;
+    (function (BillingPeriodEnum) {
+        BillingPeriodEnum[BillingPeriodEnum["WEEKLY"] = 'WEEKLY'] = "WEEKLY";
+        BillingPeriodEnum[BillingPeriodEnum["MONTHLY"] = 'MONTHLY'] = "MONTHLY";
+        BillingPeriodEnum[BillingPeriodEnum["YEARLY"] = 'YEARLY'] = "YEARLY";
+    })(BillingPeriodEnum = Product.BillingPeriodEnum || (Product.BillingPeriodEnum = {}));
+})(Product = exports.Product || (exports.Product = {}));
 /**
  * @export
  * @namespace SalesPointFound
@@ -419,7 +470,7 @@ const AutorizacinDeDepsitosApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getDepositAuthConfigurations(authorization, subscription, options) {
-            const localVarFetchArgs = exports.AutorizacinDeDepsitosApiFetchParamCreator(configuration).getDepositAuthConfigurations(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.AutorizacinDeDepsitosApiFetchParamCreator)(configuration).getDepositAuthConfigurations(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -441,7 +492,7 @@ const AutorizacinDeDepsitosApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         putDepositAuthConfigurations(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.AutorizacinDeDepsitosApiFetchParamCreator(configuration).putDepositAuthConfigurations(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.AutorizacinDeDepsitosApiFetchParamCreator)(configuration).putDepositAuthConfigurations(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -471,7 +522,7 @@ const AutorizacinDeDepsitosApiFactory = function (configuration, fetch, basePath
          * @throws {RequiredError}
          */
         getDepositAuthConfigurations(authorization, subscription, options) {
-            return exports.AutorizacinDeDepsitosApiFp(configuration).getDepositAuthConfigurations(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.AutorizacinDeDepsitosApiFp)(configuration).getDepositAuthConfigurations(authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Habilita o deshabilita la autorización de depósitos. Devuelve la información final de la autorización de depósitos del contrato relacionado a la suscripción al terminar.
@@ -483,7 +534,7 @@ const AutorizacinDeDepsitosApiFactory = function (configuration, fetch, basePath
          * @throws {RequiredError}
          */
         putDepositAuthConfigurations(body, authorization, subscription, options) {
-            return exports.AutorizacinDeDepsitosApiFp(configuration).putDepositAuthConfigurations(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.AutorizacinDeDepsitosApiFp)(configuration).putDepositAuthConfigurations(body, authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -505,7 +556,7 @@ class AutorizacinDeDepsitosApi extends BaseAPI {
      * @memberof AutorizacinDeDepsitosApi
      */
     getDepositAuthConfigurations(authorization, subscription, options) {
-        return exports.AutorizacinDeDepsitosApiFp(this.configuration).getDepositAuthConfigurations(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.AutorizacinDeDepsitosApiFp)(this.configuration).getDepositAuthConfigurations(authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Habilita o deshabilita la autorización de depósitos. Devuelve la información final de la autorización de depósitos del contrato relacionado a la suscripción al terminar.
@@ -518,10 +569,206 @@ class AutorizacinDeDepsitosApi extends BaseAPI {
      * @memberof AutorizacinDeDepsitosApi
      */
     putDepositAuthConfigurations(body, authorization, subscription, options) {
-        return exports.AutorizacinDeDepsitosApiFp(this.configuration).putDepositAuthConfigurations(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.AutorizacinDeDepsitosApiFp)(this.configuration).putDepositAuthConfigurations(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.AutorizacinDeDepsitosApi = AutorizacinDeDepsitosApi;
+/**
+ * CargosRecurrentesApi - fetch parameter creator
+ * @export
+ */
+const CargosRecurrentesApiFetchParamCreator = function (configuration) {
+    return {
+        /**
+         *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+         * @summary Cancelación/desubscripción de cargos recurrentes
+         * @param {string} authorization Header para token
+         * @param {string} order_id orderId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteRecurringChargeUsingDELETE(authorization, order_id, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling deleteRecurringChargeUsingDELETE.');
+            }
+            // verify required parameter 'order_id' is not null or undefined
+            if (order_id === null || order_id === undefined) {
+                throw new RequiredError('order_id', 'Required parameter order_id was null or undefined when calling deleteRecurringChargeUsingDELETE.');
+            }
+            const localVarPath = `/recurring-charge/{orderId}`
+                .replace(`{${"orderId"}}`, encodeURIComponent(String(order_id)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'DELETE' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+         * @summary Registro de cargos recurrentes
+         * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+         * @param {string} authorization Header para token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerRecurringChargeUsingPOST(body, authorization, options = {}) {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling registerRecurringChargeUsingPOST.');
+            }
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling registerRecurringChargeUsingPOST.');
+            }
+            const localVarPath = `/recurring-charge`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("RecurringChargeRequest" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    };
+};
+exports.CargosRecurrentesApiFetchParamCreator = CargosRecurrentesApiFetchParamCreator;
+/**
+ * CargosRecurrentesApi - functional programming interface
+ * @export
+ */
+const CargosRecurrentesApiFp = function (configuration) {
+    return {
+        /**
+         *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+         * @summary Cancelación/desubscripción de cargos recurrentes
+         * @param {string} authorization Header para token
+         * @param {string} order_id orderId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteRecurringChargeUsingDELETE(authorization, order_id, options) {
+            const localVarFetchArgs = (0, exports.CargosRecurrentesApiFetchParamCreator)(configuration).deleteRecurringChargeUsingDELETE(authorization, order_id, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+         * @summary Registro de cargos recurrentes
+         * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+         * @param {string} authorization Header para token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerRecurringChargeUsingPOST(body, authorization, options) {
+            const localVarFetchArgs = (0, exports.CargosRecurrentesApiFetchParamCreator)(configuration).registerRecurringChargeUsingPOST(body, authorization, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+    };
+};
+exports.CargosRecurrentesApiFp = CargosRecurrentesApiFp;
+/**
+ * CargosRecurrentesApi - factory interface
+ * @export
+ */
+const CargosRecurrentesApiFactory = function (configuration, fetch, basePath) {
+    return {
+        /**
+         *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+         * @summary Cancelación/desubscripción de cargos recurrentes
+         * @param {string} authorization Header para token
+         * @param {string} order_id orderId
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteRecurringChargeUsingDELETE(authorization, order_id, options) {
+            return (0, exports.CargosRecurrentesApiFp)(configuration).deleteRecurringChargeUsingDELETE(authorization, order_id, options)(fetch, basePath);
+        },
+        /**
+         *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+         * @summary Registro de cargos recurrentes
+         * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+         * @param {string} authorization Header para token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerRecurringChargeUsingPOST(body, authorization, options) {
+            return (0, exports.CargosRecurrentesApiFp)(configuration).registerRecurringChargeUsingPOST(body, authorization, options)(fetch, basePath);
+        },
+    };
+};
+exports.CargosRecurrentesApiFactory = CargosRecurrentesApiFactory;
+/**
+ * CargosRecurrentesApi - object-oriented interface
+ * @export
+ * @class CargosRecurrentesApi
+ * @extends {BaseAPI}
+ */
+class CargosRecurrentesApi extends BaseAPI {
+    /**
+     *  Se solicita la desuscripción de un cargo recurrente activo. En el request llevará el orderId que identifica el cargo recurrente a eliminar/dar de baja se deshabilitará tanto de openpay como del sistem wire4.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Cancelación/desubscripción de cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {string} order_id orderId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CargosRecurrentesApi
+     */
+    deleteRecurringChargeUsingDELETE(authorization, order_id, options) {
+        return (0, exports.CargosRecurrentesApiFp)(this.configuration).deleteRecurringChargeUsingDELETE(authorization, order_id, options)(this.fetch, this.basePath);
+    }
+    /**
+     *  Se registra una solicitud para generar un plan de cargos recurrentes. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos de acuerdo al plan seleccionado.<br> Nota: Debe considerar que para hacer uso de esta funcionalidad debe contar con un scope  especial
+     * @summary Registro de cargos recurrentes
+     * @param {RecurringChargeRequest} body Información de la solicitud para aplicar cargos recurrentes
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CargosRecurrentesApi
+     */
+    registerRecurringChargeUsingPOST(body, authorization, options) {
+        return (0, exports.CargosRecurrentesApiFp)(this.configuration).registerRecurringChargeUsingPOST(body, authorization, options)(this.fetch, this.basePath);
+    }
+}
+exports.CargosRecurrentesApi = CargosRecurrentesApi;
 /**
  * ComprobanteElectrnicoDePagoCEPApi - fetch parameter creator
  * @export
@@ -583,7 +830,7 @@ const ComprobanteElectrnicoDePagoCEPApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainTransactionCepUsingPOST(body, authorization, options) {
-            const localVarFetchArgs = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator(configuration).obtainTransactionCepUsingPOST(body, authorization, options);
+            const localVarFetchArgs = (0, exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator)(configuration).obtainTransactionCepUsingPOST(body, authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -613,7 +860,7 @@ const ComprobanteElectrnicoDePagoCEPApiFactory = function (configuration, fetch,
          * @throws {RequiredError}
          */
         obtainTransactionCepUsingPOST(body, authorization, options) {
-            return exports.ComprobanteElectrnicoDePagoCEPApiFp(configuration).obtainTransactionCepUsingPOST(body, authorization, options)(fetch, basePath);
+            return (0, exports.ComprobanteElectrnicoDePagoCEPApiFp)(configuration).obtainTransactionCepUsingPOST(body, authorization, options)(fetch, basePath);
         },
     };
 };
@@ -635,7 +882,7 @@ class ComprobanteElectrnicoDePagoCEPApi extends BaseAPI {
      * @memberof ComprobanteElectrnicoDePagoCEPApi
      */
     obtainTransactionCepUsingPOST(body, authorization, options) {
-        return exports.ComprobanteElectrnicoDePagoCEPApiFp(this.configuration).obtainTransactionCepUsingPOST(body, authorization, options)(this.fetch, this.basePath);
+        return (0, exports.ComprobanteElectrnicoDePagoCEPApiFp)(this.configuration).obtainTransactionCepUsingPOST(body, authorization, options)(this.fetch, this.basePath);
     }
 }
 exports.ComprobanteElectrnicoDePagoCEPApi = ComprobanteElectrnicoDePagoCEPApi;
@@ -700,7 +947,7 @@ const ContactoApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         sendContactUsingPOST(body, authorization, options) {
-            const localVarFetchArgs = exports.ContactoApiFetchParamCreator(configuration).sendContactUsingPOST(body, authorization, options);
+            const localVarFetchArgs = (0, exports.ContactoApiFetchParamCreator)(configuration).sendContactUsingPOST(body, authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -730,7 +977,7 @@ const ContactoApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         sendContactUsingPOST(body, authorization, options) {
-            return exports.ContactoApiFp(configuration).sendContactUsingPOST(body, authorization, options)(fetch, basePath);
+            return (0, exports.ContactoApiFp)(configuration).sendContactUsingPOST(body, authorization, options)(fetch, basePath);
         },
     };
 };
@@ -752,7 +999,7 @@ class ContactoApi extends BaseAPI {
      * @memberof ContactoApi
      */
     sendContactUsingPOST(body, authorization, options) {
-        return exports.ContactoApiFp(this.configuration).sendContactUsingPOST(body, authorization, options)(this.fetch, this.basePath);
+        return (0, exports.ContactoApiFp)(this.configuration).sendContactUsingPOST(body, authorization, options)(this.fetch, this.basePath);
     }
 }
 exports.ContactoApi = ContactoApi;
@@ -946,7 +1193,7 @@ const ContractsDetailsApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         createAuthorization(body, authorization, options) {
-            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).createAuthorization(body, authorization, options);
+            const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).createAuthorization(body, authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -968,7 +1215,7 @@ const ContractsDetailsApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
-            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options);
+            const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -990,7 +1237,7 @@ const ContractsDetailsApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
-            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options);
+            const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1012,7 +1259,7 @@ const ContractsDetailsApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainContractDetails(body, authorization, X_ACCESS_KEY, options) {
-            const localVarFetchArgs = exports.ContractsDetailsApiFetchParamCreator(configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options);
+            const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1042,7 +1289,7 @@ const ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         createAuthorization(body, authorization, options) {
-            return exports.ContractsDetailsApiFp(configuration).createAuthorization(body, authorization, options)(fetch, basePath);
+            return (0, exports.ContractsDetailsApiFp)(configuration).createAuthorization(body, authorization, options)(fetch, basePath);
         },
         /**
          * Obtienen los detalles de los usuarios autorizados de Monex.
@@ -1054,7 +1301,7 @@ const ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
-            return exports.ContractsDetailsApiFp(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options)(fetch, basePath);
+            return (0, exports.ContractsDetailsApiFp)(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options)(fetch, basePath);
         },
         /**
          * Obtienen los detalles de los usuarios autorizados por contrato Monex.
@@ -1066,7 +1313,7 @@ const ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
-            return exports.ContractsDetailsApiFp(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options)(fetch, basePath);
+            return (0, exports.ContractsDetailsApiFp)(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options)(fetch, basePath);
         },
         /**
          * Detalles de la compañía relacionada con el contrato de Monex.
@@ -1078,7 +1325,7 @@ const ContractsDetailsApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         obtainContractDetails(body, authorization, X_ACCESS_KEY, options) {
-            return exports.ContractsDetailsApiFp(configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options)(fetch, basePath);
+            return (0, exports.ContractsDetailsApiFp)(configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options)(fetch, basePath);
         },
     };
 };
@@ -1100,7 +1347,7 @@ class ContractsDetailsApi extends BaseAPI {
      * @memberof ContractsDetailsApi
      */
     createAuthorization(body, authorization, options) {
-        return exports.ContractsDetailsApiFp(this.configuration).createAuthorization(body, authorization, options)(this.fetch, this.basePath);
+        return (0, exports.ContractsDetailsApiFp)(this.configuration).createAuthorization(body, authorization, options)(this.fetch, this.basePath);
     }
     /**
      * Obtienen los detalles de los usuarios autorizados de Monex.
@@ -1113,7 +1360,7 @@ class ContractsDetailsApi extends BaseAPI {
      * @memberof ContractsDetailsApi
      */
     obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
-        return exports.ContractsDetailsApiFp(this.configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options)(this.fetch, this.basePath);
+        return (0, exports.ContractsDetailsApiFp)(this.configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options)(this.fetch, this.basePath);
     }
     /**
      * Obtienen los detalles de los usuarios autorizados por contrato Monex.
@@ -1126,7 +1373,7 @@ class ContractsDetailsApi extends BaseAPI {
      * @memberof ContractsDetailsApi
      */
     obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
-        return exports.ContractsDetailsApiFp(this.configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options)(this.fetch, this.basePath);
+        return (0, exports.ContractsDetailsApiFp)(this.configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options)(this.fetch, this.basePath);
     }
     /**
      * Detalles de la compañía relacionada con el contrato de Monex.
@@ -1139,7 +1386,7 @@ class ContractsDetailsApi extends BaseAPI {
      * @memberof ContractsDetailsApi
      */
     obtainContractDetails(body, authorization, X_ACCESS_KEY, options) {
-        return exports.ContractsDetailsApiFp(this.configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options)(this.fetch, this.basePath);
+        return (0, exports.ContractsDetailsApiFp)(this.configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options)(this.fetch, this.basePath);
     }
 }
 exports.ContractsDetailsApi = ContractsDetailsApi;
@@ -1318,13 +1565,15 @@ const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) 
          * @param {string} [beneficiary_name] Es el nombre del beneficiario.
          * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
          * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [page] Es el número de página.
          * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+         * @param {string} [size] Es el tamaño de página.
          * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options = {}) {
+        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getBeneficiariesForAccountUsingGET.');
@@ -1354,8 +1603,14 @@ const CuentasDeBeneficiariosSPEIApiFetchParamCreator = function (configuration) 
             if (init_date !== undefined) {
                 localVarQueryParameter['init_date'] = init_date;
             }
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
             if (rfc !== undefined) {
                 localVarQueryParameter['rfc'] = rfc;
+            }
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
             }
             if (status !== undefined) {
                 localVarQueryParameter['status'] = status;
@@ -1524,7 +1779,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         authorizeAccountsPendingPUT(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1546,7 +1801,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         deleteAccountUsingDELETE(authorization, account, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).deleteAccountUsingDELETE(authorization, account, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).deleteAccountUsingDELETE(authorization, account, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1567,7 +1822,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getAvailableRelationshipsMonexUsingGET(authorization, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1589,7 +1844,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1610,14 +1865,16 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @param {string} [beneficiary_name] Es el nombre del beneficiario.
          * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
          * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [page] Es el número de página.
          * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+         * @param {string} [size] Es el tamaño de página.
          * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options);
+        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1639,7 +1896,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         preRegisterAccountsUsingPOST(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1661,7 +1918,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1684,7 +1941,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator(configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -1715,7 +1972,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         authorizeAccountsPendingPUT(body, authorization, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Elimina la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la suscripción. La cuenta a borrar debe ser una que opere con SPEI.
@@ -1727,7 +1984,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         deleteAccountUsingDELETE(authorization, account, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).deleteAccountUsingDELETE(authorization, account, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).deleteAccountUsingDELETE(authorization, account, subscription, options)(fetch, basePath);
         },
         /**
          * Obtiene las posibles relaciones existentes para registrar beneficiarios en Monex. Se debe invocar este recurso antes de pre-registrar una cuenta de beneficiario.
@@ -1738,7 +1995,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         getAvailableRelationshipsMonexUsingGET(authorization, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
@@ -1750,7 +2007,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
@@ -1761,14 +2018,16 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @param {string} [beneficiary_name] Es el nombre del beneficiario.
          * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
          * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+         * @param {string} [page] Es el número de página.
          * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+         * @param {string} [size] Es el tamaño de página.
          * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(fetch, basePath);
+        getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options)(fetch, basePath);
         },
         /**
          * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -1780,7 +2039,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         preRegisterAccountsUsingPOST(body, authorization, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
@@ -1792,7 +2051,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
@@ -1805,7 +2064,7 @@ const CuentasDeBeneficiariosSPEIApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPEIApiFp(configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -1828,7 +2087,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     authorizeAccountsPendingPUT(body, authorization, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Elimina la cuenta de beneficiario proporcionada relacionada al contrato perteneciente a la suscripción. La cuenta a borrar debe ser una que opere con SPEI.
@@ -1841,7 +2100,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     deleteAccountUsingDELETE(authorization, account, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).deleteAccountUsingDELETE(authorization, account, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).deleteAccountUsingDELETE(authorization, account, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene las posibles relaciones existentes para registrar beneficiarios en Monex. Se debe invocar este recurso antes de pre-registrar una cuenta de beneficiario.
@@ -1853,7 +2112,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     getAvailableRelationshipsMonexUsingGET(authorization, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene los beneficiarios enviados para registro en una petición al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex, que pertenezcan a la petición que se solicita.
@@ -1866,7 +2125,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene los beneficiarios registrados al contrato relacionado con la suscripción, Los beneficiarios son los que actualmente se encuentran registrados en banca Monex.
@@ -1877,15 +2136,17 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del perido a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fºecha de inicio del perido a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Controbuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta. Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
-    getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(this.fetch, this.basePath);
+    getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Pre-registra una o más cuentas de beneficiario en la plataforma de Wire4, ésta le proporcionará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -1898,7 +2159,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     preRegisterAccountsUsingPOST(body, authorization, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Elimina uno o más beneficiarios que se encuentran en estado pendiente de confirmar (autorizar) de la cuenta del cliente Monex relacionada a la suscripción.
@@ -1911,7 +2172,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Se crea una solicitud para actualizar el monto límite a la cuenta de beneficiario proporcionada y relacionada al contrato perteneciente a la subscripción. Una vez enviada la solicitud se retornará una URl que lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar la actualización del monto límite.
@@ -1925,7 +2186,7 @@ class CuentasDeBeneficiariosSPEIApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPEIApi
      */
     updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPEIApiFp(this.configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPEIApiFp)(this.configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.CuentasDeBeneficiariosSPEIApi = CuentasDeBeneficiariosSPEIApi;
@@ -1944,13 +2205,15 @@ const CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration) 
          * @param {string} [beneficiary_name] Es el nombre del beneficiario.
          * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
          * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [page] Es el número de página.
          * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+         * @param {string} [size] Es el tamaño de página.
          * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options = {}) {
+        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getSpidBeneficiariesForAccount.');
@@ -1980,8 +2243,14 @@ const CuentasDeBeneficiariosSPIDApiFetchParamCreator = function (configuration) 
             if (init_date !== undefined) {
                 localVarQueryParameter['init_date'] = init_date;
             }
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
             if (rfc !== undefined) {
                 localVarQueryParameter['rfc'] = rfc;
+            }
+            if (size !== undefined) {
+                localVarQueryParameter['size'] = size;
             }
             if (status !== undefined) {
                 localVarQueryParameter['status'] = status;
@@ -2059,14 +2328,16 @@ const CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
          * @param {string} [beneficiary_name] Es el nombre del beneficiario.
          * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
          * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [page] Es el número de página.
          * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+         * @param {string} [size] Es el tamaño de página.
          * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options);
+        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator)(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2088,7 +2359,7 @@ const CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         preRegisterAccountsUsingPOST1(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator(configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator)(configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2118,14 +2389,16 @@ const CuentasDeBeneficiariosSPIDApiFactory = function (configuration, fetch, bas
          * @param {string} [beneficiary_name] Es el nombre del beneficiario.
          * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
          * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+         * @param {string} [page] Es el número de página.
          * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+         * @param {string} [size] Es el tamaño de página.
          * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPIDApiFp(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(fetch, basePath);
+        getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
+            return (0, exports.CuentasDeBeneficiariosSPIDApiFp)(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options)(fetch, basePath);
         },
         /**
          * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -2137,7 +2410,7 @@ const CuentasDeBeneficiariosSPIDApiFactory = function (configuration, fetch, bas
          * @throws {RequiredError}
          */
         preRegisterAccountsUsingPOST1(body, authorization, subscription, options) {
-            return exports.CuentasDeBeneficiariosSPIDApiFp(configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.CuentasDeBeneficiariosSPIDApiFp)(configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -2158,15 +2431,17 @@ class CuentasDeBeneficiariosSPIDApi extends BaseAPI {
      * @param {string} [beneficiary_name] Es el nombre del beneficiario.
      * @param {string} [end_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
      * @param {string} [init_date] Es la fecha de inicio del periodo a filtrar en formato dd-mm-yyyy.
+     * @param {string} [page] Es el número de página.
      * @param {string} [rfc] Es el Registro Federal de Contribuyentes (RFC) del beneficiario.
+     * @param {string} [size] Es el tamaño de página.
      * @param {string} [status] Es el estado (estatus) de la cuenta, Los valores pueden ser &lt;b&gt;PENDING&lt;/b&gt; y &lt;b&gt;REGISTERED&lt;/b&gt;.
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CuentasDeBeneficiariosSPIDApi
      */
-    getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPIDApiFp(this.configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, rfc, status, subscription, options)(this.fetch, this.basePath);
+    getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
+        return (0, exports.CuentasDeBeneficiariosSPIDApiFp)(this.configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Pre-registra una o más cuentas de beneficiario SPID® en la plataforma de Wire4, ésta le proporcionaará una URL donde lo llevará al centro de autorización para que el cuentahabiente Monex ingrese su llave digital para confirmar el alta de las cuentas de beneficiarios.<br/> Los posibles valores de <em>relationship</em> y <em>kind_of_relationship</em> se deben  obtener de <a href=\"#operation/getAvailableRelationshipsMonexUsingGET\">/subscriptions/{subscription}/beneficiaries/relationships.</a><br/><br/>La confirmación de registro en Monex se realizará a través de una notificación a los webhooks registrados con el evento de tipo <a href=\"#section/Eventos/Tipos-de-Eventos\">ACCOUNT.CREATED.</a>
@@ -2179,7 +2454,7 @@ class CuentasDeBeneficiariosSPIDApi extends BaseAPI {
      * @memberof CuentasDeBeneficiariosSPIDApi
      */
     preRegisterAccountsUsingPOST1(body, authorization, subscription, options) {
-        return exports.CuentasDeBeneficiariosSPIDApiFp(this.configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.CuentasDeBeneficiariosSPIDApiFp)(this.configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.CuentasDeBeneficiariosSPIDApi = CuentasDeBeneficiariosSPIDApi;
@@ -2191,13 +2466,13 @@ const DepositantesApiFetchParamCreator = function (configuration) {
     return {
         /**
          * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-         * @summary Consulta cuantas cuentas de depositantes existen
+         * @summary Número de depositantes por suscripción
          * @param {string} authorization Header para token
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-         getDepositantsTotalsUsingGET(authorization, subscription, options = {}) {
+        getDepositantsTotalsUsingGET(authorization, subscription, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
                 throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling getDepositantsTotalsUsingGET.');
@@ -2260,7 +2535,7 @@ const DepositantesApiFetchParamCreator = function (configuration) {
             };
         },
         /**
-         * Registra un nuevo depositante en el contrato asociado a la suscripción.
+         * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
          * @summary Registra un nuevo depositante
          * @param {DepositantsRegister} body Depositant info
          * @param {string} authorization Header para token
@@ -2313,13 +2588,13 @@ const DepositantesApiFp = function (configuration) {
     return {
         /**
          * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-         * @summary Consulta cuantas cuentas de depositantes existen
+         * @summary Número de depositantes por suscripción
          * @param {string} authorization Header para token
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-         getDepositantsTotalsUsingGET(authorization, subscription, options) {
+        getDepositantsTotalsUsingGET(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).getDepositantsTotalsUsingGET(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
@@ -2341,7 +2616,7 @@ const DepositantesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getDepositantsUsingGET(authorization, subscription, options) {
-            const localVarFetchArgs = exports.DepositantesApiFetchParamCreator(configuration).getDepositantsUsingGET(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).getDepositantsUsingGET(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2354,7 +2629,7 @@ const DepositantesApiFp = function (configuration) {
             };
         },
         /**
-         * Registra un nuevo depositante en el contrato asociado a la suscripción.
+         * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
          * @summary Registra un nuevo depositante
          * @param {DepositantsRegister} body Depositant info
          * @param {string} authorization Header para token
@@ -2363,7 +2638,7 @@ const DepositantesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         registerDepositantsUsingPOST(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.DepositantesApiFetchParamCreator(configuration).registerDepositantsUsingPOST(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).registerDepositantsUsingPOST(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2386,13 +2661,13 @@ const DepositantesApiFactory = function (configuration, fetch, basePath) {
     return {
         /**
          * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-         * @summary Consulta cuantas cuentas de depositantes existen
+         * @summary Número de depositantes por suscripción
          * @param {string} authorization Header para token
          * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-         getDepositantsTotalsUsingGET(authorization, subscription, options) {
+        getDepositantsTotalsUsingGET(authorization, subscription, options) {
             return (0, exports.DepositantesApiFp)(configuration).getDepositantsTotalsUsingGET(authorization, subscription, options)(fetch, basePath);
         },
         /**
@@ -2404,10 +2679,10 @@ const DepositantesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         getDepositantsUsingGET(authorization, subscription, options) {
-            return exports.DepositantesApiFp(configuration).getDepositantsUsingGET(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.DepositantesApiFp)(configuration).getDepositantsUsingGET(authorization, subscription, options)(fetch, basePath);
         },
         /**
-         * Registra un nuevo depositante en el contrato asociado a la suscripción.
+         * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
          * @summary Registra un nuevo depositante
          * @param {DepositantsRegister} body Depositant info
          * @param {string} authorization Header para token
@@ -2416,7 +2691,7 @@ const DepositantesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         registerDepositantsUsingPOST(body, authorization, subscription, options) {
-            return exports.DepositantesApiFp(configuration).registerDepositantsUsingPOST(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.DepositantesApiFp)(configuration).registerDepositantsUsingPOST(body, authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -2430,14 +2705,14 @@ exports.DepositantesApiFactory = DepositantesApiFactory;
 class DepositantesApi extends BaseAPI {
     /**
      * Obtiene la cantidad el total de depositantes asociados al contrato relacionado a la suscripción.
-     * @summary Consulta cuantas cuentas de depositantes existen
+     * @summary Número de depositantes por suscripción
      * @param {string} authorization Header para token
      * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DepositantesApi
      */
-     getDepositantsTotalsUsingGET(authorization, subscription, options) {
+    getDepositantsTotalsUsingGET(authorization, subscription, options) {
         return (0, exports.DepositantesApiFp)(this.configuration).getDepositantsTotalsUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
@@ -2450,10 +2725,10 @@ class DepositantesApi extends BaseAPI {
      * @memberof DepositantesApi
      */
     getDepositantsUsingGET(authorization, subscription, options) {
-        return exports.DepositantesApiFp(this.configuration).getDepositantsUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.DepositantesApiFp)(this.configuration).getDepositantsUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
-     * Registra un nuevo depositante en el contrato asociado a la suscripción.
+     * Registra un nuevo depositante en el contrato asociado a la suscripción. Si intenta registrar un depositante que previamente se había registrado, se devolverá la cuenta clabe asociada al Álias que está intentando registrar. Queda bajo responsabilidad del cliente verificar que los álias sean únicos en sus sistemas.
      * @summary Registra un nuevo depositante
      * @param {DepositantsRegister} body Depositant info
      * @param {string} authorization Header para token
@@ -2463,7 +2738,7 @@ class DepositantesApi extends BaseAPI {
      * @memberof DepositantesApi
      */
     registerDepositantsUsingPOST(body, authorization, subscription, options) {
-        return exports.DepositantesApiFp(this.configuration).registerDepositantsUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.DepositantesApiFp)(this.configuration).registerDepositantsUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.DepositantesApi = DepositantesApi;
@@ -2556,7 +2831,7 @@ const EmpresasCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainCompanies(authorization, options) {
-            const localVarFetchArgs = exports.EmpresasCoDiApiFetchParamCreator(configuration).obtainCompanies(authorization, options);
+            const localVarFetchArgs = (0, exports.EmpresasCoDiApiFetchParamCreator)(configuration).obtainCompanies(authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2577,7 +2852,7 @@ const EmpresasCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         registerCompanyUsingPOST(body, authorization, options) {
-            const localVarFetchArgs = exports.EmpresasCoDiApiFetchParamCreator(configuration).registerCompanyUsingPOST(body, authorization, options);
+            const localVarFetchArgs = (0, exports.EmpresasCoDiApiFetchParamCreator)(configuration).registerCompanyUsingPOST(body, authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2606,7 +2881,7 @@ const EmpresasCoDiApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         obtainCompanies(authorization, options) {
-            return exports.EmpresasCoDiApiFp(configuration).obtainCompanies(authorization, options)(fetch, basePath);
+            return (0, exports.EmpresasCoDiApiFp)(configuration).obtainCompanies(authorization, options)(fetch, basePath);
         },
         /**
          * Registra una empresa para hacer uso de operaciones CODI®.<br><br> <b>Nota:<b> Es requerido tener el certificado emitido por BANXICO® asi como el Nombre de la empresa, Nombre comercial y el Registro Federal de Contribuyentes (RFC) de la empresa.<br/>
@@ -2617,7 +2892,7 @@ const EmpresasCoDiApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         registerCompanyUsingPOST(body, authorization, options) {
-            return exports.EmpresasCoDiApiFp(configuration).registerCompanyUsingPOST(body, authorization, options)(fetch, basePath);
+            return (0, exports.EmpresasCoDiApiFp)(configuration).registerCompanyUsingPOST(body, authorization, options)(fetch, basePath);
         },
     };
 };
@@ -2638,7 +2913,7 @@ class EmpresasCoDiApi extends BaseAPI {
      * @memberof EmpresasCoDiApi
      */
     obtainCompanies(authorization, options) {
-        return exports.EmpresasCoDiApiFp(this.configuration).obtainCompanies(authorization, options)(this.fetch, this.basePath);
+        return (0, exports.EmpresasCoDiApiFp)(this.configuration).obtainCompanies(authorization, options)(this.fetch, this.basePath);
     }
     /**
      * Registra una empresa para hacer uso de operaciones CODI®.<br><br> <b>Nota:<b> Es requerido tener el certificado emitido por BANXICO® asi como el Nombre de la empresa, Nombre comercial y el Registro Federal de Contribuyentes (RFC) de la empresa.<br/>
@@ -2650,7 +2925,7 @@ class EmpresasCoDiApi extends BaseAPI {
      * @memberof EmpresasCoDiApi
      */
     registerCompanyUsingPOST(body, authorization, options) {
-        return exports.EmpresasCoDiApiFp(this.configuration).registerCompanyUsingPOST(body, authorization, options)(this.fetch, this.basePath);
+        return (0, exports.EmpresasCoDiApiFp)(this.configuration).registerCompanyUsingPOST(body, authorization, options)(this.fetch, this.basePath);
     }
 }
 exports.EmpresasCoDiApi = EmpresasCoDiApi;
@@ -2746,7 +3021,7 @@ const FacturasApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         billingsReportByIdUsingGET(authorization, id, options) {
-            const localVarFetchArgs = exports.FacturasApiFetchParamCreator(configuration).billingsReportByIdUsingGET(authorization, id, options);
+            const localVarFetchArgs = (0, exports.FacturasApiFetchParamCreator)(configuration).billingsReportByIdUsingGET(authorization, id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2767,7 +3042,7 @@ const FacturasApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         billingsReportUsingGET(authorization, period, options) {
-            const localVarFetchArgs = exports.FacturasApiFetchParamCreator(configuration).billingsReportUsingGET(authorization, period, options);
+            const localVarFetchArgs = (0, exports.FacturasApiFetchParamCreator)(configuration).billingsReportUsingGET(authorization, period, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2797,7 +3072,7 @@ const FacturasApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         billingsReportByIdUsingGET(authorization, id, options) {
-            return exports.FacturasApiFp(configuration).billingsReportByIdUsingGET(authorization, id, options)(fetch, basePath);
+            return (0, exports.FacturasApiFp)(configuration).billingsReportByIdUsingGET(authorization, id, options)(fetch, basePath);
         },
         /**
          * Consulta las facturas emitidas por conceptos de uso de la plataforma y operaciones realizadas tanto de entrada como de salida. Es posible filtrar por periodo de fecha yyyy-MM, por ejemplo 2019-11
@@ -2808,7 +3083,7 @@ const FacturasApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         billingsReportUsingGET(authorization, period, options) {
-            return exports.FacturasApiFp(configuration).billingsReportUsingGET(authorization, period, options)(fetch, basePath);
+            return (0, exports.FacturasApiFp)(configuration).billingsReportUsingGET(authorization, period, options)(fetch, basePath);
         },
     };
 };
@@ -2830,7 +3105,7 @@ class FacturasApi extends BaseAPI {
      * @memberof FacturasApi
      */
     billingsReportByIdUsingGET(authorization, id, options) {
-        return exports.FacturasApiFp(this.configuration).billingsReportByIdUsingGET(authorization, id, options)(this.fetch, this.basePath);
+        return (0, exports.FacturasApiFp)(this.configuration).billingsReportByIdUsingGET(authorization, id, options)(this.fetch, this.basePath);
     }
     /**
      * Consulta las facturas emitidas por conceptos de uso de la plataforma y operaciones realizadas tanto de entrada como de salida. Es posible filtrar por periodo de fecha yyyy-MM, por ejemplo 2019-11
@@ -2842,7 +3117,7 @@ class FacturasApi extends BaseAPI {
      * @memberof FacturasApi
      */
     billingsReportUsingGET(authorization, period, options) {
-        return exports.FacturasApiFp(this.configuration).billingsReportUsingGET(authorization, period, options)(this.fetch, this.basePath);
+        return (0, exports.FacturasApiFp)(this.configuration).billingsReportUsingGET(authorization, period, options)(this.fetch, this.basePath);
     }
 }
 exports.FacturasApi = FacturasApi;
@@ -2898,7 +3173,7 @@ const InstitucionesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getAllInstitutionsUsingGET(authorization, options) {
-            const localVarFetchArgs = exports.InstitucionesApiFetchParamCreator(configuration).getAllInstitutionsUsingGET(authorization, options);
+            const localVarFetchArgs = (0, exports.InstitucionesApiFetchParamCreator)(configuration).getAllInstitutionsUsingGET(authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2927,7 +3202,7 @@ const InstitucionesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         getAllInstitutionsUsingGET(authorization, options) {
-            return exports.InstitucionesApiFp(configuration).getAllInstitutionsUsingGET(authorization, options)(fetch, basePath);
+            return (0, exports.InstitucionesApiFp)(configuration).getAllInstitutionsUsingGET(authorization, options)(fetch, basePath);
         },
     };
 };
@@ -2948,7 +3223,7 @@ class InstitucionesApi extends BaseAPI {
      * @memberof InstitucionesApi
      */
     getAllInstitutionsUsingGET(authorization, options) {
-        return exports.InstitucionesApiFp(this.configuration).getAllInstitutionsUsingGET(authorization, options)(this.fetch, this.basePath);
+        return (0, exports.InstitucionesApiFp)(this.configuration).getAllInstitutionsUsingGET(authorization, options)(this.fetch, this.basePath);
     }
 }
 exports.InstitucionesApi = InstitucionesApi;
@@ -3054,7 +3329,7 @@ const LmitesDeMontosApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainConfigurationsLimits(authorization, suscription, options) {
-            const localVarFetchArgs = exports.LmitesDeMontosApiFetchParamCreator(configuration).obtainConfigurationsLimits(authorization, suscription, options);
+            const localVarFetchArgs = (0, exports.LmitesDeMontosApiFetchParamCreator)(configuration).obtainConfigurationsLimits(authorization, suscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3076,7 +3351,7 @@ const LmitesDeMontosApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         updateConfigurations(body, authorization, suscription, options) {
-            const localVarFetchArgs = exports.LmitesDeMontosApiFetchParamCreator(configuration).updateConfigurations(body, authorization, suscription, options);
+            const localVarFetchArgs = (0, exports.LmitesDeMontosApiFetchParamCreator)(configuration).updateConfigurations(body, authorization, suscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3106,7 +3381,7 @@ const LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         obtainConfigurationsLimits(authorization, suscription, options) {
-            return exports.LmitesDeMontosApiFp(configuration).obtainConfigurationsLimits(authorization, suscription, options)(fetch, basePath);
+            return (0, exports.LmitesDeMontosApiFp)(configuration).obtainConfigurationsLimits(authorization, suscription, options)(fetch, basePath);
         },
         /**
          * Actualiza las configuraciones de un contrato asociado a una suscripción
@@ -3118,7 +3393,7 @@ const LmitesDeMontosApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         updateConfigurations(body, authorization, suscription, options) {
-            return exports.LmitesDeMontosApiFp(configuration).updateConfigurations(body, authorization, suscription, options)(fetch, basePath);
+            return (0, exports.LmitesDeMontosApiFp)(configuration).updateConfigurations(body, authorization, suscription, options)(fetch, basePath);
         },
     };
 };
@@ -3140,7 +3415,7 @@ class LmitesDeMontosApi extends BaseAPI {
      * @memberof LmitesDeMontosApi
      */
     obtainConfigurationsLimits(authorization, suscription, options) {
-        return exports.LmitesDeMontosApiFp(this.configuration).obtainConfigurationsLimits(authorization, suscription, options)(this.fetch, this.basePath);
+        return (0, exports.LmitesDeMontosApiFp)(this.configuration).obtainConfigurationsLimits(authorization, suscription, options)(this.fetch, this.basePath);
     }
     /**
      * Actualiza las configuraciones de un contrato asociado a una suscripción
@@ -3153,7 +3428,7 @@ class LmitesDeMontosApi extends BaseAPI {
      * @memberof LmitesDeMontosApi
      */
     updateConfigurations(body, authorization, suscription, options) {
-        return exports.LmitesDeMontosApiFp(this.configuration).updateConfigurations(body, authorization, suscription, options)(this.fetch, this.basePath);
+        return (0, exports.LmitesDeMontosApiFp)(this.configuration).updateConfigurations(body, authorization, suscription, options)(this.fetch, this.basePath);
     }
 }
 exports.LmitesDeMontosApi = LmitesDeMontosApi;
@@ -3234,7 +3509,7 @@ const OperacionesCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
-            const localVarFetchArgs = exports.OperacionesCoDiApiFetchParamCreator(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options);
+            const localVarFetchArgs = (0, exports.OperacionesCoDiApiFetchParamCreator)(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3268,7 +3543,7 @@ const OperacionesCoDiApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
-            return exports.OperacionesCoDiApiFp(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options)(fetch, basePath);
+            return (0, exports.OperacionesCoDiApiFp)(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options)(fetch, basePath);
         },
     };
 };
@@ -3294,7 +3569,7 @@ class OperacionesCoDiApi extends BaseAPI {
      * @memberof OperacionesCoDiApi
      */
     consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
-        return exports.OperacionesCoDiApiFp(this.configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options)(this.fetch, this.basePath);
+        return (0, exports.OperacionesCoDiApiFp)(this.configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options)(this.fetch, this.basePath);
     }
 }
 exports.OperacionesCoDiApi = OperacionesCoDiApi;
@@ -3413,7 +3688,7 @@ const PeticionesDePagoPorCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
-            const localVarFetchArgs = exports.PeticionesDePagoPorCoDiApiFetchParamCreator(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options);
+            const localVarFetchArgs = (0, exports.PeticionesDePagoPorCoDiApiFetchParamCreator)(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3435,7 +3710,7 @@ const PeticionesDePagoPorCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         generateCodiCodeQR(body, authorization, sales_point_id, options) {
-            const localVarFetchArgs = exports.PeticionesDePagoPorCoDiApiFetchParamCreator(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options);
+            const localVarFetchArgs = (0, exports.PeticionesDePagoPorCoDiApiFetchParamCreator)(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3466,7 +3741,7 @@ const PeticionesDePagoPorCoDiApiFactory = function (configuration, fetch, basePa
          * @throws {RequiredError}
          */
         consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
-            return exports.PeticionesDePagoPorCoDiApiFp(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options)(fetch, basePath);
+            return (0, exports.PeticionesDePagoPorCoDiApiFp)(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options)(fetch, basePath);
         },
         /**
          * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
@@ -3478,7 +3753,7 @@ const PeticionesDePagoPorCoDiApiFactory = function (configuration, fetch, basePa
          * @throws {RequiredError}
          */
         generateCodiCodeQR(body, authorization, sales_point_id, options) {
-            return exports.PeticionesDePagoPorCoDiApiFp(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options)(fetch, basePath);
+            return (0, exports.PeticionesDePagoPorCoDiApiFp)(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options)(fetch, basePath);
         },
     };
 };
@@ -3501,7 +3776,7 @@ class PeticionesDePagoPorCoDiApi extends BaseAPI {
      * @memberof PeticionesDePagoPorCoDiApi
      */
     consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
-        return exports.PeticionesDePagoPorCoDiApiFp(this.configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options)(this.fetch, this.basePath);
+        return (0, exports.PeticionesDePagoPorCoDiApiFp)(this.configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options)(this.fetch, this.basePath);
     }
     /**
      * Genera un código QR solicitado por un punto de venta para un pago mediante CODI®
@@ -3514,7 +3789,7 @@ class PeticionesDePagoPorCoDiApi extends BaseAPI {
      * @memberof PeticionesDePagoPorCoDiApi
      */
     generateCodiCodeQR(body, authorization, sales_point_id, options) {
-        return exports.PeticionesDePagoPorCoDiApiFp(this.configuration).generateCodiCodeQR(body, authorization, sales_point_id, options)(this.fetch, this.basePath);
+        return (0, exports.PeticionesDePagoPorCoDiApiFp)(this.configuration).generateCodiCodeQR(body, authorization, sales_point_id, options)(this.fetch, this.basePath);
     }
 }
 exports.PeticionesDePagoPorCoDiApi = PeticionesDePagoPorCoDiApi;
@@ -3625,7 +3900,7 @@ const PuntosDeVentaCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         createSalesPoint(body, authorization, company_id, options) {
-            const localVarFetchArgs = exports.PuntosDeVentaCoDiApiFetchParamCreator(configuration).createSalesPoint(body, authorization, company_id, options);
+            const localVarFetchArgs = (0, exports.PuntosDeVentaCoDiApiFetchParamCreator)(configuration).createSalesPoint(body, authorization, company_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3646,7 +3921,7 @@ const PuntosDeVentaCoDiApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         obtainSalePoints(authorization, company_id, options) {
-            const localVarFetchArgs = exports.PuntosDeVentaCoDiApiFetchParamCreator(configuration).obtainSalePoints(authorization, company_id, options);
+            const localVarFetchArgs = (0, exports.PuntosDeVentaCoDiApiFetchParamCreator)(configuration).obtainSalePoints(authorization, company_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3677,7 +3952,7 @@ const PuntosDeVentaCoDiApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         createSalesPoint(body, authorization, company_id, options) {
-            return exports.PuntosDeVentaCoDiApiFp(configuration).createSalesPoint(body, authorization, company_id, options)(fetch, basePath);
+            return (0, exports.PuntosDeVentaCoDiApiFp)(configuration).createSalesPoint(body, authorization, company_id, options)(fetch, basePath);
         },
         /**
          * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
@@ -3688,7 +3963,7 @@ const PuntosDeVentaCoDiApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         obtainSalePoints(authorization, company_id, options) {
-            return exports.PuntosDeVentaCoDiApiFp(configuration).obtainSalePoints(authorization, company_id, options)(fetch, basePath);
+            return (0, exports.PuntosDeVentaCoDiApiFp)(configuration).obtainSalePoints(authorization, company_id, options)(fetch, basePath);
         },
     };
 };
@@ -3711,7 +3986,7 @@ class PuntosDeVentaCoDiApi extends BaseAPI {
      * @memberof PuntosDeVentaCoDiApi
      */
     createSalesPoint(body, authorization, company_id, options) {
-        return exports.PuntosDeVentaCoDiApiFp(this.configuration).createSalesPoint(body, authorization, company_id, options)(this.fetch, this.basePath);
+        return (0, exports.PuntosDeVentaCoDiApiFp)(this.configuration).createSalesPoint(body, authorization, company_id, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene los puntos de venta asociados a una empresa en las cuales se hacen operaciones CODI®.
@@ -3723,7 +3998,7 @@ class PuntosDeVentaCoDiApi extends BaseAPI {
      * @memberof PuntosDeVentaCoDiApi
      */
     obtainSalePoints(authorization, company_id, options) {
-        return exports.PuntosDeVentaCoDiApiFp(this.configuration).obtainSalePoints(authorization, company_id, options)(this.fetch, this.basePath);
+        return (0, exports.PuntosDeVentaCoDiApiFp)(this.configuration).obtainSalePoints(authorization, company_id, options)(this.fetch, this.basePath);
     }
 }
 exports.PuntosDeVentaCoDiApi = PuntosDeVentaCoDiApi;
@@ -3786,7 +4061,7 @@ const SaldoApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getBalanceUsingGET(authorization, subscription, options) {
-            const localVarFetchArgs = exports.SaldoApiFetchParamCreator(configuration).getBalanceUsingGET(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.SaldoApiFetchParamCreator)(configuration).getBalanceUsingGET(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -3816,7 +4091,7 @@ const SaldoApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         getBalanceUsingGET(authorization, subscription, options) {
-            return exports.SaldoApiFp(configuration).getBalanceUsingGET(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.SaldoApiFp)(configuration).getBalanceUsingGET(authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -3838,7 +4113,7 @@ class SaldoApi extends BaseAPI {
      * @memberof SaldoApi
      */
     getBalanceUsingGET(authorization, subscription, options) {
-        return exports.SaldoApiFp(this.configuration).getBalanceUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.SaldoApiFp)(this.configuration).getBalanceUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.SaldoApi = SaldoApi;
@@ -4060,7 +4335,7 @@ const SuscripcionesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.SuscripcionesApiFetchParamCreator(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4082,7 +4357,7 @@ const SuscripcionesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         changeSubscriptionUseUsingPATCH(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.SuscripcionesApiFetchParamCreator(configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4103,7 +4378,7 @@ const SuscripcionesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         preEnrollmentMonexUserUsingPOST(body, authorization, options) {
-            const localVarFetchArgs = exports.SuscripcionesApiFetchParamCreator(configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options);
+            const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4124,7 +4399,7 @@ const SuscripcionesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         removeEnrollmentUserUsingDELETE(authorization, subscription, options) {
-            const localVarFetchArgs = exports.SuscripcionesApiFetchParamCreator(configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4145,7 +4420,7 @@ const SuscripcionesApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options) {
-            const localVarFetchArgs = exports.SuscripcionesApiFetchParamCreator(configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4176,7 +4451,7 @@ const SuscripcionesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
-            return exports.SuscripcionesApiFp(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.SuscripcionesApiFp)(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Se asigna o cambia el uso y el estatus que se le dará a la subscripción para los servicios SPEI y SPID en el manejo de Cobros y Pagos El status puede tener los posibles valores: ACTIVE o INACTIVE. El uso puede tener los posibles valores: WITHDRAWAL_DEPOSIT o WITHDRAWAL o DEPOSIT
@@ -4188,7 +4463,7 @@ const SuscripcionesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         changeSubscriptionUseUsingPATCH(body, authorization, subscription, options) {
-            return exports.SuscripcionesApiFp(configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.SuscripcionesApiFp)(configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Pre-registra una suscripción para operar un contrato a través de un aplicación socio de la plataforma. Se retorna una dirección URL hacia el centro de autorización donde el cliente  Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/><br/>Una vez que el cuentahabiente autorice el acceso, se envía una notificación (webhook configurado) con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
@@ -4199,7 +4474,7 @@ const SuscripcionesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         preEnrollmentMonexUserUsingPOST(body, authorization, options) {
-            return exports.SuscripcionesApiFp(configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options)(fetch, basePath);
+            return (0, exports.SuscripcionesApiFp)(configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options)(fetch, basePath);
         },
         /**
          * Elimina una suscripción mediante su identificador. Una vez eliminada dicha suscripción, ya no se podrán realizar operaciones en el API utilizando sus credenciales
@@ -4210,7 +4485,7 @@ const SuscripcionesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         removeEnrollmentUserUsingDELETE(authorization, subscription, options) {
-            return exports.SuscripcionesApiFp(configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.SuscripcionesApiFp)(configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Se elimina el pre-registro de suscripción. Sólo se elimina en caso de que el cliente Monex no haya concedido su autorización de acceso (token), es decir que la suscripcion esté pendiente.
@@ -4221,7 +4496,7 @@ const SuscripcionesApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options) {
-            return exports.SuscripcionesApiFp(configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.SuscripcionesApiFp)(configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -4244,7 +4519,7 @@ class SuscripcionesApi extends BaseAPI {
      * @memberof SuscripcionesApi
      */
     changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
-        return exports.SuscripcionesApiFp(this.configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.SuscripcionesApiFp)(this.configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Se asigna o cambia el uso y el estatus que se le dará a la subscripción para los servicios SPEI y SPID en el manejo de Cobros y Pagos El status puede tener los posibles valores: ACTIVE o INACTIVE. El uso puede tener los posibles valores: WITHDRAWAL_DEPOSIT o WITHDRAWAL o DEPOSIT
@@ -4257,7 +4532,7 @@ class SuscripcionesApi extends BaseAPI {
      * @memberof SuscripcionesApi
      */
     changeSubscriptionUseUsingPATCH(body, authorization, subscription, options) {
-        return exports.SuscripcionesApiFp(this.configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.SuscripcionesApiFp)(this.configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Pre-registra una suscripción para operar un contrato a través de un aplicación socio de la plataforma. Se retorna una dirección URL hacia el centro de autorización donde el cliente  Monex debe autorizar el acceso a los datos de su cuenta a el socio.<br/><br/>Una vez que el cuentahabiente autorice el acceso, se envía una notificación (webhook configurado) con el evento 'ENROLLMENT.CREATED', el cuál contiene los datos de acceso a esta API.
@@ -4269,7 +4544,7 @@ class SuscripcionesApi extends BaseAPI {
      * @memberof SuscripcionesApi
      */
     preEnrollmentMonexUserUsingPOST(body, authorization, options) {
-        return exports.SuscripcionesApiFp(this.configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options)(this.fetch, this.basePath);
+        return (0, exports.SuscripcionesApiFp)(this.configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options)(this.fetch, this.basePath);
     }
     /**
      * Elimina una suscripción mediante su identificador. Una vez eliminada dicha suscripción, ya no se podrán realizar operaciones en el API utilizando sus credenciales
@@ -4281,7 +4556,7 @@ class SuscripcionesApi extends BaseAPI {
      * @memberof SuscripcionesApi
      */
     removeEnrollmentUserUsingDELETE(authorization, subscription, options) {
-        return exports.SuscripcionesApiFp(this.configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.SuscripcionesApiFp)(this.configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Se elimina el pre-registro de suscripción. Sólo se elimina en caso de que el cliente Monex no haya concedido su autorización de acceso (token), es decir que la suscripcion esté pendiente.
@@ -4293,7 +4568,7 @@ class SuscripcionesApi extends BaseAPI {
      * @memberof SuscripcionesApi
      */
     removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options) {
-        return exports.SuscripcionesApiFp(this.configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.SuscripcionesApiFp)(this.configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.SuscripcionesApi = SuscripcionesApi;
@@ -4476,6 +4751,86 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
             };
         },
         /**
+         * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+         * @summary Consulta de transferencias realizadas por order_id
+         * @param {string} authorization Header para token
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling outCommingSpeiSpidOrderIdTransactionReportUsingGET.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling outCommingSpeiSpidOrderIdTransactionReportUsingGET.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/transactions/outcoming`
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (order_id !== undefined) {
+                localVarQueryParameter['order_id'] = order_id;
+            }
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+         * @summary Consulta de transferencias de salida por identificador de petición
+         * @param {string} authorization Header para token
+         * @param {string} request_id Identificador de la petición a buscar.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling outCommingSpeiSpidRequestIdTransactionsReportUsingGET.');
+            }
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling outCommingSpeiSpidRequestIdTransactionsReportUsingGET.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling outCommingSpeiSpidRequestIdTransactionsReportUsingGET.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/transactions/outcoming/{requestId}`
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)))
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
          * @summary Consulta de transferencias realizadas
          * @param {string} authorization Header para token
@@ -4557,6 +4912,49 @@ const TransferenciasSPEIApiFetchParamCreator = function (configuration) {
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+         * @summary Registro de transferencias SPEI y SPID
+         * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+         * @param {string} authorization Header para token
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options = {}) {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling registerSpeiSpidOutgoingTransactionsUsingPOST.');
+            }
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling registerSpeiSpidOutgoingTransactionsUsingPOST.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling registerSpeiSpidOutgoingTransactionsUsingPOST.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/transactions/outcoming`
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("TransactionsRegister" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     };
 };
 exports.TransferenciasSPEIApiFetchParamCreator = TransferenciasSPEIApiFetchParamCreator;
@@ -4576,7 +4974,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         createAuthorizationTransactionsGroup(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4599,7 +4997,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4622,7 +5020,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4644,7 +5042,51 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+         * @summary Consulta de transferencias realizadas por order_id
+         * @param {string} authorization Header para token
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options) {
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+         * @summary Consulta de transferencias de salida por identificador de petición
+         * @param {string} authorization Header para token
+         * @param {string} request_id Identificador de la petición a buscar.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4666,7 +5108,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4688,7 +5130,29 @@ const TransferenciasSPEIApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPEIApiFetchParamCreator(configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options);
+            return (fetch = portableFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+         * @summary Registro de transferencias SPEI y SPID
+         * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+         * @param {string} authorization Header para token
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options) {
+            const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4719,7 +5183,7 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         createAuthorizationTransactionsGroup(body, authorization, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
@@ -4732,7 +5196,7 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
@@ -4745,7 +5209,7 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options)(fetch, basePath);
         },
         /**
          * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
@@ -4757,7 +5221,31 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(fetch, basePath);
+        },
+        /**
+         * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+         * @summary Consulta de transferencias realizadas por order_id
+         * @param {string} authorization Header para token
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options) {
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options)(fetch, basePath);
+        },
+        /**
+         * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+         * @summary Consulta de transferencias de salida por identificador de petición
+         * @param {string} authorization Header para token
+         * @param {string} request_id Identificador de la petición a buscar.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(fetch, basePath);
         },
         /**
          * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
@@ -4769,7 +5257,7 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options)(fetch, basePath);
         },
         /**
          * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
@@ -4781,7 +5269,19 @@ const TransferenciasSPEIApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options) {
-            return exports.TransferenciasSPEIApiFp(configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options)(fetch, basePath);
+        },
+        /**
+         * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+         * @summary Registro de transferencias SPEI y SPID
+         * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+         * @param {string} authorization Header para token
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options) {
+            return (0, exports.TransferenciasSPEIApiFp)(configuration).registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -4804,7 +5304,7 @@ class TransferenciasSPEIApi extends BaseAPI {
      * @memberof TransferenciasSPEIApi
      */
     createAuthorizationTransactionsGroup(body, authorization, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Elimina un conjunto de transferencias en estado pendiente de confirmar o autorizar, en la cuenta del cliente Monex relacionada a la suscripción.<br><br><b>Nota:</b> Las transferencias no deben haber sido confirmadas o autorizadas por el cliente.
@@ -4818,7 +5318,7 @@ class TransferenciasSPEIApi extends BaseAPI {
      * @memberof TransferenciasSPEIApi
      */
     dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Realiza una consulta de las transferencias recibidas (depósitos) en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias  recibidas durante el día en el que se realiza la consulta. Para consultar transacciones que se encuentran en otras fechas se debe utilizar los parámetros de fecha inicial (beginDate) y fecha final (endDate), siempre deben de ir las dos ya que en caso de que falte una marcará error la consulta, si faltan las dos la consulta lanzará solo las del día, como se describe al inicio. El formato para las fechas es \"yyyy-MM-dd\"
@@ -4832,7 +5332,7 @@ class TransferenciasSPEIApi extends BaseAPI {
      * @memberof TransferenciasSPEIApi
      */
     incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
@@ -4845,7 +5345,33 @@ class TransferenciasSPEIApi extends BaseAPI {
      * @memberof TransferenciasSPEIApi
      */
     outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(this.fetch, this.basePath);
+    }
+    /**
+     * Consulta las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta o las transferencias identificadas con el <strong>order_id</strong> proporcionado, para este tipo de consultas no importa el día en el que se realizó la transferencia. <br> Es importante que conozca que la respuesta puede dar como resultado un objeto con una lista spei o una lista spid con el/los elementos ya que un identificador order_id solo puede pertenecer a una transacción sea spei o spid.
+     * @summary Consulta de transferencias realizadas por order_id
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApi
+     */
+    outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options) {
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options)(this.fetch, this.basePath);
+    }
+    /**
+     * Consulta las transferencias de salida registradas en una petición, las transferencias que regresa este recuso son únicamente las transferencias de salida agrupadas al identificador de la petición que se generó al hacer el registro de las transacciones el cuál se debe especificar como parte del path de este endpoint.
+     * @summary Consulta de transferencias de salida por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApi
+     */
+    outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Consulta las transferencias realizadas en la cuenta del cliente Monex relacionada a la suscripción, las transferencias que regresa este recuso son únicamente las transferencias recibidas en el día en el que se realiza la consulta.<br>Se pueden realizar consultas por <strong>order_id</strong> al realizar este tipo de consultas no importa el día en el que se realizó la transferencia
@@ -4858,7 +5384,7 @@ class TransferenciasSPEIApi extends BaseAPI {
      * @memberof TransferenciasSPEIApi
      */
     outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Se registra un conjunto de transferencias (una o más) a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
@@ -4871,7 +5397,20 @@ class TransferenciasSPEIApi extends BaseAPI {
      * @memberof TransferenciasSPEIApi
      */
     registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options) {
-        return exports.TransferenciasSPEIApiFp(this.configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
+    }
+    /**
+     * Se registra un conjunto de transferencias (una o más) tanto SPEI como SPID en una sola petición en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br>  Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
+     * @summary Registro de transferencias SPEI y SPID
+     * @param {TransactionsRegister} body Información de las transferencias SPEI y SPID de salida
+     * @param {string} authorization Header para token
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TransferenciasSPEIApi
+     */
+    registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options) {
+        return (0, exports.TransferenciasSPEIApiFp)(this.configuration).registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.TransferenciasSPEIApi = TransferenciasSPEIApi;
@@ -4977,7 +5516,7 @@ const TransferenciasSPIDApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getSpidClassificationsUsingGET(authorization, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPIDApiFetchParamCreator(configuration).getSpidClassificationsUsingGET(authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPIDApiFetchParamCreator)(configuration).getSpidClassificationsUsingGET(authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -4999,7 +5538,7 @@ const TransferenciasSPIDApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options) {
-            const localVarFetchArgs = exports.TransferenciasSPIDApiFetchParamCreator(configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options);
+            const localVarFetchArgs = (0, exports.TransferenciasSPIDApiFetchParamCreator)(configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -5029,7 +5568,7 @@ const TransferenciasSPIDApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         getSpidClassificationsUsingGET(authorization, subscription, options) {
-            return exports.TransferenciasSPIDApiFp(configuration).getSpidClassificationsUsingGET(authorization, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPIDApiFp)(configuration).getSpidClassificationsUsingGET(authorization, subscription, options)(fetch, basePath);
         },
         /**
          * Registra un conjunto de transferencias a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br> Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
@@ -5041,7 +5580,7 @@ const TransferenciasSPIDApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options) {
-            return exports.TransferenciasSPIDApiFp(configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options)(fetch, basePath);
+            return (0, exports.TransferenciasSPIDApiFp)(configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options)(fetch, basePath);
         },
     };
 };
@@ -5063,7 +5602,7 @@ class TransferenciasSPIDApi extends BaseAPI {
      * @memberof TransferenciasSPIDApi
      */
     getSpidClassificationsUsingGET(authorization, subscription, options) {
-        return exports.TransferenciasSPIDApiFp(this.configuration).getSpidClassificationsUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPIDApiFp)(this.configuration).getSpidClassificationsUsingGET(authorization, subscription, options)(this.fetch, this.basePath);
     }
     /**
      * Registra un conjunto de transferencias a realizar en la cuenta del cliente Monex relacionada a la suscripción. En la respuesta se proporcionará una dirección URL que lo llevará al centro de autorización para que las transferencias sean confirmadas (autorizadas) por el cliente para que se efectúen, para ello debe ingresar la llave electrónica (Token).<br> Nota: Debe considerar que el concepto de cada una de las transacciones solo debe contener caracteres alfanuméricos por lo que en caso de que se reciban caracteres como ñ o acentos serán sustituidos por n o en su caso por la letra sin acento. Los caracteres no alfanuméricos como pueden ser caracteres especiales serán eliminados.
@@ -5076,7 +5615,7 @@ class TransferenciasSPIDApi extends BaseAPI {
      * @memberof TransferenciasSPIDApi
      */
     registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options) {
-        return exports.TransferenciasSPIDApiFp(this.configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
+        return (0, exports.TransferenciasSPIDApiFp)(this.configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.TransferenciasSPIDApi = TransferenciasSPIDApi;
@@ -5205,7 +5744,7 @@ const WebhooksApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getWebhook(authorization, webhook_id, options) {
-            const localVarFetchArgs = exports.WebhooksApiFetchParamCreator(configuration).getWebhook(authorization, webhook_id, options);
+            const localVarFetchArgs = (0, exports.WebhooksApiFetchParamCreator)(configuration).getWebhook(authorization, webhook_id, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -5225,7 +5764,7 @@ const WebhooksApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         getWebhooks(authorization, options) {
-            const localVarFetchArgs = exports.WebhooksApiFetchParamCreator(configuration).getWebhooks(authorization, options);
+            const localVarFetchArgs = (0, exports.WebhooksApiFetchParamCreator)(configuration).getWebhooks(authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -5246,7 +5785,7 @@ const WebhooksApiFp = function (configuration) {
          * @throws {RequiredError}
          */
         registerWebhook(body, authorization, options) {
-            const localVarFetchArgs = exports.WebhooksApiFetchParamCreator(configuration).registerWebhook(body, authorization, options);
+            const localVarFetchArgs = (0, exports.WebhooksApiFetchParamCreator)(configuration).registerWebhook(body, authorization, options);
             return (fetch = portableFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -5276,7 +5815,7 @@ const WebhooksApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         getWebhook(authorization, webhook_id, options) {
-            return exports.WebhooksApiFp(configuration).getWebhook(authorization, webhook_id, options)(fetch, basePath);
+            return (0, exports.WebhooksApiFp)(configuration).getWebhook(authorization, webhook_id, options)(fetch, basePath);
         },
         /**
          * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
@@ -5286,7 +5825,7 @@ const WebhooksApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         getWebhooks(authorization, options) {
-            return exports.WebhooksApiFp(configuration).getWebhooks(authorization, options)(fetch, basePath);
+            return (0, exports.WebhooksApiFp)(configuration).getWebhooks(authorization, options)(fetch, basePath);
         },
         /**
          * Registra un webhook en la plataforma para su uso como notificador de eventos, cuándo estos ocurran.
@@ -5297,7 +5836,7 @@ const WebhooksApiFactory = function (configuration, fetch, basePath) {
          * @throws {RequiredError}
          */
         registerWebhook(body, authorization, options) {
-            return exports.WebhooksApiFp(configuration).registerWebhook(body, authorization, options)(fetch, basePath);
+            return (0, exports.WebhooksApiFp)(configuration).registerWebhook(body, authorization, options)(fetch, basePath);
         },
     };
 };
@@ -5319,7 +5858,7 @@ class WebhooksApi extends BaseAPI {
      * @memberof WebhooksApi
      */
     getWebhook(authorization, webhook_id, options) {
-        return exports.WebhooksApiFp(this.configuration).getWebhook(authorization, webhook_id, options)(this.fetch, this.basePath);
+        return (0, exports.WebhooksApiFp)(this.configuration).getWebhook(authorization, webhook_id, options)(this.fetch, this.basePath);
     }
     /**
      * Obtiene una lista de los webhooks registrados en la plataforma que tengan el estado (estatus)  Activo (ACTIVE) e Inactivo (INACTIVE).
@@ -5330,7 +5869,7 @@ class WebhooksApi extends BaseAPI {
      * @memberof WebhooksApi
      */
     getWebhooks(authorization, options) {
-        return exports.WebhooksApiFp(this.configuration).getWebhooks(authorization, options)(this.fetch, this.basePath);
+        return (0, exports.WebhooksApiFp)(this.configuration).getWebhooks(authorization, options)(this.fetch, this.basePath);
     }
     /**
      * Registra un webhook en la plataforma para su uso como notificador de eventos, cuándo estos ocurran.
@@ -5342,7 +5881,7 @@ class WebhooksApi extends BaseAPI {
      * @memberof WebhooksApi
      */
     registerWebhook(body, authorization, options) {
-        return exports.WebhooksApiFp(this.configuration).registerWebhook(body, authorization, options)(this.fetch, this.basePath);
+        return (0, exports.WebhooksApiFp)(this.configuration).registerWebhook(body, authorization, options)(this.fetch, this.basePath);
     }
 }
 exports.WebhooksApi = WebhooksApi;
