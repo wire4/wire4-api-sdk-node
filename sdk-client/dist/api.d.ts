@@ -1869,6 +1869,30 @@ export interface Deposit {
      * @memberof Deposit
      */
     sender_rfc: string;
+    /**
+     * Es el estatus del depósito (COMPLETED/RETURNED).
+     * @type {string}
+     * @memberof Deposit
+     */
+    status: Deposit.StatusEnum;
+}
+/**
+ * @export
+ * @namespace Deposit
+ */
+export declare namespace Deposit {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum StatusEnum {
+        PENDING,
+        COMPLETED,
+        FAILED,
+        CANCELLED,
+        AUTHORIZING,
+        REJECTED
+    }
 }
 /**
  * Contiene la información de la autorización de depósitos
@@ -1931,6 +1955,12 @@ export interface Depositant {
      * @memberof Depositant
      */
     name: string;
+    /**
+     * Es el estatus del depositante.
+     * @type {string}
+     * @memberof Depositant
+     */
+    status: string;
 }
 /**
  * Objeto que contiene la cantidad de depositantes
@@ -2057,6 +2087,49 @@ export interface ErrorResponse {
      * @memberof ErrorResponse
      */
     message: string;
+}
+/**
+ *
+ * @export
+ * @interface FailedChargesDataDTO
+ */
+export interface FailedChargesDataDTO {
+    /**
+     *
+     * @type {string}
+     * @memberof FailedChargesDataDTO
+     */
+    brand: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FailedChargesDataDTO
+     */
+    card_number: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FailedChargesDataDTO
+     */
+    date: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FailedChargesDataDTO
+     */
+    error_code: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FailedChargesDataDTO
+     */
+    error_message: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FailedChargesDataDTO
+     */
+    holder_name: string;
 }
 /**
  * Es el objeto que contiene una lista de depositantes.
@@ -3532,6 +3605,197 @@ export interface PaymentRequestCodiResponseDTO {
 /**
  *
  * @export
+ * @interface PaymentRequestReportDTO
+ */
+export interface PaymentRequestReportDTO {
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    amount: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    cancel_return_url: string;
+    /**
+     *
+     * @type {Customer}
+     * @memberof PaymentRequestReportDTO
+     */
+    customer: Customer;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    description: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    due_date: string;
+    /**
+     *
+     * @type {Array<FailedChargesDataDTO>}
+     * @memberof PaymentRequestReportDTO
+     */
+    failed_charges: Array<FailedChargesDataDTO>;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    order_id: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    return_url: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReportDTO
+     */
+    status: PaymentRequestReportDTO.StatusEnum;
+    /**
+     *
+     * @type {SuccessDataDTO}
+     * @memberof PaymentRequestReportDTO
+     */
+    success_charge: SuccessDataDTO;
+}
+/**
+ * @export
+ * @namespace PaymentRequestReportDTO
+ */
+export declare namespace PaymentRequestReportDTO {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum StatusEnum {
+        NEW,
+        REQUESTED,
+        PAID,
+        CANCELLED
+    }
+}
+/**
+ * Objeto request para solicitud de pago
+ * @export
+ * @interface PaymentRequestReq
+ */
+export interface PaymentRequestReq {
+    /**
+     * Es el monto de la solicitud de pago
+     * @type {number}
+     * @memberof PaymentRequestReq
+     */
+    amount: number;
+    /**
+     * Es la dirección URL a la que se redirigirá en caso de que el usuario cancele.
+     * @type {string}
+     * @memberof PaymentRequestReq
+     */
+    cancel_return_url: string;
+    /**
+     *
+     * @type {Customer}
+     * @memberof PaymentRequestReq
+     */
+    customer: Customer;
+    /**
+     * Es la descripción de la solicitud de pago.
+     * @type {string}
+     * @memberof PaymentRequestReq
+     */
+    description: string;
+    /**
+     * Es la fecha de operación de la solicitud de pago.
+     * @type {Date}
+     * @memberof PaymentRequestReq
+     */
+    due_date: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof PaymentRequestReq
+     */
+    method: PaymentRequestReq.MethodEnum;
+    /**
+     * Número de orden asignado por el cliente de Wire4
+     * @type {string}
+     * @memberof PaymentRequestReq
+     */
+    order_id: string;
+    /**
+     * Es la dirección URL a la que se redirigirá en caso de éxito.
+     * @type {string}
+     * @memberof PaymentRequestReq
+     */
+    return_url: string;
+    /**
+     * Tipo de pago por paycash
+     * @type {string}
+     * @memberof PaymentRequestReq
+     */
+    type: PaymentRequestReq.TypeEnum;
+}
+/**
+ * @export
+ * @namespace PaymentRequestReq
+ */
+export declare namespace PaymentRequestReq {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum MethodEnum {
+        CARD,
+        CASH
+    }
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum TypeEnum {
+        RECURRENT,
+        ONEOCASSION
+    }
+}
+/**
+ *
+ * @export
+ * @interface PaymentRequestResponse
+ */
+export interface PaymentRequestResponse {
+    /**
+     * Es la referencia de pago generada para la petición (solicitud).
+     * @type {string}
+     * @memberof PaymentRequestResponse
+     */
+    reference: string;
+    /**
+     * Es el identificador público generado para la petición (solicitud).
+     * @type {string}
+     * @memberof PaymentRequestResponse
+     */
+    request_id: string;
+    /**
+     * Url del portal en donde se debe capturar los datos de la tarjeta para aplicar el cargo
+     * @type {string}
+     * @memberof PaymentRequestResponse
+     */
+    url: string;
+}
+/**
+ *
+ * @export
  * @interface PaymentsRequestId
  */
 export interface PaymentsRequestId {
@@ -4173,6 +4437,76 @@ export declare namespace SubscriptionChangeStatusRequest {
     enum StatusEnum {
         ACTIVE,
         INACTIVE
+    }
+}
+/**
+ *
+ * @export
+ * @interface SuccessChargesDataDTO
+ */
+export interface SuccessChargesDataDTO {
+    /**
+     *
+     * @type {string}
+     * @memberof SuccessChargesDataDTO
+     */
+    authorization: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SuccessChargesDataDTO
+     */
+    brand: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SuccessChargesDataDTO
+     */
+    card_number: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SuccessChargesDataDTO
+     */
+    date: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SuccessChargesDataDTO
+     */
+    holder_name: string;
+}
+/**
+ *
+ * @export
+ * @interface SuccessDataDTO
+ */
+export interface SuccessDataDTO {
+    /**
+     *
+     * @type {SuccessChargesDataDTO}
+     * @memberof SuccessDataDTO
+     */
+    data: SuccessChargesDataDTO;
+    /**
+     *
+     * @type {string}
+     * @memberof SuccessDataDTO
+     */
+    method: SuccessDataDTO.MethodEnum;
+}
+/**
+ * @export
+ * @namespace SuccessDataDTO
+ */
+export declare namespace SuccessDataDTO {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum MethodEnum {
+        CARD,
+        CASH
     }
 }
 /**
@@ -6157,6 +6491,17 @@ export declare const DepositantesApiFetchParamCreator: (configuration: Configura
      * @throws {RequiredError}
      */
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options?: any): FetchArgs;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options?: any): FetchArgs;
 };
 /**
  * DepositantesApi - functional programming interface
@@ -6191,6 +6536,17 @@ export declare const DepositantesApiFp: (configuration: Configuration) => {
      * @throws {RequiredError}
      */
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<DepositantsResponse>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Depositant>;
 };
 /**
  * DepositantesApi - factory interface
@@ -6225,6 +6581,17 @@ export declare const DepositantesApiFactory: (configuration: Configuration, fetc
      * @throws {RequiredError}
      */
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): Promise<DepositantsResponse>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): Promise<Depositant>;
 };
 /**
  * DepositantesApi - interface
@@ -6263,6 +6630,18 @@ export interface DepositantesApiInterface {
      * @memberof DepositantesApiInterface
      */
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): Promise<DepositantsResponse>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApiInterface
+     */
+    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): Promise<Depositant>;
 }
 /**
  * DepositantesApi - object-oriented interface
@@ -6302,6 +6681,18 @@ export declare class DepositantesApi extends BaseAPI implements DepositantesApiI
      * @memberof DepositantesApi
      */
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): Promise<DepositantsResponse>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApi
+     */
+    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): Promise<Depositant>;
 }
 /**
  * EmpresasCoDiApi - fetch parameter creator
@@ -7129,6 +7520,133 @@ export declare class PuntosDeVentaCoDiApi extends BaseAPI implements PuntosDeVen
     obtainSalePoints(authorization: string, company_id: string, options: any): Promise<SalesPointFound[]>;
 }
 /**
+ * ReporteDeSolicitudesDePagosApi - fetch parameter creator
+ * @export
+ */
+export declare const ReporteDeSolicitudesDePagosApiFetchParamCreator: (configuration: Configuration) => {
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por numero de orden.
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    paymentRequestIdReportByOrderIdUsingGET(authorization: string, order_id: string, options?: any): FetchArgs;
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    paymentRequestIdReportUsingGET(authorization: string, request_id: string, options?: any): FetchArgs;
+};
+/**
+ * ReporteDeSolicitudesDePagosApi - functional programming interface
+ * @export
+ */
+export declare const ReporteDeSolicitudesDePagosApiFp: (configuration: Configuration) => {
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por numero de orden.
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    paymentRequestIdReportByOrderIdUsingGET(authorization: string, order_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentRequestReportDTO>;
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    paymentRequestIdReportUsingGET(authorization: string, request_id: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentRequestReportDTO>;
+};
+/**
+ * ReporteDeSolicitudesDePagosApi - factory interface
+ * @export
+ */
+export declare const ReporteDeSolicitudesDePagosApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por numero de orden.
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    paymentRequestIdReportByOrderIdUsingGET(authorization: string, order_id: string, options: any): Promise<PaymentRequestReportDTO>;
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    paymentRequestIdReportUsingGET(authorization: string, request_id: string, options: any): Promise<PaymentRequestReportDTO>;
+};
+/**
+ * ReporteDeSolicitudesDePagosApi - interface
+ * @export
+ * @interface ReporteDeSolicitudesDePagosApi
+ */
+export interface ReporteDeSolicitudesDePagosApiInterface {
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por numero de orden.
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ReporteDeSolicitudesDePagosApiInterface
+     */
+    paymentRequestIdReportByOrderIdUsingGET(authorization: string, order_id: string, options: any): Promise<PaymentRequestReportDTO>;
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ReporteDeSolicitudesDePagosApiInterface
+     */
+    paymentRequestIdReportUsingGET(authorization: string, request_id: string, options: any): Promise<PaymentRequestReportDTO>;
+}
+/**
+ * ReporteDeSolicitudesDePagosApi - object-oriented interface
+ * @export
+ * @class ReporteDeSolicitudesDePagosApi
+ * @extends {BaseAPI}
+ */
+export declare class ReporteDeSolicitudesDePagosApi extends BaseAPI implements ReporteDeSolicitudesDePagosApiInterface {
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por numero de orden.
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ReporteDeSolicitudesDePagosApi
+     */
+    paymentRequestIdReportByOrderIdUsingGET(authorization: string, order_id: string, options: any): Promise<PaymentRequestReportDTO>;
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ReporteDeSolicitudesDePagosApi
+     */
+    paymentRequestIdReportUsingGET(authorization: string, request_id: string, options: any): Promise<PaymentRequestReportDTO>;
+}
+/**
  * SaldoApi - fetch parameter creator
  * @export
  */
@@ -7207,6 +7725,86 @@ export declare class SaldoApi extends BaseAPI implements SaldoApiInterface {
      * @memberof SaldoApi
      */
     getBalanceUsingGET(authorization: string, subscription: string, options: any): Promise<BalanceListResponse>;
+}
+/**
+ * SolicitudDePagosApi - fetch parameter creator
+ * @export
+ */
+export declare const SolicitudDePagosApiFetchParamCreator: (configuration: Configuration) => {
+    /**
+     *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+     * @summary Registro de solicitud de pagos
+     * @param {PaymentRequestReq} body Información de la solicitud de pagos
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerPaymentRequestUsingPOST(body: PaymentRequestReq, authorization: string, options?: any): FetchArgs;
+};
+/**
+ * SolicitudDePagosApi - functional programming interface
+ * @export
+ */
+export declare const SolicitudDePagosApiFp: (configuration: Configuration) => {
+    /**
+     *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+     * @summary Registro de solicitud de pagos
+     * @param {PaymentRequestReq} body Información de la solicitud de pagos
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerPaymentRequestUsingPOST(body: PaymentRequestReq, authorization: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<PaymentRequestResponse>;
+};
+/**
+ * SolicitudDePagosApi - factory interface
+ * @export
+ */
+export declare const SolicitudDePagosApiFactory: (configuration: Configuration, fetch: FetchAPI, basePath: string) => {
+    /**
+     *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+     * @summary Registro de solicitud de pagos
+     * @param {PaymentRequestReq} body Información de la solicitud de pagos
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    registerPaymentRequestUsingPOST(body: PaymentRequestReq, authorization: string, options: any): Promise<PaymentRequestResponse>;
+};
+/**
+ * SolicitudDePagosApi - interface
+ * @export
+ * @interface SolicitudDePagosApi
+ */
+export interface SolicitudDePagosApiInterface {
+    /**
+     *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+     * @summary Registro de solicitud de pagos
+     * @param {PaymentRequestReq} body Información de la solicitud de pagos
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SolicitudDePagosApiInterface
+     */
+    registerPaymentRequestUsingPOST(body: PaymentRequestReq, authorization: string, options: any): Promise<PaymentRequestResponse>;
+}
+/**
+ * SolicitudDePagosApi - object-oriented interface
+ * @export
+ * @class SolicitudDePagosApi
+ * @extends {BaseAPI}
+ */
+export declare class SolicitudDePagosApi extends BaseAPI implements SolicitudDePagosApiInterface {
+    /**
+     *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+     * @summary Registro de solicitud de pagos
+     * @param {PaymentRequestReq} body Información de la solicitud de pagos
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SolicitudDePagosApi
+     */
+    registerPaymentRequestUsingPOST(body: PaymentRequestReq, authorization: string, options: any): Promise<PaymentRequestResponse>;
 }
 /**
  * SuscripcionesApi - fetch parameter creator

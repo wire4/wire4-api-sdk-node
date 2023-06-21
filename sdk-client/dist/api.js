@@ -13,10 +13,11 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.CargosRecurrentesApi = exports.CargosRecurrentesApiFactory = exports.CargosRecurrentesApiFp = exports.CargosRecurrentesApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.Product = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
-exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = void 0;
+exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.CargosRecurrentesApi = exports.CargosRecurrentesApiFactory = exports.CargosRecurrentesApiFp = exports.CargosRecurrentesApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SuccessDataDTO = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.Product = exports.PaymentRequestReq = exports.PaymentRequestReportDTO = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.Deposit = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SolicitudDePagosApi = exports.SolicitudDePagosApiFactory = exports.SolicitudDePagosApiFp = exports.SolicitudDePagosApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.ReporteDeSolicitudesDePagosApi = exports.ReporteDeSolicitudesDePagosApiFactory = exports.ReporteDeSolicitudesDePagosApiFp = exports.ReporteDeSolicitudesDePagosApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = void 0;
+exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = void 0;
 const url = require("url");
-const portableFetch = require("portable-fetch");
+const isomorphicFetch = require("isomorphic-fetch");
 const BASE_PATH = "https://sandbox-api.wire4.mx/wire4/1.0.0".replace(/\/+$/, "");
 /**
  *
@@ -34,7 +35,7 @@ exports.COLLECTION_FORMATS = {
  * @class BaseAPI
  */
 class BaseAPI {
-    constructor(configuration, basePath = BASE_PATH, fetch = portableFetch) {
+    constructor(configuration, basePath = BASE_PATH, fetch = isomorphicFetch) {
         this.basePath = basePath;
         this.fetch = fetch;
         if (configuration) {
@@ -192,6 +193,26 @@ var CodiOperationsFiltersRequestDTO;
 })(CodiOperationsFiltersRequestDTO = exports.CodiOperationsFiltersRequestDTO || (exports.CodiOperationsFiltersRequestDTO = {}));
 /**
  * @export
+ * @namespace Deposit
+ */
+var Deposit;
+(function (Deposit) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let StatusEnum;
+    (function (StatusEnum) {
+        StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
+        StatusEnum[StatusEnum["COMPLETED"] = 'COMPLETED'] = "COMPLETED";
+        StatusEnum[StatusEnum["FAILED"] = 'FAILED'] = "FAILED";
+        StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+        StatusEnum[StatusEnum["AUTHORIZING"] = 'AUTHORIZING'] = "AUTHORIZING";
+        StatusEnum[StatusEnum["REJECTED"] = 'REJECTED'] = "REJECTED";
+    })(StatusEnum = Deposit.StatusEnum || (Deposit.StatusEnum = {}));
+})(Deposit = exports.Deposit || (exports.Deposit = {}));
+/**
+ * @export
  * @namespace MessageRequestChanged
  */
 var MessageRequestChanged;
@@ -261,6 +282,49 @@ var PaymentCODI;
 })(PaymentCODI = exports.PaymentCODI || (exports.PaymentCODI = {}));
 /**
  * @export
+ * @namespace PaymentRequestReportDTO
+ */
+var PaymentRequestReportDTO;
+(function (PaymentRequestReportDTO) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let StatusEnum;
+    (function (StatusEnum) {
+        StatusEnum[StatusEnum["NEW"] = 'NEW'] = "NEW";
+        StatusEnum[StatusEnum["REQUESTED"] = 'REQUESTED'] = "REQUESTED";
+        StatusEnum[StatusEnum["PAID"] = 'PAID'] = "PAID";
+        StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
+    })(StatusEnum = PaymentRequestReportDTO.StatusEnum || (PaymentRequestReportDTO.StatusEnum = {}));
+})(PaymentRequestReportDTO = exports.PaymentRequestReportDTO || (exports.PaymentRequestReportDTO = {}));
+/**
+ * @export
+ * @namespace PaymentRequestReq
+ */
+var PaymentRequestReq;
+(function (PaymentRequestReq) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let MethodEnum;
+    (function (MethodEnum) {
+        MethodEnum[MethodEnum["CARD"] = 'CARD'] = "CARD";
+        MethodEnum[MethodEnum["CASH"] = 'CASH'] = "CASH";
+    })(MethodEnum = PaymentRequestReq.MethodEnum || (PaymentRequestReq.MethodEnum = {}));
+    /**
+     * @export
+     * @enum {string}
+     */
+    let TypeEnum;
+    (function (TypeEnum) {
+        TypeEnum[TypeEnum["RECURRENT"] = 'RECURRENT'] = "RECURRENT";
+        TypeEnum[TypeEnum["ONEOCASSION"] = 'ONE_OCASSION'] = "ONEOCASSION";
+    })(TypeEnum = PaymentRequestReq.TypeEnum || (PaymentRequestReq.TypeEnum = {}));
+})(PaymentRequestReq = exports.PaymentRequestReq || (exports.PaymentRequestReq = {}));
+/**
+ * @export
  * @namespace Product
  */
 var Product;
@@ -308,6 +372,22 @@ var SubscriptionChangeStatusRequest;
         StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
     })(StatusEnum = SubscriptionChangeStatusRequest.StatusEnum || (SubscriptionChangeStatusRequest.StatusEnum = {}));
 })(SubscriptionChangeStatusRequest = exports.SubscriptionChangeStatusRequest || (exports.SubscriptionChangeStatusRequest = {}));
+/**
+ * @export
+ * @namespace SuccessDataDTO
+ */
+var SuccessDataDTO;
+(function (SuccessDataDTO) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let MethodEnum;
+    (function (MethodEnum) {
+        MethodEnum[MethodEnum["CARD"] = 'CARD'] = "CARD";
+        MethodEnum[MethodEnum["CASH"] = 'CASH'] = "CASH";
+    })(MethodEnum = SuccessDataDTO.MethodEnum || (SuccessDataDTO.MethodEnum = {}));
+})(SuccessDataDTO = exports.SuccessDataDTO || (exports.SuccessDataDTO = {}));
 /**
  * @export
  * @namespace UseServiceBanking
@@ -471,7 +551,7 @@ const AutorizacinDeDepsitosApiFp = function (configuration) {
          */
         getDepositAuthConfigurations(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.AutorizacinDeDepsitosApiFetchParamCreator)(configuration).getDepositAuthConfigurations(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -493,7 +573,7 @@ const AutorizacinDeDepsitosApiFp = function (configuration) {
          */
         putDepositAuthConfigurations(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.AutorizacinDeDepsitosApiFetchParamCreator)(configuration).putDepositAuthConfigurations(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -670,7 +750,7 @@ const CargosRecurrentesApiFp = function (configuration) {
          */
         deleteRecurringChargeUsingDELETE(authorization, order_id, options) {
             const localVarFetchArgs = (0, exports.CargosRecurrentesApiFetchParamCreator)(configuration).deleteRecurringChargeUsingDELETE(authorization, order_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -691,7 +771,7 @@ const CargosRecurrentesApiFp = function (configuration) {
          */
         registerRecurringChargeUsingPOST(body, authorization, options) {
             const localVarFetchArgs = (0, exports.CargosRecurrentesApiFetchParamCreator)(configuration).registerRecurringChargeUsingPOST(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -831,7 +911,7 @@ const ComprobanteElectrnicoDePagoCEPApiFp = function (configuration) {
          */
         obtainTransactionCepUsingPOST(body, authorization, options) {
             const localVarFetchArgs = (0, exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator)(configuration).obtainTransactionCepUsingPOST(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -948,7 +1028,7 @@ const ContactoApiFp = function (configuration) {
          */
         sendContactUsingPOST(body, authorization, options) {
             const localVarFetchArgs = (0, exports.ContactoApiFetchParamCreator)(configuration).sendContactUsingPOST(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -1194,7 +1274,7 @@ const ContractsDetailsApiFp = function (configuration) {
          */
         createAuthorization(body, authorization, options) {
             const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).createAuthorization(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1216,7 +1296,7 @@ const ContractsDetailsApiFp = function (configuration) {
          */
         obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options) {
             const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).obtainAuthorizedUsers(authorization, X_ACCESS_KEY, request_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1238,7 +1318,7 @@ const ContractsDetailsApiFp = function (configuration) {
          */
         obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options) {
             const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).obtainAuthorizedUsersByContract(authorization, X_ACCESS_KEY, contract, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1260,7 +1340,7 @@ const ContractsDetailsApiFp = function (configuration) {
          */
         obtainContractDetails(body, authorization, X_ACCESS_KEY, options) {
             const localVarFetchArgs = (0, exports.ContractsDetailsApiFetchParamCreator)(configuration).obtainContractDetails(body, authorization, X_ACCESS_KEY, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1780,7 +1860,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         authorizeAccountsPendingPUT(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).authorizeAccountsPendingPUT(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1802,7 +1882,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         deleteAccountUsingDELETE(authorization, account, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).deleteAccountUsingDELETE(authorization, account, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -1823,7 +1903,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         getAvailableRelationshipsMonexUsingGET(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).getAvailableRelationshipsMonexUsingGET(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1845,7 +1925,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         getBeneficiariesByRequestId(authorization, request_id, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).getBeneficiariesByRequestId(authorization, request_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1875,7 +1955,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).getBeneficiariesForAccountUsingGET(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1897,7 +1977,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         preRegisterAccountsUsingPOST(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).preRegisterAccountsUsingPOST(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -1919,7 +1999,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).removeBeneficiariesPendingUsingDELETE(authorization, request_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -1942,7 +2022,7 @@ const CuentasDeBeneficiariosSPEIApiFp = function (configuration) {
          */
         updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator)(configuration).updateAmountLimitAccountUsingPUT(body, authorization, account, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2338,7 +2418,7 @@ const CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
          */
         getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator)(configuration).getSpidBeneficiariesForAccount(authorization, account, beneficiary_bank, beneficiary_name, end_date, init_date, page, rfc, size, status, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2360,7 +2440,7 @@ const CuentasDeBeneficiariosSPIDApiFp = function (configuration) {
          */
         preRegisterAccountsUsingPOST1(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator)(configuration).preRegisterAccountsUsingPOST1(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2577,6 +2657,53 @@ const DepositantesApiFetchParamCreator = function (configuration) {
                 options: localVarRequestOptions,
             };
         },
+        /**
+         *
+         * @summary Solicitud para actualizar el estado de un depossitante
+         * @param {string} authorization Header para token
+         * @param {string} account Es la cuenta que va a ser actualizada.
+         * @param {string} action Es la cuenta que va a ser actualizada.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling updateStatusDepositantsUsingPUT.');
+            }
+            // verify required parameter 'account' is not null or undefined
+            if (account === null || account === undefined) {
+                throw new RequiredError('account', 'Required parameter account was null or undefined when calling updateStatusDepositantsUsingPUT.');
+            }
+            // verify required parameter 'action' is not null or undefined
+            if (action === null || action === undefined) {
+                throw new RequiredError('action', 'Required parameter action was null or undefined when calling updateStatusDepositantsUsingPUT.');
+            }
+            // verify required parameter 'subscription' is not null or undefined
+            if (subscription === null || subscription === undefined) {
+                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling updateStatusDepositantsUsingPUT.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/depositants/{account}/{action}`
+                .replace(`{${"account"}}`, encodeURIComponent(String(account)))
+                .replace(`{${"action"}}`, encodeURIComponent(String(action)))
+                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'PATCH' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     };
 };
 exports.DepositantesApiFetchParamCreator = DepositantesApiFetchParamCreator;
@@ -2596,7 +2723,7 @@ const DepositantesApiFp = function (configuration) {
          */
         getDepositantsTotalsUsingGET(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).getDepositantsTotalsUsingGET(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2617,7 +2744,7 @@ const DepositantesApiFp = function (configuration) {
          */
         getDepositantsUsingGET(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).getDepositantsUsingGET(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2639,7 +2766,30 @@ const DepositantesApiFp = function (configuration) {
          */
         registerDepositantsUsingPOST(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).registerDepositantsUsingPOST(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Solicitud para actualizar el estado de un depossitante
+         * @param {string} authorization Header para token
+         * @param {string} account Es la cuenta que va a ser actualizada.
+         * @param {string} action Es la cuenta que va a ser actualizada.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options) {
+            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options);
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2693,6 +2843,19 @@ const DepositantesApiFactory = function (configuration, fetch, basePath) {
         registerDepositantsUsingPOST(body, authorization, subscription, options) {
             return (0, exports.DepositantesApiFp)(configuration).registerDepositantsUsingPOST(body, authorization, subscription, options)(fetch, basePath);
         },
+        /**
+         *
+         * @summary Solicitud para actualizar el estado de un depossitante
+         * @param {string} authorization Header para token
+         * @param {string} account Es la cuenta que va a ser actualizada.
+         * @param {string} action Es la cuenta que va a ser actualizada.
+         * @param {string} subscription Es el identificador de la suscripción a esta API.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options) {
+            return (0, exports.DepositantesApiFp)(configuration).updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options)(fetch, basePath);
+        },
     };
 };
 exports.DepositantesApiFactory = DepositantesApiFactory;
@@ -2739,6 +2902,20 @@ class DepositantesApi extends BaseAPI {
      */
     registerDepositantsUsingPOST(body, authorization, subscription, options) {
         return (0, exports.DepositantesApiFp)(this.configuration).registerDepositantsUsingPOST(body, authorization, subscription, options)(this.fetch, this.basePath);
+    }
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {string} subscription Es el identificador de la suscripción a esta API.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApi
+     */
+    updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options) {
+        return (0, exports.DepositantesApiFp)(this.configuration).updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options)(this.fetch, this.basePath);
     }
 }
 exports.DepositantesApi = DepositantesApi;
@@ -2832,7 +3009,7 @@ const EmpresasCoDiApiFp = function (configuration) {
          */
         obtainCompanies(authorization, options) {
             const localVarFetchArgs = (0, exports.EmpresasCoDiApiFetchParamCreator)(configuration).obtainCompanies(authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -2853,7 +3030,7 @@ const EmpresasCoDiApiFp = function (configuration) {
          */
         registerCompanyUsingPOST(body, authorization, options) {
             const localVarFetchArgs = (0, exports.EmpresasCoDiApiFetchParamCreator)(configuration).registerCompanyUsingPOST(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3022,7 +3199,7 @@ const FacturasApiFp = function (configuration) {
          */
         billingsReportByIdUsingGET(authorization, id, options) {
             const localVarFetchArgs = (0, exports.FacturasApiFetchParamCreator)(configuration).billingsReportByIdUsingGET(authorization, id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3043,7 +3220,7 @@ const FacturasApiFp = function (configuration) {
          */
         billingsReportUsingGET(authorization, period, options) {
             const localVarFetchArgs = (0, exports.FacturasApiFetchParamCreator)(configuration).billingsReportUsingGET(authorization, period, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3174,7 +3351,7 @@ const InstitucionesApiFp = function (configuration) {
          */
         getAllInstitutionsUsingGET(authorization, options) {
             const localVarFetchArgs = (0, exports.InstitucionesApiFetchParamCreator)(configuration).getAllInstitutionsUsingGET(authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3330,7 +3507,7 @@ const LmitesDeMontosApiFp = function (configuration) {
          */
         obtainConfigurationsLimits(authorization, suscription, options) {
             const localVarFetchArgs = (0, exports.LmitesDeMontosApiFetchParamCreator)(configuration).obtainConfigurationsLimits(authorization, suscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3352,7 +3529,7 @@ const LmitesDeMontosApiFp = function (configuration) {
          */
         updateConfigurations(body, authorization, suscription, options) {
             const localVarFetchArgs = (0, exports.LmitesDeMontosApiFetchParamCreator)(configuration).updateConfigurations(body, authorization, suscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -3510,7 +3687,7 @@ const OperacionesCoDiApiFp = function (configuration) {
          */
         consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options) {
             const localVarFetchArgs = (0, exports.OperacionesCoDiApiFetchParamCreator)(configuration).consultCodiOperations(body, authorization, company_id, page, sales_point_id, size, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3689,7 +3866,7 @@ const PeticionesDePagoPorCoDiApiFp = function (configuration) {
          */
         consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options) {
             const localVarFetchArgs = (0, exports.PeticionesDePagoPorCoDiApiFetchParamCreator)(configuration).consultCodiRequestByOrderId(authorization, order_id, sales_point_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3711,7 +3888,7 @@ const PeticionesDePagoPorCoDiApiFp = function (configuration) {
          */
         generateCodiCodeQR(body, authorization, sales_point_id, options) {
             const localVarFetchArgs = (0, exports.PeticionesDePagoPorCoDiApiFetchParamCreator)(configuration).generateCodiCodeQR(body, authorization, sales_point_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3901,7 +4078,7 @@ const PuntosDeVentaCoDiApiFp = function (configuration) {
          */
         createSalesPoint(body, authorization, company_id, options) {
             const localVarFetchArgs = (0, exports.PuntosDeVentaCoDiApiFetchParamCreator)(configuration).createSalesPoint(body, authorization, company_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -3922,7 +4099,7 @@ const PuntosDeVentaCoDiApiFp = function (configuration) {
          */
         obtainSalePoints(authorization, company_id, options) {
             const localVarFetchArgs = (0, exports.PuntosDeVentaCoDiApiFetchParamCreator)(configuration).obtainSalePoints(authorization, company_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -4003,6 +4180,198 @@ class PuntosDeVentaCoDiApi extends BaseAPI {
 }
 exports.PuntosDeVentaCoDiApi = PuntosDeVentaCoDiApi;
 /**
+ * ReporteDeSolicitudesDePagosApi - fetch parameter creator
+ * @export
+ */
+const ReporteDeSolicitudesDePagosApiFetchParamCreator = function (configuration) {
+    return {
+        /**
+         *
+         * @summary Consulta de solicitudes de pago por numero de orden.
+         * @param {string} authorization Header para token
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling paymentRequestIdReportByOrderIdUsingGET.');
+            }
+            const localVarPath = `/payment-request`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (order_id !== undefined) {
+                localVarQueryParameter['order_id'] = order_id;
+            }
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Consulta de solicitudes de pago por identificador de petición
+         * @param {string} authorization Header para token
+         * @param {string} request_id Identificador de la petición a buscar.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentRequestIdReportUsingGET(authorization, request_id, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling paymentRequestIdReportUsingGET.');
+            }
+            // verify required parameter 'request_id' is not null or undefined
+            if (request_id === null || request_id === undefined) {
+                throw new RequiredError('request_id', 'Required parameter request_id was null or undefined when calling paymentRequestIdReportUsingGET.');
+            }
+            const localVarPath = `/payment-request/{requestId}`
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(request_id)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    };
+};
+exports.ReporteDeSolicitudesDePagosApiFetchParamCreator = ReporteDeSolicitudesDePagosApiFetchParamCreator;
+/**
+ * ReporteDeSolicitudesDePagosApi - functional programming interface
+ * @export
+ */
+const ReporteDeSolicitudesDePagosApiFp = function (configuration) {
+    return {
+        /**
+         *
+         * @summary Consulta de solicitudes de pago por numero de orden.
+         * @param {string} authorization Header para token
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options) {
+            const localVarFetchArgs = (0, exports.ReporteDeSolicitudesDePagosApiFetchParamCreator)(configuration).paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options);
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Consulta de solicitudes de pago por identificador de petición
+         * @param {string} authorization Header para token
+         * @param {string} request_id Identificador de la petición a buscar.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentRequestIdReportUsingGET(authorization, request_id, options) {
+            const localVarFetchArgs = (0, exports.ReporteDeSolicitudesDePagosApiFetchParamCreator)(configuration).paymentRequestIdReportUsingGET(authorization, request_id, options);
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+    };
+};
+exports.ReporteDeSolicitudesDePagosApiFp = ReporteDeSolicitudesDePagosApiFp;
+/**
+ * ReporteDeSolicitudesDePagosApi - factory interface
+ * @export
+ */
+const ReporteDeSolicitudesDePagosApiFactory = function (configuration, fetch, basePath) {
+    return {
+        /**
+         *
+         * @summary Consulta de solicitudes de pago por numero de orden.
+         * @param {string} authorization Header para token
+         * @param {string} [order_id] Es el identificador de la orden a buscar.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options) {
+            return (0, exports.ReporteDeSolicitudesDePagosApiFp)(configuration).paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Consulta de solicitudes de pago por identificador de petición
+         * @param {string} authorization Header para token
+         * @param {string} request_id Identificador de la petición a buscar.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentRequestIdReportUsingGET(authorization, request_id, options) {
+            return (0, exports.ReporteDeSolicitudesDePagosApiFp)(configuration).paymentRequestIdReportUsingGET(authorization, request_id, options)(fetch, basePath);
+        },
+    };
+};
+exports.ReporteDeSolicitudesDePagosApiFactory = ReporteDeSolicitudesDePagosApiFactory;
+/**
+ * ReporteDeSolicitudesDePagosApi - object-oriented interface
+ * @export
+ * @class ReporteDeSolicitudesDePagosApi
+ * @extends {BaseAPI}
+ */
+class ReporteDeSolicitudesDePagosApi extends BaseAPI {
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por numero de orden.
+     * @param {string} authorization Header para token
+     * @param {string} [order_id] Es el identificador de la orden a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ReporteDeSolicitudesDePagosApi
+     */
+    paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options) {
+        return (0, exports.ReporteDeSolicitudesDePagosApiFp)(this.configuration).paymentRequestIdReportByOrderIdUsingGET(authorization, order_id, options)(this.fetch, this.basePath);
+    }
+    /**
+     *
+     * @summary Consulta de solicitudes de pago por identificador de petición
+     * @param {string} authorization Header para token
+     * @param {string} request_id Identificador de la petición a buscar.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ReporteDeSolicitudesDePagosApi
+     */
+    paymentRequestIdReportUsingGET(authorization, request_id, options) {
+        return (0, exports.ReporteDeSolicitudesDePagosApiFp)(this.configuration).paymentRequestIdReportUsingGET(authorization, request_id, options)(this.fetch, this.basePath);
+    }
+}
+exports.ReporteDeSolicitudesDePagosApi = ReporteDeSolicitudesDePagosApi;
+/**
  * SaldoApi - fetch parameter creator
  * @export
  */
@@ -4062,7 +4431,7 @@ const SaldoApiFp = function (configuration) {
          */
         getBalanceUsingGET(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.SaldoApiFetchParamCreator)(configuration).getBalanceUsingGET(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -4117,6 +4486,123 @@ class SaldoApi extends BaseAPI {
     }
 }
 exports.SaldoApi = SaldoApi;
+/**
+ * SolicitudDePagosApi - fetch parameter creator
+ * @export
+ */
+const SolicitudDePagosApiFetchParamCreator = function (configuration) {
+    return {
+        /**
+         *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+         * @summary Registro de solicitud de pagos
+         * @param {PaymentRequestReq} body Información de la solicitud de pagos
+         * @param {string} authorization Header para token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerPaymentRequestUsingPOST(body, authorization, options = {}) {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling registerPaymentRequestUsingPOST.');
+            }
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling registerPaymentRequestUsingPOST.');
+            }
+            const localVarPath = `/payment-request`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'POST' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("PaymentRequestReq" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    };
+};
+exports.SolicitudDePagosApiFetchParamCreator = SolicitudDePagosApiFetchParamCreator;
+/**
+ * SolicitudDePagosApi - functional programming interface
+ * @export
+ */
+const SolicitudDePagosApiFp = function (configuration) {
+    return {
+        /**
+         *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+         * @summary Registro de solicitud de pagos
+         * @param {PaymentRequestReq} body Información de la solicitud de pagos
+         * @param {string} authorization Header para token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerPaymentRequestUsingPOST(body, authorization, options) {
+            const localVarFetchArgs = (0, exports.SolicitudDePagosApiFetchParamCreator)(configuration).registerPaymentRequestUsingPOST(body, authorization, options);
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+    };
+};
+exports.SolicitudDePagosApiFp = SolicitudDePagosApiFp;
+/**
+ * SolicitudDePagosApi - factory interface
+ * @export
+ */
+const SolicitudDePagosApiFactory = function (configuration, fetch, basePath) {
+    return {
+        /**
+         *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+         * @summary Registro de solicitud de pagos
+         * @param {PaymentRequestReq} body Información de la solicitud de pagos
+         * @param {string} authorization Header para token
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        registerPaymentRequestUsingPOST(body, authorization, options) {
+            return (0, exports.SolicitudDePagosApiFp)(configuration).registerPaymentRequestUsingPOST(body, authorization, options)(fetch, basePath);
+        },
+    };
+};
+exports.SolicitudDePagosApiFactory = SolicitudDePagosApiFactory;
+/**
+ * SolicitudDePagosApi - object-oriented interface
+ * @export
+ * @class SolicitudDePagosApi
+ * @extends {BaseAPI}
+ */
+class SolicitudDePagosApi extends BaseAPI {
+    /**
+     *  Se registra una solicitud de pagos. En la respuesta se proporcionará una dirección URL que lo llevará al sitio donde se le solicitará ingresar los datos de tarjeta a la que se aplicarán los cargos.
+     * @summary Registro de solicitud de pagos
+     * @param {PaymentRequestReq} body Información de la solicitud de pagos
+     * @param {string} authorization Header para token
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SolicitudDePagosApi
+     */
+    registerPaymentRequestUsingPOST(body, authorization, options) {
+        return (0, exports.SolicitudDePagosApiFp)(this.configuration).registerPaymentRequestUsingPOST(body, authorization, options)(this.fetch, this.basePath);
+    }
+}
+exports.SolicitudDePagosApi = SolicitudDePagosApi;
 /**
  * SuscripcionesApi - fetch parameter creator
  * @export
@@ -4336,7 +4822,7 @@ const SuscripcionesApiFp = function (configuration) {
          */
         changeSubscriptionStatusUsingPUT(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).changeSubscriptionStatusUsingPUT(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -4358,7 +4844,7 @@ const SuscripcionesApiFp = function (configuration) {
          */
         changeSubscriptionUseUsingPATCH(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).changeSubscriptionUseUsingPATCH(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -4379,7 +4865,7 @@ const SuscripcionesApiFp = function (configuration) {
          */
         preEnrollmentMonexUserUsingPOST(body, authorization, options) {
             const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).preEnrollmentMonexUserUsingPOST(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -4400,7 +4886,7 @@ const SuscripcionesApiFp = function (configuration) {
          */
         removeEnrollmentUserUsingDELETE(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).removeEnrollmentUserUsingDELETE(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -4421,7 +4907,7 @@ const SuscripcionesApiFp = function (configuration) {
          */
         removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.SuscripcionesApiFetchParamCreator)(configuration).removeSubscriptionPendingStatusUsingDELETE(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -4975,7 +5461,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         createAuthorizationTransactionsGroup(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).createAuthorizationTransactionsGroup(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -4998,7 +5484,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).dropTransactionsPendingUsingDELETE(authorization, order_id, request_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response;
@@ -5021,7 +5507,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).incomingSpeiTransactionsReportUsingGET(authorization, begin_date, end_date, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5043,7 +5529,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outCommingSpeiRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5065,7 +5551,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outCommingSpeiSpidOrderIdTransactionReportUsingGET(authorization, order_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5087,7 +5573,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, request_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5109,7 +5595,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).outgoingSpeiTransactionsReportUsingGET(authorization, order_id, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5131,7 +5617,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).registerOutgoingSpeiTransactionUsingPOST(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5153,7 +5639,7 @@ const TransferenciasSPEIApiFp = function (configuration) {
          */
         registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPEIApiFetchParamCreator)(configuration).registerSpeiSpidOutgoingTransactionsUsingPOST(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5517,7 +6003,7 @@ const TransferenciasSPIDApiFp = function (configuration) {
          */
         getSpidClassificationsUsingGET(authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPIDApiFetchParamCreator)(configuration).getSpidClassificationsUsingGET(authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5539,7 +6025,7 @@ const TransferenciasSPIDApiFp = function (configuration) {
          */
         registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options) {
             const localVarFetchArgs = (0, exports.TransferenciasSPIDApiFetchParamCreator)(configuration).registerOutgoingSpidTransactionUsingPOST(body, authorization, subscription, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5745,7 +6231,7 @@ const WebhooksApiFp = function (configuration) {
          */
         getWebhook(authorization, webhook_id, options) {
             const localVarFetchArgs = (0, exports.WebhooksApiFetchParamCreator)(configuration).getWebhook(authorization, webhook_id, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5765,7 +6251,7 @@ const WebhooksApiFp = function (configuration) {
          */
         getWebhooks(authorization, options) {
             const localVarFetchArgs = (0, exports.WebhooksApiFetchParamCreator)(configuration).getWebhooks(authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
@@ -5786,7 +6272,7 @@ const WebhooksApiFp = function (configuration) {
          */
         registerWebhook(body, authorization, options) {
             const localVarFetchArgs = (0, exports.WebhooksApiFetchParamCreator)(configuration).registerWebhook(body, authorization, options);
-            return (fetch = portableFetch, basePath = BASE_PATH) => {
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
                         return response.json();
