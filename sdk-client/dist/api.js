@@ -320,7 +320,7 @@ var PaymentRequestReq;
     let TypeEnum;
     (function (TypeEnum) {
         TypeEnum[TypeEnum["RECURRENT"] = 'RECURRENT'] = "RECURRENT";
-        TypeEnum[TypeEnum["ONEOCASSION"] = 'ONE_OCASSION'] = "ONEOCASSION";
+        TypeEnum[TypeEnum["ONEOCCASION"] = 'ONE_OCCASION'] = "ONEOCCASION";
     })(TypeEnum = PaymentRequestReq.TypeEnum || (PaymentRequestReq.TypeEnum = {}));
 })(PaymentRequestReq = exports.PaymentRequestReq || (exports.PaymentRequestReq = {}));
 /**
@@ -2659,35 +2659,30 @@ const DepositantesApiFetchParamCreator = function (configuration) {
         },
         /**
          *
-         * @summary Solicitud para actualizar el estado de un depossitante
+         * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+         * @param {string} [body] Empty value
          * @param {string} authorization Header para token
          * @param {string} account Es la cuenta que va a ser actualizada.
          * @param {string} action Es la cuenta que va a ser actualizada.
-         * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options = {}) {
+        updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options = {}) {
             // verify required parameter 'authorization' is not null or undefined
             if (authorization === null || authorization === undefined) {
-                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling updateStatusDepositantsUsingPUT.');
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling updateStatusDepositantsNoSuscrptionUsingPATCH.');
             }
             // verify required parameter 'account' is not null or undefined
             if (account === null || account === undefined) {
-                throw new RequiredError('account', 'Required parameter account was null or undefined when calling updateStatusDepositantsUsingPUT.');
+                throw new RequiredError('account', 'Required parameter account was null or undefined when calling updateStatusDepositantsNoSuscrptionUsingPATCH.');
             }
             // verify required parameter 'action' is not null or undefined
             if (action === null || action === undefined) {
-                throw new RequiredError('action', 'Required parameter action was null or undefined when calling updateStatusDepositantsUsingPUT.');
+                throw new RequiredError('action', 'Required parameter action was null or undefined when calling updateStatusDepositantsNoSuscrptionUsingPATCH.');
             }
-            // verify required parameter 'subscription' is not null or undefined
-            if (subscription === null || subscription === undefined) {
-                throw new RequiredError('subscription', 'Required parameter subscription was null or undefined when calling updateStatusDepositantsUsingPUT.');
-            }
-            const localVarPath = `/subscriptions/{subscription}/depositants/{account}/{action}`
+            const localVarPath = `/depositants/{account}/{action}`
                 .replace(`{${"account"}}`, encodeURIComponent(String(account)))
-                .replace(`{${"action"}}`, encodeURIComponent(String(action)))
-                .replace(`{${"subscription"}}`, encodeURIComponent(String(subscription)));
+                .replace(`{${"action"}}`, encodeURIComponent(String(action)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions = Object.assign({ method: 'PATCH' }, options);
             const localVarHeaderParameter = {};
@@ -2695,10 +2690,58 @@ const DepositantesApiFetchParamCreator = function (configuration) {
             if (authorization !== undefined && authorization !== null) {
                 localVarHeaderParameter['Authorization'] = String(authorization);
             }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("string" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         *
+         * @summary Solicitud para actualizar el estado de un depossitante
+         * @param {string} [body] Empty value
+         * @param {string} authorization Header para token
+         * @param {string} account Es la cuenta que va a ser actualizada.
+         * @param {string} action Es la cuenta que va a ser actualizada.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStatusDepositantsUsingPATCH(body, authorization, account, action, options = {}) {
+            // verify required parameter 'authorization' is not null or undefined
+            if (authorization === null || authorization === undefined) {
+                throw new RequiredError('authorization', 'Required parameter authorization was null or undefined when calling updateStatusDepositantsUsingPATCH.');
+            }
+            // verify required parameter 'account' is not null or undefined
+            if (account === null || account === undefined) {
+                throw new RequiredError('account', 'Required parameter account was null or undefined when calling updateStatusDepositantsUsingPATCH.');
+            }
+            // verify required parameter 'action' is not null or undefined
+            if (action === null || action === undefined) {
+                throw new RequiredError('action', 'Required parameter action was null or undefined when calling updateStatusDepositantsUsingPATCH.');
+            }
+            const localVarPath = `/subscriptions/{subscription}/depositants/{account}/{action}`
+                .replace(`{${"account"}}`, encodeURIComponent(String(account)))
+                .replace(`{${"action"}}`, encodeURIComponent(String(action)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions = Object.assign({ method: 'PATCH' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            if (authorization !== undefined && authorization !== null) {
+                localVarHeaderParameter['Authorization'] = String(authorization);
+            }
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+            const needsSerialization = ("string" !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.body = needsSerialization ? JSON.stringify(body || {}) : (body || "");
             return {
                 url: url.format(localVarUrlObj),
                 options: localVarRequestOptions,
@@ -2779,16 +2822,39 @@ const DepositantesApiFp = function (configuration) {
         },
         /**
          *
-         * @summary Solicitud para actualizar el estado de un depossitante
+         * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+         * @param {string} [body] Empty value
          * @param {string} authorization Header para token
          * @param {string} account Es la cuenta que va a ser actualizada.
          * @param {string} action Es la cuenta que va a ser actualizada.
-         * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options) {
-            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options);
+        updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options) {
+            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options);
+            return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
+                return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                    if (response.status >= 200 && response.status < 300) {
+                        return response.json();
+                    }
+                    else {
+                        throw response;
+                    }
+                });
+            };
+        },
+        /**
+         *
+         * @summary Solicitud para actualizar el estado de un depossitante
+         * @param {string} [body] Empty value
+         * @param {string} authorization Header para token
+         * @param {string} account Es la cuenta que va a ser actualizada.
+         * @param {string} action Es la cuenta que va a ser actualizada.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStatusDepositantsUsingPATCH(body, authorization, account, action, options) {
+            const localVarFetchArgs = (0, exports.DepositantesApiFetchParamCreator)(configuration).updateStatusDepositantsUsingPATCH(body, authorization, account, action, options);
             return (fetch = isomorphicFetch, basePath = BASE_PATH) => {
                 return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                     if (response.status >= 200 && response.status < 300) {
@@ -2845,16 +2911,29 @@ const DepositantesApiFactory = function (configuration, fetch, basePath) {
         },
         /**
          *
-         * @summary Solicitud para actualizar el estado de un depossitante
+         * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+         * @param {string} [body] Empty value
          * @param {string} authorization Header para token
          * @param {string} account Es la cuenta que va a ser actualizada.
          * @param {string} action Es la cuenta que va a ser actualizada.
-         * @param {string} subscription Es el identificador de la suscripción a esta API.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options) {
-            return (0, exports.DepositantesApiFp)(configuration).updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options)(fetch, basePath);
+        updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options) {
+            return (0, exports.DepositantesApiFp)(configuration).updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options)(fetch, basePath);
+        },
+        /**
+         *
+         * @summary Solicitud para actualizar el estado de un depossitante
+         * @param {string} [body] Empty value
+         * @param {string} authorization Header para token
+         * @param {string} account Es la cuenta que va a ser actualizada.
+         * @param {string} action Es la cuenta que va a ser actualizada.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        updateStatusDepositantsUsingPATCH(body, authorization, account, action, options) {
+            return (0, exports.DepositantesApiFp)(configuration).updateStatusDepositantsUsingPATCH(body, authorization, account, action, options)(fetch, basePath);
         },
     };
 };
@@ -2905,17 +2984,31 @@ class DepositantesApi extends BaseAPI {
     }
     /**
      *
-     * @summary Solicitud para actualizar el estado de un depossitante
+     * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+     * @param {string} [body] Empty value
      * @param {string} authorization Header para token
      * @param {string} account Es la cuenta que va a ser actualizada.
      * @param {string} action Es la cuenta que va a ser actualizada.
-     * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DepositantesApi
      */
-    updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options) {
-        return (0, exports.DepositantesApiFp)(this.configuration).updateStatusDepositantsUsingPUT(authorization, account, action, subscription, options)(this.fetch, this.basePath);
+    updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options) {
+        return (0, exports.DepositantesApiFp)(this.configuration).updateStatusDepositantsNoSuscrptionUsingPATCH(body, authorization, account, action, options)(this.fetch, this.basePath);
+    }
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} [body] Empty value
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApi
+     */
+    updateStatusDepositantsUsingPATCH(body, authorization, account, action, options) {
+        return (0, exports.DepositantesApiFp)(this.configuration).updateStatusDepositantsUsingPATCH(body, authorization, account, action, options)(this.fetch, this.basePath);
     }
 }
 exports.DepositantesApi = DepositantesApi;
