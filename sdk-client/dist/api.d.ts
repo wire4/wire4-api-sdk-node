@@ -3717,10 +3717,10 @@ export interface PaymentRequestReq {
     description: string;
     /**
      * Es la fecha de operación de la solicitud de pago.
-     * @type {Date}
+     * @type {string}
      * @memberof PaymentRequestReq
      */
-    due_date: Date;
+    due_date: string;
     /**
      *
      * @type {string}
@@ -3765,7 +3765,7 @@ export declare namespace PaymentRequestReq {
      */
     enum TypeEnum {
         RECURRENT,
-        ONEOCASSION
+        ONEOCCASION
     }
 }
 /**
@@ -6493,15 +6493,26 @@ export declare const DepositantesApiFetchParamCreator: (configuration: Configura
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options?: any): FetchArgs;
     /**
      *
-     * @summary Solicitud para actualizar el estado de un depossitante
+     * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+     * @param {string} [body] Empty value
      * @param {string} authorization Header para token
      * @param {string} account Es la cuenta que va a ser actualizada.
      * @param {string} action Es la cuenta que va a ser actualizada.
-     * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options?: any): FetchArgs;
+    updateStatusDepositantsNoSuscrptionUsingPATCH(body: string, authorization: string, account: string, action: string, options?: any): FetchArgs;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} [body] Empty value
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateStatusDepositantsUsingPATCH(body: string, authorization: string, account: string, action: string, options?: any): FetchArgs;
 };
 /**
  * DepositantesApi - functional programming interface
@@ -6538,15 +6549,26 @@ export declare const DepositantesApiFp: (configuration: Configuration) => {
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<DepositantsResponse>;
     /**
      *
-     * @summary Solicitud para actualizar el estado de un depossitante
+     * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+     * @param {string} [body] Empty value
      * @param {string} authorization Header para token
      * @param {string} account Es la cuenta que va a ser actualizada.
      * @param {string} action Es la cuenta que va a ser actualizada.
-     * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Depositant>;
+    updateStatusDepositantsNoSuscrptionUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Depositant>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} [body] Empty value
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateStatusDepositantsUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): (fetch: FetchAPI, basePath: string) => Promise<Depositant>;
 };
 /**
  * DepositantesApi - factory interface
@@ -6583,15 +6605,26 @@ export declare const DepositantesApiFactory: (configuration: Configuration, fetc
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): Promise<DepositantsResponse>;
     /**
      *
-     * @summary Solicitud para actualizar el estado de un depossitante
+     * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+     * @param {string} [body] Empty value
      * @param {string} authorization Header para token
      * @param {string} account Es la cuenta que va a ser actualizada.
      * @param {string} action Es la cuenta que va a ser actualizada.
-     * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): Promise<Depositant>;
+    updateStatusDepositantsNoSuscrptionUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): Promise<Depositant>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} [body] Empty value
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    updateStatusDepositantsUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): Promise<Depositant>;
 };
 /**
  * DepositantesApi - interface
@@ -6632,16 +6665,28 @@ export interface DepositantesApiInterface {
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): Promise<DepositantsResponse>;
     /**
      *
-     * @summary Solicitud para actualizar el estado de un depossitante
+     * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+     * @param {string} [body] Empty value
      * @param {string} authorization Header para token
      * @param {string} account Es la cuenta que va a ser actualizada.
      * @param {string} action Es la cuenta que va a ser actualizada.
-     * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DepositantesApiInterface
      */
-    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): Promise<Depositant>;
+    updateStatusDepositantsNoSuscrptionUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): Promise<Depositant>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} [body] Empty value
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApiInterface
+     */
+    updateStatusDepositantsUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): Promise<Depositant>;
 }
 /**
  * DepositantesApi - object-oriented interface
@@ -6683,16 +6728,28 @@ export declare class DepositantesApi extends BaseAPI implements DepositantesApiI
     registerDepositantsUsingPOST(body: DepositantsRegister, authorization: string, subscription: string, options: any): Promise<DepositantsResponse>;
     /**
      *
-     * @summary Solicitud para actualizar el estado de un depossitante
+     * @summary Solicitud para actualizar el estado de un depositante sin utilizar la suscripción
+     * @param {string} [body] Empty value
      * @param {string} authorization Header para token
      * @param {string} account Es la cuenta que va a ser actualizada.
      * @param {string} action Es la cuenta que va a ser actualizada.
-     * @param {string} subscription Es el identificador de la suscripción a esta API.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DepositantesApi
      */
-    updateStatusDepositantsUsingPUT(authorization: string, account: string, action: string, subscription: string, options: any): Promise<Depositant>;
+    updateStatusDepositantsNoSuscrptionUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): Promise<Depositant>;
+    /**
+     *
+     * @summary Solicitud para actualizar el estado de un depossitante
+     * @param {string} [body] Empty value
+     * @param {string} authorization Header para token
+     * @param {string} account Es la cuenta que va a ser actualizada.
+     * @param {string} action Es la cuenta que va a ser actualizada.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepositantesApi
+     */
+    updateStatusDepositantsUsingPATCH(body: string, authorization: string, account: string, action: string, options: any): Promise<Depositant>;
 }
 /**
  * EmpresasCoDiApi - fetch parameter creator
