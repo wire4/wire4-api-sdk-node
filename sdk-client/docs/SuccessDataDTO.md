@@ -1,11 +1,10 @@
-# Person
+# SuccessDataDTO
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**last_name** | **str** | Apellido Materno del propietario de la cuenta | [optional] 
-**middle_name** | **str** | Apellido Paterno del propietario de la cuenta | 
-**name** | **str** | Nombre(s) del propietario de la cuenta | 
+**data** | [**SuccessChargesDataDTO**](SuccessChargesDataDTO.md) |  | [optional] 
+**method** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

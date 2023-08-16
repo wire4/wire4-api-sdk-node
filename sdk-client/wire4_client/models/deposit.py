@@ -49,7 +49,8 @@ class Deposit(object):
         'sender_account': 'str',
         'sender_bank': 'MessageInstitution',
         'sender_name': 'str',
-        'sender_rfc': 'str'
+        'sender_rfc': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
@@ -74,10 +75,11 @@ class Deposit(object):
         'sender_account': 'sender_account',
         'sender_bank': 'sender_bank',
         'sender_name': 'sender_name',
-        'sender_rfc': 'sender_rfc'
+        'sender_rfc': 'sender_rfc',
+        'status': 'status'
     }
 
-    def __init__(self, amount=None, beneficiary_account=None, beneficiary_name=None, beneficiary_rfc=None, cep=None, clave_rastreo=None, confirm_date=None, currency_code=None, deposit_date=None, depositant=None, depositant_alias=None, depositant_clabe=None, depositant_email=None, depositant_rfc=None, description=None, monex_description=None, monex_transaction_id=None, reference=None, sender_account=None, sender_bank=None, sender_name=None, sender_rfc=None):  # noqa: E501
+    def __init__(self, amount=None, beneficiary_account=None, beneficiary_name=None, beneficiary_rfc=None, cep=None, clave_rastreo=None, confirm_date=None, currency_code=None, deposit_date=None, depositant=None, depositant_alias=None, depositant_clabe=None, depositant_email=None, depositant_rfc=None, description=None, monex_description=None, monex_transaction_id=None, reference=None, sender_account=None, sender_bank=None, sender_name=None, sender_rfc=None, status=None):  # noqa: E501
         """Deposit - a model defined in Swagger"""  # noqa: E501
         self._amount = None
         self._beneficiary_account = None
@@ -101,6 +103,7 @@ class Deposit(object):
         self._sender_bank = None
         self._sender_name = None
         self._sender_rfc = None
+        self._status = None
         self.discriminator = None
         if amount is not None:
             self.amount = amount
@@ -146,6 +149,8 @@ class Deposit(object):
             self.sender_name = sender_name
         if sender_rfc is not None:
             self.sender_rfc = sender_rfc
+        if status is not None:
+            self.status = status
 
     @property
     def amount(self):
@@ -648,6 +653,35 @@ class Deposit(object):
         """
 
         self._sender_rfc = sender_rfc
+
+    @property
+    def status(self):
+        """Gets the status of this Deposit.  # noqa: E501
+
+        Es el estatus del depósito (COMPLETED/RETURNED).  # noqa: E501
+
+        :return: The status of this Deposit.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Deposit.
+
+        Es el estatus del depósito (COMPLETED/RETURNED).  # noqa: E501
+
+        :param status: The status of this Deposit.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["PENDING", "COMPLETED", "FAILED", "CANCELLED", "AUTHORIZING", "REJECTED"]  # noqa: E501
+        if status not in allowed_values:
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

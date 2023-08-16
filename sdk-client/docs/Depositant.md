@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **depositant_clabe** | **str** | Es la cuenta CLABE (es de 18 dígitos) del depositante. | [optional] 
 **email** | **list[str]** | Es la lista de correos electrónicos (emails) del depositante. | [optional] 
 **name** | **str** | Es el nombre del depositante. | [optional] 
+**status** | **str** | Es el estatus del depositante. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

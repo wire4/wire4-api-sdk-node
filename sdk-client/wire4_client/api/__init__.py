@@ -18,7 +18,9 @@ from wire4_client.api.lmites_de_montos_api import LmitesDeMontosApi
 from wire4_client.api.operaciones_co_di_api import OperacionesCoDiApi
 from wire4_client.api.peticiones_de_pago_por_co_di_api import PeticionesDePagoPorCoDiApi
 from wire4_client.api.puntos_de_venta_co_di_api import PuntosDeVentaCoDiApi
+from wire4_client.api.reporte_de_solicitudes_de_pagos_api import ReporteDeSolicitudesDePagosApi
 from wire4_client.api.saldo_api import SaldoApi
+from wire4_client.api.solicitud_de_pagos_api import SolicitudDePagosApi
 from wire4_client.api.suscripciones_api import SuscripcionesApi
 from wire4_client.api.transferencias_spei_api import TransferenciasSPEIApi
 from wire4_client.api.transferencias_spid_api import TransferenciasSPIDApi

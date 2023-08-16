@@ -58,6 +58,7 @@ from wire4_client.models.depositants_response import DepositantsResponse
 from wire4_client.models.deposits_authorization_response import DepositsAuthorizationResponse
 from wire4_client.models.detailed_error_response import DetailedErrorResponse
 from wire4_client.models.error_response import ErrorResponse
+from wire4_client.models.failed_charges_data_dto import FailedChargesDataDTO
 from wire4_client.models.get_depositants import GetDepositants
 from wire4_client.models.institution import Institution
 from wire4_client.models.institutions_list import InstitutionsList
@@ -81,6 +82,9 @@ from wire4_client.models.pager_response_dto import PagerResponseDto
 from wire4_client.models.payment import Payment
 from wire4_client.models.payment_codi import PaymentCODI
 from wire4_client.models.payment_request_codi_response_dto import PaymentRequestCodiResponseDTO
+from wire4_client.models.payment_request_report_dto import PaymentRequestReportDTO
+from wire4_client.models.payment_request_req import PaymentRequestReq
+from wire4_client.models.payment_request_response import PaymentRequestResponse
 from wire4_client.models.payments_request_id import PaymentsRequestId
 from wire4_client.models.payments_spei_and_spid_order_id import PaymentsSpeiAndSpidOrderId
 from wire4_client.models.payments_spei_and_spid_request_id import PaymentsSpeiAndSpidRequestId
@@ -102,6 +106,8 @@ from wire4_client.models.spid_beneficiary_response import SpidBeneficiaryRespons
 from wire4_client.models.spid_classification_dto import SpidClassificationDTO
 from wire4_client.models.spid_classifications_response_dto import SpidClassificationsResponseDTO
 from wire4_client.models.subscription_change_status_request import SubscriptionChangeStatusRequest
+from wire4_client.models.success_charges_data_dto import SuccessChargesDataDTO
+from wire4_client.models.success_data_dto import SuccessDataDTO
 from wire4_client.models.token_required_response import TokenRequiredResponse
 from wire4_client.models.transaction_error_code import TransactionErrorCode
 from wire4_client.models.transaction_outgoing import TransactionOutgoing

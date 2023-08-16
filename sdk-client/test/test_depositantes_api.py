@@ -49,6 +49,20 @@ class TestDepositantesApi(unittest.TestCase):
         """
         pass
 
+    def test_update_status_depositants_no_suscrption_using_patch(self):
+        """Test case for update_status_depositants_no_suscrption_using_patch
+
+        Solicitud para actualizar el estado de un depositante sin utilizar la suscripción  # noqa: E501
+        """
+        pass
+
+    def test_update_status_depositants_using_patch(self):
+        """Test case for update_status_depositants_using_patch
+
+        Solicitud para actualizar el estado de un depossitante  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

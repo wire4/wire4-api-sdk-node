@@ -45,7 +45,8 @@ class Person(object):
         self._middle_name = None
         self._name = None
         self.discriminator = None
-        self.last_name = last_name
+        if last_name is not None:
+            self.last_name = last_name
         self.middle_name = middle_name
         self.name = name
 
@@ -69,8 +70,6 @@ class Person(object):
         :param last_name: The last_name of this Person.  # noqa: E501
         :type: str
         """
-        if last_name is None:
-            raise ValueError("Invalid value for `last_name`, must not be `None`")  # noqa: E501
 
         self._last_name = last_name
 

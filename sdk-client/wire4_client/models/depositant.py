@@ -32,7 +32,8 @@ class Depositant(object):
         'currency_code': 'str',
         'depositant_clabe': 'str',
         'email': 'list[str]',
-        'name': 'str'
+        'name': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
@@ -40,16 +41,18 @@ class Depositant(object):
         'currency_code': 'currency_code',
         'depositant_clabe': 'depositant_clabe',
         'email': 'email',
-        'name': 'name'
+        'name': 'name',
+        'status': 'status'
     }
 
-    def __init__(self, alias=None, currency_code=None, depositant_clabe=None, email=None, name=None):  # noqa: E501
+    def __init__(self, alias=None, currency_code=None, depositant_clabe=None, email=None, name=None, status=None):  # noqa: E501
         """Depositant - a model defined in Swagger"""  # noqa: E501
         self._alias = None
         self._currency_code = None
         self._depositant_clabe = None
         self._email = None
         self._name = None
+        self._status = None
         self.discriminator = None
         if alias is not None:
             self.alias = alias
@@ -61,6 +64,8 @@ class Depositant(object):
             self.email = email
         if name is not None:
             self.name = name
+        if status is not None:
+            self.status = status
 
     @property
     def alias(self):
@@ -176,6 +181,29 @@ class Depositant(object):
         """
 
         self._name = name
+
+    @property
+    def status(self):
+        """Gets the status of this Depositant.  # noqa: E501
+
+        Es el estatus del depositante.  # noqa: E501
+
+        :return: The status of this Depositant.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this Depositant.
+
+        Es el estatus del depositante.  # noqa: E501
+
+        :param status: The status of this Depositant.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     def to_dict(self):
         """Returns the model properties as a dict"""
