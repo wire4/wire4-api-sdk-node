@@ -13,9 +13,9 @@
  * Do not edit the file manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.CargosRecurrentesApi = exports.CargosRecurrentesApiFactory = exports.CargosRecurrentesApiFp = exports.CargosRecurrentesApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SuccessDataDTO = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.Product = exports.PaymentRequestReq = exports.PaymentRequestReportDTO = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.Deposit = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
-exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SolicitudDePagosApi = exports.SolicitudDePagosApiFactory = exports.SolicitudDePagosApiFp = exports.SolicitudDePagosApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.ReporteDeSolicitudesDePagosApi = exports.ReporteDeSolicitudesDePagosApiFactory = exports.ReporteDeSolicitudesDePagosApiFp = exports.ReporteDeSolicitudesDePagosApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = void 0;
-exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = void 0;
+exports.CuentasDeBeneficiariosSPIDApiFp = exports.CuentasDeBeneficiariosSPIDApiFetchParamCreator = exports.CuentasDeBeneficiariosSPEIApi = exports.CuentasDeBeneficiariosSPEIApiFactory = exports.CuentasDeBeneficiariosSPEIApiFp = exports.CuentasDeBeneficiariosSPEIApiFetchParamCreator = exports.ContractsDetailsApi = exports.ContractsDetailsApiFactory = exports.ContractsDetailsApiFp = exports.ContractsDetailsApiFetchParamCreator = exports.ContactoApi = exports.ContactoApiFactory = exports.ContactoApiFp = exports.ContactoApiFetchParamCreator = exports.ComprobanteElectrnicoDePagoCEPApi = exports.ComprobanteElectrnicoDePagoCEPApiFactory = exports.ComprobanteElectrnicoDePagoCEPApiFp = exports.ComprobanteElectrnicoDePagoCEPApiFetchParamCreator = exports.CargosRecurrentesApi = exports.CargosRecurrentesApiFactory = exports.CargosRecurrentesApiFp = exports.CargosRecurrentesApiFetchParamCreator = exports.AutorizacinDeDepsitosApi = exports.AutorizacinDeDepsitosApiFactory = exports.AutorizacinDeDepsitosApiFp = exports.AutorizacinDeDepsitosApiFetchParamCreator = exports.WebhookResponse = exports.Webhook = exports.UseServiceBanking = exports.SuccessDataDTO = exports.SubscriptionChangeStatusRequest = exports.SalesPointFound = exports.Product = exports.PaymentRequestReq = exports.PaymentRequestReportDTO = exports.PaymentCODI = exports.Operations = exports.MessageRequestChanged = exports.Deposit = exports.CodiOperationsFiltersRequestDTO = exports.CodiCodeRequestDTO = exports.CodiCodeQrResponseDTO = exports.CepSearchBanxico = exports.CepResponse = exports.BillingTransaction = exports.Billing = exports.BeneficiariesQueryRegisterStatus = exports.RequiredError = exports.BaseAPI = exports.COLLECTION_FORMATS = void 0;
+exports.SuscripcionesApi = exports.SuscripcionesApiFactory = exports.SuscripcionesApiFp = exports.SuscripcionesApiFetchParamCreator = exports.SolicitudDePagosApi = exports.SolicitudDePagosApiFactory = exports.SolicitudDePagosApiFp = exports.SolicitudDePagosApiFetchParamCreator = exports.SaldoApi = exports.SaldoApiFactory = exports.SaldoApiFp = exports.SaldoApiFetchParamCreator = exports.ReporteDeSolicitudesDePagosApi = exports.ReporteDeSolicitudesDePagosApiFactory = exports.ReporteDeSolicitudesDePagosApiFp = exports.ReporteDeSolicitudesDePagosApiFetchParamCreator = exports.PuntosDeVentaCoDiApi = exports.PuntosDeVentaCoDiApiFactory = exports.PuntosDeVentaCoDiApiFp = exports.PuntosDeVentaCoDiApiFetchParamCreator = exports.PeticionesDePagoPorCoDiApi = exports.PeticionesDePagoPorCoDiApiFactory = exports.PeticionesDePagoPorCoDiApiFp = exports.PeticionesDePagoPorCoDiApiFetchParamCreator = exports.OperacionesCoDiApi = exports.OperacionesCoDiApiFactory = exports.OperacionesCoDiApiFp = exports.OperacionesCoDiApiFetchParamCreator = exports.LmitesDeMontosApi = exports.LmitesDeMontosApiFactory = exports.LmitesDeMontosApiFp = exports.LmitesDeMontosApiFetchParamCreator = exports.InstitucionesApi = exports.InstitucionesApiFactory = exports.InstitucionesApiFp = exports.InstitucionesApiFetchParamCreator = exports.FacturasApi = exports.FacturasApiFactory = exports.FacturasApiFp = exports.FacturasApiFetchParamCreator = exports.EmpresasCoDiApi = exports.EmpresasCoDiApiFactory = exports.EmpresasCoDiApiFp = exports.EmpresasCoDiApiFetchParamCreator = exports.DepositantesApi = exports.DepositantesApiFactory = exports.DepositantesApiFp = exports.DepositantesApiFetchParamCreator = exports.CuentasDeBeneficiariosSPIDApi = exports.CuentasDeBeneficiariosSPIDApiFactory = void 0;
+exports.WebhooksApi = exports.WebhooksApiFactory = exports.WebhooksApiFp = exports.WebhooksApiFetchParamCreator = exports.TransferenciasSPIDApi = exports.TransferenciasSPIDApiFactory = exports.TransferenciasSPIDApiFp = exports.TransferenciasSPIDApiFetchParamCreator = exports.TransferenciasSPEIApi = exports.TransferenciasSPEIApiFactory = exports.TransferenciasSPEIApiFp = exports.TransferenciasSPEIApiFetchParamCreator = void 0;
 const url = require("url");
 const isomorphicFetch = require("isomorphic-fetch");
 const BASE_PATH = "https://sandbox-api.wire4.mx/wire4/1.0.0".replace(/\/+$/, "");
@@ -74,7 +74,7 @@ var BeneficiariesQueryRegisterStatus;
         StatusRequestEnum[StatusRequestEnum["PENDING"] = 'PENDING'] = "PENDING";
         StatusRequestEnum[StatusRequestEnum["AUTHORIZED"] = 'AUTHORIZED'] = "AUTHORIZED";
     })(StatusRequestEnum = BeneficiariesQueryRegisterStatus.StatusRequestEnum || (BeneficiariesQueryRegisterStatus.StatusRequestEnum = {}));
-})(BeneficiariesQueryRegisterStatus = exports.BeneficiariesQueryRegisterStatus || (exports.BeneficiariesQueryRegisterStatus = {}));
+})(BeneficiariesQueryRegisterStatus || (exports.BeneficiariesQueryRegisterStatus = BeneficiariesQueryRegisterStatus = {}));
 /**
  * @export
  * @namespace Billing
@@ -92,7 +92,7 @@ var Billing;
         StatusEnum[StatusEnum["WAITINGPAYMENT"] = 'WAITING_PAYMENT'] = "WAITINGPAYMENT";
         StatusEnum[StatusEnum["EMISSIONPENDING"] = 'EMISSION_PENDING'] = "EMISSIONPENDING";
     })(StatusEnum = Billing.StatusEnum || (Billing.StatusEnum = {}));
-})(Billing = exports.Billing || (exports.Billing = {}));
+})(Billing || (exports.Billing = Billing = {}));
 /**
  * @export
  * @namespace BillingTransaction
@@ -108,7 +108,39 @@ var BillingTransaction;
         TypeEnum[TypeEnum["IN"] = 'IN'] = "IN";
         TypeEnum[TypeEnum["OUT"] = 'OUT'] = "OUT";
     })(TypeEnum = BillingTransaction.TypeEnum || (BillingTransaction.TypeEnum = {}));
-})(BillingTransaction = exports.BillingTransaction || (exports.BillingTransaction = {}));
+})(BillingTransaction || (exports.BillingTransaction = BillingTransaction = {}));
+/**
+ * @export
+ * @namespace CepResponse
+ */
+var CepResponse;
+(function (CepResponse) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let TypeEnum;
+    (function (TypeEnum) {
+        TypeEnum[TypeEnum["SPEI"] = 'SPEI'] = "SPEI";
+        TypeEnum[TypeEnum["SPID"] = 'SPID'] = "SPID";
+    })(TypeEnum = CepResponse.TypeEnum || (CepResponse.TypeEnum = {}));
+})(CepResponse || (exports.CepResponse = CepResponse = {}));
+/**
+ * @export
+ * @namespace CepSearchBanxico
+ */
+var CepSearchBanxico;
+(function (CepSearchBanxico) {
+    /**
+     * @export
+     * @enum {string}
+     */
+    let TypeEnum;
+    (function (TypeEnum) {
+        TypeEnum[TypeEnum["SPEI"] = 'SPEI'] = "SPEI";
+        TypeEnum[TypeEnum["SPID"] = 'SPID'] = "SPID";
+    })(TypeEnum = CepSearchBanxico.TypeEnum || (CepSearchBanxico.TypeEnum = {}));
+})(CepSearchBanxico || (exports.CepSearchBanxico = CepSearchBanxico = {}));
 /**
  * @export
  * @namespace CodiCodeQrResponseDTO
@@ -140,7 +172,7 @@ var CodiCodeQrResponseDTO;
         TypeEnum[TypeEnum["QRCODE"] = 'QR_CODE'] = "QRCODE";
         TypeEnum[TypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
     })(TypeEnum = CodiCodeQrResponseDTO.TypeEnum || (CodiCodeQrResponseDTO.TypeEnum = {}));
-})(CodiCodeQrResponseDTO = exports.CodiCodeQrResponseDTO || (exports.CodiCodeQrResponseDTO = {}));
+})(CodiCodeQrResponseDTO || (exports.CodiCodeQrResponseDTO = CodiCodeQrResponseDTO = {}));
 /**
  * @export
  * @namespace CodiCodeRequestDTO
@@ -168,7 +200,7 @@ var CodiCodeRequestDTO;
         TypeEnum[TypeEnum["QRCODE"] = 'QR_CODE'] = "QRCODE";
         TypeEnum[TypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
     })(TypeEnum = CodiCodeRequestDTO.TypeEnum || (CodiCodeRequestDTO.TypeEnum = {}));
-})(CodiCodeRequestDTO = exports.CodiCodeRequestDTO || (exports.CodiCodeRequestDTO = {}));
+})(CodiCodeRequestDTO || (exports.CodiCodeRequestDTO = CodiCodeRequestDTO = {}));
 /**
  * @export
  * @namespace CodiOperationsFiltersRequestDTO
@@ -190,7 +222,7 @@ var CodiOperationsFiltersRequestDTO;
         StatusEnum[StatusEnum["REVERSED"] = 'REVERSED'] = "REVERSED";
         StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
     })(StatusEnum = CodiOperationsFiltersRequestDTO.StatusEnum || (CodiOperationsFiltersRequestDTO.StatusEnum = {}));
-})(CodiOperationsFiltersRequestDTO = exports.CodiOperationsFiltersRequestDTO || (exports.CodiOperationsFiltersRequestDTO = {}));
+})(CodiOperationsFiltersRequestDTO || (exports.CodiOperationsFiltersRequestDTO = CodiOperationsFiltersRequestDTO = {}));
 /**
  * @export
  * @namespace Deposit
@@ -210,7 +242,7 @@ var Deposit;
         StatusEnum[StatusEnum["AUTHORIZING"] = 'AUTHORIZING'] = "AUTHORIZING";
         StatusEnum[StatusEnum["REJECTED"] = 'REJECTED'] = "REJECTED";
     })(StatusEnum = Deposit.StatusEnum || (Deposit.StatusEnum = {}));
-})(Deposit = exports.Deposit || (exports.Deposit = {}));
+})(Deposit || (exports.Deposit = Deposit = {}));
 /**
  * @export
  * @namespace MessageRequestChanged
@@ -225,7 +257,7 @@ var MessageRequestChanged;
     (function (StatusEnum) {
         StatusEnum[StatusEnum["AUTHORIZED"] = 'AUTHORIZED'] = "AUTHORIZED";
     })(StatusEnum = MessageRequestChanged.StatusEnum || (MessageRequestChanged.StatusEnum = {}));
-})(MessageRequestChanged = exports.MessageRequestChanged || (exports.MessageRequestChanged = {}));
+})(MessageRequestChanged || (exports.MessageRequestChanged = MessageRequestChanged = {}));
 /**
  * @export
  * @namespace Operations
@@ -257,7 +289,7 @@ var Operations;
         TypeEnum[TypeEnum["QRCODE"] = 'QR_CODE'] = "QRCODE";
         TypeEnum[TypeEnum["UNKNOWN"] = 'UNKNOWN'] = "UNKNOWN";
     })(TypeEnum = Operations.TypeEnum || (Operations.TypeEnum = {}));
-})(Operations = exports.Operations || (exports.Operations = {}));
+})(Operations || (exports.Operations = Operations = {}));
 /**
  * @export
  * @namespace PaymentCODI
@@ -279,7 +311,7 @@ var PaymentCODI;
         StatusEnum[StatusEnum["REVERSED"] = 'REVERSED'] = "REVERSED";
         StatusEnum[StatusEnum["PENDING"] = 'PENDING'] = "PENDING";
     })(StatusEnum = PaymentCODI.StatusEnum || (PaymentCODI.StatusEnum = {}));
-})(PaymentCODI = exports.PaymentCODI || (exports.PaymentCODI = {}));
+})(PaymentCODI || (exports.PaymentCODI = PaymentCODI = {}));
 /**
  * @export
  * @namespace PaymentRequestReportDTO
@@ -297,7 +329,7 @@ var PaymentRequestReportDTO;
         StatusEnum[StatusEnum["PAID"] = 'PAID'] = "PAID";
         StatusEnum[StatusEnum["CANCELLED"] = 'CANCELLED'] = "CANCELLED";
     })(StatusEnum = PaymentRequestReportDTO.StatusEnum || (PaymentRequestReportDTO.StatusEnum = {}));
-})(PaymentRequestReportDTO = exports.PaymentRequestReportDTO || (exports.PaymentRequestReportDTO = {}));
+})(PaymentRequestReportDTO || (exports.PaymentRequestReportDTO = PaymentRequestReportDTO = {}));
 /**
  * @export
  * @namespace PaymentRequestReq
@@ -322,7 +354,7 @@ var PaymentRequestReq;
         TypeEnum[TypeEnum["RECURRENT"] = 'RECURRENT'] = "RECURRENT";
         TypeEnum[TypeEnum["ONEOCCASION"] = 'ONE_OCCASION'] = "ONEOCCASION";
     })(TypeEnum = PaymentRequestReq.TypeEnum || (PaymentRequestReq.TypeEnum = {}));
-})(PaymentRequestReq = exports.PaymentRequestReq || (exports.PaymentRequestReq = {}));
+})(PaymentRequestReq || (exports.PaymentRequestReq = PaymentRequestReq = {}));
 /**
  * @export
  * @namespace Product
@@ -339,7 +371,7 @@ var Product;
         BillingPeriodEnum[BillingPeriodEnum["MONTHLY"] = 'MONTHLY'] = "MONTHLY";
         BillingPeriodEnum[BillingPeriodEnum["YEARLY"] = 'YEARLY'] = "YEARLY";
     })(BillingPeriodEnum = Product.BillingPeriodEnum || (Product.BillingPeriodEnum = {}));
-})(Product = exports.Product || (exports.Product = {}));
+})(Product || (exports.Product = Product = {}));
 /**
  * @export
  * @namespace SalesPointFound
@@ -355,7 +387,7 @@ var SalesPointFound;
         StatusEnum[StatusEnum["ACTIVE"] = 'ACTIVE'] = "ACTIVE";
         StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
     })(StatusEnum = SalesPointFound.StatusEnum || (SalesPointFound.StatusEnum = {}));
-})(SalesPointFound = exports.SalesPointFound || (exports.SalesPointFound = {}));
+})(SalesPointFound || (exports.SalesPointFound = SalesPointFound = {}));
 /**
  * @export
  * @namespace SubscriptionChangeStatusRequest
@@ -371,7 +403,7 @@ var SubscriptionChangeStatusRequest;
         StatusEnum[StatusEnum["ACTIVE"] = 'ACTIVE'] = "ACTIVE";
         StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
     })(StatusEnum = SubscriptionChangeStatusRequest.StatusEnum || (SubscriptionChangeStatusRequest.StatusEnum = {}));
-})(SubscriptionChangeStatusRequest = exports.SubscriptionChangeStatusRequest || (exports.SubscriptionChangeStatusRequest = {}));
+})(SubscriptionChangeStatusRequest || (exports.SubscriptionChangeStatusRequest = SubscriptionChangeStatusRequest = {}));
 /**
  * @export
  * @namespace SuccessDataDTO
@@ -387,7 +419,7 @@ var SuccessDataDTO;
         MethodEnum[MethodEnum["CARD"] = 'CARD'] = "CARD";
         MethodEnum[MethodEnum["CASH"] = 'CASH'] = "CASH";
     })(MethodEnum = SuccessDataDTO.MethodEnum || (SuccessDataDTO.MethodEnum = {}));
-})(SuccessDataDTO = exports.SuccessDataDTO || (exports.SuccessDataDTO = {}));
+})(SuccessDataDTO || (exports.SuccessDataDTO = SuccessDataDTO = {}));
 /**
  * @export
  * @namespace UseServiceBanking
@@ -413,7 +445,7 @@ var UseServiceBanking;
         UseEnum[UseEnum["WITHDRAWAL"] = 'WITHDRAWAL'] = "WITHDRAWAL";
         UseEnum[UseEnum["DEPOSIT"] = 'DEPOSIT'] = "DEPOSIT";
     })(UseEnum = UseServiceBanking.UseEnum || (UseServiceBanking.UseEnum = {}));
-})(UseServiceBanking = exports.UseServiceBanking || (exports.UseServiceBanking = {}));
+})(UseServiceBanking || (exports.UseServiceBanking = UseServiceBanking = {}));
 /**
  * @export
  * @namespace Webhook
@@ -430,7 +462,7 @@ var Webhook;
         StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
         StatusEnum[StatusEnum["DELETED"] = 'DELETED'] = "DELETED";
     })(StatusEnum = Webhook.StatusEnum || (Webhook.StatusEnum = {}));
-})(Webhook = exports.Webhook || (exports.Webhook = {}));
+})(Webhook || (exports.Webhook = Webhook = {}));
 /**
  * @export
  * @namespace WebhookResponse
@@ -447,7 +479,7 @@ var WebhookResponse;
         StatusEnum[StatusEnum["INACTIVE"] = 'INACTIVE'] = "INACTIVE";
         StatusEnum[StatusEnum["DELETED"] = 'DELETED'] = "DELETED";
     })(StatusEnum = WebhookResponse.StatusEnum || (WebhookResponse.StatusEnum = {}));
-})(WebhookResponse = exports.WebhookResponse || (exports.WebhookResponse = {}));
+})(WebhookResponse || (exports.WebhookResponse = WebhookResponse = {}));
 /**
  * AutorizacinDeDepsitosApi - fetch parameter creator
  * @export

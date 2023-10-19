@@ -1,6 +1,6 @@
 {
   "name": "wire4-examples",
-  "version": "1.0.0",
+  "version": "1.2.4",
   "description": "Ejemplos de implementacion del Api Wire4",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "wire4-api-sdk": "1.1.0"
+    "wire4-api-sdk": "^1.2.3",
+    "isomorphic-fetch": "^3.0.0"
   }
 }

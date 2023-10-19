@@ -34,7 +34,6 @@ apiRoutes.get('/', (req, resp) => {
 });
 
 apiRoutes.get('/webhooks', async (req, resp) => {
-
     try {
 
         var instance = new api.WebhooksApi();
@@ -1312,6 +1311,269 @@ apiRoutes.post('/consultCodiOperations', async (req, resp) => {
 
     }catch (error) {
 
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/updateDepositantsNoSubscription/:account/:action', async (req, resp) => {
+    try {
+        var instance = new api.DepositantesApiFetchParamCreator();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var account = req.params.account;
+        var action = req.params.action;
+
+        const authorization  = await outhWire4.obtainAccessTokenApp("general");
+        const response = await instance.updateStatusDepositantsNoSuscrptionUsingPATCH(null, authorization, account, action, {});
+
+        console.log('Response:'+JSON.stringify(response));
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/getPaymentRequestByOrderId/:orderId', async (req, resp) => {
+    try {
+        var instance = new api.ReporteDeSolicitudesDePagosApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var orderId = req.params.orderId
+        console.log(orderId)
+        const authorization  = await outhWire4.obtainAccessTokenApp("general");
+        const response = await instance.paymentRequestIdReportByOrderIdUsingGET(authorization, orderId);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/createPaymentRequest/:orderId', async (req, resp) => {
+    try {
+        var instance = new api.SolicitudDePagosApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var orderId = req.params.orderId
+        const body = {
+            "customer": {
+                "name": "Juan Perez",
+                "email": "juanperez@correo.com",
+                "mobile": "+5955500000000"
+            },
+            "description": "otros",
+            "due_date": "2023-10-21",
+            "amount": 4000,
+            "order_id": orderId,
+            "cancel_return_url": "https://wire4.mx",
+            "return_url": "https://wire4.mx",
+            "method": "CARD"
+        };
+        
+        console.log("Body: ", body);
+        const authorization  = await outhWire4.obtainAccessTokenApp("general");
+        const response = await instance.registerPaymentRequestUsingPOST(body, authorization);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/getPaymentRequestByRequestId/:requestId', async (req, resp) => {
+
+    try {
+        var instance = new api.ReporteDeSolicitudesDePagosApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var requestId = req.params.requestId
+        const authorization  = await outhWire4.obtainAccessTokenApp("general");
+        const response = await instance.paymentRequestIdReportUsingGET(authorization, requestId);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/createRecurringCharge/:orderId', async (req, resp) => {
+    try {
+        var instance = new api.CargosRecurrentesApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var orderId = req.params.orderId
+        const body = {
+            "customer" : {
+            "name":"Luis Olalde",
+            "email":"luis.olalde@wire4.mx"
+            },
+            "product":{
+                "name":"Prueba suscripcion",
+                "amount": 2,
+                "billing_period":"WEEKLY",
+                "frequency":1
+            },
+            "first_charge_date":"2022-12-23T00:00:00.000-06:00",
+            "charges":5,
+            "order_id": orderId,
+            "return_url": "https://wire4.mx/",
+            "cancel_return_url": "https://wire4.mx/"
+        };
+        
+        console.log("Body: ", body);
+        const authorization  = await outhWire4.obtainAccessTokenApp("charges_general");
+        const response = await instance.registerRecurringChargeUsingPOST(body, authorization);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/deleteRecurringCharge/:orderId', async (req, resp) => {
+    try {
+        var instance = new api.CargosRecurrentesApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var orderId = req.params.orderId
+        const authorization  = await outhWire4.obtainAccessTokenApp("charges_general");
+        const response = await instance.deleteRecurringChargeUsingDELETE(authorization, orderId);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/getDepositAutorization', async (req, resp) => {
+
+    try {
+        var instance = new api.AutorizacinDeDepsitosApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        const authorization  = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_admin');
+        const response = await instance.getDepositAuthConfigurations(authorization, SUBSCRIPTION);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/enableDisableDepositAuthConfigurations', async (req, resp) => {
+
+    try {
+        var instance = new api.AutorizacinDeDepsitosApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        const authorization  = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_admin');
+        var body = {
+            "enabled" : true,
+            "wh_uuid" : "wh_30bfe7b213ea49bca4a29cc7793dda41", // tu identificador de webjook
+            "webhook" : {
+              "name" : "mio", // nombre de tu webhook
+              "url" : "https://tu-url-de-webhook"
+            }
+          }
+        
+        const response = await instance.putDepositAuthConfigurations(body, authorization, SUBSCRIPTION);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/updateDepositants/:account/:action', async (req, resp) => {
+    try {
+        var instance = new api.DepositantesApiFetchParamCreator();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        var account = req.params.account;
+        var action = req.params.action;
+
+        const authorization  = await outhWire4.obtainAccessTokenApp("general");
+        const response = await instance.updateStatusDepositantsUsingPATCH(null, authorization, account, action, {});
+
+        console.log('Response:'+JSON.stringify(response));
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+
+        if(error.status !== undefined ) {
+            console.log('Error:' + error.status, ' mensaje:' + error.statusText);
+        } else {
+            console.log('Error:' + error);
+        }
+    }
+});
+
+apiRoutes.get('/getOutcommingSPEISPIDByRequestId/:requestId', async (req, resp) => {
+
+    try {
+        var instance = new api.TransferenciasSPEIApi();
+        var outhWire4 = new OAuthWire4(OAUTH_CONSUMER_KEY, OAUTH_CONSUMER_SECRET, Environment.SANDBOX);
+        const requestId = req.params.requestId;
+        const authorization  = await outhWire4.obtainAccessTokenAppUser(USER_KEY, SECRET_KEY, 'spei_spid_admin');
+        const response = await instance.outCommingSpeiSpidRequestIdTransactionsReportUsingGET(authorization, requestId, SUBSCRIPTION);
+        console.log(response)
+        resp.json(response);
+        resp.end();
+
+    } catch (error) {
+        console.log(error)
         if(error.status !== undefined ) {
             console.log('Error:' + error.status, ' mensaje:' + error.statusText);
         } else {
