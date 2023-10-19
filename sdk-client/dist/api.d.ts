@@ -1072,11 +1072,31 @@ export interface CepResponse {
      */
     signature: string;
     /**
+     * Es el tiop de CEP, puede ser: <strong>SPEI</strong> o <strong>SPID</strong>.
+     * @type {string}
+     * @memberof CepResponse
+     */
+    type: CepResponse.TypeEnum;
+    /**
      * La url al archivo zip del CEP, el cual contiene el xml y pdf
      * @type {string}
      * @memberof CepResponse
      */
     url_zip: string;
+}
+/**
+ * @export
+ * @namespace CepResponse
+ */
+export declare namespace CepResponse {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum TypeEnum {
+        SPEI,
+        SPID
+    }
 }
 /**
  *
@@ -1132,6 +1152,26 @@ export interface CepSearchBanxico {
      * @memberof CepSearchBanxico
      */
     sender_bank_key: string;
+    /**
+     * Es el tipo de cep a consultar, puede ser SPEI o SPID.
+     * @type {string}
+     * @memberof CepSearchBanxico
+     */
+    type: CepSearchBanxico.TypeEnum;
+}
+/**
+ * @export
+ * @namespace CepSearchBanxico
+ */
+export declare namespace CepSearchBanxico {
+    /**
+     * @export
+     * @enum {string}
+     */
+    enum TypeEnum {
+        SPEI,
+        SPID
+    }
 }
 /**
  * Certificado de la empresa que se está registrando.
