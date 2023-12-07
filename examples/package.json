@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "wire4-api-sdk": "^1.2.3",
+    "wire4-api-sdk": "^1.2.4",
     "isomorphic-fetch": "^3.0.0"
   }
 }
